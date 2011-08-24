@@ -96,6 +96,6 @@ Acknowledgements
 ================
 
 This project was possible with the tutorship of Carlos Denner dos Santos Jr and
-the finantial support of [Centro de Competência de Software Livre]
+the financial support of [Centro de Competência de Software Livre]
 (http://ccsl.ime.usp.br/).
 
