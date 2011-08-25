@@ -26,7 +26,7 @@ end
 
 list = config['file-project-list']
 
-dir = "#{config['dir-project-prefix']}/$X#{config['dir-project-suffix']}"
+dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
 cmd = "git --git-dir #{dir} log #{format('$X', '$D')} --shortstat"
 system "cat #{list} | while read X; do D=$(cat #{dir}/description); #{cmd}; done"
 
