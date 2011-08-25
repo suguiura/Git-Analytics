@@ -38,10 +38,10 @@ the too, using the following command syntax to download the data.
 ### Download git descriptions (optional)
 
 Since the git tool, used within the script in the previous step, doesn't
-download projects description, it can be done separatedly. A tool is available
+download projects description, it can be done separately. A tool is available
 for this task and has the following syntax:
 
-    ruby script/dl-description <config.yaml> [--to <directory>]
+    ruby script/dl-description <config.yaml>
 
 ### Correct incorrect emails (optional)
 

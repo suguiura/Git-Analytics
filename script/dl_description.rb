@@ -16,19 +16,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'yaml'
-require 'optparse'
 
 config = YAML::load(File.open(ARGV.first))
 
-opts = ARGV.getopts('', 'to:')
-dest = opts['to'] || '.'
-
-prefix = config['url-description-prefix']
-suffix = config['url-description-suffix']
+list = config['file-project-list']
 parser = config['url-description-parser']
 
-dl = "wget -qO - \"#{prefix}$X#{suffix}\""
-cmds = "#{dl} | #{parser} > #{dest}/$X/description"
-prepare = "mkdir -p #{dest}/$X; echo -n \"(\" $(date +%R) \")\""
-system "cat #{config['list']} | while read X Y; do #{prepare}; #{cmds}; done"
+dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
+url = "#{config['url-description-prefix']}$X#{config['url-description-suffix']}"
+cmd = "wget -qO - \"#{url}\" | #{parser} > #{dir}/description"
+prepare = "mkdir -p #{dir}; echo '('$(date +%R)')'"
+system "cat #{list} | while read X; do #{prepare}; #{cmd}; done"
 
