@@ -16,19 +16,18 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'yaml'
+
 config = YAML::load(File.open(ARGV.first))
 
-require 'optparse'
-opts = ARGV.getopts('', 'to:')
+list = config['file-project-list']
+listurl = config['url-project-list']
 
-dest = opts['to'] || '.'
+wget = "wget -O - '#{listurl}' | #{config['url-project-list-parser']} > #{list}"
+system "echo 'Downloading list...'; #{wget}" if not File.exists? list
 
-prefix = config['url-git-prefix']
-suffix = config['url-git-suffix']
-
-
-
-cmds = "git clone --mirror #{prefix}$X#{suffix} #{dest}/$X"
-prepare = "mkdir -p #{dest}/$X; echo -n \"(\" $(date +%R) \")\""
-system "cat #{config['list']} | while read X Y; do #{prepare}; #{cmds}; done"
+dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
+url = "#{config['url-git-prefix']}$X#{config['url-git-suffix']}"
+cmd = "git clone --mirror #{url} #{dir}"
+prepare = "mkdir -p #{dir}; echo '('$(date +%R)')'"
+system "cat #{list} | while read X; do #{prepare}; #{cmd}; done"
 
