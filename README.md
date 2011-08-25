@@ -90,7 +90,7 @@ rown can become quite monotonous. Fortunately, the scripts were coded into such
 a way that it all can be done into a long pipe. The following is an example
 using the pipe feature, along with `time` and `gzip`.
 
-    time ruby script/gitlog.rb config/linux.yaml | ruby script/csv.rb --default-origin 'linux' | gzip -c > generated/linux.dat.gz
+    time ruby script/gitlog.rb config/linux.yaml | ruby script/csv.rb | gzip -c > generated/linux.dat.gz
 
 Acknowledgements
 ================
