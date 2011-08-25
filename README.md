@@ -31,7 +31,8 @@ Download the git files from each project
 
 A given server can contain several projects (e.g. git.kernel.org) and the dl.rb
 tool was made to automatically download them. Give a yaml configuration file to
-the too, using the following command syntax to download the data.
+the too, using the following command syntax to download the data. If a project
+list doesn't already exist, it is downloaded.
 
     ruby script/dl.rb <config.yaml>
 
