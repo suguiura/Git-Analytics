@@ -62,6 +62,11 @@ will generate a mailmap format from the input list.
 
     ruby script/anomalies.rb <config.yaml> | ruby script/mailmap.rb
 
+Note: In order to actually use the mailmap file, set it into the git config with
+the following command:
+
+    git config --global mailmap.file <path_to_mailmap>
+
 Concatenate commit logs into a formatted file
 ---------------------------------------------
 
