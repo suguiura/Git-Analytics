@@ -38,7 +38,7 @@ def header
   attribs = ['name', 'email', domain, 'date'].flatten
   author, committer = cat_and_spawn(['author ', 'committer '], attribs, 1)
 
-  ['origin', 'project', 'shortdesc', author, committer, 'committer_date - author_date (seconds)', 'tag', 'files changed', 'line insertions', 'line deletions', 'subject', 'subject length', 'body', 'body length', ].join("\t")
+  ['origin', 'project', 'shortdesc', author, committer, 'committer_date - author_date (seconds)', 'tag', 'files changed', 'line insertions', 'line deletions', 'subject', 'subject length', 'body', 'body length', tags].join("\t")
 end
 
 def domain(email)
@@ -59,7 +59,7 @@ def tags(body)
 end
 
 def stats(shortstat)
-  shortstat.scan(/(\d+)/).map{|x| x.first}
+  (shortstat.scan(/(\d+)/).map{|x| x.first} + [0, 0, 0]).first(3)
 end
 
 puts header
