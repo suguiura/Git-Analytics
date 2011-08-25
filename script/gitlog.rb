@@ -28,5 +28,7 @@ list = config['file-project-list']
 
 dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
 cmd = "git --git-dir #{dir} log #{format('$X', '$D')} --shortstat"
-system "cat #{list} | while read X; do D=$(cat #{dir}/description); #{cmd}; done"
+prepare = "echo \"Logging: $I/$N - $X\">&2;((I++));D=$(cat #{dir}/description)"
+count = "N=$(cat #{list} | wc -l); I=1"
+system "#{count}; cat #{list} | while read X; do #{prepare}; #{cmd}; done"
 
