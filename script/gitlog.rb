@@ -25,10 +25,8 @@ def format(project, description)
 end
 
 list = config['file-project-list']
-prefix = config['dir-project-prefix']
-suffix = config['dir-project-suffix']
 
-dir = "#{prefix}/$X#{suffix}"
+dir = "#{config['dir-project-prefix']}/$X#{config['dir-project-suffix']}"
 cmd = "git --git-dir #{dir} log #{format('$X', '$D')} --shortstat"
-system("cat #{list} | while read X Y; do D=$(cat #{dir}/description); #{cmd}; done")
+system "cat #{list} | while read X; do D=$(cat #{dir}/description); #{cmd}; done"
 
