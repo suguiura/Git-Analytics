@@ -82,8 +82,8 @@ project's name.
 
     ruby script/csv.rb [--default-origin <string>] [--regexp-origin <regexp>]
 
-A long pipe
------------
+The pipe way
+------------
 
 Given the data is already downloaded, performing the above steps many times in a
 rown can become quite monotonous. Fortunately, the scripts were coded into such
