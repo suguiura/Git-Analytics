@@ -57,7 +57,7 @@ A script to list all the anomalies is the following:
 
 Another script tries its best to guess the correct email from a list supplied
 into its standard input. Using the list from the script above, the following
-will generate a mailmap format from the list generated.
+will generate a mailmap format from the input list.
 
     ruby script/anomalies.rb <config.yaml> | ruby script/mailmap.rb
 

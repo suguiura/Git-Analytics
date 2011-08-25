@@ -18,7 +18,8 @@
 require 'uri'
 
 ARGF.each_line do |line|
-  email = URI.unescape(line.strip)
+  line.strip!
+  email = URI.unescape(line)
   email.gsub!(/DOT/, '.')
   email.gsub!(/AT/, '@')
   email.downcase!
