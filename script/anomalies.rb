@@ -16,16 +16,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 require 'yaml'
+
 config = YAML::load(File.open(ARGV.first))
 
-path = File.dirname(__FILE__)
-
 list = config['file-project-list']
-prefix = config['dir-project-prefix']
-suffix = config['dir-project-suffix']
 
+dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
-check = "perl -I#{path} -MAddress -ne '#{perlexpr}'"
-cmd = "git --git-dir #{prefix}/$X#{suffix} log --pretty='%aE%x0A%cE'"
+check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
+cmd = "git --git-dir #{dir} log --pretty='%aE%x0A%cE'"
 system "cat #{list} | while read X Y; do #{cmd}; done | sort | uniq | #{check}"
 
