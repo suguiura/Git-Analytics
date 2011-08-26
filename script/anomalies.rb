@@ -19,11 +19,20 @@ require 'yaml'
 
 config = YAML::load(File.open(ARGV.first))
 
-list = config['file-project-list']
+emails = []
 
-dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
+projects = IO.read(config['file-project-list']).strip.split("\n")
+n = projects.size
+projects.each_index do |i|
+  project = projects[i]
+  STDERR.printf "%5d/%d - %s\n", i + 1, n, project
+  dir = [config['dir-project-prefix'], project, config['dir-project-suffix']].join
+  emails += %x( git --git-dir #{dir} log --pretty='%aE%x0A%cE' ).split("\n")
+end
+
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
 check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
-cmd = "git --git-dir #{dir} log --pretty='%aE%x0A%cE'"
-system "cat #{list} | while read X Y; do #{cmd}; done | sort | uniq | #{check}"
+IO.popen(check, 'w') do |io|
+  emails.map{|x| x.strip}.uniq.sort.each {|email| io.puts email}
+end
 
