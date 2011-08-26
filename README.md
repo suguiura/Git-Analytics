@@ -101,7 +101,7 @@ using the pipe feature, along with `time` and `gzip`.
 Acknowledgements
 ================
 
-This project was possible with the tutorship of Carlos Denner dos Santos Jr and
-the financial support of [Centro de Competência de Software Livre]
+This project was possible with the tutorship of [Carlos Denner dos Santos Jr]
+(denner@ime.usp.br) and the financial support of [Centro de Competência de Software Livre]
 (http://ccsl.ime.usp.br/).
 
