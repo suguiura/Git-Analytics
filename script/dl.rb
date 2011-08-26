@@ -19,15 +19,19 @@ require 'yaml'
 
 config = YAML::load(File.open(ARGV.first))
 
-list = config['file-project-list']
-listurl = config['url-project-list']
+unless File.exists? list
+  puts 'Downloading project list...'
+  system "wget -O - '#{config['url-project-list']}' | #{config['url-project-list-parser']} > #{config['file-project-list']}" 
+end
 
-wget = "wget -O - '#{listurl}' | #{config['url-project-list-parser']} > #{list}"
-system "echo 'Downloading list...'; #{wget}" if not File.exists? list
+projects = IO.read(config['file-project-list']).strip.split("\n")
+n = projects.size
+projects.each_index do |i|
+  project = projects[i]
+  STDERR.printf "%5d/%d - %s\n", i + 1, n, project
+  dir = [config['dir-project-prefix'], project, config['dir-project-suffix']].join
+  url = [config['url-git-prefix'], project, config['url-git-suffix']].join
+  system "mkdir -p #{dir}; git clone --mirror #{url} #{dir}"
+end
 
-dir = "#{config['dir-project-prefix']}$X#{config['dir-project-suffix']}"
-url = "#{config['url-git-prefix']}$X#{config['url-git-suffix']}"
-cmd = "git clone --mirror #{url} #{dir}"
-prepare = "mkdir -p #{dir}; echo '('$(date +%R)')'"
-system "cat #{list} | while read X; do #{prepare}; #{cmd}; done"
 
