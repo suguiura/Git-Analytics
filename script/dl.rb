@@ -19,7 +19,7 @@ require 'yaml'
 
 config = YAML::load(File.open(ARGV.first))
 
-unless File.exists? list
+unless File.exists? config['file-project-list']
   puts 'Downloading project list...'
   system "wget -O - '#{config['url-project-list']}' | #{config['url-project-list-parser']} > #{config['file-project-list']}" 
 end
