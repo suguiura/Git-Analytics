@@ -1,0 +1,22 @@
+:host: git.gnome.org
+:ip: 209.132.180.173
+:data:
+  :dir:
+  - data/gnome/
+  - .git
+:git:
+  :url:
+  - git://209.132.180.173/
+  -
+:description:
+  :url:
+  - http://209.132.180.173/browse/
+  - /atom
+  :find:
+    :xpath: //ns:subtitle
+    :nslist: ns:http://www.w3.org/2005/Atom
+:list:
+  :url: http://209.132.180.173/repositories.txt
+  :regexp: ^[^\s]*
+  :file: config/list-gnome.yaml
+
