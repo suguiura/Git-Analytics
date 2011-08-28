@@ -12,12 +12,12 @@ Estatística.
 Dependencies
 ============
 
-- linux
-- bash
-- git
-- perl
-- ruby
-- libxml (libxml.rubyforge.org)
+- [linux](http://kernel.org/)
+- [bash](http://www.gnu.org/s/bash/)
+- [git](http://git-scm.com/)
+- [perl](http://www.perl.org/)
+- [ruby](http://ruby-lang.org/)
+- [libxml](http://libxml.rubyforge.org/)
 
 
 How to use
