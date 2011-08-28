@@ -17,18 +17,15 @@
 
 require 'yaml'
 
-config = YAML::load(File.open(ARGV.first))
+config = YAML.load_file(ARGV.first)
+projects = YAML.load_file(config[:list][:file])
 
 vars = %w(%an %aE %ai %cn %cE %ci %d %s %b).join('%x09')
-
-projects = IO.read(config['file-project-list']).strip.split("\n")
-n = projects.size
-projects.each_index do |i|
-  project = projects[i]
-  STDERR.printf "%5d/%d - %s\n", i + 1, n, project
-  dir = [config['dir-project-prefix'], project, config['dir-project-suffix']].join
-  description = IO.read(dir + '/description').strip.dump[1..-2]
-  format = "--format=\"%x00#{project}%x09#{description}%x09" + vars + "%x09\""
-  system "git --git-dir #{dir} log #{format} --shortstat"
+projects.each_index do |i| project = projects[i]
+  STDERR.printf "%5d/%d - %s\n", i + 1, projects.size, project[:path]
+  path, dir, range = project[:path], project[:dir], project[:range]
+  description = project[:description].dump[1..-2]
+  format = "--format=\"%x00#{path}%x09#{description}%x09" + vars + "%x09\""
+  system "git --git-dir #{dir} log #{format} --shortstat #{range}"
 end
 

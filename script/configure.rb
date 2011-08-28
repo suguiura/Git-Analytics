@@ -21,25 +21,49 @@ require 'uri'
 require 'xml'
 require 'optparse'
 
-config = YAML::load(File.open(ARGV.first))
-opts = ARGV.getopts('', 'stdin')
+config = YAML.load_file(ARGV.first)
 
 regexp = Regexp.new(config[:list][:regexp])
-projects = if opts['stdin']
-  STDERR.puts 'Downloading list'
-  ARGF.read
+paths = unless config[:list][:only].nil?
+  config[:list][:only]
 else
-  Net::HTTP.get URI.parse config[:list][:url]
-end.strip.split("\n").map{|x| x.strip.scan(regexp).first}
+  STDERR.puts 'Downloading list'
+  result = Net::HTTP.get URI.parse config[:list][:url]
+  result.strip.split("\n").map{|x| x.strip.scan(regexp).first}
+end
 
+filename = ["/tmp/description-#{config[:host]}-", ".txt"]
 xpath, nslist = config[:description][:find].values
-puts projects.map do |project|
-  STDERR.puts 'Downloading description for ' + project
-  xml = Net::HTTP.get URI.parse config[:description][:url].join(project)
-  description = XML::Parser.string(xml).parse.find_first(xpath, nslist).first
-  {:project => project,
-   :description => description,
-   :git => config[:git][:url].join(project),
-   :dir => config[:data][:dir].join(project)}
-end.to_yaml
+paths.each_index do |i| path = paths[i]
+  next if File.exists? filename.join(i.to_s)
+  STDERR.puts 'Downloading description for ' + path
+  Process.fork do
+    xml = Net::HTTP.get URI.parse config[:description][:url].join(path)
+    description = XML::Parser.string(xml).parse.find_first(xpath, nslist).first
+    File.new(filename.join(i.to_s), 'w').write "#{path} #{description}"
+  end
+  sleep 1
+end
+STDERR.puts 'Waiting processes'
+Process.waitall
+
+descriptions = Hash[paths.each_index.map do |i|
+  File.open(filename.join(i.to_s)).read.strip.split ' ', 2
+end]
+
+STDERR.puts 'Generating ' + config[:list][:file]
+
+file = File.new config[:list][:file], 'w'
+paths.each do |path|
+  next unless (config[:list][:deny] || []).index(path).nil?
+  project = {:path => path, :fork => false, :range => nil,
+             :name => path.split('/').last.sub(/\.git$/, ''),
+             :dir => config[:data][:dir].join(path),
+             :git => config[:git][:url].join(path),
+             :description => descriptions[path]}
+  project.update(config[:instances][path] || {}) if config[:instances]
+  file.puts [project].to_yaml[5..-1]
+end
+
+STDERR.puts 'Done.'
 

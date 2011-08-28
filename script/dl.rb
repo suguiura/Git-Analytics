@@ -17,21 +17,18 @@
 
 require 'yaml'
 
-config = YAML::load(File.open(ARGV.first))
+config = YAML.load_file(ARGV.first)
+projects = YAML.load_file(config[:list][:file])
 
-unless File.exists? config['file-project-list']
-  puts 'Downloading project list...'
-  system "wget -O - '#{config['url-project-list']}' | #{config['url-project-list-parser']} > #{config['file-project-list']}" 
-end
-
-projects = IO.read(config['file-project-list']).strip.split("\n")
-n = projects.size
-projects.each_index do |i|
-  project = projects[i]
-  STDERR.printf "%5d/%d - %s\n", i + 1, n, project
-  dir = [config['dir-project-prefix'], project, config['dir-project-suffix']].join
-  url = [config['url-git-prefix'], project, config['url-git-suffix']].join
-  system "mkdir -p #{dir}; git clone --mirror #{url} #{dir}"
+projects.each_index do |i| project = projects[i]
+  STDERR.printf "%5d/%d - %s\n", i + 1, projects.size, project[:path]
+  name, dir, url = project[:name], project[:dir], project[:git]
+  cmd = if project[:fork]
+    "cd #{dir}; git remote add -f #{name} #{url}"
+  else
+    "mkdir -p #{dir}; git clone --mirror #{url} #{dir}"
+  end
+  system cmd
 end
 
 
