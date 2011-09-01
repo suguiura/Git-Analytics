@@ -15,10 +15,15 @@
   :find:
     :xpath: /rss/channel/description
     :nslist: 
+:emailfix:
+  :file: config/emailfix.yaml
 :list:
   :url: http://149.20.4.77/?a=project_index
   :regexp: ^[^\s]*
   :file: config/list-android.yaml
+  :deny:
+  - kernel/linux-2.6.git
+  - kernel/experimental.git
 :instances:
   kernel/common.git:
     :dir: data/linux/linux/kernel/git/torvalds/linux.git
