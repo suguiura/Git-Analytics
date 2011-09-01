@@ -17,15 +17,27 @@
 
 require 'yaml'
 
-config = YAML.load_file(ARGV.first)
-projects = YAML.load_file(config[:list][:file])
+$config = YAML.load_file('config/servers.yaml')
 
-vars = %w(%an %aE %ai %cn %cE %ci %d %s %b).join('%x09')
-projects.each_index do |i| project = projects[i]
-  STDERR.printf "%5d/%d - %s\n", i + 1, projects.size, project[:path]
-  path, dir, range = project[:path], project[:dir], project[:range]
-  description = project[:description].dump[1..-2]
-  format = "--format=\"%x00#{path}%x09#{description}%x09" + vars + "%x09\""
-  system "git --git-dir #{dir} log #{format} --shortstat #{range}"
+servers = $config[:servers].keys
+servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
+
+projects = YAML.load_file $config[:global][:list][:file]
+
+servers.each do |server| n = projects[server].size
+  STDERR.puts "Logging for #{server}..."
+  counter = 0
+  gitlog = File.open $config[:servers][server][:data][:gitlog], 'w'
+  projects[server].each do |path, project| n -= 1
+    STDERR.printf "[#{Time.now.strftime("%H:%M:%S")}] %5d - %s\n", n, path
+    dir, range = project[:dir], project[:range]
+    description = (project[:description] || "''").dump[1..-2]
+    git = "git --git-dir #{dir} log -z --decorate --stat --pretty=raw #{range}"
+    IO.popen git do |io|
+      gitlog.write "\0path #{path}\ndescription #{description}\n\0"
+      io.each("\0"){|line| gitlog.write(line); counter += 1}
+    end
+  end
+  STDERR.puts "#{server} has #{counter} commits"
 end
 

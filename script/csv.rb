@@ -15,62 +15,121 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+require 'yaml'
 require 'time'
 require 'optparse'
 
-opts = ARGV.getopts("", "default-origin:", "regexp-origin:")
+$config = YAML.load_file('config/servers.yaml')
 
-$cctlds = %w(ac ad ae af ag ai al am an ao aq ar as at au aw ax az ba bb bd be bf bg bh bi bj bm bn bo br bs bt bv bw by bz ca cc cd cf cg ch ci ck cl cm cn co cr cu cv cx cy cz de dj dk dm do dz ec ee eg er es et eu fi fj fk fm fo fr ga gb gd ge gf gg gh gi gl gm gn gp gq gr gs gt gu gw gy hk hm hn hr ht hu id ie il im in io iq ir is it je jm jo jp ke kg kh ki km kn kp kr kw ky kz la lb lc li lk lr ls lt lu lv ly ma mc md me mg mh mk ml mm mn mo mp mq mr ms mt mu mv mw mx my mz na nc ne nf ng ni nl no np nr nu nz om pa pe pf pg ph pk pl pm pn pr ps pt pw py qa re ro rs ru rw sa sb sc sd se sg sh si sj sk sl sm sn so sr st su sv sy sz tc td tf tg th tj tk tl tm tn to tp tr tt tv tw tz ua ug uk us uy uz va vc ve vg vi vn vu wf ws ye yt za zm zw)
-$gtlds = %w(aero arpa asia biz cat com coop edu gov info int jobs mil mobi museum name net org pro tel travel xxx)
+servers = $config[:servers].keys
+servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
+
+emailfix = $config[:global][:emailfix][:file]
+$emailfixmap = {}
+$emailfixmap = Hash[YAML.load_file(emailfix)] if File.exists?(emailfix)
 
 $tags8 = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by"]
 $tags4 = ["Acked-by", "Cc"]
 
-def cat_and_spawn(prefixes, array, n)
-  prefixes.map{|prefix|(1..n).map{|x|([prefix + (n > 1 ? "[#{x}] " : ' ')] * array.size).zip(array).map{|y|y.join}}}
+def cat_and_spawn(array, suffixes, n)
+  array.map do |x|
+    (1..n).map do |y|
+      clones = [x + (n > 1 ? "[#{y}] " : ' ')] * suffixes.size
+      clones.zip(suffixes).map{|z|z.join}
+    end
+  end
 end
 
 def header
-  domain = (['domain'] * 5).zip(['', ' department', ' company', ' gtld', ' cctld']).map{|x| x.join}
+  email_suffixes = ['', ' domain', ' department', ' company', ' gtld', ' cctld']
+  email = (['email'] * 6).zip(email_suffixes).map{|x| x.join}
+  attribs = ['name', email, 'date'].flatten
+  author, committer = cat_and_spawn(['author', 'committer'], attribs, 1)
+  tags = [cat_and_spawn($tags8, email, 8), cat_and_spawn($tags4, email, 4)]
+  files = [cat_and_spawn(['file'], [''], 100)]
 
-  tags = [cat_and_spawn($tags8, [''] + domain, 8), cat_and_spawn($tags4, [''] + domain, 4)]
-
-  attribs = ['name', 'email', domain, 'date'].flatten
-  author, committer = cat_and_spawn(['author ', 'committer '], attribs, 1)
-
-  ['origin', 'project', 'shortdesc', author, committer, 'committer_date - author_date (seconds)', 'tag', 'files changed', 'line insertions', 'line deletions', 'subject', 'subject length', 'body', 'body length', tags].join("\t")
+  ['origin', 'project', 'shortdesc', author, committer, 'committer_date - author_date (seconds)', 'commit tag', 'message', 'message length', 'file changes', 'line changes', files, tags].join("\t")
 end
 
-def domain(email)
+def offset_seconds(offset)
+  number = offset.to_i
+  return 0 if number == 0
+  hours, minutes = offset.scan(/^(.*)(..)$/).flatten.map{|x|x.to_i}
+  (number / number.abs) * (hours.abs * 3600 + minutes * 60)
+end
+
+def parse_date(date)
+  secs, offset = date.split
+  time = Time.at(secs.to_i) + offset_seconds(offset)
+  time.strftime('%Y-%m-%d %H:%M:%S ' + offset)
+end
+
+def parse_email(email)
+  email = $emailfixmap[email] || email || ''
   domain = email.split('@', 2)[1] || ''
   parts = domain.split('.')
-  cctld = parts.pop unless $cctlds.index(parts.last).nil?
-  gtld = parts.pop unless $gtlds.index(parts.last).nil?
+  cctld = parts.pop unless $config[:global][:cctlds].index(parts.last).nil?
+  gtld = parts.pop unless $config[:global][:gtlds].index(parts.last).nil?
   company = parts.pop
-  [domain, parts.join('.'), company, gtld, cctld]
+  [email, domain, parts.join('.'), company, gtld, cctld]
+end
+
+def parse_person(person)
+  name, email, date = person.scan(/(.*)<(.*)>(.*)/).flatten.map{|x|x.strip}
+  [name, parse_email(email), parse_date(date)]
 end
 
 def tag_email(str, queries, n)
-  queries.map{|query|(str.scan(Regexp.new(query + ": [^<]*<([^>]*)>")).flatten.map{|x| y = x.strip; [y, domain(y)]}.flatten + Array.new(6 * n, ''))[0, 6 * n]}
+  queries.map do |query|
+    array = str.scan(Regexp.new(query + ": [^<]*<([^>]*)>")).flatten
+    array = array.map{|x| y = x.strip; [parse_email(y)]}.flatten
+    (array + Array.new(6 * n, ''))[0, 6 * n]
+  end
 end
 
-def tags(body)
-  [tag_email(body, $tags8, 8), tag_email(body, $tags4, 4)]
-end
-
-def stats(shortstat)
-  (shortstat.scan(/(\d+)/).map{|x| x.first} + [0, 0, 0]).first(3)
-end
-
-puts header
-STDIN.each_line("\0") do |line|
-  next if line.strip.empty?
-  # check the header function for variables description
-  pr, sd, an, ae, ai, cn, ce, ci, r, s, b, ss = line.split("\t").map{|x| x.strip || ''}
-  origin = pr.scan(Regexp.new(opts['regexp-origin'])).first unless opts['regexp-origin'].nil?
-  origin ||= opts['default-origin'] || ''
-  td = (Time.parse(ci) - Time.parse(ai)).to_i
-  b = b.dump[1..-2]
-  puts [origin, pr, sd, an, ae, domain(ae), ai, cn, ce, domain(ce), ci, td, r[1..-2], stats(ss), s, s.size, b, b.size, tags(b)].join("\t")
+servers.each do |server|
+  STDERR.puts "Parsing gitlog and generating CSV for #{server}"
+  gitlog = $config[:servers][server][:data][:gitlog]
+  output = File.open $config[:servers][server][:data][:csv], 'w'
+  output.puts header
+  half = n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
+  IO.foreach(gitlog, "\0") do |line| n -= 1
+    if n <= half
+      STDERR.puts "[#{Time.now.strftime("%H:%M:%S")}] #{n} commit(s) left"
+      half /= 2
+    end
+    line.strip!;
+    next if line.empty?
+    line.gsub!(/^(path|description|commit|tree|parent|author|committer) /, ":\\1: |-\n  ")
+    line.sub!(/\n\n (\S)/, "\n:changes: |-\n \\1")
+    line.sub!(/\n\n    /, "\n:message: |-\n    \t")
+    line.gsub!(/(\n    \n)(    \n)*/, '\1')
+    data = YAML.load line
+    unless data[:path].nil?
+      $path, $description = data[:path], data[:description]
+      origin = $config[:servers][server][:origin]
+      regexp = Regexp.new(origin[:regexp] || '^$')
+      $origin = $path.scan(regexp).first || origin[:default] || '.'
+    else
+      author = parse_person(data[:author])
+      committer = parse_person(data[:committer])
+      committag = data[:commit].split(' ', 2)[1]
+      message = (data[:message] || '').strip.dump[1..-2]
+      changes = (data[:changes] || '').split("\n")[0..-2]
+      linechanges = changes.map{|x| x.split('|', 2).last.to_i}
+      filechanges = changes.map{|x| x.split('|', 2).first.strip}
+      
+      output.puts [$origin, $path, $description, author, committer,
+            committer[3].to_i - author[3].to_i,
+            committag,
+            message, message.size,
+            filechanges.compact.size,
+            linechanges.compact.size,
+            (filechanges + [nil] * 100)[0, 100],
+            tag_email(message, $tags8, 8),
+            tag_email(message, $tags4, 4)
+           ].join("\t")
+    end
+  end
 end
 

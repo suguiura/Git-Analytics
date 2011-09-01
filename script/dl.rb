@@ -17,18 +17,26 @@
 
 require 'yaml'
 
-config = YAML.load_file(ARGV.first)
-projects = YAML.load_file(config[:list][:file])
+$config = YAML.load_file('config/servers.yaml')
 
-projects.each_index do |i| project = projects[i]
-  STDERR.printf "%5d/%d - %s\n", i + 1, projects.size, project[:path]
-  name, dir, url = project[:name], project[:dir], project[:git]
-  cmd = if project[:fork]
-    "cd #{dir}; git remote add -f #{name} #{url}"
-  else
-    "mkdir -p #{dir}; git clone --mirror #{url} #{dir}"
+servers = $config[:servers].keys
+servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
+
+projects = YAML.load_file $config[:global][:list][:file]
+
+servers.each do |server| n = projects[server].size
+  STDERR.puts "Downloading projects for #{server}..."
+  projects[server].each do |path, project| n -= 1
+    STDERR.printf " %5d - %s\n", n, path
+    name, dir, url = project[:name], project[:dir], project[:git]
+    case
+    when project[:fork]
+      system "git --git-dir=#{dir} remote add #{name} #{url}"
+    when !File.exists?(dir)
+      system "mkdir -p #{dir}; git clone --mirror #{url} #{dir}"
+    end
+    # --prune removes project forks, should be avoided
+    system "git --git-dir=#{dir} remote update"
   end
-  system cmd
 end
-
 
