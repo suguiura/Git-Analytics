@@ -18,16 +18,15 @@
 require 'yaml'
 
 $config = YAML.load_file('config/servers.yaml')
-
-servers = $config[:servers].keys
-servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
-
 projects = YAML.load_file $config[:global][:list][:file]
+argservers = ARGV.map{|x| x.to_sym}
 
-servers.each do |server| n = projects[server].size
+$config[:servers].each do |server, config|
+  next unless argservers.empty? or argservers.include? server
   STDERR.puts "Downloading projects for #{server}..."
+  n = projects[server].size
   projects[server].each do |path, project| n -= 1
-    STDERR.printf " %5d - %s\n", n, path
+    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
     name, dir, url = project[:name], project[:dir], project[:git]
     case
     when project[:fork]

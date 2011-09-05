@@ -21,32 +21,26 @@ require 'uri'
 require 'xml'
 
 $config = YAML.load_file('config/servers.yaml')
+argservers = ARGV.map{|x| x.to_sym}
 
-servers = $config[:servers].keys
-servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
-
-def download_descriptions(config, server, paths)
-  filename = ["/tmp/description-#{server}-", ".txt"]
+def download_descriptions(server, config, paths)
+  STDERR.puts "Downloading description for:"
   xpath, nslist = config[:description][:find].values
-  paths.each_index do |i| path = paths[i]
-    next if File.exists? filename.join(i.to_s)
-    STDERR.puts "Downloading description for #{path}..."
+  n = paths.size
+  paths.each do |path, tmpfile| n -= 1
+    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
+    next if File.exists? tmpfile
     Process.fork do
       xml = Net::HTTP.get URI.parse config[:description][:url].join(path)
       description = XML::Parser.string(xml).parse.find_first(xpath, nslist).first
-      File.new(filename.join(i.to_s), 'w').write "#{path} #{description}"
-    end
-    sleep 1
+      File.new(tmpfile, 'w').write description
+    end; sleep 1
   end
-  STDERR.puts 'Waiting download processes to finish...'
-  Process.waitall
-
-  Hash[paths.each_index.map do |i|
-    File.open(filename.join(i.to_s)).read.strip.split ' ', 2
-  end]
+  STDERR.puts 'Waiting download processes to finish...'; Process.waitall
 end
 
-def get_paths(config)
+def get_paths(server, config)
+  filename = ["/tmp/description-#{server}-", ".txt"]
   unless config[:list][:only].nil?
     config[:list][:only]
   else
@@ -55,6 +49,9 @@ def get_paths(config)
     result = Net::HTTP.get URI.parse url
     regexp = Regexp.new(config[:list][:regexp])
     result.strip.split("\n").map{|x| x.strip.scan(regexp).first}
+  end.inject({}) do |hash, path|
+    tmpfile = filename.join(path.hash.to_s.tr('-', 'x'))
+    hash.update({path => tmpfile})
   end
 end
 
@@ -62,26 +59,26 @@ listfilename = $config[:global][:list][:file]
 system "mkdir -p $(dirname #{listfilename}); touch #{listfilename}"
 list = (YAML.load_file(listfilename) || {})
 
-servers.each do |server| config = $config[:servers][server]
-  paths = get_paths(config)
-  descriptions = download_descriptions(config, server, paths)
+$config[:servers].each do |server, config|
+  next unless argservers.empty? or argservers.include? server
+  STDERR.puts "Configuring #{server}"
 
-  STDERR.puts 'Gathering information...'
+  paths = get_paths(server, config)
+  download_descriptions(server, config, paths)
   list[server] ||= {}
-  paths.each do |path|
+  paths.each do |path, tmpfile|
     next if (config[:list][:deny] || []).include?(path)
     next unless list[server][path].nil?
-    list[server][path] = {
-      :fork => false, :range => nil,
-      :name => path.split('/').last.sub(/\.git$/, ''),
-      :dir => config[:data][:dir].join(path),
-      :git => config[:git][:url].join(path),
-      :description => descriptions[path]
-      }.update((config[:instances] || {})[path] || {})
+    description = (File.exists?(tmpfile) ? IO.read(tmpfile).strip : '')
+    name = path.split('/').last.sub(/\.git$/, '')
+    git, dir = config[:git][:url].join(path), config[:data][:dir].join(path)
+    project = {path => {:name => name, :fork => false, :range => nil,
+                        :description => description, :dir => dir, :git => git
+                       }.update((config[:instances] || {})[path] || {})}
+    list[server].update(project)
   end
 end
 
-STDERR.puts 'Writting to file...'
 File.new(listfilename, 'w').puts list.to_yaml
 STDERR.puts 'Done.'
 

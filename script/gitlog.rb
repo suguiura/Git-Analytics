@@ -18,26 +18,22 @@
 require 'yaml'
 
 $config = YAML.load_file('config/servers.yaml')
-
-servers = $config[:servers].keys
-servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
-
 projects = YAML.load_file $config[:global][:list][:file]
+argservers = ARGV.map{|x| x.to_sym}
 
-servers.each do |server| n = projects[server].size
+$config[:servers].each do |server, config|
+  next unless argservers.empty? or argservers.include? server
   STDERR.puts "Logging for #{server}..."
-  counter = 0
-  gitlog = File.open $config[:servers][server][:data][:gitlog], 'w'
+  n, gitlog = projects[server].size, File.open(config[:data][:gitlog], 'w')
   projects[server].each do |path, project| n -= 1
-    STDERR.printf "[#{Time.now.strftime("%H:%M:%S")}] %5d - %s\n", n, path
+    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
     dir, range = project[:dir], project[:range]
     description = (project[:description] || "''").dump[1..-2]
     git = "git --git-dir #{dir} log -z --decorate --stat --pretty=raw #{range}"
     IO.popen git do |io|
       gitlog.write "\0path #{path}\ndescription #{description}\n\0"
-      io.each("\0"){|line| gitlog.write(line); counter += 1}
+      io.each("\0"){|line| gitlog.write(line)}
     end
   end
-  STDERR.puts "#{server} has #{counter} commits"
 end
 

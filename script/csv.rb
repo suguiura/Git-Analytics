@@ -20,13 +20,12 @@ require 'time'
 require 'optparse'
 
 $config = YAML.load_file('config/servers.yaml')
-
-servers = $config[:servers].keys
-servers &= ARGV.map{|x| x.to_sym} unless ARGV.empty?
+projects = YAML.load_file $config[:global][:list][:file]
+argservers = ARGV.map{|x| x.to_sym}
 
 emailfix = $config[:global][:emailfix][:file]
-$emailfixmap = {}
-$emailfixmap = Hash[YAML.load_file(emailfix)] if File.exists?(emailfix)
+system "mkdir -p $(dirname #{emailfix}); touch #{emailfix}"
+$emailfixmap = YAML.load_file(emailfix) || {}
 
 $tags8 = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by"]
 $tags4 = ["Acked-by", "Cc"]
@@ -87,10 +86,10 @@ def tag_email(str, queries, n)
   end
 end
 
-servers.each do |server|
-  STDERR.puts "Parsing gitlog and generating CSV for #{server}"
-  gitlog = $config[:servers][server][:data][:gitlog]
-  output = File.open $config[:servers][server][:data][:csv], 'w'
+$config[:servers].each do |server, config|
+  next unless argservers.empty? or argservers.include? server
+  STDERR.puts "Parsing gitlog and generating CSV for #{server}..."
+  gitlog, output = config[:data][:gitlog], File.open(config[:data][:csv], 'w')
   output.puts header
   half = n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
   IO.foreach(gitlog, "\0") do |line| n -= 1
@@ -107,9 +106,8 @@ servers.each do |server|
     data = YAML.load line
     unless data[:path].nil?
       $path, $description = data[:path], data[:description]
-      origin = $config[:servers][server][:origin]
-      regexp = Regexp.new(origin[:regexp] || '^$')
-      $origin = $path.scan(regexp).first || origin[:default] || '.'
+      regexp = Regexp.new(config[:origin][:regexp] || '^$')
+      $origin = $path.scan(regexp).first || config[:origin][:default] || '.'
     else
       author = parse_person(data[:author])
       committer = parse_person(data[:committer])
@@ -121,10 +119,8 @@ servers.each do |server|
       
       output.puts [$origin, $path, $description, author, committer,
             committer[3].to_i - author[3].to_i,
-            committag,
-            message, message.size,
-            filechanges.compact.size,
-            linechanges.compact.size,
+            committag, message, message.size,
+            filechanges.compact.size, linechanges.compact.size,
             (filechanges + [nil] * 100)[0, 100],
             tag_email(message, $tags8, 8),
             tag_email(message, $tags4, 4)
