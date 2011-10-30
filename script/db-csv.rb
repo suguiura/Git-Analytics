@@ -17,7 +17,6 @@
 
 $: << File.dirname(__FILE__)
 require 'config'
-require 'utils'
 
 
 $tags8 = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by"]
