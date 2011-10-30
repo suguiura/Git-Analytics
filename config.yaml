@@ -28,7 +28,7 @@
       :dir:
       - data/linux/
       - 
-      :gitlog: data/linux.gitlog
+      :gitlog: /home/rafael/linux.gitlog
       :csv: data/linux.dat
     :git:
       :url:
@@ -58,7 +58,7 @@
       :dir:
       - data/gnome/
       - .git
-      :gitlog: data/gnome.gitlog
+      :gitlog: /home/rafael/gnome.gitlog
       :csv: data/gnome.dat
     :git:
       :url:
@@ -86,7 +86,7 @@
       :dir:
       - data/android/
       - 
-      :gitlog: data/android.gitlog
+      :gitlog: /home/rafael/android.gitlog
       :csv: data/android.dat
     :git:
       :url:
