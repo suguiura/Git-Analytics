@@ -22,7 +22,9 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-argservers = ARGV.map{|x| x.to_sym}
+selection = ARGV.map{|x| x.to_sym}
+keys = $config[:servers].keys
+keys &= selection unless selection.empty?
 
 emailfixfile = $config[:global][:emailfix][:file]
 system "mkdir -p $(dirname #{emailfixfile}); touch #{emailfixfile}"
@@ -31,13 +33,10 @@ emails = YAML.load_file(emailfixfile) || {}
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
 check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
 
-$config[:servers].each do |server, config|
-  next unless argservers.empty? or argservers.include? server
-  STDERR.puts "Retrieving, selecting and fixing emails for #{server}..."
-
+keys.each do |server| $l.info "Fixing emails for #{server}..."
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
-    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
+    $l.info "%5d - %s" % (n, path)
     dir, range = project[:dir], project[:range]
     git = "git --git-dir #{dir} log --pretty='%aE%x0A%cE' #{range}"
     cmd = "#{git} | sort | uniq | #{check}"
@@ -64,5 +63,5 @@ $config[:servers].each do |server, config|
 end
 
 File.open(emailfixfile, 'w').puts emails.to_yaml
-STDERR.puts 'Done.'
+$l.info 'Done.'
 

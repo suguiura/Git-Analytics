@@ -20,20 +20,21 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-argservers = ARGV.map{|x| x.to_sym}
+selection = ARGV.map{|x| x.to_sym}
+keys = $config[:servers].keys
+keys &= selection unless selection.empty?
 
-$config[:servers].each do |server, config|
-  next unless argservers.empty? or argservers.include? server
-  STDERR.puts "Logging for #{server}..."
-  n, gitlog = $projects[server].size, File.open(config[:data][:gitlog], 'w')
+keys.each do |server| $l.info "Logging for #{server}"
+  file = File.open($config[:servers][server][:data][:gitlog], 'w')
+  n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
-    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
+    $l.info "%5d - %s" % (n, path)
     dir, range = project[:dir], project[:range]
     description = (project[:description] || "''").dump[1..-2]
     git = "git --git-dir #{dir} log -z --decorate --stat --pretty=raw #{range}"
     IO.popen git do |io|
-      gitlog.write "\0path #{path}\ndescription #{description}\n\0"
-      io.each("\0"){|line| gitlog.write(line)}
+      file.write "\0path #{path}\ndescription #{description}\n\0"
+      io.each("\0"){|line| file.write(line)}
     end
   end
 end
