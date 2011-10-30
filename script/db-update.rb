@@ -20,7 +20,6 @@ require 'optparse'
 
 $: << File.dirname(__FILE__)
 require 'config'
-require 'utils'
 
 argservers = ARGV.map{|x| x.to_sym}
 
