@@ -19,8 +19,9 @@ require 'uri'
 require 'optparse'
 require 'yaml'
 
-$config = YAML.load_file('config.yaml')
-projects = YAML.load_file $config[:global][:list][:file]
+$: << File.join(File.dirname(__FILE__), '.')
+require 'config'
+
 argservers = ARGV.map{|x| x.to_sym}
 
 emailfixfile = $config[:global][:emailfix][:file]
@@ -34,8 +35,8 @@ $config[:servers].each do |server, config|
   next unless argservers.empty? or argservers.include? server
   STDERR.puts "Retrieving, selecting and fixing emails for #{server}..."
 
-  n = projects[server].size
-  projects[server].each do |path, project| n -= 1
+  n = $projects[server].size
+  $projects[server].each do |path, project| n -= 1
     STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
     dir, range = project[:dir], project[:range]
     git = "git --git-dir #{dir} log --pretty='%aE%x0A%cE' #{range}"

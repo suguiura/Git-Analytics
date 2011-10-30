@@ -15,20 +15,22 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'yaml'
 require 'net/http'
 require 'uri'
 require 'xml'
 
-$config = YAML.load_file('config.yaml')
+$: << File.join(File.dirname(__FILE__), '.')
+require 'config'
+
+
 argservers = ARGV.map{|x| x.to_sym}
 
 def download_descriptions(server, config, paths)
-  STDERR.puts "Downloading description for:"
+  $l.info "Downloading description for:"
   xpath, nslist = config[:description][:find].values
   n = paths.size
   paths.each do |path, tmpfile| n -= 1
-    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
+    $l.info "%5d - %s" % (n, path)
     next if File.exists? tmpfile
     Process.fork do
       xml = Net::HTTP.get URI.parse config[:description][:url].join(path)
@@ -36,7 +38,7 @@ def download_descriptions(server, config, paths)
       File.new(tmpfile, 'w').write description
     end; sleep 1
   end
-  STDERR.puts 'Waiting download processes to finish...'; Process.waitall
+  $l.info 'Waiting download processes to finish...'; Process.waitall
 end
 
 def get_paths(server, config)
@@ -45,7 +47,7 @@ def get_paths(server, config)
     config[:list][:only]
   else
     url = config[:list][:url]
-    STDERR.puts "Downloading list from #{url}..."
+    $l.info "Downloading list from #{url}..."
     result = Net::HTTP.get URI.parse url
     regexp = Regexp.new(config[:list][:regexp])
     result.strip.split("\n").map{|x| x.strip.scan(regexp).first}
@@ -55,30 +57,26 @@ def get_paths(server, config)
   end
 end
 
-listfilename = $config[:global][:list][:file]
-system "mkdir -p $(dirname #{listfilename}); touch #{listfilename}"
-list = (YAML.load_file(listfilename) || {})
-
 $config[:servers].each do |server, config|
   next unless argservers.empty? or argservers.include? server
-  STDERR.puts "Configuring #{server}"
+  $l.info "Configuring #{server}"
 
   paths = get_paths(server, config)
   download_descriptions(server, config, paths)
-  list[server] ||= {}
+  $projects[server] ||= {}
   paths.each do |path, tmpfile|
     next if (config[:list][:deny] || []).include?(path)
-    next unless list[server][path].nil?
+    next unless $projects[server][path].nil?
     description = (File.exists?(tmpfile) ? IO.read(tmpfile).strip : '')
     name = path.split('/').last.sub(/\.git$/, '')
     git, dir = config[:git][:url].join(path), config[:data][:dir].join(path)
     project = {path => {:name => name, :fork => false, :range => nil,
                         :description => description, :dir => dir, :git => git
                        }.update((config[:instances] || {})[path] || {})}
-    list[server].update(project)
+    $projects[server].update(project)
   end
 end
 
-File.new(listfilename, 'w').puts list.to_yaml
-STDERR.puts 'Done.'
+File.new($config[:global][:list][:file], 'w').puts $projects.to_yaml
+$l.info 'Done.'
 

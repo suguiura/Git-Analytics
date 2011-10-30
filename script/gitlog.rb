@@ -17,15 +17,16 @@
 
 require 'yaml'
 
-$config = YAML.load_file('config.yaml')
-projects = YAML.load_file $config[:global][:list][:file]
+$: << File.join(File.dirname(__FILE__), '.')
+require 'config'
+
 argservers = ARGV.map{|x| x.to_sym}
 
 $config[:servers].each do |server, config|
   next unless argservers.empty? or argservers.include? server
   STDERR.puts "Logging for #{server}..."
-  n, gitlog = projects[server].size, File.open(config[:data][:gitlog], 'w')
-  projects[server].each do |path, project| n -= 1
+  n, gitlog = $projects[server].size, File.open(config[:data][:gitlog], 'w')
+  $projects[server].each do |path, project| n -= 1
     STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
     dir, range = project[:dir], project[:range]
     description = (project[:description] || "''").dump[1..-2]

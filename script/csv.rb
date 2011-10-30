@@ -19,8 +19,9 @@ require 'yaml'
 require 'time'
 require 'optparse'
 
-$config = YAML.load_file('config.yaml')
-projects = YAML.load_file $config[:global][:list][:file]
+$: << File.join(File.dirname(__FILE__), '.')
+require 'config'
+
 argservers = ARGV.map{|x| x.to_sym}
 
 emailfix = $config[:global][:emailfix][:file]
