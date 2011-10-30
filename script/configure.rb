@@ -20,7 +20,7 @@ require 'net/http'
 require 'uri'
 require 'xml'
 
-$config = YAML.load_file('config/servers.yaml')
+$config = YAML.load_file('config.yaml')
 argservers = ARGV.map{|x| x.to_sym}
 
 def download_descriptions(server, config, paths)

@@ -19,7 +19,7 @@ require 'uri'
 require 'optparse'
 require 'yaml'
 
-$config = YAML.load_file('config/servers.yaml')
+$config = YAML.load_file('config.yaml')
 projects = YAML.load_file $config[:global][:list][:file]
 argservers = ARGV.map{|x| x.to_sym}
 
