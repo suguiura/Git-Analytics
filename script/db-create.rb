@@ -23,7 +23,7 @@ ActiveRecord::Schema.define do
     t.string     :origin,                :default => '', :limit => 32
     t.string     :project, :description, :default => '', :limit => 128
     t.text       :tag, :message,   :default => ''
-    t.date       :author_date, :committer_date
+    t.datetime   :author_date, :committer_date
     t.references :author, :committer
     t.timestamps
   end
