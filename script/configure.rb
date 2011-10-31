@@ -22,10 +22,6 @@ require 'xml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-selection = ARGV.map{|x| x.to_sym}
-keys = $config[:servers].keys
-keys &= selection unless selection.empty?
-
 def download_descriptions(server, config, paths)
   $l.info "Downloading description for:"
   xpath, nslist = config[:description][:find].values
@@ -58,7 +54,9 @@ def get_paths(server, config)
   end
 end
 
-keys.each do |server| $l.info "Configuring #{server}"
+servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
+servers = $config[:servers].keys if servers.empty?
+servers.each do |server| $l.info "Configuring #{server}"
   config = $config[:servers][server]
   paths = get_paths(server, config)
   download_descriptions(server, config, paths)

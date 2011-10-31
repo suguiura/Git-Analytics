@@ -22,8 +22,6 @@ require 'optparse'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-argservers = ARGV.map{|x| x.to_sym}
-
 emailfix = $config[:global][:emailfix][:file]
 system "mkdir -p $(dirname #{emailfix}); touch #{emailfix}"
 $emailfixmap = YAML.load_file(emailfix) || {}
@@ -87,15 +85,16 @@ def tag_email(str, queries, n)
   end
 end
 
-$config[:servers].each do |server, config|
-  next unless argservers.empty? or argservers.include? server
-  STDERR.puts "Parsing gitlog and generating CSV for #{server}..."
+servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
+servers = $config[:servers].keys if servers.empty?
+servers.each do |server| $l.info "Generating CSV for #{server}"
+  config = $config[:servers][server]
   gitlog, output = config[:data][:gitlog], File.open(config[:data][:csv], 'w')
   output.puts header
   half = n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
   IO.foreach(gitlog, "\0") do |line| n -= 1
     if n <= half
-      STDERR.puts "[#{Time.now.strftime("%H:%M:%S")}] #{n} commit(s) left"
+      $l.info "#{n} commit(s) left"
       half /= 2
     end
     line.strip!;

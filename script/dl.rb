@@ -20,11 +20,9 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-selection = ARGV.map{|x| x.to_sym}
-keys = $config[:servers].keys
-keys &= selection unless selection.empty?
-
-keys.each do |server| $l.info "Downloading projects for #{server}"
+servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
+servers = $config[:servers].keys if servers.empty?
+servers.each do |server| $l.info "Downloading projects for #{server}"
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
     STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
