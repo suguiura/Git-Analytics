@@ -21,8 +21,6 @@ require 'optparse'
 $: << File.dirname(__FILE__)
 require 'config'
 
-argservers = ARGV.map{|x| x.to_sym}
-
 emailfixfile = $config[:global][:emailfix][:file]
 system "mkdir -p $(dirname #{emailfixfile}); touch #{emailfixfile}"
 $emailfixmap = YAML.load_file(emailfixfile) || {}
@@ -40,12 +38,9 @@ def parse_date(date)
   time.strftime('%Y-%m-%d %H:%M:%S ' + offset)
 end
 
-def fix_email(email)
-  $emailfixmap[email] || email || ''
-end
-
 def create_person(name, email)
-  Person.find_or_create_by_email(fix_email(email), :name => name)
+  email = $emailfixmap[email] || email || ''
+  Person.find_or_create_by_email(email, :name => name)
 end
 
 def parse_person_date(data)
@@ -79,13 +74,14 @@ def parse_data(config, data)
   end
   author,    author_date    = parse_person_date(data[:author])
   committer, committer_date = parse_person_date(data[:committer])
-  tag     = data[:commit].split(' ', 2)[1]
-  message = (data[:message] || '').strip.dump[1..-2]
+  sha1, tag = data[:commit].split(' ', 2)
+  message   = (data[:message] || '').strip.dump[1..-2]
 
   commit = Commit.create do |c|
     c.origin         = $origin
     c.project        = $path
     c.description    = $description
+    c.sha1           = sha1
     c.tag            = tag
     c.message        = message
     c.author         = author
@@ -98,9 +94,10 @@ def parse_data(config, data)
   commit.modifications << parse_changes(data[:changes])
 end
 
-$config[:servers].each do |server, config|
-  next unless argservers.empty? or argservers.include? server
-  $l.info "Parsing gitlog and updating database for #{server}..."
+servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
+servers = $config[:servers].keys if servers.empty?
+servers.each do |server| $l.info "Updating database for #{server}"
+  config = $config[:servers][server]
   gitlog = config[:data][:gitlog]
   n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
   IO.foreach(gitlog, "\0") do |line| n -= 1

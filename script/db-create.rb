@@ -20,6 +20,7 @@ require 'config'
 
 ActiveRecord::Schema.define do
   create_table   :commits, :force => true do |t|
+    t.string     :sha1,                  :default => '', :limit => 40
     t.string     :origin,                :default => '', :limit => 32
     t.string     :project, :description, :default => '', :limit => 128
     t.text       :tag, :message,   :default => ''
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define do
 
   create_table   :people, :force => true do |t|
     t.string     :name, :email, :default => '', :limit => 128
+    t.references :company
   end
   create_table   :modifications, :force => true do |t|
     t.string     :path, :default => '', :limit => 64
