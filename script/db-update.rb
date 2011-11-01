@@ -96,10 +96,11 @@ end
 
 servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
 servers = $config[:servers].keys if servers.empty?
-servers.each do |server| $l.info "Updating database for #{server}"
-  config = $config[:servers][server]
+servers.each do |server| config = $config[:servers][server]
+  $l.info "Updating database for #{server}"
   gitlog = config[:data][:gitlog]
   n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
+  ActiveRecord::Base.establish_connection config[:db]
   IO.foreach(gitlog, "\0") do |line| n -= 1
     $l.info "#{n} commit(s) left" if (n % 1000) == 0
     line.strip!

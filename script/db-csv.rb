@@ -57,25 +57,30 @@ def split_email(email)
   [email, domain, parts.join('.'), company, gtld, cctld]
 end
 
-Commit.find_each do |commit|
-  puts [
-    commit.origin,
-    commit.project,
-    commit.description,
-    commit.author.name,
-    split_email(commit.author.email),
-    commit.author_date,
-    commit.committer.name,
-    split_email(commit.committer.email),
-    commit.committer_date,
-    commit.committer_date.to_i - commit.author_date.to_i,
-    commit.tag,
-    commit.message,
-    commit.message.length,
-    commit.modifications.length,
-    commit.modifications.inject(0){|memo, x| memo + x.linechanges},
-    fill_array(commit.modifications.map{|x| x.path}, 100),
-    fill_array(commit.signatures.map{|s|split_email(s.person.email)}, 8, 6)
-  ].join "\t"
+servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
+servers = $config[:servers].keys if servers.empty?
+servers.each do |server| config = $config[:servers][server]
+  $l.info "Generating CSV for for #{server}"
+  ActiveRecord::Base.establish_connection config[:db]
+  Commit.find_each do |commit|
+    puts [
+      commit.origin,
+      commit.project,
+      commit.description,
+      commit.author.name,
+      split_email(commit.author.email),
+      commit.author_date,
+      commit.committer.name,
+      split_email(commit.committer.email),
+      commit.committer_date,
+      commit.committer_date.to_i - commit.author_date.to_i,
+      commit.tag,
+      commit.message,
+      commit.message.length,
+      commit.modifications.length,
+      commit.modifications.inject(0){|memo, x| memo + x.linechanges},
+      fill_array(commit.modifications.map{|x| x.path}, 100),
+      fill_array(commit.signatures.map{|s|split_email(s.person.email)}, 8, 6)
+    ].join "\t"
+  end
 end
-
