@@ -20,7 +20,7 @@ require 'rubygems'
 require 'active_record'
 require 'models'
 
-$l = Logger.new STDOUT
+$l = Logger.new STDERR
 $l.formatter = Logger::Formatter.new
 #$l.datetime_format = "%H:%M:%S"
 
@@ -28,6 +28,5 @@ $config = YAML::load_file 'config.yaml'
 path = $config[:global][:list][:file]
 $projects = begin; YAML.load_file(path); rescue; {}; end
 
-ActiveRecord::Base.establish_connection $config[:db][$config[:db][:current]]
 #ActiveRecord::Base.logger = Logger.new STDERR
 
