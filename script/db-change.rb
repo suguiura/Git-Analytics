@@ -22,37 +22,22 @@ $config[:servers].each do |server, config|
   $l.info "Creating database for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
-    create_table   :commits, :force => true do |t|
-      t.string     :sha1,                  :default => '', :limit => 40
-      t.string     :origin,                :default => '', :limit => 32
-      t.string     :project, :description, :default => '', :limit => 128
-      t.text       :tag, :message,   :default => ''
-      t.datetime   :author_date, :committer_date
-      t.references :author, :committer
-      t.timestamps
+    change_table   :commits do |t|
       t.index      :author_id
       t.index      :committer_id
     end
 
-    create_table   :people, :force => true do |t|
-      t.string     :name, :email, :default => '', :limit => 128
-      t.references :company
+    change_table   :people do |t|
       t.index      :company_id
     end
-    create_table   :modifications, :force => true do |t|
-      t.string     :path, :default => '', :limit => 64
-      t.integer    :linechanges, :default => 0
-      t.references :commit
+    change_table   :modifications do |t|
       t.index      :commit_id
     end
-    create_table   :signatures, :force => true do |t|
-      t.string     :name, :default => '', :limit => 32
-      t.references :person
+    change_table   :signatures do |t|
       t.index      :person_id
     end
 
-    create_table   :commits_signatures, :force => true, :id => false do |t|
-      t.references :commit, :signature
+    change_table   :commits_signatures do |t|
       t.index      :commit_id
       t.index      :signature_id
     end
