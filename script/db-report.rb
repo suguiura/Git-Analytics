@@ -62,14 +62,17 @@ def count0(h)
   h.values.inject(0){|memo,list| memo + (list.size == 1 ? 0 : list.size)}
 end
 def get_conflicts(g, h)
-  g.select{|k,v| h.has_key?(k) and h[k].size > 1}
+  Hash[g.select{|k,v| h.has_key?(k) and h[k].size > 1}]
+end
+def get_com(g)
+  Hash[g.select{|k,v| (not k.nil?) and k.end_with?('.com')}]
 end
 
-com = Hash[companies.select{|k,v| (k || '').end_with?('.com')}]
-
+com = get_com(companies)
 $l.info "Companies (domains): %d (%d)" % [count(companies), companies.keys.size]
-$l.info "Companies (domains.com): %d (%d)" % [count(com), com.keys.size]
 $l.info "Conflicts: %d" % count0(companies)
+$l.info "Companies (domains.com): %d (%d)" % [count(com), com.keys.size]
+$l.info "Conflicts: %d" % count0(com)
 
 servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
 servers = $config[:servers].keys if servers.empty?
@@ -88,10 +91,12 @@ servers.each do |server| config = $config[:servers][server]
 
   conflicts = get_conflicts(people_by_email, companies)
   common = (people_by_email.keys & companies.keys)
+  com = get_com(people_by_email)
 
   $l.info "People (domains): %d (%d)" % [count(people_by_email), people_by_email.keys.size]
   $l.info "Conflicts: %d" % conflicts.size
   $l.info "People domains in CB: %d" % common.size
-  $l.info "list of conflicts:\n%s" % conflicts.map{|x|x.first}.join("\n")
+  $l.info "list of conflicts:\n%s" % conflicts.keys.join("\n")
+  $l.info "People (domains.com): %d (%d)" % [count(com), com.keys.size]
 end
 
