@@ -62,7 +62,10 @@ servers.each do |server| config = $config[:servers][server]
   ActiveRecord::Base.establish_connection config[:db]
   file = File.open(config[:data][:csv], 'w')
   file.puts header
-  Commit.find_each do |commit|
+  n = Commit.count
+  $l.info "Total: #{n} commit(s)"
+  Commit.find_each do |commit| n -= 1
+    $l.info "#{n} commit(s) left" if (n % 1000) == 0
     file.puts [
       commit.origin,
       commit.project,
@@ -79,10 +82,11 @@ servers.each do |server| config = $config[:servers][server]
       commit.tag,
       commit.message,
       commit.message.length,
-      commit.modifications.length,
+      commit.modifications.count,
       commit.modifications.inject(0){|memo, x| memo + x.linechanges},
       fill_array(commit.modifications.map{|x| x.path}, 100),
       fill_array(commit.signatures.map{|s|split_email(s.person.email)}, 8, 6)
     ].join "\t"
   end
 end
+
