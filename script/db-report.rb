@@ -35,7 +35,7 @@ end
 
 companies_by_homepage = {}
 companies_by_email = {}
-companies_by_homepage_and_email = {}
+companies = {}
 Company.find_each do |company|
   homepage = company.homepage.strip.gsub(/(\?|\`| ).*/, '').gsub(/\/+$/, '') unless company.homepage.nil?
   uri = URI.parse(homepage || '')
@@ -48,8 +48,8 @@ Company.find_each do |company|
   companies_by_email[email_domain] ||= []
   companies_by_email[email_domain] << company
   if homepage_domain == email_domain
-    companies_by_homepage_and_email[homepage_domain] ||= []
-    companies_by_homepage_and_email[homepage_domain] << company
+    companies[homepage_domain] ||= []
+    companies[homepage_domain] << company
   end
 end
 
@@ -61,16 +61,20 @@ end
 def count0(h)
   h.values.inject(0){|memo,list| memo + (list.size == 1 ? 0 : list.size)}
 end
-def count_conflicting(g, h)
-  g.keys.inject(0){|memo,k| memo + ((h[k] || []).size > 1 ? 1 : 0)}
+def get_conflicts(g, h)
+  g.select{|k,v| h.has_key?(k) and h[k].size > 1}
 end
 
-$l.info "Companies (domains): %d (%d)" % [count(companies_by_homepage_and_email), companies_by_homepage_and_email.keys.size]
-$l.info "Conflicts: %d" % count0(companies_by_homepage_and_email)
+com = Hash[companies.select{|k,v| k.end_with?('.com')}]
+
+$l.info "Companies (domains): %d (%d)" % [count(companies), companies.keys.size]
+$l.info "Companies (domains.com): %d (%d)" % [count(com), com.keys.size]
+$l.info "Conflicts: %d" % count0(companies)
 
 servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
 servers = $config[:servers].keys if servers.empty?
 servers.each do |server| config = $config[:servers][server]
+  $stderr.puts
   $l.info "Reporting for #{server}"
   Person.establish_connection config[:db]
 
@@ -82,8 +86,12 @@ servers.each do |server| config = $config[:servers][server]
     people_by_email[domain] << person
   end
 
+  conflicts = get_conflicts(people_by_email, companies)
+  common = (people_by_email.keys & companies.keys)
+
   $l.info "People (domains): %d (%d)" % [count(people_by_email), people_by_email.keys.size]
-  $l.info "Conflicts: %d" % count_conflicting(people_by_email, companies_by_homepage_and_email)
-  $l.info "People domains in CB: %d" % (people_by_email.keys & companies_by_homepage_and_email.keys).size
+  $l.info "Conflicts: %d" % conflicts.size
+  $l.info "People domains in CB: %d" % common.size
+  $l.info "list of conflicts:\n%s" % conflicts.map{|x|x.first}.join("\n")
 end
 
