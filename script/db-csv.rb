@@ -42,8 +42,6 @@ def header
   ['origin', 'project', 'description', author, 'author cb permalink', committer, 'committer cb permalink', 'committer_date - author_date (seconds)', 'commit tag', 'message', 'message length', 'file changes', 'line changes', files, tags].join("\t")
 end
 
-puts header
-
 def fill_array(array, totalfields, fieldsize=1)
   (array + [[nil] * fieldsize] * totalfields)[0, totalfields]
 end
@@ -62,18 +60,20 @@ servers = $config[:servers].keys if servers.empty?
 servers.each do |server| config = $config[:servers][server]
   $l.info "Generating CSV for for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
+  file = File.open(config[:data][:csv], 'w')
+  file.puts header
   Commit.find_each do |commit|
-    puts [
+    file.puts [
       commit.origin,
       commit.project,
       commit.description,
       commit.author.name,
       split_email(commit.author.email),
-      commit.author.company.permalink,
+      (commit.author.company.permalink unless commit.author.company.nil?),
       commit.author_date,
       commit.committer.name,
       split_email(commit.committer.email),
-      commit.committer.company.permalink,
+      (commit.committer.company.permalink unless commit.committer.company.nil?),
       commit.committer_date,
       commit.committer_date.to_i - commit.author_date.to_i,
       commit.tag,
