@@ -25,8 +25,8 @@ def get_domain(host)
   return nil if host.nil?
   parts = host.split('.')
   parts.shift if parts.first == 'www'
-  cctld = parts.pop unless $config[:global][:cctlds].index(parts.last).nil?
-  gtld = parts.pop unless $config[:global][:gtlds].index(parts.last).nil?
+  cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
+  gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
   company = parts.pop
   department = parts
   return nil if company.nil? or (gtld.nil? and cctld.nil?)

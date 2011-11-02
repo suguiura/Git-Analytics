@@ -49,8 +49,8 @@ end
 def split_email(email)
   username, domain = (email + '@').split('@', 3)
   parts = domain.split('.')
-  cctld = parts.pop unless $config[:global][:cctlds].index(parts.last).nil?
-  gtld = parts.pop unless $config[:global][:gtlds].index(parts.last).nil?
+  cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
+  gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
   company = parts.pop
   [email, domain, parts.join('.'), company, gtld, cctld]
 end

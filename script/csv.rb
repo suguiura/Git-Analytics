@@ -66,8 +66,8 @@ def parse_email(email)
   email = $emailfixmap[email] || email || ''
   domain = email.split('@', 2)[1] || ''
   parts = domain.split('.')
-  cctld = parts.pop unless $config[:global][:cctlds].index(parts.last).nil?
-  gtld = parts.pop unless $config[:global][:gtlds].index(parts.last).nil?
+  cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
+  gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
   company = parts.pop
   [email, domain, parts.join('.'), company, gtld, cctld]
 end
