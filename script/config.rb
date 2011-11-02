@@ -30,3 +30,5 @@ $projects = begin; YAML.load_file(path); rescue; {}; end
 
 #ActiveRecord::Base.logger = Logger.new STDERR
 
+Company.establish_connection $config[:crunchbase][:db]
+

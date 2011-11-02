@@ -39,7 +39,7 @@ def header
   tags = [cat_and_spawn($tags8, email, 8), cat_and_spawn($tags4, email, 4)]
   files = [cat_and_spawn(['file'], [''], 100)]
 
-  ['origin', 'project', 'shortdesc', author, committer, 'committer_date - author_date (seconds)', 'commit tag', 'message', 'message length', 'file changes', 'line changes', files, tags].join("\t")
+  ['origin', 'project', 'description', author, 'author cb permalink', committer, 'committer cb permalink', 'committer_date - author_date (seconds)', 'commit tag', 'message', 'message length', 'file changes', 'line changes', files, tags].join("\t")
 end
 
 puts header
@@ -69,9 +69,11 @@ servers.each do |server| config = $config[:servers][server]
       commit.description,
       commit.author.name,
       split_email(commit.author.email),
+      commit.author.company.permalink,
       commit.author_date,
       commit.committer.name,
       split_email(commit.committer.email),
+      commit.committer.company.permalink,
       commit.committer_date,
       commit.committer_date.to_i - commit.author_date.to_i,
       commit.tag,

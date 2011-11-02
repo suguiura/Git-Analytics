@@ -9,6 +9,7 @@ end
 class Person < ActiveRecord::Base
   has_many :commits
   has_many :signatures
+  belongs_to :company
 end
 
 class Modification < ActiveRecord::Base
@@ -17,5 +18,9 @@ end
 
 class Signature < ActiveRecord::Base
   belongs_to :person
+end
+
+class Company < ActiveRecord::Base
+  has_many :people
 end
 
