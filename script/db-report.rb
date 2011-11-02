@@ -65,7 +65,7 @@ def get_conflicts(g, h)
   g.select{|k,v| h.has_key?(k) and h[k].size > 1}
 end
 
-com = Hash[companies.select{|k,v| k.end_with?('.com')}]
+com = Hash[companies.select{|k,v| (k || '').end_with?('.com')}]
 
 $l.info "Companies (domains): %d (%d)" % [count(companies), companies.keys.size]
 $l.info "Companies (domains.com): %d (%d)" % [count(com), com.keys.size]
