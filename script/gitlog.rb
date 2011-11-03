@@ -20,9 +20,8 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| $l.info "Logging for #{server}"
+each_server_config do |server, config|
+  $l.info "Logging for #{server}"
   file = File.open($config[:servers][server][:data][:gitlog], 'w')
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1

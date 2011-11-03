@@ -29,9 +29,8 @@ emails = YAML.load_file(emailfixfile) || {}
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
 check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| $l.info "Fixing emails for #{server}..."
+each_server_config do |server, config|
+  $l.info "Fixing emails for #{server}..."
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
     $l.info "%5d - %s" % (n, path)

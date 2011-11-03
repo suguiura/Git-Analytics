@@ -54,10 +54,8 @@ def get_paths(server, config)
   end
 end
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| $l.info "Configuring #{server}"
-  config = $config[:servers][server]
+each_server_config do |server, config|
+  $l.info "Configuring #{server}"
   paths = get_paths(server, config)
   download_descriptions(server, config, paths)
   $projects[server] ||= {}

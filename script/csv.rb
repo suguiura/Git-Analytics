@@ -85,10 +85,8 @@ def tag_email(str, queries, n)
   end
 end
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| $l.info "Generating CSV for #{server}"
-  config = $config[:servers][server]
+each_server_config do |server, config|
+  $l.info "Generating CSV for #{server}"
   gitlog, output = config[:data][:gitlog], File.open(config[:data][:csv], 'w')
   output.puts header
   half = n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
