@@ -18,11 +18,13 @@
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-$config[:servers].each do |server, config|
+servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
+servers = $config[:servers].keys if servers.empty?
+servers.each do |server| config = $config[:servers][server]
   $l.info "Creating database for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
-    create_table   :commits, :force => true do |t|
+    create_table   :commits do |t|
       t.string     :sha1,                  :default => '', :limit => 40
       t.string     :origin,                :default => '', :limit => 32
       t.string     :project, :description, :default => '', :limit => 128
@@ -34,24 +36,24 @@ $config[:servers].each do |server, config|
       t.index      :committer_id
     end
 
-    create_table   :people, :force => true do |t|
+    create_table   :people do |t|
       t.string     :name, :email, :default => '', :limit => 128
       t.references :company
       t.index      :company_id
     end
-    create_table   :modifications, :force => true do |t|
+    create_table   :modifications do |t|
       t.string     :path, :default => '', :limit => 64
       t.integer    :linechanges, :default => 0
       t.references :commit
       t.index      :commit_id
     end
-    create_table   :signatures, :force => true do |t|
+    create_table   :signatures do |t|
       t.string     :name, :default => '', :limit => 32
       t.references :person
       t.index      :person_id
     end
 
-    create_table   :commits_signatures, :force => true, :id => false do |t|
+    create_table   :commits_signatures, :id => false do |t|
       t.references :commit, :signature
       t.index      :commit_id
       t.index      :signature_id
