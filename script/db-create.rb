@@ -29,6 +29,7 @@ each_server_config("Creating database for ") do |server, config|
       t.datetime   :author_date, :committer_date
       t.references :author, :committer
       t.timestamps
+      t.index      :sha1
       t.index      :author_id
       t.index      :committer_id
     end

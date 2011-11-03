@@ -22,6 +22,7 @@ each_server_config("Creating database for ") do |server, config|
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
     change_table   :commits do |t|
+      t.index      :sha1
       t.index      :author_id
       t.index      :committer_id
     end
