@@ -55,7 +55,7 @@ def split_email(email)
   [email, domain, parts.join('.'), company, gtld, cctld]
 end
 
-each_config_server do |server, config|
+each_server_config do |server, config|
   $l.info "Generating CSV for for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   file = File.open(config[:data][:csv], 'w')

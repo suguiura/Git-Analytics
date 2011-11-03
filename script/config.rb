@@ -32,7 +32,7 @@ $projects = begin; YAML.load_file(path); rescue; {}; end
 
 Company.establish_connection $config[:crunchbase][:db]
 
-def each_config_server()
+def each_server_config
   servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
   servers = $config[:servers].keys if servers.empty?
   servers.each{|server| yield(server, $config[:servers][server])}
