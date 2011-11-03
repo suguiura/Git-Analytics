@@ -75,7 +75,7 @@ def parse_data(config, data)
   author,    author_date    = parse_person_date(data[:author])
   committer, committer_date = parse_person_date(data[:committer])
   sha1, tag = data[:commit].split(' ', 2)
-  message   = (data[:message] || '').strip.dump[1..-2]
+  message   = (data[:message] || '').strip
 
   commit = Commit.create do |c|
     c.origin         = $origin
@@ -83,7 +83,7 @@ def parse_data(config, data)
     c.description    = $description
     c.sha1           = sha1
     c.tag            = tag
-    c.message        = message
+    c.message        = message.dump[1..-2]
     c.author         = author
     c.author_date    = author_date
     c.committer      = committer
@@ -94,13 +94,28 @@ def parse_data(config, data)
   commit.modifications << parse_changes(data[:changes])
 end
 
+def get_sld(homepage)
+  return nil if homepage.nil?
+  uri = URI.parse homepage.strip.gsub(/((\?|\`| ).*)|(\/+$)/, '')
+  return nil if uri.path == '' or uri.host.nil?
+  parts = uri.host.split('.')
+  parts.shift if parts.first == 'www'
+  cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
+  gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
+  organization = parts.pop
+  department = parts
+  return nil if organization.nil? or (gtld.nil? and cctld.nil?)
+  [department, organization, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
+end
+
 servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
 servers = $config[:servers].keys if servers.empty?
 servers.each do |server| config = $config[:servers][server]
   $l.info "Updating database for #{server}"
+  ActiveRecord::Base.establish_connection config[:db]
   gitlog = config[:data][:gitlog]
   n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
-  ActiveRecord::Base.establish_connection config[:db]
+  $l.info "Total: #{n} commit(s)"
   IO.foreach(gitlog, "\0") do |line| n -= 1
     $l.info "#{n} commit(s) left" if (n % 1000) == 0
     line.strip!
@@ -110,6 +125,10 @@ servers.each do |server| config = $config[:servers][server]
     line.sub!(/\n\n    /, "\n:message: |-\n    \t")
     line.gsub!(/(\n    \n)(    \n)*/, '\1')
     parse_data config, YAML.load(line)
+  end
+
+  Company.find_each do |company| domain = get_sld(company.homepage)
+    company.people = Person.find(:all, {:conditions => ['email like ?', "%@#{domain}"]}) unless domain.nil?
   end
 end
 
