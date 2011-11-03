@@ -21,36 +21,35 @@ require 'uri'
 
 $l.info 'Start'
 
-def get_domain(host)
+def get_sld(host)
   return nil if host.nil?
   parts = host.split('.')
   parts.shift if parts.first == 'www'
   cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
   gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
-  company = parts.pop
-  department = parts
-  return nil if company.nil? or (gtld.nil? and cctld.nil?)
-  [department, company, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
+  organization = parts.pop
+  subdomain = parts
+  return nil if organization.nil? or (gtld.nil? and cctld.nil?)
+  [subdomain, organization, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
 end
 
-companies_by_homepage = {}
-companies_by_email = {}
+def get_domain(company)
+  unless company.homepage.nil?
+    uri = URI.parse company.homepage.strip.gsub(/((\?|\`| ).*)|(\/+$)/, '')
+    domain = get_sld(uri.host)
+    return domain unless (uri.path != '') or domain.nil?
+  end
+
+  return nil if company.email.nil?
+  return get_sld(company.email.split('@')[1])
+end
+
 companies = {}
 Company.find_each do |company|
-  homepage = company.homepage.strip.gsub(/(\?|\`| ).*/, '').gsub(/\/+$/, '') unless company.homepage.nil?
-  uri = URI.parse(homepage || '')
-  a, b = company.email.split('@') unless company.email.nil?
-
-  homepage_domain = get_domain(uri.host) unless (uri.path != '')
-  companies_by_homepage[homepage_domain] ||= []
-  companies_by_homepage[homepage_domain] << company
-  email_domain = get_domain(b)
-  companies_by_email[email_domain] ||= []
-  companies_by_email[email_domain] << company
-  if homepage_domain == email_domain
-    companies[homepage_domain] ||= []
-    companies[homepage_domain] << company
-  end
+  domain = get_domain(company)
+  next if domain.nil?
+  companies[domain] ||= []
+  companies[domain] << company
 end
 
 $l.info 'Queries gathered'
@@ -67,36 +66,44 @@ end
 def get_com(g)
   Hash[g.select{|k,v| (not k.nil?) and k.end_with?('.com')}]
 end
+def selection(a, b)
+  Hash[a.select{|k,v| b.has_key?(k)}]
+end
+
+def log(people, companies, title='', prefix='')
+  $l.info "--- " + title
+  $l.info prefix + "People: %d" % count(people)
+  $l.info prefix + "SLDs: %d" % people.keys.size
+  conflicts = get_conflicts(people, companies)
+  $l.info prefix + "Conflicts: %d" % conflicts.size
+  $l.info prefix + "list of conflicts:\n" + conflicts.keys.join("\n")
+  $l.info prefix + "top 10 SLDs:\n" + people.sort{|x,y|y.last.size<=>x.last.size}[0,10].map{|k,v|"%d %s" % [v.size, k]}.join("\n")
+end
 
 com = get_com(companies)
-$l.info "Companies (domains): %d (%d)" % [count(companies), companies.keys.size]
-$l.info "Conflicts: %d" % count0(companies)
-$l.info "Companies (domains.com): %d (%d)" % [count(com), com.keys.size]
-$l.info "Conflicts: %d" % count0(com)
+$l.info "Companies, SLD, Conflicts"
+$l.info [count(companies), companies.keys.size, count0(companies)].join(', ')
+$l.info "Companies, .com SLD, Conflicts"
+$l.info [count(com), com.keys.size, count0(com)].join(', ')
 
 servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
 servers = $config[:servers].keys if servers.empty?
 servers.each do |server| config = $config[:servers][server]
-  $stderr.puts
-  $l.info "Reporting for #{server}"
+  $l.info "*** Reporting for #{server}"
   Person.establish_connection config[:db]
 
-  people_by_email = {}
+  people = {}
   Person.find_each do |person| next if person.email.nil?
     a, b = person.email.split('@')
-    domain = get_domain(b)
-    people_by_email[domain] ||= []
-    people_by_email[domain] << person
+    domain = get_sld(b)
+    people[domain] ||= []
+    people[domain] << person
   end
 
-  conflicts = get_conflicts(people_by_email, companies)
-  common = (people_by_email.keys & companies.keys)
-  com = get_com(people_by_email)
-
-  $l.info "People (domains): %d (%d)" % [count(people_by_email), people_by_email.keys.size]
-  $l.info "Conflicts: %d" % conflicts.size
-  $l.info "People domains in CB: %d" % common.size
-  $l.info "list of conflicts:\n%s" % conflicts.keys.join("\n")
-  $l.info "People (domains.com): %d (%d)" % [count(com), com.keys.size]
+  log(people, companies, 'all')
+  log(selection(people, companies), companies, 'all CB', '(CB) ')
+  people = get_com(people)
+  log(people, companies, '.com')
+  log(selection(people, companies), companies, '.com CB', '(CB) ')
 end
 
