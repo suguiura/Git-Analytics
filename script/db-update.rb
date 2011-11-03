@@ -103,8 +103,7 @@ def get_sld(homepage)
   [department, organization, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
 end
 
-each_server_config do |server, config|
-  $l.info "Updating database for #{server}"
+each_server_config("Updating database for ") do |server, config|
   ActiveRecord::Base.establish_connection config[:db]
   gitlog = config[:data][:gitlog]
   n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1

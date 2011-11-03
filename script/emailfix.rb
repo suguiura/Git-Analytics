@@ -28,8 +28,7 @@ emails = $emailfixmap
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
 check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
 
-each_server_config do |server, config|
-  $l.info "Fixing emails for #{server}..."
+each_server_config("Fixing emails for ") do |server, config|
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
     $l.info "%5d - %s" % (n, path)

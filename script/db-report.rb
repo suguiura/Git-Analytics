@@ -86,8 +86,7 @@ $l.info [count(companies), companies.keys.size, count0(companies)].join(', ')
 $l.info "Companies, .com SLD, Conflicts"
 $l.info [count(com), com.keys.size, count0(com)].join(', ')
 
-each_server_config do |server, config|
-  $l.info "*** Reporting for #{server}"
+each_server_config("*** Reporting for ") do |server, config|
   Person.establish_connection config[:db]
 
   people = {}

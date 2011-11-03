@@ -20,8 +20,7 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-each_server_config do |server, config|
-  $l.info "Downloading projects for #{server}"
+each_server_config("Downloading projects for ") do |server, config|
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
     STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path

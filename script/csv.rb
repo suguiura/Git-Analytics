@@ -81,8 +81,7 @@ def tag_email(str, queries, n)
   end
 end
 
-each_server_config do |server, config|
-  $l.info "Generating CSV for #{server}"
+each_server_config("Generating CSV for ") do |server, config|
   gitlog, output = config[:data][:gitlog], File.open(config[:data][:csv], 'w')
   output.puts header
   half = n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1

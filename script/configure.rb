@@ -54,8 +54,7 @@ def get_paths(server, config)
   end
 end
 
-each_server_config do |server, config|
-  $l.info "Configuring #{server}"
+each_server_config("Configuring ") do |server, config|
   paths = get_paths(server, config)
   download_descriptions(server, config, paths)
   $projects[server] ||= {}

@@ -20,8 +20,7 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-each_server_config do |server, config|
-  $l.info "Logging for #{server}"
+each_server_config("Logging for ") do |server, config|
   file = File.open($config[:servers][server][:data][:gitlog], 'w')
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
