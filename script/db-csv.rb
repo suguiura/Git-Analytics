@@ -34,12 +34,12 @@ end
 def header
   email_suffixes = ['', ' domain', ' department', ' company', ' gtld', ' cctld']
   email = (['email'] * 6).zip(email_suffixes).map{|x| x.join}
-  attribs = ['name', email, 'date'].flatten
+  attribs = ['name', email, 'cb permalink', 'date'].flatten
   author, committer = cat_and_spawn(['author', 'committer'], attribs, 1)
   tags = [cat_and_spawn($tags8, email, 8), cat_and_spawn($tags4, email, 4)]
   files = [cat_and_spawn(['file'], [''], 100)]
 
-  ['origin', 'project', 'description', author, 'author cb permalink', committer, 'committer cb permalink', 'committer_date - author_date (seconds)', 'commit tag', 'message', 'message length', 'file changes', 'line changes', files, tags].join("\t")
+  ['origin', 'project', 'description', author, committer, 'committer_date - author_date (seconds)', 'commit tag', 'message', 'message length', 'file changes', 'line changes', files, tags].join("\t")
 end
 
 def fill_array(array, totalfields, fieldsize=1)
@@ -72,11 +72,11 @@ servers.each do |server| config = $config[:servers][server]
       commit.description,
       commit.author.name,
       split_email(commit.author.email),
-      (commit.author.company.permalink unless commit.author.company.nil?),
+      (commit.author.company.permalink unless commit.author.company.nil?) || '',
       commit.author_date,
       commit.committer.name,
       split_email(commit.committer.email),
-      (commit.committer.company.permalink unless commit.committer.company.nil?),
+      (commit.committer.company.permalink unless commit.committer.company.nil?) || '',
       commit.committer_date,
       commit.committer_date.to_i - commit.author_date.to_i,
       commit.tag,
