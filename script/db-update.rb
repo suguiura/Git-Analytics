@@ -47,7 +47,7 @@ end
 def parse_signatures(message)
   signatures = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by",
           "Acked-by", "Cc"].join('|')
-  regexp = Regexp.new("(#{signatures}): ([^<]*)<([^>]*)>")
+  regexp = Regexp.new("(#{signatures}): ([^<]*)<([^>\n]*)>")
   message.scan(regexp).map do |signature, name, email|
     create_person(name, email).signatures.find_or_create_by_name(signature)
   end
