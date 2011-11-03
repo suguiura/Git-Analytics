@@ -17,6 +17,7 @@
 
 require 'time'
 require 'optparse'
+require 'uri'
 
 $: << File.dirname(__FILE__)
 require 'config'
@@ -67,9 +68,12 @@ def parse_data(config, data)
     $origin      = $path.scan(regexp).first || config[:origin][:default] || '.'
     return
   end
+
+  sha1, tag = data[:commit].split(' ', 2)
+  return if Commit.exists?(:sha1 => sha1)
+
   author,    author_date    = parse_person_date(data[:author])
   committer, committer_date = parse_person_date(data[:committer])
-  sha1, tag = data[:commit].split(' ', 2)
   message   = (data[:message] || '').strip
 
   commit = Commit.create do |c|
