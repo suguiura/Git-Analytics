@@ -22,9 +22,8 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-emailfixfile = $config[:global][:emailfix][:file]
-system "mkdir -p $(dirname #{emailfixfile}); touch #{emailfixfile}"
-emails = YAML.load_file(emailfixfile) || {}
+fix_email(nil)
+emails = $emailfixmap
 
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
 check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
@@ -39,7 +38,6 @@ each_server_config do |server, config|
     cmd = "#{git} | sort | uniq | #{check}"
     IO.popen(cmd){|io|io.read}.split("\n").each do |bad_email|
       next unless emails[bad_email].nil?
-      next if bad_email.include? '(none)'
       bad_email.strip!
       email = URI.unescape(bad_email)
       email.gsub! /DOT/, '.'
@@ -53,7 +51,6 @@ each_server_config do |server, config|
       email.sub!(' ', '@') if email.count('@') == 0
       email.gsub! ' ', '.'
       email.squeeze! '.'
-      next unless email.match(/^[[:alpha:]]*$/).nil?
       emails[bad_email] = email
     end
   end

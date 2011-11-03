@@ -22,10 +22,6 @@ require 'optparse'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-emailfix = $config[:global][:emailfix][:file]
-system "mkdir -p $(dirname #{emailfix}); touch #{emailfix}"
-$emailfixmap = YAML.load_file(emailfix) || {}
-
 $tags8 = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by"]
 $tags4 = ["Acked-by", "Cc"]
 
@@ -63,7 +59,7 @@ def parse_date(date)
 end
 
 def parse_email(email)
-  email = $emailfixmap[email] || email || ''
+  email = fix_email(email)
   domain = email.split('@', 2)[1] || ''
   parts = domain.split('.')
   cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?

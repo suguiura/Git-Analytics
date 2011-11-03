@@ -18,7 +18,6 @@
 $: << File.dirname(__FILE__)
 require 'config'
 
-
 $tags8 = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by"]
 $tags4 = ["Acked-by", "Cc"]
 

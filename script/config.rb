@@ -38,3 +38,11 @@ def each_server_config
   servers.each{|server| yield(server, $config[:servers][server])}
 end
 
+def fix_email(email)
+  if $emailfixmap.nil?
+    emailfix = $config[:global][:emailfix][:file]
+    system "mkdir -p $(dirname #{emailfix}); touch #{emailfix}"
+    $emailfixmap = YAML.load_file(emailfix) || {}
+  end
+  $emailfixmap[email] || email || ''
+end

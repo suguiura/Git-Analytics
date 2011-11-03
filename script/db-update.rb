@@ -21,10 +21,6 @@ require 'optparse'
 $: << File.dirname(__FILE__)
 require 'config'
 
-emailfixfile = $config[:global][:emailfix][:file]
-system "mkdir -p $(dirname #{emailfixfile}); touch #{emailfixfile}"
-$emailfixmap = YAML.load_file(emailfixfile) || {}
-
 def offset_seconds(offset)
   number = offset.to_i
   return 0 if number == 0
@@ -39,8 +35,7 @@ def parse_date(date)
 end
 
 def create_person(name, email)
-  email = $emailfixmap[email] || email || ''
-  Person.find_or_create_by_email(email, :name => name)
+  Person.find_or_create_by_email(fix_email(email), :name => name)
 end
 
 def parse_person_date(data)
