@@ -18,7 +18,7 @@
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-$config[:servers].each do |server, config|
+each_config_server do |server, config|
   $l.info "Creating database for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do

@@ -18,9 +18,7 @@
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| config = $config[:servers][server]
+each_config_server do |server, config|
   $l.info "Creating database for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do

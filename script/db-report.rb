@@ -86,9 +86,7 @@ $l.info [count(companies), companies.keys.size, count0(companies)].join(', ')
 $l.info "Companies, .com SLD, Conflicts"
 $l.info [count(com), com.keys.size, count0(com)].join(', ')
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| config = $config[:servers][server]
+each_config_server do |server, config|
   $l.info "*** Reporting for #{server}"
   Person.establish_connection config[:db]
 

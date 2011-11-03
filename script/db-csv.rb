@@ -55,9 +55,7 @@ def split_email(email)
   [email, domain, parts.join('.'), company, gtld, cctld]
 end
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| config = $config[:servers][server]
+each_config_server do |server, config|
   $l.info "Generating CSV for for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   file = File.open(config[:data][:csv], 'w')

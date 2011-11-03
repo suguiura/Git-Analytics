@@ -108,9 +108,7 @@ def get_sld(homepage)
   [department, organization, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
 end
 
-servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-servers = $config[:servers].keys if servers.empty?
-servers.each do |server| config = $config[:servers][server]
+each_config_server do |server, config|
   $l.info "Updating database for #{server}"
   ActiveRecord::Base.establish_connection config[:db]
   gitlog = config[:data][:gitlog]
