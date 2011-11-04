@@ -113,8 +113,11 @@ each_server_config("Updating database for ") do |server, config| last = Time.now
     parse_data(config, YAML.load(line)) unless line.empty?
   end
 
+  $l.info "Associating companies"
   Company.find_each do |company| domain = get_sld(company.homepage)
-    company.people = Person.find(:all, {:conditions => ['email like ?', "%@#{domain}"]}) unless domain.nil?
+    condition = {:conditions => ['email like ?', "%@#{domain}"]}
+    company.people = Person.find(:all, condition) unless domain.nil?
   end
+  $l.info "Done"
 end
 
