@@ -49,3 +49,12 @@ def fix_email(email)
   end
   $emailfixmap[email] || email || ''
 end
+
+def step_log(n, last, step)
+  n -= 1
+  return [n, last] if (n % step) != 0
+  delta = Time.now - last
+  mins = ((delta.to_i * n) / (60 * step))
+  $l.info "#{n} left; ETA: %dmin" % mins
+  [n, last + delta]
+end

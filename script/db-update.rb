@@ -107,10 +107,11 @@ end
 each_server_config("Updating database for ") do |server, config|
   ActiveRecord::Base.establish_connection config[:db]
   gitlog = config[:data][:gitlog]
+  last = Time.now
   n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
   $l.info "Total: #{n} commit(s)"
-  IO.foreach(gitlog, "\0") do |line| n -= 1
-    $l.info "#{n} commit(s) left" if (n % 1000) == 0
+  IO.foreach(gitlog, "\0") do |line|
+    n, last = step_log(n, last, 1000)
     line.strip!
     next if line.empty?
     line.gsub!(/^(path|description|commit|tree|parent|author|committer) /, ":\\1: |-\n  ")
