@@ -25,8 +25,7 @@ $l.formatter = Logger::Formatter.new
 #$l.datetime_format = "%H:%M:%S"
 
 $config = YAML::load_file 'config.yaml'
-path = $config[:global][:list][:file]
-$projects = begin; YAML.load_file(path); rescue; {}; end
+$projects = begin; YAML.load_file($config[:global][:list][:file]); rescue; {}; end
 
 #ActiveRecord::Base.logger = Logger.new STDERR
 
@@ -58,3 +57,4 @@ def step_log(n, last, step)
   $l.info "#{n} left; ETA: %dmin" % mins
   [n, last + delta]
 end
+
