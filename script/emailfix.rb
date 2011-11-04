@@ -31,7 +31,7 @@ check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
 each_server_config("Fixing emails for ") do |server, config|
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
-    $l.info "%5d - %s" % (n, path)
+    puts "%5d - %s" % [n, path]
     dir, range = project[:dir], project[:range]
     git = "git --git-dir #{dir} log --pretty='%aE%x0A%cE' #{range}"
     cmd = "#{git} | sort | uniq | #{check}"
@@ -50,11 +50,12 @@ each_server_config("Fixing emails for ") do |server, config|
       email.sub!(' ', '@') if email.count('@') == 0
       email.gsub! ' ', '.'
       email.squeeze! '.'
+      email.sub! /(^no\.author\.@)|(@.*\.none$)/, ''
       emails[bad_email] = email
     end
   end
 end
 
-File.open(emailfixfile, 'w').puts emails.to_yaml
+File.open($config[:global][:emailfix][:file], 'w').puts emails.to_yaml
 $l.info 'Done.'
 
