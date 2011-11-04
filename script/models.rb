@@ -1,9 +1,9 @@
 
 class Commit < ActiveRecord::Base
   has_many :modifications
+  has_many :signatures
   belongs_to :author, :class_name => 'Person', :foreign_key => 'author_id'
   belongs_to :committer, :class_name => 'Person', :foreign_key => 'committer_id'
-  has_and_belongs_to_many :signatures
 end
 
 class Person < ActiveRecord::Base
@@ -18,6 +18,7 @@ end
 
 class Signature < ActiveRecord::Base
   belongs_to :person
+  belongs_to :commit
 end
 
 class Company < ActiveRecord::Base
