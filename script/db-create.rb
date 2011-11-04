@@ -37,6 +37,7 @@ each_server_config("Creating database for ") do |server, config|
     create_table   :people do |t|
       t.string     :name, :email, :default => '', :limit => 128
       t.references :company
+      t.index      :email
       t.index      :company_id
     end
     create_table   :modifications do |t|

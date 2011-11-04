@@ -28,6 +28,7 @@ each_server_config("Creating database for ") do |server, config|
     end
 
     change_table   :people do |t|
+      t.index      :email
       t.index      :company_id
     end
     change_table   :modifications do |t|
