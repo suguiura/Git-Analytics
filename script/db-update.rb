@@ -31,8 +31,7 @@ end
 
 def parse_date(date)
   secs, offset = date.split
-  time = Time.at(secs.to_i) + offset_seconds(offset)
-  time.strftime('%Y-%m-%d %H:%M:%S ' + offset)
+  Time.at(secs.to_i + offset_seconds(offset)).utc.strftime('%Y-%m-%d %H:%M:%S')
 end
 
 def create_person(name, email)
