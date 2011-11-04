@@ -20,6 +20,15 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
+def line_to_yaml(line)
+  regexp = /^(path|description|commit|tree|parent|author|committer) /
+  line.gsub!(regexp, ":\\1: |-\n  ")
+  line.sub!(/\n\n (\S)/, "\n:changes: |-\n \\1")
+  line.sub!(/\n\n    /, "\n:message: |-\n    \t")
+  line.gsub!(/(\n    \n)(    \n)*/, '\1')
+  line
+end
+
 each_server_config("Logging for ") do |server, config|
   file = File.open($config[:servers][server][:data][:gitlog], 'w')
   n = $projects[server].size
@@ -30,7 +39,7 @@ each_server_config("Logging for ") do |server, config|
     git = "git --git-dir #{dir} log -z --decorate --stat --pretty=raw #{range}"
     IO.popen git do |io|
       file.write "\0path #{path}\ndescription #{description}\n\0"
-      io.each("\0"){|line| file.write(line)}
+      io.each("\0"){|line| file.write(line_to_yaml(line))}
     end
   end
 end

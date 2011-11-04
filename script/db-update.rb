@@ -104,21 +104,13 @@ def get_sld(homepage)
   [department, organization, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
 end
 
-each_server_config("Updating database for ") do |server, config|
+each_server_config("Updating database for ") do |server, config| last = Time.now
   ActiveRecord::Base.establish_connection config[:db]
-  gitlog = config[:data][:gitlog]
-  last = Time.now
-  n = %x(cat #{gitlog} | tr -dc "\\0" | wc -c).to_i + 1
+  n = %x(cat #{config[:data][:gitlog]} | tr -dc "\\0" | wc -c).to_i + 1
   $l.info "Total: #{n} commit(s)"
-  IO.foreach(gitlog, "\0") do |line|
+  IO.foreach(config[:data][:gitlog], "\0") do |line| line.strip!
     n, last = step_log(n, last, 1000)
-    line.strip!
-    next if line.empty?
-    line.gsub!(/^(path|description|commit|tree|parent|author|committer) /, ":\\1: |-\n  ")
-    line.sub!(/\n\n (\S)/, "\n:changes: |-\n \\1")
-    line.sub!(/\n\n    /, "\n:message: |-\n    \t")
-    line.gsub!(/(\n    \n)(    \n)*/, '\1')
-    parse_data config, YAML.load(line)
+    parse_data(config, YAML.load(line)) unless line.empty?
   end
 
   Company.find_each do |company| domain = get_sld(company.homepage)
