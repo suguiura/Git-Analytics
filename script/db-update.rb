@@ -69,11 +69,9 @@ def parse_data(config, data)
   end
 
   sha1, tag = data[:commit].split(' ', 2)
-  return if Commit.exists?(:sha1 => sha1)
-
+  message   = (data[:message] || '').strip
   author,    author_date    = parse_person_date(data[:author])
   committer, committer_date = parse_person_date(data[:committer])
-  message   = (data[:message] || '').strip
 
   commit = Commit.create do |c|
     c.origin         = $origin
