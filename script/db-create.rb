@@ -49,7 +49,8 @@ each_server_config("Creating database for ") do |server, config|
     create_table   :signatures do |t|
       t.string     :name, :default => '', :limit => 32
       t.references :person, :commit
-      t.index      :person_id, :commit_id
+      t.index      :person_id
+      t.index      :commit_id
     end
   end
 end

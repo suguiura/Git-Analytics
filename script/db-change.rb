@@ -18,7 +18,7 @@
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-each_server_config("Creating database for ") do |server, config|
+each_server_config("Changing database for ") do |server, config|
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
     change_table   :commits do |t|
@@ -36,11 +36,7 @@ each_server_config("Creating database for ") do |server, config|
     end
     change_table   :signatures do |t|
       t.index      :person_id
-    end
-
-    change_table   :commits_signatures do |t|
       t.index      :commit_id
-      t.index      :signature_id
     end
   end
 end
