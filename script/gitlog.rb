@@ -30,10 +30,10 @@ def line_to_yaml(line)
 end
 
 each_server_config("Logging for ") do |server, config|
-  file = File.open($config[:servers][server][:data][:gitlog], 'w')
+  file = File.open(config[:data][:gitlog], 'w')
   n = $projects[server].size
   $projects[server].each do |path, project| n -= 1
-    $l.info "%5d - %s" % (n, path)
+    $l.info "%5d - %s" % [n, path]
     dir, range = project[:dir], project[:range]
     description = (project[:description] || "''").dump[1..-2]
     git = "git --git-dir #{dir} log -z --decorate --stat --pretty=raw #{range}"
@@ -42,5 +42,6 @@ each_server_config("Logging for ") do |server, config|
       io.each("\0"){|line| file.write(line_to_yaml(line))}
     end
   end
+  $l.info "Done"
 end
 
