@@ -20,27 +20,60 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-def line_to_yaml(line)
-  regexp = /^(path|description|commit|tree|parent|author|committer) /
-  line.gsub!(regexp, ":\\1: |-\n  ")
-  line.sub!(/\n\n (\S)/, "\n:changes: |-\n \\1")
-  line.sub!(/\n\n    /, "\n:message: |-\n    \t")
-  line.gsub!(/(\n    \n)(    \n)*/, '\1')
-  line
+def get_person(header, line)
+  regexp = Regexp.new("^#{header} (.*)<(.*)> (.*) (.*)$")
+  line.scan(regexp).map do |name, email, secs, offset|
+    offset = -DateTime.parse('1970-01-01 00:00:00 ' + offset).to_time.to_i
+    { :name => name.strip,
+      :email => email,
+      :offset => offset,
+      :utcdate => Time.at(secs.to_i).utc
+    }
+  end.last
+end
+
+def get_signatures(line)
+  sigs = {}
+  regexp = /(Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc): ([^\n]*)/
+  line.scan(regexp) do |key, value| key.downcase!
+    name, email = value.split('<', 2).map{|x|x.strip}
+    name, email = email, name if email.nil?
+    email, numb = email.split('>', 2)
+    sigs[key] = (sigs[key] || []) << {:name => name, :email => email}
+  end
+  sigs
+end
+
+def parse(origin, project, description, line)
+  commit, tag = line.scan(/^commit (\S+) ?(.*)$/).flatten
+  message = line.scan(/^    (.*)/).join("\n").strip
+  changes = Hash[line.scan(/^ (.+) \| \s*(\d+) /).map{|path, n| n.to_i}]
+  {
+    :origin => origin,
+    :project => project,
+    :description => description,
+    :commit => commit,
+    :tag => tag,
+    :author => get_person('author', line),
+    :committer => get_person('committer', line),
+    :message => message,
+    :signatures => get_signatures(line),
+    :changes => changes
+  }.to_yaml[5..-1] + "\0"
 end
 
 each_server_config("Logging for ") do |server, config|
   file = File.open(config[:data][:gitlog], 'w')
   n = $projects[server].size
-  $projects[server].each do |path, project| n -= 1
-    $l.info "%5d - %s" % [n, path]
-    dir, range = project[:dir], project[:range]
-    description = (project[:description] || "''").dump[1..-2]
+  $projects[server].each do |project, data| n -= 1
+    $l.info "%5d - %s" % [n, project]
+    dir, range = data[:dir], data[:range]
+    regexp = Regexp.new(config[:origin][:regexp])
+    origin = project.scan(regexp).first || config[:origin][:default]
     git = "git --git-dir #{dir} log -z --decorate --stat --pretty=raw #{range}"
-    IO.popen git do |io|
-      file.write "\0path #{path}\ndescription #{description}\n\0"
-      io.each("\0"){|line| file.write(line_to_yaml(line))}
-    end
+    IO.popen(git){|io| io.each("\0") do |line|
+      file.write parse(origin, project, data[:description], line.rstrip)
+    end}
   end
   $l.info "Done"
 end
