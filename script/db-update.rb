@@ -15,104 +15,87 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'time'
-require 'optparse'
 require 'uri'
 
 $: << File.dirname(__FILE__)
 require 'config'
 
-def offset_seconds(offset)
-  number = offset.to_i
-  return 0 if number == 0
-  hours, minutes = offset.scan(/^(.*)(..)$/).flatten.map{|x|x.to_i}
-  (number / number.abs) * (hours.abs * 3600 + minutes * 60)
-end
-
-def parse_date(date)
-  secs, offset = date.split
-  Time.at(secs.to_i + offset_seconds(offset)).utc.strftime('%Y-%m-%d %H:%M:%S')
-end
-
 def create_person(name, email)
   Person.find_or_create_by_email(fix_email(email), :name => name)
 end
 
-def parse_person_date(data)
-  name, email, date = data.scan(/(.*)<(.*)>(.*)/).flatten.map{|x|x.strip}
-  [create_person(name, email), parse_date(date)]
-end
-
-def parse_signatures(message)
-  signatures = ["Signed-off-by", "Reported-by", "Reviewed-by", "Tested-by",
-          "Acked-by", "Cc"].join('|')
-  regexp = Regexp.new("(#{signatures}): ([^<]*)<([^>\n]*)>")
-  message.scan(regexp).map do |signature, name, email|
-    create_person(name, email).signatures.create(:name => signature)
+signatures = "Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc"
+$re_signatures = /^    (#{signatures}): (.* <(.+)>|.*)$/
+def parse_signatures(line, commit)
+  line.scan($re_signatures) do |key, name, email|
+    data = {:name => key.downcase, :commit => commit}
+    create_person(name, email || name).signatures.create(data)
   end
 end
 
-def parse_changes(data)
-  (data || '').split("\n")[0..-2].map do |entry|
-    path, changes = entry.split('|', 2)
-    Modification.create(:path => path, :linechanges => changes.to_i)
+$re_changes = /^ (.+) \|\s+(\d+) /
+def parse_changes(line, commit)
+  line.scan($re_changes) do |path, changes|
+    commit.modifications.create(:path => path, :linechanges => changes.to_i)
   end
 end
 
-def parse_data(config, data)
-  unless data[:path].nil?
-    $path        = data[:path]
-    $description = data[:description]
-    regexp       = Regexp.new(config[:origin][:regexp] || '^$')
-    $origin      = $path.scan(regexp).first || config[:origin][:default] || '.'
-    return
-  end
+$offset = Hash.new{|hash, key| hash[key] = -DateTime.parse('1970-01-01 00:00:00 ' + key).to_time.to_i}
+$re_person = Hash.new{|hash, key| hash[key] = /^#{key} (.*) <(.*)> (.*) (.*)$/}
+def parse_person(header, line)
+  name, email, secs, offset = $re_person[header].match(line).captures
+  [create_person(name.strip, email), Time.at(secs.to_i).utc, $offset[offset]]
+end
 
-  sha1, tag = data[:commit].split(' ', 2)
-  message   = (data[:message] || '').strip
-  author,    author_date    = parse_person_date(data[:author])
-  committer, committer_date = parse_person_date(data[:committer])
+$re_message = /^    (.*)$/
+$re_commit = /^commit (\S+) ?(.*)$/
+def parse(data, line)
+  sha1, tag = $re_commit.match(line).captures
+  message = line.scan($re_message).join("\n").strip
+  author, author_date, author_offset = parse_person('author', line)
+  committer, committer_date, committer_offset = parse_person('committer', line)
 
   commit = Commit.create do |c|
-    c.origin         = $origin
-    c.project        = $path
-    c.description    = $description
+    c.origin         = data[:origin]
+    c.project        = data[:name]
+    c.description    = data[:description]
     c.sha1           = sha1
     c.tag            = tag
-    c.message        = message.dump[1..-2]
+    c.message        = message
     c.author         = author
     c.author_date    = author_date
     c.committer      = committer
     c.committer_date = committer_date
   end
 
-  commit.signatures    << parse_signatures(message)
-  commit.modifications << parse_changes(data[:changes])
+  parse_signatures(line, commit)
+  parse_changes(line, commit)
 end
 
+gtld = '(%s)' % $config[:gtlds].join('|')
+cctld = '(%s)' % $config[:cctlds].join('|')
+$re_tld = /\.(#{gtld}\.#{cctld}|#{gtld}|#{cctld})$/
+$re_host = /^www\./
 def get_sld(homepage)
-  return nil if homepage.nil?
-  uri = URI.parse homepage.strip.gsub(/((\?|\`| ).*)|(\/+$)/, '')
-  return nil if uri.path == '' or uri.host.nil?
-  parts = uri.host.split('.')
-  parts.shift if parts.first == 'www'
-  cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
-  gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
-  organization = parts.pop
-  department = parts
-  return nil if organization.nil? or (gtld.nil? and cctld.nil?)
-  [department, organization, gtld, cctld].join(' ').squeeze(' ').strip.gsub(' ', '.')
+  uri = URI.parse homepage rescue nil
+  return nil if uri.path.length > 1
+  host = uri.host.sub($re_host, '')
+  host if host =~ $re_tld
 end
 
-each_server_config("Updating database for ") do |server, config| last = Time.now
+each_server_config("Updating database for ") do |server, config|
   ActiveRecord::Base.establish_connection config[:db]
-  n = %x(cat #{config[:data][:gitlog]} | tr -dc "\\0" | wc -c).to_i + 1
-  $l.info "Total: #{n} commit(s)"
-  IO.foreach(config[:data][:gitlog], "\0") do |line| line.strip!
-    n, last = step_log(n, last, 1000)
-    parse_data(config, YAML.load(line)) unless line.empty?
+  n, re_origin = $projects[server].size, Regexp.new(config[:origin][:regexp])
+  default_origin = config[:origin][:default]
+  $projects[server].each do |project, data| n -= 1
+    $l.info "%5d - %s; total: %d" % [n, project, m]
+    git = "git --git-dir '#{data[:dir]}' log #{data[:range]} "
+    m = %x(git + '--oneline | wc -l').to_i
+    data[:origin] = re_origin.match(project).captures.first rescue default_origin
+    IO.popen(git + "-z --decorate --stat --pretty=raw") do |io|
+      io.each("\0"){|line| m = step_log(m, 1000); parse(data, line.rstrip)}
+    end
   end
-
   $l.info "Associating companies"
   Company.find_each do |company| domain = get_sld(company.homepage)
     condition = {:conditions => ['email like ?', "%@#{domain}"]}

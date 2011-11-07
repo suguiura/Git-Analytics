@@ -40,21 +40,13 @@ def each_server_config(info_prefix=nil, info_suffix='')
   end
 end
 
+$fix_email = YAML.load_file($config[:global][:emailfix][:file]) rescue {}
 def fix_email(email)
-  if $emailfixmap.nil?
-    emailfix = $config[:global][:emailfix][:file]
-    system "mkdir -p $(dirname #{emailfix}); touch #{emailfix}"
-    $emailfixmap = YAML.load_file(emailfix) || {}
-  end
-  $emailfixmap[email] || email || ''
+  $fix_email[email] || email
 end
 
-def step_log(n, last, step)
-  n -= 1
-  return [n, last] if (n % step) != 0
-  delta = Time.now - last
-  mins = ((delta.to_i * n) / (60 * step))
-  $l.info "#{n} left; ETA: %dmin" % mins
-  [n, last + delta]
+def step_log(n, step)
+  $l.info "   #{n} left" if (n % step) == 0
+  n - 1
 end
 
