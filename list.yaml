@@ -4553,7 +4553,7 @@
     :git: git://149.20.4.77/platform/external/gdata.git
     :name: gdata
   kernel/omap.git: 
-    :description: 
+    :description: ''
     :range: ..remotes/omap/android-omap-3.0
     :fork: true
     :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
@@ -5267,7 +5267,7 @@
     :git: git://149.20.4.77/platform/vendor/qcom/surf.git
     :name: surf
   platform/external/expat.git: 
-    :description: 
+    :description: ''
     :range: 
     :fork: false
     :dir: /home/rafael/media/git-data/android/platform/external/expat.git

@@ -22,7 +22,7 @@
       :dir:
       - /home/rafael/media/git-data/linux/
       - 
-      :gitlog: /home/rafael/media/git-data/gitlog/linux.gitlog
+      :gitlog: /home/ram/linux.gitlog
       :csv: /home/rafael/media/git-data/linux.dat
     :git:
       :url:
@@ -37,7 +37,7 @@
         :nslist:
     :origin:
       :default: .
-      :regexp:
+      :regexp: '^$'
     :list:
       :url: http://149.20.4.72/?a=project_index
       :regexp: ^[^\s]*
@@ -70,7 +70,7 @@
         :nslist: ns:http://www.w3.org/2005/Atom
     :origin:
       :default: .
-      :regexp:
+      :regexp: '^$'
     :list:
       :url: http://209.132.180.173/repositories.txt
       :regexp: ^[^\s]*
