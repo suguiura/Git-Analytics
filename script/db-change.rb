@@ -21,23 +21,14 @@ require 'config'
 each_server_config("Changing database for ") do |server, config|
   ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
-    change_table   :commits do |t|
-      t.index      :sha1
-      t.index      :author_id
-      t.index      :committer_id
-    end
-
-    change_table   :people do |t|
-      t.index      :email
-      t.index      :company_id
-    end
-    change_table   :modifications do |t|
-      t.index      :commit_id
-    end
-    change_table   :signatures do |t|
-      t.index      :person_id
-      t.index      :commit_id
-    end
+    add_index :commits, :sha1
+    add_index :commits, :author_id
+    add_index :commits, :committer_id
+    add_index :people, :email
+    add_index :people, :company_id
+    add_index :modifications, :commit_id
+    add_index :signatures, :person_id
+    add_index :signatures, :commit_id
   end
 end
 
