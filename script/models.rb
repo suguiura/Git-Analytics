@@ -12,6 +12,14 @@ class Person < ActiveRecord::Base
   belongs_to :company
 end
 
+class Author < Person
+  has_many :commits, :foreign_key => 'author_id'
+end
+
+class Committer < Person
+  has_many :commits, :foreign_key => 'committer_id'
+end
+
 class Modification < ActiveRecord::Base
   belongs_to :commit
 end
@@ -22,6 +30,9 @@ class Signature < ActiveRecord::Base
 end
 
 class Company < ActiveRecord::Base
-  has_many :people
+  has_many :authors
+  has_many :committers
+  has_many :author_commits, :through => :authors, :source => :commits
+  has_many :committers_commits, :through => :committers, :source => :commits
 end
 
