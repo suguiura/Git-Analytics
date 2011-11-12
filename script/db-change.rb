@@ -19,7 +19,6 @@ $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
 each_server_config("Changing database for ") do |server, config|
-  ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
     add_index :commits, :sha1
     add_index :commits, :author_id

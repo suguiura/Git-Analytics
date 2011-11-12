@@ -55,7 +55,6 @@ def split_email(email)
 end
 
 each_server_config("Generating CSV for for ") do |server, config|
-  ActiveRecord::Base.establish_connection config[:db]
   file = File.open(config[:data][:csv], 'w')
   file.puts header
   n = Commit.count
@@ -68,11 +67,11 @@ each_server_config("Generating CSV for for ") do |server, config|
       commit.description,
       commit.author.name,
       split_email(commit.author.email),
-      (commit.author.company.permalink unless commit.author.company.nil?) || '',
+      (commit.author.company.permalink rescue ''),
       commit.author_date,
       commit.committer.name,
       split_email(commit.committer.email),
-      (commit.committer.company.permalink unless commit.committer.company.nil?) || '',
+      (commit.committer.company.permalink rescue ''),
       commit.committer_date,
       commit.committer_date.to_i - commit.author_date.to_i,
       commit.tag,

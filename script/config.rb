@@ -36,6 +36,7 @@ def each_server_config(info_prefix=nil, info_suffix='')
   servers = $config[:servers].keys if servers.empty?
   servers.each do |server|
     $l.info(info_prefix + server.to_s + info_suffix) unless info_prefix.nil?
+    ActiveRecord::Base.establish_connection $config[:servers][server][:db]
     yield(server, $config[:servers][server])
   end
 end

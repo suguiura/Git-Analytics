@@ -87,7 +87,6 @@ def get_sld(homepage)
 end
 
 each_server_config("Updating database for ") do |server, config|
-  ActiveRecord::Base.establish_connection config[:db]
   n, re_origin = $projects[server].size, Regexp.new(config[:origin][:regexp])
   default_origin = config[:origin][:default]
   $projects[server].each do |project, data| n -= 1

@@ -19,7 +19,6 @@ $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
 each_server_config("Creating database for ") do |server, config|
-  ActiveRecord::Base.establish_connection config[:db]
   ActiveRecord::Schema.define do
     create_table   :commits do |t|
       t.string     :sha1,        :default => '', :limit => 40
