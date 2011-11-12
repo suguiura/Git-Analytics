@@ -50,7 +50,10 @@ end
 $re_message = /^    (.*)$/
 $re_commit = /^commit (\S+) ?(.*)$/
 def parse(data, line)
+  line = line.encode(Encoding::UTF_8, Encoding::ISO8859_1).rstrip
   sha1, tag = $re_commit.match(line).captures
+  return if Commit.exists?(:sha1 => sha1)
+  
   message = line.scan($re_message).join("\n").strip
   author, author_date, author_offset = parse_person('author', line)
   committer, committer_date, committer_offset = parse_person('committer', line)
@@ -77,9 +80,9 @@ cctld = '(%s)' % $config[:cctlds].join('|')
 $re_tld = /\.(#{gtld}\.#{cctld}|#{gtld}|#{cctld})$/
 $re_host = /^www\./
 def get_sld(homepage)
-  uri = URI.parse homepage rescue nil
-  return nil if uri.path.length > 1
-  host = uri.host.sub($re_host, '')
+  uri = URI.parse homepage rescue return
+  return if uri.path.length > 1
+  host = uri.host.sub($re_host, '') rescue return
   host if host =~ $re_tld
 end
 
@@ -88,12 +91,12 @@ each_server_config("Updating database for ") do |server, config|
   n, re_origin = $projects[server].size, Regexp.new(config[:origin][:regexp])
   default_origin = config[:origin][:default]
   $projects[server].each do |project, data| n -= 1
-    $l.info "%5d - %s; total: %d" % [n, project, m]
     git = "git --git-dir '#{data[:dir]}' log #{data[:range]} "
-    m = %x(git + '--oneline | wc -l').to_i
     data[:origin] = re_origin.match(project).captures.first rescue default_origin
+    m = IO.popen(git + '--oneline | wc -l').read.to_i
+    $l.info "%5d - %s; total: %d" % [n, project, m]
     IO.popen(git + "-z --decorate --stat --pretty=raw") do |io|
-      io.each("\0"){|line| m = step_log(m, 1000); parse(data, line.rstrip)}
+      io.each("\0"){|line| m = step_log(m, 1000); parse(data, line)}
     end
   end
   $l.info "Associating companies"
