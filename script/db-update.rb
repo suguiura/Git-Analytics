@@ -19,61 +19,7 @@ require 'uri'
 
 $: << File.dirname(__FILE__)
 require 'config'
-
-def create_person(name, email)
-  Person.find_or_create_by_email(fix_email(email), :name => name)
-end
-
-signatures = "Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc"
-$re_signatures = /^    (#{signatures}): (.* <(.+)>|.*)$/
-def parse_signatures(line, commit)
-  line.scan($re_signatures) do |key, name, email|
-    data = {:name => key.downcase, :commit => commit}
-    create_person(name, email || name).signatures.create(data)
-  end
-end
-
-$re_changes = /^ (.+) \|\s+(\d+) /
-def parse_changes(line, commit)
-  line.scan($re_changes) do |path, changes|
-    commit.modifications.create(:path => path, :linechanges => changes.to_i)
-  end
-end
-
-$offset = Hash.new{|hash, key| hash[key] = -DateTime.parse('1970-01-01 00:00:00 ' + key).to_time.to_i}
-$re_person = Hash.new{|hash, key| hash[key] = /^#{key} (.*) <(.*)> (.*) (.*)$/}
-def parse_person(header, line)
-  name, email, secs, offset = $re_person[header].match(line).captures
-  [create_person(name.strip, email), Time.at(secs.to_i).utc, $offset[offset]]
-end
-
-$re_message = /^    (.*)$/
-$re_commit = /^commit (\S+) ?(.*)$/
-def parse(data, line)
-  line = line.encode(Encoding::UTF_8, Encoding::ISO8859_1).rstrip
-  sha1, tag = $re_commit.match(line).captures
-  return if Commit.exists?(:sha1 => sha1)
-  
-  message = line.scan($re_message).join("\n").strip
-  author, author_date, author_offset = parse_person('author', line)
-  committer, committer_date, committer_offset = parse_person('committer', line)
-
-  commit = Commit.create do |c|
-    c.origin         = data[:origin]
-    c.project        = data[:name]
-    c.description    = data[:description]
-    c.sha1           = sha1
-    c.tag            = tag
-    c.message        = message
-    c.author         = author
-    c.author_date    = author_date
-    c.committer      = committer
-    c.committer_date = committer_date
-  end
-
-  parse_signatures(line, commit)
-  parse_changes(line, commit)
-end
+require 'git'
 
 gtld = '(%s)' % $config[:gtlds].join('|')
 cctld = '(%s)' % $config[:cctlds].join('|')
@@ -86,23 +32,74 @@ def get_sld(homepage)
   host if host =~ $re_tld
 end
 
-each_server_config("Updating database for ") do |server, config|
-  n, re_origin = $projects[server].size, Regexp.new(config[:origin][:regexp])
-  default_origin = config[:origin][:default]
-  $projects[server].each do |project, data| n -= 1
-    git = "git --git-dir '#{data[:dir]}' log #{data[:range]} "
-    data[:origin] = re_origin.match(project).captures.first rescue default_origin
-    m = IO.popen(git + '--oneline | wc -l').read.to_i
-    $l.info "%5d - %s; total: %d" % [n, project, m]
-    IO.popen(git + "-z --decorate --stat --pretty=raw") do |io|
-      io.each("\0"){|line| m = step_log(m, 1000); parse(data, line)}
-    end
-  end
+def associate_companies()
   $l.info "Associating companies"
   Company.find_each do |company| domain = get_sld(company.homepage)
     condition = {:conditions => ['email like ?', "%@#{domain}"]}
-    company.people = Person.find(:all, condition) unless domain.nil?
+    company.authors = Author.find(:all, condition) unless domain.nil?
   end
   $l.info "Done"
+end
+
+def create_person(name, email)
+  Person.find_or_create_by_email(fix_email(email), :name => name)
+end
+
+def create_signatures(log)
+  log[:signatures].map do |signature|
+    name, email = signature[:person][:name], signature[:person][:email]
+    create_person(name, email).signatures.create(:name => signature[:name])
+  end
+end
+
+def create_modifications(log)
+  log[:modifications].map do |modification|
+    Modification.create(modification)
+  end
+end
+
+def log_to_db(data, log)
+  author = create_person(log[:author][:name], log[:author][:email])
+  committer = create_person(log[:committer][:name], log[:committer][:email])
+  commit = Commit.create do |c|
+    c.origin         = data[:origin]
+    c.project        = data[:name]
+    c.description    = data[:description]
+    c.sha1           = log[:sha1]
+    c.tag            = log[:tag]
+    c.message        = log[:message]
+    c.author_date    = log[:author][:date]
+    c.committer_date = log[:committer][:date]
+    c.author         = author
+    c.committer      = committer
+    c.signatures     = create_signatures(log)
+    c.modifications  = create_modifications(log)
+  end
+end
+
+def process_project(data)
+  m = Git.count(data[:dir], data[:range])
+
+  $l.info "total: %d" % m
+  Git.log(data[:dir], data[:range]) do |log|
+    m = step_log(m, 1000, 'commits: ')
+    log_to_db(data, log)
+  end
+end
+
+def load_origin(config, project)
+  origin = config[:origin]
+  regex, default = Regexp.new(origin[:regexp]), origin[:default]
+  regex.match(project).captures.first rescue default
+end
+
+each_server_config "Updating database for " do |server, config|
+  n = $projects[server].size rescue next
+  $projects[server].each do |project, data|
+    n = step_log(n, 1000, '', " - #{project}")
+    data[:origin] = load_origin(config, project)
+    process_project(data)
+  end
+  associate_companies
 end
 
