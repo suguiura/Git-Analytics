@@ -45,5 +45,18 @@ module GitAnalytics
         add_index :signatures, :commit_id
       end
     end
+    
+    def self.remove_indexes
+      ActiveRecord::Schema.define do
+        remove_index :commits, :sha1
+        remove_index :commits, :author_id
+        remove_index :commits, :committer_id
+        remove_index :people, :email
+        remove_index :people, :company_id
+        remove_index :modifications, :commit_id
+        remove_index :signatures, :person_id
+        remove_index :signatures, :commit_id
+      end
+    end
   end
 end
