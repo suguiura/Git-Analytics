@@ -1,9 +1,6 @@
 :conflicts: conflicts.yaml
 :emailfix: emailfix.yaml
-
-:global:
-  :list:
-    :file: list.yaml
+:file: list.yaml
 
 :crunchbase:
   :db:

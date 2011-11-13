@@ -71,6 +71,6 @@ each_server_config("Configuring ") do |server, config|
   end
 end
 
-File.new($config[:global][:list][:file], 'w').puts $projects.to_yaml
+File.new($config[:list], 'w').puts $projects.to_yaml
 $l.info 'Done.'
 
