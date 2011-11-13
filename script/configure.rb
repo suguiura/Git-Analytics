@@ -39,9 +39,15 @@ def get_paths(server, config)
   end
 end
 
+def load_origin(config, project)
+  origin = config[:origin]
+  regex, default = Regexp.new(origin[:regexp]), origin[:default]
+  regex.match(project).captures.first rescue default
+end
+
 each_server_config("Configuring ") do |server, config|
   paths = get_paths(server, config)
-  download_descriptions(server, config, paths)
+#  download_descriptions(server, config, paths)
   $projects[server] ||= {}
   paths.each do |path, tmpfile|
     next if (config[:list][:deny] || []).include?(path)
@@ -49,8 +55,10 @@ each_server_config("Configuring ") do |server, config|
     description = (File.exists?(tmpfile) ? IO.read(tmpfile).strip : '')
     name = path.split('/').last.sub(/\.git$/, '')
     git, dir = config[:git][:url].join(path), config[:data][:dir].join(path)
+    origin = load_origin(config, path)
     project = {path => {:name => name, :fork => false, :range => nil,
-                        :description => description, :dir => dir, :git => git
+                        :origin => origin, :dir => dir, :git => git,
+                        :description => description
                        }.update((config[:instances] || {})[path] || {})}
     $projects[server].update(project)
   end
