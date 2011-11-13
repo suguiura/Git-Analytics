@@ -16,7 +16,7 @@ module Git
 
   @signatures = "Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc"
   @re_signatures = /^    (#@signatures): (.* <(.+)>|.*)$/
-  @re_changes = /^ (.+) \|\s+(\d+) /
+  @re_modifications = /^ (.+) \|\s+(\d+) /
   @re_person = Hash.new{|hash, key| hash[key] = /^#{key} (.*) <(.*)> (.*) (.*)$/}
   @re_message = /^    (.*)$/
   @re_commit = /^commit (\S+) ?(.*)$/
@@ -31,12 +31,12 @@ module Git
 
   def self.parse_signatures(line)
     line.scan(@re_signatures).map do |key, name, email|
-      {:signature => key, :person => create_person(name, email)}
+      {:name => key, :person => create_person(name, email)}
     end
   end
 
-  def self.parse_changes(line)
-    line.scan(@re_changes).map{|p, c| {:path => p.strip, :linechanges => c}}
+  def self.parse_modifications(line)
+    line.scan(@re_modifications).map{|p, c| {:path => p.strip, :linechanges => c}}
   end
 
   def self.parse_person(header, line)
@@ -57,7 +57,7 @@ module Git
       :author         => parse_person('author', line),
       :committer      => parse_person('committer', line),
       :signatures     => parse_signatures(line),
-      :changes        => parse_changes(line)
+      :modifications  => parse_modifications(line)
     }
   end
 end
