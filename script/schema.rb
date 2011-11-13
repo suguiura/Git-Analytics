@@ -33,7 +33,7 @@ module GitAnalytics
       end
     end
     
-    def add_indexes
+    def self.add_indexes
       ActiveRecord::Schema.define do
         add_index :commits, :sha1
         add_index :commits, :author_id
