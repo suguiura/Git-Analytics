@@ -25,7 +25,7 @@ $l.formatter = Logger::Formatter.new
 #$l.datetime_format = "%H:%M:%S"
 
 $config = YAML::load_file 'config.yaml'
-$projects = begin; YAML.load_file($config[:list]); rescue; {}; end
+$projects = YAML.load_file($config[:list]) rescue {}
 
 #ActiveRecord::Base.logger = Logger.new STDERR
 
