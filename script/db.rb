@@ -9,7 +9,7 @@ module GitAnalytics
       committer = create_person(log[:committer][:name], log[:committer][:email])
       commit = Commit.create do |c|
         c.origin         = log[:origin]
-        c.project        = log[:name]
+        c.project        = log[:project]
         c.description    = log[:description]
         c.sha1           = log[:sha1]
         c.tag            = log[:tag]
