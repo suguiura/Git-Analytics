@@ -16,13 +16,15 @@ $projects = YAML.load_file($config[:list]) rescue {}
 
 Company.establish_connection $config[:crunchbase][:db]
 
-def each_server_config(info_prefix=nil, info_suffix='')
-  servers = ARGV.map{|x| x.to_sym} & $config[:servers].keys
-  servers = $config[:servers].keys if servers.empty?
-  servers.each do |server|
-    $l.info(info_prefix + server.to_s + info_suffix) unless info_prefix.nil?
+def each_server_config(prefix=nil, suffix='')
+  selectors = ARGV.map do |arg|
+    server, project = arg.split('.').map{|x| x.to_sym}
+    next unless $config[:servers].key?(server)
+    $l.info(prefix + server.to_s + suffix) unless prefix.nil?
     ActiveRecord::Base.establish_connection $config[:servers][server][:db]
-    yield(server, $config[:servers][server])
+    projects = {project => $projects[server][project.to_s]}
+    projects = $projects[server] if project.nil?
+    yield(server, $config[:servers][server], projects)
   end
 end
 
