@@ -21,6 +21,7 @@ $: << File.dirname(__FILE__)
 require 'config'
 require 'git'
 require 'db'
+require 'schema'
 
 gtld = '(%s)' % $config[:gtlds].join('|')
 cctld = '(%s)' % $config[:cctlds].join('|')
@@ -51,7 +52,7 @@ def process_project(data)
     log[:origin] = data[:origin]
     log[:name] = data[:name]
     log[:description] = data[:description]
-#    GitAnalytics::DB.store(log)
+    GitAnalytics::DB.store(log)
   end
 end
 
@@ -62,12 +63,14 @@ def load_origin(config, project)
 end
 
 each_server_config "Updating database for " do |server, config|
+  GitAnalytics::Schema.create_tables
+  GitAnalytics::Schema.add_indexes
   n = $projects[server].size rescue next
   $projects[server].each do |project, data|
     n = step_log(n, 1, '', " - #{project}")
     data[:origin] = load_origin(config, project)
     process_project(data)
   end
-  associate_companies
+#  associate_companies
 end
 
