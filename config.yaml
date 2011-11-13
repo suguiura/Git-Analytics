@@ -1,13 +1,14 @@
+:conflicts: conflicts.yaml
+:emailfix: emailfix.yaml
+
 :global:
-  :emailfix:
-    :file: emailfix.yaml
   :list:
     :file: list.yaml
 
 :crunchbase:
   :db:
     :adapter: sqlite3
-    :database: /home/rafael/media/cb-data/cb.sqlite3
+    :database: /media/attach/data/crunchbase/cb.sqlite3
 
 :servers:
 
@@ -17,12 +18,11 @@
     :ip: 149.20.4.72
     :db:
       :adapter: sqlite3
-      :database: /home/ram/git-linux.sqlite3
+      :database: /media/attach/data/git/git-linux.sqlite3
     :data:
       :dir:
-      - /home/rafael/media/git-data/linux/
+      - /media/attach/data/git/linux/
       - 
-      :gitlog: /home/ram/linux.gitlog
       :csv: /home/rafael/media/git-data/linux.dat
     :git:
       :url:
@@ -50,12 +50,11 @@
     :ip: 209.132.180.173
     :db:
       :adapter: sqlite3
-      :database: /home/ram/git-gnome.sqlite3
+      :database: /media/attach/data/git/git-gnome.sqlite3
     :data:
       :dir:
-      - /home/rafael/media/git-data/gnome/
+      - /media/attach/data/git/gnome/
       - .git
-      :gitlog: /home/rafael/media/git-data/gitlog/gnome.gitlog
       :csv: /home/rafael/media/git-data/gnome.dat
     :git:
       :url:
@@ -81,12 +80,11 @@
     :ip: 149.20.4.77
     :db:
       :adapter: sqlite3
-      :database: /home/ram/git-android.sqlite3
+      :database: /media/attach/data/git/git-android.sqlite3
     :data:
       :dir:
-      - /home/rafael/media/git-data/android/
+      - /media/attach/data/git/android/
       - 
-      :gitlog: /home/rafael/media/git-data/gitlog/android.gitlog
       :csv: /home/rafael/media/git-data/android.dat
     :git:
       :url:

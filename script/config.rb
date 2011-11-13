@@ -41,7 +41,7 @@ def each_server_config(info_prefix=nil, info_suffix='')
   end
 end
 
-$fix_email = YAML.load_file($config[:global][:emailfix][:file]) rescue {}
+$fix_email = YAML.load_file($config[:emailfix]) rescue {}
 def fix_email(email)
   $fix_email[email] || email
 end

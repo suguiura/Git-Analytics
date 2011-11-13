@@ -56,6 +56,6 @@ each_server_config("Fixing emails for ") do |server, config|
   end
 end
 
-File.open($config[:global][:emailfix][:file], 'w').puts emails.to_yaml
+File.open($config[:emailfix], 'w').puts emails.to_yaml
 $l.info 'Done.'
 
