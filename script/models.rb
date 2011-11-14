@@ -7,7 +7,6 @@ class Commit < ActiveRecord::Base
 end
 
 class Person < ActiveRecord::Base
-  has_many :commits
   has_many :signatures
   belongs_to :company
 end
