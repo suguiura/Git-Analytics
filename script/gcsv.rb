@@ -16,6 +16,7 @@ module GitAnalytics
         [p[:email], p[:domain], split_domain(p[:domain])]
       end
       @file.puts [
+        log[:server],
         log[:origin],
         log[:project],
         log[:description],
@@ -69,6 +70,7 @@ module GitAnalytics
       attribs = ['name', email, 'date'].flatten
 
       [
+        'server',
         'origin',
         'project',
         'description',
