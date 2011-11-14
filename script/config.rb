@@ -14,8 +14,6 @@ $projects = YAML.load_file($config[:list]) rescue {}
 
 #ActiveRecord::Base.logger = Logger.new STDERR
 
-Company.establish_connection $config[:crunchbase][:db]
-
 def each_server_config(prefix=nil, suffix='')
   selectors = ARGV.map do |arg|
     server, project = arg.split('.').map{|x| x.to_sym}
