@@ -10,27 +10,6 @@ require 'uri'
 
 $l.info "Start"
 
-gtld = '(%s)' % $config[:gtlds].join('|')
-cctld = '(%s)' % $config[:cctlds].join('|')
-$re_tld = /\.(#{gtld}\.#{cctld}|#{gtld}|#{cctld})$/
-$re_host = /^www\./
-def get_sld(homepage)
-  uri = URI.parse homepage rescue return
-  return if uri.path.length > 1
-  host = uri.host.sub($re_host, '') rescue return
-  host if host =~ $re_tld
-end
-
-def associate_companies()
-  n = Company.count
-  $l.info "Associating companies (#{n})"
-  Company.find_each do |company| domain = get_sld(company.homepage)
-    n = step_log(n, 1000, '', " companies left")
-    condition = {:conditions => ['email like ?', "%@#{domain}"]}
-    company.authors = Author.find(:all, condition) unless domain.nil?
-  end
-end
-
 def process_project(data)
   dir, range = data[:dir], data[:range]
   extra = {:origin      => data[:origin],
@@ -60,7 +39,6 @@ each_server_config "Processing " do |server, config, projects|
 #  GitAnalytics::Schema.remove_indexes
 #  GitAnalytics::Schema.add_indexes
   process_server(server, config, projects)
-#  associate_companies
 end
 
 $l.info "Finish!"
