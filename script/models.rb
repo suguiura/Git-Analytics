@@ -4,6 +4,7 @@ class Commit < ActiveRecord::Base
   has_many :signatures
   belongs_to :author, :class_name => 'Person', :foreign_key => 'author_id'
   belongs_to :committer, :class_name => 'Person', :foreign_key => 'committer_id'
+  belongs_to :server
 end
 
 class Person < ActiveRecord::Base
@@ -36,3 +37,6 @@ class Domain < ActiveRecord::Base
   has_many :committers_commits, :through => :committers, :source => :commits
 end
 
+class Server < ActiveRecord::Base
+  has_many :commits
+end
