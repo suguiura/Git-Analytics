@@ -2,7 +2,8 @@
 module GitAnalytics
   module Schema
 
-    def self.create_tables
+    def self.create_tables(db=nil)
+      ActiveRecord::Base.establish_connection db unless db.nil?
       ActiveRecord::Schema.define do
         create_table   :commits do |t|
           t.string     :sha1,        :default => '', :limit => 40
@@ -33,7 +34,8 @@ module GitAnalytics
       end
     end
     
-    def self.add_indexes
+    def self.add_indexes(db=nil)
+      ActiveRecord::Base.establish_connection db unless db.nil?
       ActiveRecord::Schema.define do
         add_index :commits, :sha1
         add_index :commits, :author_id
@@ -46,7 +48,8 @@ module GitAnalytics
       end
     end
     
-    def self.remove_indexes
+    def self.remove_indexes(db=nil)
+      ActiveRecord::Base.establish_connection db unless db.nil?
       ActiveRecord::Schema.define do
         remove_index :commits, :sha1
         remove_index :commits, :author_id
