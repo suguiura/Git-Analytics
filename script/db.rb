@@ -8,7 +8,9 @@ module GitAnalytics
       a, c = log[:author], log[:committer]
       author    = create_person(a[:name], a[:email], a[:domain])
       committer = create_person(c[:name], c[:email], c[:domain])
+      server = Server.find_or_create_by_name(log[:server])
       commit = Commit.create do |c|
+        c.server         = server
         c.origin         = log[:origin]
         c.project        = log[:project]
         c.description    = log[:description]
