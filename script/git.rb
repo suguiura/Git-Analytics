@@ -49,9 +49,14 @@ module GitAnalytics
       Time.at(secs.to_i).getlocal(offset.insert(3, ':'))
     end
 
+    def self.create_person(name, email)
+      email = fix_email(email || name)
+      {:name => name, :email => email, :domain => $domain[email]}
+    end
+
     def self.parse_signatures(line)
       line.scan(@re_signatures).map do |key, name, email|
-        {:name => key, :person => {:name => name, :email => email || name}}
+        {:name => key, :person => create_person(name, email)}
       end
     end
 
@@ -61,8 +66,8 @@ module GitAnalytics
 
     def self.parse_person(header, line)
       name, email, secs, offset = @re_person[header].match(line).captures
-      date, email = create_date(secs, offset), fix_email(email)
-      {:date => date, :name => name, :email => email, :domain => $domain[email]}
+      date = create_date(secs, offset)
+      create_person(name, email).update {:date => date}
     end
   end
 end
