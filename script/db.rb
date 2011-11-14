@@ -35,8 +35,9 @@ module GitAnalytics
 
     def self.create_signatures(log)
       log[:signatures].map do |signature|
-        name, email = signature[:person][:name], signature[:person][:email]
-        create_person(name, email).signatures.create(:name => signature[:name])
+        p, name = signature[:person], signature[:name]
+        person = create_person(p[:name], p[:email], p[:domain])
+        person.signatures.create(:name => name)
       end
     end
 
