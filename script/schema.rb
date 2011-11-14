@@ -2,8 +2,7 @@
 module GitAnalytics
   module Schema
 
-    def self.create_tables(db=nil)
-      ActiveRecord::Base.establish_connection db unless db.nil?
+    def self.create_tables
       ActiveRecord::Schema.define do
         create_table   :commits do |t|
           t.string     :sha1,        :default => '', :limit => 40
@@ -14,7 +13,7 @@ module GitAnalytics
           t.text       :message,     :default => ''
           t.datetime   :author_date
           t.datetime   :committer_date
-          t.references :author, :committer
+          t.references :author, :committer, :server
           t.timestamps
         end
         create_table   :people do |t|
@@ -34,15 +33,18 @@ module GitAnalytics
         create_table   :domains do |t|
           t.string     :domain, :default => '', :limit => 128
         end
+        create_table   :servers do |t|
+          t.string     :name, :null => false, :limit => 128
+        end
       end
     end
     
-    def self.add_indexes(db=nil)
-      ActiveRecord::Base.establish_connection db unless db.nil?
+    def self.add_indexes
       ActiveRecord::Schema.define do
         add_index :commits, :sha1
         add_index :commits, :author_id
         add_index :commits, :committer_id
+        add_index :commits, :server_id
         add_index :people, :email
         add_index :people, :domain_id
         add_index :modifications, :commit_id
@@ -52,12 +54,12 @@ module GitAnalytics
       end
     end
     
-    def self.remove_indexes(db=nil)
-      ActiveRecord::Base.establish_connection db unless db.nil?
+    def self.remove_indexes
       ActiveRecord::Schema.define do
         remove_index :commits, :sha1
         remove_index :commits, :author_id
         remove_index :commits, :committer_id
+        remove_index :commits, :server_id
         remove_index :people, :email
         remove_index :people, :domain_id
         remove_index :modifications, :commit_id
