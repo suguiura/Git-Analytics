@@ -14,12 +14,13 @@ $projects = YAML.load_file($config[:list]) rescue {}
 
 #ActiveRecord::Base.logger = Logger.new STDERR
 
+ActiveRecord::Base.establish_connection $config[:db][:commits]
+
 def each_server_config(prefix=nil, suffix='')
   selectors = ARGV.map do |arg|
     server, project = arg.split('.').map{|x| x.to_sym}
     next unless $config[:servers].key?(server)
     $l.info(prefix + server.to_s + suffix) unless prefix.nil?
-    ActiveRecord::Base.establish_connection $config[:servers][server][:db]
     projects = {project => $projects[server][project.to_s]}
     projects = $projects[server] if project.nil?
     yield(server, $config[:servers][server], projects)
