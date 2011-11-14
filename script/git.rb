@@ -1,7 +1,8 @@
 
 module GitAnalytics
   module Git
-    require 'yaml'
+    $: << File.dirname(__FILE__)
+    require 'config'
     require 'mail'
 
     def self.count(gitdir, range='')
@@ -60,6 +61,7 @@ module GitAnalytics
     def self.parse_person(header, line)
       name, email, secs, offset = @re_person[header].match(line).captures
       date = create_date(secs, offset)
+      email = fix_email(email)
       domain = Mail::Address.new(email).domain
       {:date => date, :name => name, :email => email, :domain => domain}
     end
