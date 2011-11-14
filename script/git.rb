@@ -67,7 +67,7 @@ module GitAnalytics
     def self.parse_person(header, line)
       name, email, secs, offset = @re_person[header].match(line).captures
       date = create_date(secs, offset)
-      create_person(name, email).update {:date => date}
+      create_person(name, email).update({:date => date})
     end
   end
 end
