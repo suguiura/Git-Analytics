@@ -5,10 +5,10 @@ require 'yaml'
 $: << File.join(File.dirname(__FILE__), '.')
 require 'config'
 
-each_server_config("Downloading projects for ") do |server, config|
-  n = $projects[server].size
-  $projects[server].each do |path, project| n -= 1
-    STDERR.printf "[%s] %5d - %s\n", Time.now.strftime("%H:%M:%S"), n, path
+each_server_config("Downloading projects for ") do |server, config, projects|
+  n = projects.size
+  projects.each do |path, project|
+    n = step_log(n, 1, '', " - " + path)
     name, dir, url = project[:name], project[:dir], project[:git]
     case
     when project[:fork]
