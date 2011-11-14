@@ -26,6 +26,7 @@ module GitAnalytics
     @re_person = Hash.new{|hash, key| hash[key] = /^#{key} (.*) <(.*)> (.*) (.*)$/}
     @re_message = /^    (.*)$/
     @re_commit = /^commit (\S+) ?(.*)$/
+    $domain = Hash.new{|hash, key| hash[key] = Mail::Address.new(key).domain}
 
     def self.parse(line, extra)
       line = line.strip
@@ -58,11 +59,9 @@ module GitAnalytics
       line.scan(@re_modifications).map{|p, c| {:path => p.strip, :linechanges => c.to_i}}
     end
 
-    $domain = Hash.new{|hash, key| hash[key] = Mail::Address.new(key).domain}
     def self.parse_person(header, line)
       name, email, secs, offset = @re_person[header].match(line).captures
-      date = create_date(secs, offset)
-      email = fix_email(email)
+      date, email = create_date(secs, offset), fix_email(email)
       {:date => date, :name => name, :email => email, :domain => $domain[email]}
     end
   end
