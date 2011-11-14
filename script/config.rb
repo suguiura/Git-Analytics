@@ -27,11 +27,6 @@ def each_server_config(prefix=nil, suffix='')
   end
 end
 
-$fix_email = YAML.load_file($config[:emailfix]) rescue {}
-def fix_email(email)
-  $fix_email[email] || email
-end
-
 def step_log(n, step, prefix='', suffix=' left')
   $l.info "%s%d%s" % [prefix, n, suffix] if (n % step) == 0
   n - 1
