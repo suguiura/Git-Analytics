@@ -13,7 +13,7 @@ module GitAnalytics
     def self.store(log)
       signatures = log[:signatures].map do |signature|
         p = signature[:person]
-        [p[:email], p[:domain], split_domain(p[:domain])
+        [p[:email], p[:domain], split_domain(p[:domain])]
       end
       @file.puts [
         log[:origin],
@@ -53,7 +53,7 @@ module GitAnalytics
     $gtld = "(%s)" % $config[:gtlds].join('|')
     $re_tlds = /((.*)\.([^\.]+))?(\.#{$gtld}\.#{$cctld}|\.#{$cctld}|\.#{$gtld})$/
     def self.split_domain(domain)
-      a, b, c, d, e, f, g, h = $re_tlds.match(domain).captures
+      a, b, c, d, e, f, g, h = $re_tlds.match(domain).captures rescue []
       department, organization, gtld, cctld = b, c, (e || h), (f || g)
       [department, organization, gtld, cctld]
     end
