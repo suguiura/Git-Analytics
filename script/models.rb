@@ -8,7 +8,7 @@ end
 
 class Person < ActiveRecord::Base
   has_many :signatures
-  belongs_to :company
+  belongs_to :domain
 end
 
 class Author < Person
@@ -28,7 +28,8 @@ class Signature < ActiveRecord::Base
   belongs_to :commit
 end
 
-class Company < ActiveRecord::Base
+class Domain < ActiveRecord::Base
+  has_many :people
   has_many :authors
   has_many :committers
   has_many :author_commits, :through => :authors, :source => :commits
