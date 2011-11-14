@@ -3,7 +3,7 @@ module GitAnalytics
   module Git
     $: << File.dirname(__FILE__)
     require 'config'
-    require 'mail'
+    require 'ga_mail'
 
     def self.count(gitdir, range='')
       git = "git --git-dir #{gitdir} log #{range} --oneline | wc -l"
@@ -16,6 +16,7 @@ module GitAnalytics
         data = parse(line, extra) rescue parse(line.encode(Encoding::UTF_8, Encoding::ISO8859_1), extra)
         yield(data)
       end}
+      GitAnalytics::Mail.save
     end
 
     private
@@ -26,7 +27,6 @@ module GitAnalytics
     @re_person = Hash.new{|hash, key| hash[key] = /^#{key} (.*) <(.*)> (.*) (.*)$/}
     @re_message = /^    (.*)$/
     @re_commit = /^commit (\S+) ?(.*)$/
-    $domain = Hash.new{|hash, key| hash[key] = Mail::Address.new(key).domain}
 
     def self.parse(line, extra)
       line = line.strip
@@ -50,8 +50,9 @@ module GitAnalytics
     end
 
     def self.create_person(name, email)
-      email = fix_email(email || name)
-      {:name => name, :email => email, :domain => $domain[email]}
+      email = GitAnalytics::Mail.fix(email || name)
+      domain = GitAnalytics::Mail.domain(email)
+      {:name => name, :email => email, :domain => domain}
     end
 
     def self.parse_signatures(line)
