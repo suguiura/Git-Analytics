@@ -11,15 +11,23 @@ module GitAnalytics
     end
     
     def self.store(log)
+      signatures = log[:signatures].map do |signature|
+        p = signature[:person]
+        [p[:email], p[:domain], split_domain(p[:domain])
+      end
       @file.puts [
         log[:origin],
         log[:project],
         log[:description],
         log[:author][:name],
-        split_email(log[:author][:email]),
+        log[:author][:email],
+        log[:author][:domain],
+        split_domain(log[:author][:domain]),
         log[:author][:date],
         log[:committer][:name],
-        split_email(log[:committer][:email]),
+        log[:committer][:email],
+        log[:committer][:domain],
+        split_domain(log[:committer][:domain]),
         log[:committer][:date],
         log[:committer][:date].to_i - log[:author][:date].to_i,
         log[:tag],
@@ -28,7 +36,7 @@ module GitAnalytics
         log[:modifications].size,
         log[:modifications].inject(0){|memo, x| memo + x[:linechanges]},
         fill_array(log[:modifications].map{|x| x[:path]}, 100),
-        fill_array(log[:signatures].map{|s| split_email(s[:person][:email])}, 8, 6)
+        fill_array(signatures, 8, 6)
       ].join("\t") rescue (p log; exit)
     end
 
@@ -41,13 +49,13 @@ module GitAnalytics
       array[0, n]
     end
 
-    def self.split_email(email)
-      username, domain = (email + '@').split('@', 3)
-      parts = domain.split('.')
-      cctld = parts.pop unless $config[:cctlds].index(parts.last).nil?
-      gtld = parts.pop unless $config[:gtlds].index(parts.last).nil?
-      company = parts.pop
-      [email, domain, parts.join('.'), company, gtld, cctld]
+    $cctld = "(%s)" % $config[:cctlds].join('|')
+    $gtld = "(%s)" % $config[:gtlds].join('|')
+    $re_tlds = /((.*)\.([^\.]+))?(\.#{$gtld}\.#{$cctld}|\.#{$cctld}|\.#{$gtld})$/
+    def self.split_domain(domain)
+      a, b, c, d, e, f, g, h = $re_tlds.match(domain).captures
+      department, organization, gtld, cctld = b, c, (e || h), (f || g)
+      [department, organization, gtld, cctld]
     end
 
     def self.cat_and_spawn(prefix, suffixes, n)
