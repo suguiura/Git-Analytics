@@ -5,8 +5,9 @@ module GitAnalytics
     require 'config'
 
     def self.store(log)
-      author = create_person(log[:author][:name], log[:author][:email])
-      committer = create_person(log[:committer][:name], log[:committer][:email])
+      a, c = log[:author], log[:committer]
+      author    = create_person(a[:name], a[:email], a[:domain])
+      committer = create_person(c[:name], c[:email], c[:domain])
       commit = Commit.create do |c|
         c.origin         = log[:origin]
         c.project        = log[:project]
@@ -25,8 +26,9 @@ module GitAnalytics
 
     private
 
-    def self.create_person(name, email)
-      Person.find_or_create_by_email(fix_email(email), :name => name)
+    def self.create_person(name, email, domain)
+      domain = Domain.find_or_create_by_domain(domain)
+      Person.find_or_create_by_email(email, :name => name, :domain => domain)
     end
 
     def self.create_signatures(log)
