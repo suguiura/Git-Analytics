@@ -13,10 +13,10 @@ emails = $emailfixmap
 perlexpr = 'print $_ unless Mail::RFC822::Address::valid($_)'
 check = "perl -I#{File.dirname(__FILE__)} -MAddress -ne '#{perlexpr}'"
 
-each_server_config("Fixing emails for ") do |server, config|
-  n = $projects[server].size
-  $projects[server].each do |path, project| n -= 1
-    puts "%5d - %s" % [n, path]
+each_server_config("Fixing emails for ") do |server, config, projects|
+  n = projects.size
+  projects.each do |path, project|
+    n = step_log(n, 1, '', " - " + path)
     dir, range = project[:dir], project[:range]
     git = "git --git-dir #{dir} log --pretty='%aE%x0A%cE' #{range}"
     cmd = "#{git} | sort | uniq | #{check}"
