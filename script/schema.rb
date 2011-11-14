@@ -20,7 +20,7 @@ module GitAnalytics
         create_table   :people do |t|
           t.string     :name,  :default => '', :limit => 128
           t.string     :email, :default => '', :limit => 128
-          t.references :company
+          t.references :domain
         end
         create_table   :modifications do |t|
           t.string     :path, :default => '', :limit => 64
@@ -30,6 +30,9 @@ module GitAnalytics
         create_table   :signatures do |t|
           t.string     :name, :default => '', :limit => 32
           t.references :person, :commit
+        end
+        create_table   :domains do |t|
+          t.string     :sld, :default => '', :limit => 128
         end
       end
     end
@@ -41,7 +44,7 @@ module GitAnalytics
         add_index :commits, :author_id
         add_index :commits, :committer_id
         add_index :people, :email
-        add_index :people, :company_id
+        add_index :people, :domain_id
         add_index :modifications, :commit_id
         add_index :signatures, :person_id
         add_index :signatures, :commit_id
@@ -55,7 +58,7 @@ module GitAnalytics
         remove_index :commits, :author_id
         remove_index :commits, :committer_id
         remove_index :people, :email
-        remove_index :people, :company_id
+        remove_index :people, :domain_id
         remove_index :modifications, :commit_id
         remove_index :signatures, :person_id
         remove_index :signatures, :commit_id
