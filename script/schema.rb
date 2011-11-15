@@ -50,7 +50,7 @@ module GitAnalytics
         add_index :modifications, :commit_id
         add_index :signatures, :person_id
         add_index :signatures, :commit_id
-        add_index :domains, :domain
+        add_index :domains, :name
       end
     end
     
@@ -65,7 +65,7 @@ module GitAnalytics
         remove_index :modifications, :commit_id
         remove_index :signatures, :person_id
         remove_index :signatures, :commit_id
-        remove_index :domains, :domain
+        remove_index :domains, :name
       end
     end
   end
