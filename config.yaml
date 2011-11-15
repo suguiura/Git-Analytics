@@ -2,9 +2,7 @@
   :commits:
     :adapter: sqlite3
     :database: /media/attach/data/git/commits.sqlite3
-
-:crunchbase:
-  :db:
+  :crunchbase:
     :adapter: sqlite3
     :database: /media/attach/data/crunchbase/cb.sqlite3
 
