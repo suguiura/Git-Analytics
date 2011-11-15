@@ -5,6 +5,7 @@ module GitAnalytics
     end
 
     def self.domain(email)
+      $domains[email]
     end
 
     def self.save
@@ -24,13 +25,13 @@ module GitAnalytics
       hash[email] = EmailVeracity::Address.new(email)
     end
     $domains = Hash.new do |hash, email|
-      hash[email] = $emails.domain
+      hash[email] = $emails[email].domain
     end
-    $fix_email = Hash.new do |hash, old_email|
-      hash[old_email] = if $emails[old_email].valid?
-        old_email
+    $fix_email = Hash.new do |hash, email|
+      hash[email] = if $emails[email].valid?
+        email
       else
-        email = URI.unescape(old_email)
+        email, old_email = URI.unescape(email), email
         email.gsub! /DOT/, '.'
         email.gsub! /AT/, '@'
         email.downcase!
