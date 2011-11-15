@@ -25,7 +25,7 @@ module GitAnalytics
       hash[email] = EmailVeracity::Address.new(email)
     end
     $domains = Hash.new do |hash, email|
-      hash[email] = $emails[email].domain
+      hash[email] = $emails[email].domain.to_s
     end
     $fix_email = Hash.new do |hash, email|
       hash[email] = if $emails[email].valid?
