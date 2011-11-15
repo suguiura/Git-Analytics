@@ -29,7 +29,7 @@ module GitAnalytics
     private
 
     def self.create_person(name, email, domain)
-      domain = Domain.find_or_create_by_domain(domain)
+      domain = Domain.find_or_create_by_name(domain)
       Person.find_or_create_by_email(email, :name => name, :domain => domain)
     end
 

@@ -31,7 +31,7 @@ module GitAnalytics
           t.references :person, :commit
         end
         create_table   :domains do |t|
-          t.string     :domain, :default => '', :limit => 128
+          t.string     :name, :default => '', :limit => 128
         end
         create_table   :servers do |t|
           t.string     :name, :null => false, :limit => 128
