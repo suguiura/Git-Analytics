@@ -12,7 +12,7 @@ load 'lib/git.rb'
 load 'lib/db.rb'
 load 'lib/schema.rb'
 load 'lib/csv.rb'
-load 'config.rb'
+load 'lib/utils.rb'
 
 def process_project(data)
   dir, range = data[:dir], data[:range]
