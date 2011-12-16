@@ -1,9 +1,11 @@
 
-$: << File.join(File.dirname(__FILE__), '.')
-require 'config'
-
 module GitAnalytics
-  module GCSV
+  module CSV
+    def self.prepare(gtlds, cctlds)
+      cctld = "(%s)" % cctlds.join('|')
+      gtld = "(%s)" % gtlds.join('|')
+      @re_tlds = /^(#{cctld}\.#{gtld}|#{cctld}|#{gtld})\.([^\.]+)(\.(.*))?$/
+    end
     
     def self.open(filename)
       @file = File.open(filename, 'w')
@@ -50,18 +52,16 @@ module GitAnalytics
       array[0, n]
     end
 
-    $cctld = "(%s)" % $config[:cctlds].join('|')
-    $gtld = "(%s)" % $config[:gtlds].join('|')
-    $re_tlds = /((.*)\.([^\.]+))?(\.#{$gtld}\.#{$cctld}|\.#{$cctld}|\.#{$gtld})$/
     def self.split_domain(domain)
-      a, b, c, d, e, f, g, h = $re_tlds.match(domain).captures rescue []
-      department, organization, gtld, cctld = b, c, (e || h), (f || g)
+      domain = domain.split('.').reverse.join('.')
+      a, b, c, d, e, f, g, h = @re_tlds.match(domain).captures rescue []
+      department, organization, gtld, cctld = h, f, (e || c), (d || b)
       [department, organization, gtld, cctld]
     end
 
     def self.cat_and_spawn(prefix, suffixes, n)
       array = [prefix].product(suffixes)
-      array = array.product(n.times.map{|x| "[#{x}]"}) if n > 1
+      array = n.times.map{|x| "[#{x}]"}.product(array).map{|x| x.rotate} if n > 1
       array.map{|x| x.join}
     end
 

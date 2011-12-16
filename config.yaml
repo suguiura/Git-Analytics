@@ -14,7 +14,7 @@
       :dir:
       - /media/attach/data/git/linux/
       - 
-      :csv: /media/attach/data/git/linux.dat
+      :csv: /media/attach/data/git/working/linux.dat
     :git:
       :url:
       - git://149.20.4.72/pub/scm/
@@ -42,7 +42,7 @@
       :dir:
       - /media/attach/data/git/gnome/
       - .git
-      :csv: /media/attach/data/git/gnome.dat
+      :csv: /media/attach/data/git/working/gnome.dat
     :git:
       :url:
       - git://209.132.180.173/
@@ -68,7 +68,7 @@
       :dir:
       - /media/attach/data/git/android/
       - 
-      :csv: /media/attach/data/git/android.dat
+      :csv: /media/attach/data/git/working/android.dat
     :git:
       :url:
       - git://149.20.4.77/

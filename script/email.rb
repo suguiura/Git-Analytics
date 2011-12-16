@@ -1,5 +1,5 @@
 module GitAnalytics
-  module Mail
+  module Email
     def self.fix(email)
       $fix_email[email] || email
     end

@@ -1,26 +1,27 @@
 
+require 'benchmark'
+
 module GitAnalytics
   module DB
-    $: << File.dirname(__FILE__)
-    require 'config'
+
+    def self.store_project(data)
+      @project = Project.find_or_create_by_name(data[:project]) do |p|
+        p.server      = Server.find_or_create_by_name(data[:server])
+        p.origin      = data[:origin]
+        p.description = data[:description]
+      end
+    end
 
     def self.store(log)
-      a, c = log[:author], log[:committer]
-      author    = create_person(a[:name], a[:email], a[:domain])
-      committer = create_person(c[:name], c[:email], c[:domain])
-      server = Server.find_or_create_by_name(log[:server])
-      commit = Commit.create do |c|
-        c.server         = server
-        c.origin         = log[:origin]
-        c.project        = log[:project]
-        c.description    = log[:description]
+      Commit.create do |c|
+        c.project        = @project
         c.sha1           = log[:sha1]
         c.tag            = log[:tag]
         c.message        = log[:message]
         c.author_date    = log[:author][:date]
         c.committer_date = log[:committer][:date]
-        c.author         = author
-        c.committer      = committer
+        c.author         = create_person(log[:author])
+        c.committer      = create_person(log[:committer])
         c.signatures     = create_signatures(log)
         c.modifications  = create_modifications(log)
       end
@@ -28,16 +29,17 @@ module GitAnalytics
 
     private
 
-    def self.create_person(name, email, domain)
-      domain = Domain.find_or_create_by_name(domain)
-      Person.find_or_create_by_email(email, :name => name, :domain => domain)
+    def self.create_person(data)
+      Person.find_or_create_by_email(data[:email]) do |p|
+        p.name   = data[:name]
+        p.domain = Domain.find_or_create_by_name(data[:domain])
+      end
     end
 
     def self.create_signatures(log)
       log[:signatures].map do |signature|
-        p, name = signature[:person], signature[:name]
-        person = create_person(p[:name], p[:email], p[:domain])
-        person.signatures.create(:name => name)
+        person = create_person(signature[:person])
+        person.signatures.create(:name => signature[:name])
       end
     end
 

@@ -1,9 +1,6 @@
 
 module GitAnalytics
   module Git
-    $: << File.dirname(__FILE__)
-    require 'config'
-    require 'ga_mail'
 
     def self.count(gitdir, range='')
       git = "git --git-dir #{gitdir} log #{range} --oneline | wc -l"
@@ -16,7 +13,7 @@ module GitAnalytics
         data = parse(line, extra) rescue parse(line.encode(Encoding::UTF_8, Encoding::ISO8859_1), extra)
         yield(data)
       end}
-      GitAnalytics::Mail.save
+      GitAnalytics::Email.save
     end
 
     private
@@ -50,8 +47,8 @@ module GitAnalytics
     end
 
     def self.create_person(name, email)
-      email = GitAnalytics::Mail.fix(email || name)
-      domain = GitAnalytics::Mail.domain(email)
+      email = GitAnalytics::Email.fix(email || name)
+      domain = GitAnalytics::Email.domain(email)
       {:name => name, :email => email, :domain => domain}
     end
 
@@ -68,7 +65,7 @@ module GitAnalytics
     def self.parse_person(header, line)
       name, email, secs, offset = @re_person[header].match(line).captures
       date = create_date(secs, offset)
-      create_person(name, email).update({:date => date})
+      create_person(name, email).update(:date => date)
     end
   end
 end

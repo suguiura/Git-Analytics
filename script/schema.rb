@@ -5,19 +5,16 @@ module GitAnalytics
     def self.create_tables
       ActiveRecord::Schema.define do
         create_table   :commits do |t|
-          t.string     :sha1,        :default => '', :limit => 40
-          t.string     :origin,      :default => '', :limit => 32
-          t.string     :project,     :default => '', :limit => 128
-          t.string     :description, :default => '', :limit => 128
-          t.text       :tag,         :default => ''
-          t.text       :message,     :default => ''
+          t.string     :sha1, :default => '', :limit => 40
+          t.text       :tag, :default => ''
+          t.text       :message, :default => ''
           t.datetime   :author_date
           t.datetime   :committer_date
-          t.references :author, :committer, :server
+          t.references :author, :committer, :project
           t.timestamps
         end
         create_table   :people do |t|
-          t.string     :name,  :default => '', :limit => 128
+          t.string     :name, :default => '', :limit => 128
           t.string     :email, :default => '', :limit => 128
           t.references :domain
         end
@@ -36,6 +33,12 @@ module GitAnalytics
         create_table   :servers do |t|
           t.string     :name, :null => false, :limit => 128
         end
+        create_table   :projects do |t|
+          t.string     :origin, :default => '', :limit => 32
+          t.string     :name, :default => '', :limit => 128
+          t.string     :description, :default => '', :limit => 128
+          t.references :server
+        end
       end
     end
     
@@ -44,10 +47,9 @@ module GitAnalytics
         add_index :commits, :sha1
         add_index :commits, :author_id
         add_index :commits, :committer_id
-        add_index :commits, :server_id
+        add_index :commits, :project_id
         add_index :people, :email
         add_index :people, :domain_id
-        add_index :modifications, :commit_id
         add_index :signatures, :person_id
         add_index :signatures, :commit_id
         add_index :domains, :name
@@ -59,10 +61,9 @@ module GitAnalytics
         remove_index :commits, :sha1
         remove_index :commits, :author_id
         remove_index :commits, :committer_id
-        remove_index :commits, :server_id
+        remove_index :commits, :project_id
         remove_index :people, :email
         remove_index :people, :domain_id
-        remove_index :modifications, :commit_id
         remove_index :signatures, :person_id
         remove_index :signatures, :commit_id
         remove_index :domains, :name
