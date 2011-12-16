@@ -6,14 +6,13 @@ require 'logger'
 require 'rubygems'
 require 'active_record'
 
-dir = File.dirname(__FILE__)
-load dir + '/models.rb'
-load dir + '/config.rb'
-load dir + '/email.rb'
-load dir + '/git.rb'
-load dir + '/db.rb'
-load dir + '/schema.rb'
-load dir + '/gcsv.rb'
+load 'lib/models.rb'
+load 'lib/email.rb'
+load 'lib/git.rb'
+load 'lib/db.rb'
+load 'lib/schema.rb'
+load 'lib/csv.rb'
+load 'config.rb'
 
 def process_project(data)
   dir, range = data[:dir], data[:range]
