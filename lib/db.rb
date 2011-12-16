@@ -1,6 +1,4 @@
 
-require 'benchmark'
-
 module GitAnalytics
   module DB
 
