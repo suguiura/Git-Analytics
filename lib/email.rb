@@ -1,37 +1,33 @@
 module GitAnalytics
   module Email
+
+    def self.prepare(file)
+      @file = file
+    end
+
     def self.fix(email)
-      $fix_email[email] || email
+      @fix_email[email] || email
     end
 
     def self.domain(email)
-      $domains[email]
+      @domains[email]
     end
 
     def self.save
-      emails = $fix_email.delete_if{|k, v| k == v}
-      File.open($config[:emailfix], 'w').puts emails.to_yaml
+      emails = @fix_email.delete_if{|k, v| k == v}
+      File.open(@file, 'w').puts emails.to_yaml
     end
     
     private
 
-    $: << File.dirname(__FILE__)
-    require 'config'
-    require 'yaml'
-    require 'email_veracity'
-
     EmailVeracity::Config[:skip_lookup] = true
-    $emails = Hash.new do |hash, email|
-      hash[email] = EmailVeracity::Address.new(email)
-    end
-    $domains = Hash.new do |hash, email|
-      hash[email] = $emails[email].domain.to_s
-    end
-    $fix_email = Hash.new do |hash, email|
-      hash[email] = if $emails[email].valid?
-        email
-      else
-        email, old_email = URI.unescape(email), email
+    @emails    = Hash.new{|h, e| h[e] = EmailVeracity::Address.new(e)}
+    @domains   = Hash.new{|h, e| h[e] = @emails[e].domain.to_s}
+    @fix_email = Hash.new{|h, e| h[e] = do_fix(e)}
+
+    def self.do_fix(email)
+      unless @emails[email].valid?
+        email = URI.unescape(email)
         email.gsub! /DOT/, '.'
         email.gsub! /AT/, '@'
         email.downcase!
@@ -44,9 +40,10 @@ module GitAnalytics
         email.gsub! ' ', '.'
         email.squeeze! '.'
         email.sub! /(^no\.author\.@)|(@.*\.none$)/, ''
-        email
       end
+      email
     end
-    $fix_email.update(YAML.load_file($config[:emailfix])) rescue nil
+
+    @fix_email.update(YAML.load_file(@file)) rescue nil
   end
 end
