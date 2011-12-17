@@ -5,12 +5,11 @@ require 'yaml'
 require 'logger'
 require 'rubygems'
 require 'active_record'
+require 'email_veracity'
 
-load 'lib/models.rb'
 load 'lib/email.rb'
 load 'lib/git.rb'
 load 'lib/db.rb'
-load 'lib/schema.rb'
 load 'lib/csv.rb'
 load 'lib/utils.rb'
 
@@ -41,10 +40,12 @@ def process
 end
 
 def prepare
+  GitAnalytics::DB.connect $config[:db][:commits]
+  GitAnalytics::Email.prepare $config[:emailfix]
 #  GitAnalytics::CSV.prepare($config[:cctlds], $config[:gtlds])
-  GitAnalytics::Schema.create_tables
-  GitAnalytics::Schema.add_indexes
-#  GitAnalytics::Schema.remove_indexes
+  GitAnalytics::DB.create_tables
+  GitAnalytics::DB.add_indexes
+#  GitAnalytics::DB.remove_indexes
 end
 
 $l.info "Start"

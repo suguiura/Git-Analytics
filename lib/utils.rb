@@ -6,15 +6,10 @@ $l.formatter = Logger::Formatter.new
 $config = YAML::load_file 'config.yaml'
 $projects = YAML.load_file($config[:list]) rescue {}
 
-#ActiveRecord::Base.logger = Logger.new STDERR
-
-ActiveRecord::Base.establish_connection $config[:db][:commits]
-
 def each_server_config(prefix='', suffix='')
-  selectors = ARGV.map do |arg| server, project = arg.split('.', 2)
+  ARGV.each do |arg| server, project = arg.split('.', 2)
     $l.info(prefix + server + suffix) unless prefix.empty?
-    config = $config[:servers][server = server.to_sym]
-    next if config.nil?
+    next if (config = $config[:servers][server = server.to_sym]).nil?
     projects = $projects[server].select{|k,v| project.nil? || project == k}
     yield(server, config, projects)
   end
