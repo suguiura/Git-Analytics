@@ -19,9 +19,10 @@ module GitAnalytics
     private
 
     @signatures = "Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc"
-    @re_signatures = /^    (#@signatures): (.* <(.+)>|.*)$/
+    @re_signatures = /^    (#{@signatures}): (.*<([^>]*).*|.*)$/
     @re_modifications = /^ (.+) \|\s+(\d+) /
-    @re_person = Hash.new{|hash, key| hash[key] = /^#{key} (.*) <(.*)> (.*) (.*)$/}
+    @re_author = /^author (.*) <(.*)> (.*) (.*)$/
+    @re_committer = /^committer (.*) <(.*)> (.*) (.*)$/
     @re_message = /^    (.*)$/
     @re_commit = /^commit (\S+) ?(.*)$/
 
@@ -32,13 +33,13 @@ module GitAnalytics
       message = line.scan(@re_message).join("\n").strip
 
       {
-        :sha1           => sha1,
-        :tag            => tag,
-        :message        => message,
-        :author         => parse_person('author', line),
-        :committer      => parse_person('committer', line),
-        :signatures     => parse_signatures(line),
-        :modifications  => parse_modifications(line)
+        :sha1          => sha1,
+        :tag           => tag,
+        :message       => message,
+        :author        => parse_person(line, @re_author),
+        :committer     => parse_person(line, @re_committer),
+        :signatures    => parse_signatures(line),
+        :modifications => parse_modifications(line)
       }.update(extra)
     end
 
@@ -47,7 +48,7 @@ module GitAnalytics
     end
 
     def self.create_person(name, email)
-      email = GitAnalytics::Email.fix(email || name)
+      email = GitAnalytics::Email.fix(email)
       domain = GitAnalytics::Email.domain(email)
       {:name => name, :email => email, :domain => domain}
     end
@@ -62,8 +63,8 @@ module GitAnalytics
       line.scan(@re_modifications).map{|p, c| {:path => p.strip, :linechanges => c.to_i}}
     end
 
-    def self.parse_person(header, line)
-      name, email, secs, offset = @re_person[header].match(line).captures
+    def self.parse_person(line, re)
+      name, email, secs, offset = re.match(line).captures
       date = create_date(secs, offset)
       create_person(name, email).update(:date => date)
     end
