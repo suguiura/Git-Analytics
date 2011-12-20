@@ -416,32 +416,32 @@ andrea.cimitan@ŋmail.com: andrea.cimitan@.mail.com
 jens@ŧriq.net: jens@.riq.net
 lionel.g.landwerlin@linuxA1;2403;0c.intel.com: lionel.g.landwerlin@linuxa1.2403.0c.intel.com
 sisob@tuxfamilyDOTorg: sisob@tuxfamily.org
-Jerome Glisse <jglisse@redhat.com: jerome.glisse.jglisse@redhat.com
+Jerome Glisse <jglisse@redhat.com: jglisse@redhat.com
 <stable@kernel.org>: stable@kernel.org
-! "<stable@kernel.org>\t\t[2.6.39.x, 3.0.x]": stable@kernel.org.2.6.39.x.3.0.x
-KAMEZAWA Hiroyuki <kamezawa.hiroyu@jp.fujitsu.com: kamezawa.hiroyuki.kamezawa.hiroyu@jp.fujitsu.com
-Alex Shi<alex.shi@intel.com>: alex.shi.alex.shi@intel.com
-Shaohua Li<shaohua.li@intel.com>: shaohua.li.shaohua.li@intel.com
-stable@kernel.org [v2.6.35+]: stable@kernel.org.v2.6.35
+! "<stable@kernel.org>\t\t[2.6.39.x, 3.0.x]": stable@kernel.org
+KAMEZAWA Hiroyuki <kamezawa.hiroyu@jp.fujitsu.com: kamezawa.hiroyu@jp.fujitsu.com
+Alex Shi<alex.shi@intel.com>: alex.shi@intel.com
+Shaohua Li<shaohua.li@intel.com>: shaohua.li@intel.com
+stable@kernel.org [v2.6.35+]: stable@kernel.org
 Mads Kiilerich: mads@kiilerich
-Mian Yousaf Kaukab<mian.yousaf.kaukab@stericsson.com>: mian.yousaf.kaukab.mian.yousaf.kaukab@stericsson.com
-! 'stable@kernel.org # 2.6.27+': stable@kernel.org.2.6.27
-stable <stable@kernel.org> [3.0+]: stable.stable@kernel.org.3.0
-stable@kernel.org [2.6.38+]: stable@kernel.org.2.6.38
+Mian Yousaf Kaukab<mian.yousaf.kaukab@stericsson.com>: mian.yousaf.kaukab@stericsson.com
+! 'stable@kernel.org # 2.6.27+': stable@kernel.org
+stable <stable@kernel.org> [3.0+]: stable@kernel.org
+stable@kernel.org [2.6.38+]: stable@kernel.org
 Stefan Assmann<sassmann@redhat.com>: stefan.assmann.sassmann@redhat.com
-stable <stable@kernel.org> [2.6.39+]: stable.stable@kernel.org.2.6.39
-! 'stable@kernel.org #2.6.39, #3.0.0': stable@kernel.org.2.6.39.3.0.0
-! 'stable@kernel.org # 3.0+': stable@kernel.org.3.0
+stable <stable@kernel.org> [2.6.39+]: stable@kernel.org
+! 'stable@kernel.org #2.6.39, #3.0.0': stable@kernel.org
+! 'stable@kernel.org # 3.0+': stable@kernel.org
 <ale.goujon@gmail.com>: ale.goujon@gmail.com
-! 'stable@kernel.org # 2.6.36+': stable@kernel.org.2.6.36
-Stable <stable@kernel.org> [back to 2.6.38]: stable.stable@kernel.org.back.to.2.6.38
-! 'stable@kernel.org # 2.6.35+': stable@kernel.org.2.6.35
-! 'stable@kernel.org # 2.6.39+': stable@kernel.org.2.6.39
-stable@kernel.org [2.6.39+]: stable@kernel.org.2.6.39
-<stable@kernel.org> [2.6.39+]: stable@kernel.org.2.6.39
+! 'stable@kernel.org # 2.6.36+': stable@kernel.org
+Stable <stable@kernel.org> [back to 2.6.38]: stable@kernel.org
+! 'stable@kernel.org # 2.6.35+': stable@kernel.org
+! 'stable@kernel.org # 2.6.39+': stable@kernel.org
+stable@kernel.org [2.6.39+]: stable@kernel.org
+<stable@kernel.org> [2.6.39+]: stable@kernel.org
 NeilBrown<neilb@suse.de>: neilbrown.neilb@suse.de
-<stable@kernel.org> (for 3.0): stable@kernel.org.for.3.0
-! "<stable@kernel.org>\t\t[2.6.35+]": stable@kernel.org.2.6.35
+<stable@kernel.org> (for 3.0): stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.35+]": stable@kernel.org
 Ralf Baechle <ralf@linux-mips.org: ralf.baechle.ralf@linux-mips.org
 Rusty Russell <rusty@rustcorp.com.au> (split & trivial fix): rusty.russell.rusty@rustcorp.com.au.split.trivial.fix
 Rusty Russell <rusty@rustcorp.com.au> (split into 2): rusty.russell.rusty@rustcorp.com.au.split.into.2
@@ -449,8 +449,8 @@ Venkateswararao Jujjuri "<jvrao@linux.vnet.ibm.com>: venkateswararao.jujjuri.jvr
 <linux-arch@vger.kernel.org>: linux-arch@vger.kernel.org
 Rusty Russell <rusty@rustcorp.com.au> (one was already fixed): rusty.russell.rusty@rustcorp.com.au.one.was.already.fixed
 Scott J. Goldman <scottjg@vmware.com>--: scott.j.goldman.scottjg@vmware.com
-stable@kernel.org [2.6.37+]: stable@kernel.org.2.6.37
-! "stable@kernel.org\t# >= v2.6.38, fixes udev busy looping w/ certain devices": stable@kernel.org.v2.6.38.fixes.udev.busy.looping.w.certain.devices
+stable@kernel.org [2.6.37+]: stable@kernel.org
+! "stable@kernel.org\t# >= v2.6.38, fixes udev busy looping w/ certain devices": stable@kernel.org
 <mjg@redhat.com>: mjg@redhat.com
 Lucas De Marchi lucas.demarchi@profusion.mobi: lucas.de.marchi.lucas.demarchi@profusion.mobi
 Sourav Poddar<sourav.poddar@ti.com>: sourav.poddar.sourav.poddar@ti.com
@@ -460,91 +460,91 @@ Marek Szyprowski<m.szyprowski@samsung.com>: marek.szyprowski.m.szyprowski@samsun
 Jeffrey Finkelstein: jeffrey@finkelstein
 Dan Williams <dan.j.williams@intel.com> (supporter:ASYNCHRONOUS TRAN...): dan.williams.dan.j.williams@intel.com.supporter.asynchronous.tran
 Vinod Koul <vinod.koul@intel.com> (supporter:DMA GENERIC OFFLO...): vinod.koul.vinod.koul@intel.com.supporter.dma.generic.offlo
-stable <stable@kernel.org>  [back to 2.6.39]: stable.stable@kernel.org.back.to.2.6.39
-! 'stable@kernel.org # 2.6.30+': stable@kernel.org.2.6.30
-stable <stable@kernel.org> [3.0]: stable.stable@kernel.org.3.0
+stable <stable@kernel.org>  [back to 2.6.39]: stable@kernel.org
+! 'stable@kernel.org # 2.6.30+': stable@kernel.org
+stable <stable@kernel.org> [3.0]: stable@kernel.org
 <xen-devel@lists.xensource.com>: xen-devel@lists.xensource.com
 xma@...ibm.com: xma@.ibm.com
-<stable@kernel.org> 2.6.38+: stable@kernel.org.2.6.38
+<stable@kernel.org> 2.6.38+: stable@kernel.org
 Jassi Brar <jassisinghbrar@gmail.com: jassi.brar.jassisinghbrar@gmail.com
-stable <stable@kernel.org>  [3.0]: stable.stable@kernel.org.3.0
+stable <stable@kernel.org>  [3.0]: stable@kernel.org
 Mark Davis: mark@davis
 Ralf Baechle<ralf@linux-mips.org>: ralf.baechle.ralf@linux-mips.org
-! 'stable.kernel.org # 2.6.39': stable.kernel.org@2.6.39
+! 'stable.kernel.org # 2.6.39': stable@kernel.org
 Tatyana Brokhman <tlinder@codeaurora.org: tatyana.brokhman.tlinder@codeaurora.org
 Matthijs van Drunen: matthijs@van.drunen
-! 'stable@kernel.org # 37+': stable@kernel.org.37
-! '<stable@kernel.org> # .38.x, .39.x': stable@kernel.org.38.x.39.x
+! 'stable@kernel.org # 37+': stable@kernel.org
+! '<stable@kernel.org> # .38.x, .39.x': stable@kernel.org
 andROOM: androom
-! 'stable@kernel.org # 2.6.35+, backport a week or two after this gets more testing in mainline': stable@kernel.org.2.6.35.backport.a.week.or.two.after.this.gets.more.testing.in.mainline
+! 'stable@kernel.org # 2.6.35+, backport a week or two after this gets more testing in mainline': stable@kernel.org
 Alex Tervoort <alex.tervoort@gmail.com> for 6A: alex.tervoort.alex.tervoort@gmail.com.for.6a
-! 'stable@kernel.org # after ab4bd22d': stable@kernel.org.after.ab4bd22d
-<stable@kernel.org> (2.6.39-stable): stable@kernel.org.2.6.39-stable
-stable@kernel.org (v2.6.38+): stable@kernel.org.v2.6.38
+! 'stable@kernel.org # after ab4bd22d': stable@kernel.org
+<stable@kernel.org> (2.6.39-stable): stable@kernel.org
+stable@kernel.org (v2.6.38+): stable@kernel.org
 Jo: jo
-! 'stable@kernel.org # 2.6.36 and newer': stable@kernel.org.2.6.36.and.newer
-! 'stable@kernel.org # 2.6.34+': stable@kernel.org.2.6.34
+! 'stable@kernel.org # 2.6.36 and newer': stable@kernel.org
+! 'stable@kernel.org # 2.6.34+': stable@kernel.org
 Chris Wilson <chris@chris-wilson.co.uk> [v1]: chris.wilson.chris@chris-wilson.co.uk.v1
 Eric Anholt <eric@anholt.net> [v1,v3]: eric.anholt.eric@anholt.net.v1.v3
 Kenneth Graunke <kenneth@whitecape.org> [v1]: kenneth.graunke.kenneth@whitecape.org.v1
 Robert Hooker <robert.hooker@canonical.com> [v1]: robert.hooker.robert.hooker@canonical.com.v1
-stable@kernel.org [2.6.39]: stable@kernel.org.2.6.39
+stable@kernel.org [2.6.39]: stable@kernel.org
 Rik van Riel<riel@redhat.com>: rik.van.riel.riel@redhat.com
-stable@kernel.org   [2.6.39]: stable@kernel.org.2.6.39
-! '<stable@kernel.org> # .37+': stable@kernel.org.37
-! '<stable@kernel.org> # .35+': stable@kernel.org.35
+stable@kernel.org   [2.6.39]: stable@kernel.org
+! '<stable@kernel.org> # .37+': stable@kernel.org
+! '<stable@kernel.org> # .35+': stable@kernel.org
 Ingo Molnar: ingo@molnar
 ! '<stable@kernel.org> # .38.x: fd88ce9: [CIFS] cifs: clarify the meaning of tcpStatus == CifsGood': stable@kernel.org.38.x.fd88ce9.cifs.cifs.clarify.the.meaning.of.tcpstatus.cifsgood
-! "stable@kernel.org\t# >= v2.6.36": stable@kernel.org.v2.6.36
-! 'stable@kernel.org # 2.6.39': stable@kernel.org.2.6.39
+! "stable@kernel.org\t# >= v2.6.36": stable@kernel.org
+! 'stable@kernel.org # 2.6.39': stable@kernel.org
 Sergei Shtylyov <sshtylyov@mvista.com: sergei.shtylyov.sshtylyov@mvista.com
-stable <stable@kernel.org>  [.39]: stable.stable@kernel.org.39
-stable <stable@kernel.org> [.39]: stable.stable@kernel.org.39
-stable <stable@kernel.org> [32, 33, 34, 39]: stable.stable@kernel.org.32.33.34.39
-! "stable@kernel.org\t# > 2.6.32": stable@kernel.org.2.6.32
-<stable@kernel.org> [2.6.38+]: stable@kernel.org.2.6.38
+stable <stable@kernel.org>  [.39]: stable@kernel.org
+stable <stable@kernel.org> [.39]: stable@kernel.org
+stable <stable@kernel.org> [32, 33, 34, 39]: stable@kernel.org
+! "stable@kernel.org\t# > 2.6.32": stable@kernel.org
+<stable@kernel.org> [2.6.38+]: stable@kernel.org
 Linus Walleij <linus.walleij@linaro.org: linus.walleij.linus.walleij@linaro.org
 Stefan Richter <stefanr@s5r6.in-berlin.de> (added include compiler.h): stefan.richter.stefanr@s5r6.in-berlin.de.added.include.compiler.h
-! '<stable@kernel.org> # .35.x .36.x .37.x .38.x .39.x': stable@kernel.org.35.x.36.x.37.x.38.x.39.x
+! '<stable@kernel.org> # .35.x .36.x .37.x .38.x .39.x': stable@kernel.org
 Laszlo Ersek<lersek@redhat.com>: laszlo.ersek.lersek@redhat.com
 Shubhrajyoti D<shubhrajyoti@ti.com>: shubhrajyoti.d.shubhrajyoti@ti.com
 Benoit Cousson<b-cousson@ti.com>: benoit.cousson.b-cousson@ti.com
-! '<stable@kernel.org> # .27+': stable@kernel.org.27
-! '<stable@kernel.org> # .36+': stable@kernel.org.36
-! 'stable@kernel.org # .39.x': stable@kernel.org.39.x
+! '<stable@kernel.org> # .27+': stable@kernel.org
+! '<stable@kernel.org> # .36+': stable@kernel.org
+! 'stable@kernel.org # .39.x': stable@kernel.org
 lrg@vega.(none): lrg
 Ying Han<yinghan@google.com>: ying.han.yinghan@google.com
 <zajec5@gmail.com>: zajec5@gmail.com
-stable@kernel.org (2.6.39): stable@kernel.org.2.6.39
-Stable <stable@vger.kernel.org>              [2.6.{37,38,39}]: stable.stable@vger.kernel.org.2.6.37.38.39
-! 'stable@kernel.org # 32.x, 38.x, 39.x': stable@kernel.org.32.x.38.x.39.x
-! '<stable@kernel.org> # as far back as it applies cleanly': stable@kernel.org.as.far.back.as.it.applies.cleanly
-! "<stable@kernel.org>\t\t[2.6.38+]": stable@kernel.org.2.6.38
-stable@kernel.org [2.6.35+]: stable@kernel.org.2.6.35
-stable@kernel.org [2.6.36+]: stable@kernel.org.2.6.36
-<stable@kernel.org> v2.6.36-39: stable@kernel.org.v2.6.36-39
-! '<stable@kernel.org> # .39.x': stable@kernel.org.39.x
+stable@kernel.org (2.6.39): stable@kernel.org
+Stable <stable@vger.kernel.org>              [2.6.{37,38,39}]: stable@vger.kernel.org
+! 'stable@kernel.org # 32.x, 38.x, 39.x': stable@kernel.org
+! '<stable@kernel.org> # as far back as it applies cleanly': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.38+]": stable@kernel.org
+stable@kernel.org [2.6.35+]: stable@kernel.org
+stable@kernel.org [2.6.36+]: stable@kernel.org
+<stable@kernel.org> v2.6.36-39: stable@kernel.org
+! '<stable@kernel.org> # .39.x': stable@kernel.org
 Stephane Eranian <eranian@google.com: stephane.eranian.eranian@google.com
-stable@kernel.org (2.6.38+): stable@kernel.org.2.6.38
+stable@kernel.org (2.6.38+): stable@kernel.org
 ! '"David Miller" <davem@davemloft.net>,': david.miller.davem@davemloft.net
 Joerg Roedel <joerg.roedel@amd.com> (supporter:AMD IOMMU (AMD-VI)): joerg.roedel.joerg.roedel@amd.com.supporter.amd.iommu.amd-vi
 iommu@lists.linux-foundation.org (open list:AMD IOMMU (AMD-VI)): iommu@lists.linux-foundation.org.open.list.amd.iommu.amd-vi
-<stable@kernel.org>         [2.6.37.x]: stable@kernel.org.2.6.37.x
-! '<stable@kernel.org> # v2.6.38/39': stable@kernel.org.v2.6.38.39
-<stable@kernel.org> (2.6.37 and later): stable@kernel.org.2.6.37.and.later
+<stable@kernel.org>         [2.6.37.x]: stable@kernel.org
+! '<stable@kernel.org> # v2.6.38/39': stable@kernel.org
+<stable@kernel.org> (2.6.37 and later): stable@kernel.org
 ! '    linux-mips@linux-mips.org': linux-mips@linux-mips.org
 Rusty Russell <rusty@rustcorp.com.au> (folded in '+' fixup): rusty.russell.rusty@rustcorp.com.au.folded.in.fixup
-! '<stable@kernel.org> # .34.x': stable@kernel.org.34.x
-! '<stable@kernel.org> # .34.x: c1854e0072 powerpc: Set nr_cpu_ids early': stable@kernel.org.34.x.c1854e0072.powerpc.set.nr_cpu_ids.early
-! '<stable@kernel.org> # (1fc711f was backported to 2.6.32)': stable@kernel.org.1fc711f.was.backported.to.2.6.32
-! "<stable@kernel.org>\t\t[2.6.37+]": stable@kernel.org.2.6.37
-! '<stable@kernel.org> # .38.x: 581ade4: cifs: clean up various nits in unicode routines (try #2)': stable@kernel.org.38.x.581ade4.cifs.clean.up.various.nits.in.unicode.routines.try.2
-<stable@kernel.org> 2.6.36..39: stable@kernel.org.2.6.36.39
-stable@kernel.org [2.6.34+]: stable@kernel.org.2.6.34
-! '<stable@kernel.org> # 38.x': stable@kernel.org.38.x
+! '<stable@kernel.org> # .34.x': stable@kernel.org
+! '<stable@kernel.org> # .34.x: c1854e0072 powerpc: Set nr_cpu_ids early': stable@kernel.org
+! '<stable@kernel.org> # (1fc711f was backported to 2.6.32)': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.37+]": stable@kernel.org
+! '<stable@kernel.org> # .38.x: 581ade4: cifs: clean up various nits in unicode routines (try #2)': stable@kernel.org
+<stable@kernel.org> 2.6.36..39: stable@kernel.org
+stable@kernel.org [2.6.34+]: stable@kernel.org
+! '<stable@kernel.org> # 38.x': stable@kernel.org
 Liam Girdwood <lrg@ti.com.: liam.girdwood.lrg@ti.com
-stable@kernel.org (2.6.32+): stable@kernel.org.2.6.32
-! '<stable@kernel.org> # As far back as possible': stable@kernel.org.as.far.back.as.possible
+stable@kernel.org (2.6.32+): stable@kernel.org
+! '<stable@kernel.org> # As far back as possible': stable@kernel.org
 rmk+kernel at arm.linux.org.uk: rmk.kernel@arm.linux.org.uk
 kgene.kim at samsung.com: kgene.kim@samsung.com
 Dmitry Torokhov <dmitry.torokhov@gmail.com> [drivers/input]: dmitry.torokhov.dmitry.torokhov@gmail.com.drivers.input
@@ -552,93 +552,93 @@ Maoxiaoyun<tinnycloud@hotmail.com>: maoxiaoyun.tinnycloud@hotmail.com
 <stable@vger.kernel.org>: stable@vger.kernel.org
 <linuxppc-dev@lists.ozlabs.org>: linuxppc-dev@lists.ozlabs.org
 Doug Nelson: doug@nelson
-! "<stable@kernel.org>\t\t[2.6.34+]": stable@kernel.org.2.6.34
+! "<stable@kernel.org>\t\t[2.6.34+]": stable@kernel.org
 Fabrice Deyber fabricedeyber@agilemesh.com: fabrice.deyber.fabricedeyber@agilemesh.com
 Duan Jiong<djduanjiong@gmail.com>: duan.jiong.djduanjiong@gmail.com
 Daniel Vetter <daniel.vetter@ffwll.ch> (855GM): daniel.vetter.daniel.vetter@ffwll.ch.855gm
 Jesse Barnes <jbarnes@virtuousgeek.org: jesse.barnes.jbarnes@virtuousgeek.org
-! 'stable@kernel.org # 2.6.38.5+': stable@kernel.org.2.6.38.5
+! 'stable@kernel.org # 2.6.38.5+': stable@kernel.org
 <matthew.e.tolentino@intel.com>: matthew.e.tolentino@intel.com
 Kurt Van Dijck <kurt.van.dijck@eia.be> (for drivers/net/can/softing/softing_cs.c): kurt.van.dijck.kurt.van.dijck@eia.be.for.drivers.net.can.softing.softing_cs.c
-! 'stable@kernel.org # 32...': stable@kernel.org.32
+! 'stable@kernel.org # 32...': stable@kernel.org
 <jeffrey.e.pieper@intel.com>: jeffrey.e.pieper@intel.com
 Kyoungil Kim<ki0351.kim@samsung.com>: kyoungil.kim.ki0351.kim@samsung.com
 Stefan Richter <stefanr@s5r6.in-berlin.de> (trivial style changes): stefan.richter.stefanr@s5r6.in-berlin.de.trivial.style.changes
-! '<stable@kernel.org> # 2.6.36.y and newer': stable@kernel.org.2.6.36.y.and.newer
+! '<stable@kernel.org> # 2.6.36.y and newer': stable@kernel.org
 Nick Cheng<nick.cheng@areca.com.tw>: nick.cheng.nick.cheng@areca.com.tw
 Sarah Sharp <sarah.a.sharp@linux.intel.com>,: sarah.sharp.sarah.a.sharp@linux.intel.com
-! "<stable@kernel.org>\t\t[2.6.38.x]": stable@kernel.org.2.6.38.x
-! '<stable@kernel.org> [2.6.38.x 084189a: um: disable CONFIG_CMPXCHG_LOCAL]': stable@kernel.org.2.6.38.x.084189a.um.disable.config_cmpxchg_local
-! "<stable@kernel.org>\t\t[2.6.36+]": stable@kernel.org.2.6.36
-! 'stable@kernel.org # 2.6.38': stable@kernel.org.2.6.38
-stable@kernel.org [2.6.17+]: stable@kernel.org.2.6.17
-! 'stable@kernel.org # 2.6.32+': stable@kernel.org.2.6.32
-stable@kernel.org [2.6.30+]: stable@kernel.org.2.6.30
+! "<stable@kernel.org>\t\t[2.6.38.x]": stable@kernel.org
+! '<stable@kernel.org> [2.6.38.x 084189a: um: disable CONFIG_CMPXCHG_LOCAL]': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.36+]": stable@kernel.org
+! 'stable@kernel.org # 2.6.38': stable@kernel.org
+stable@kernel.org [2.6.17+]: stable@kernel.org
+! 'stable@kernel.org # 2.6.32+': stable@kernel.org
+stable@kernel.org [2.6.30+]: stable@kernel.org
 <Valdis.Kletnieks@vt.edu>: valdis.kletnieks@vt.edu
-! 'stable@kernel.org # 2.6.14+': stable@kernel.org.2.6.14
-stable@kernel.org    [2.6.38]: stable@kernel.org.2.6.38
+! 'stable@kernel.org # 2.6.14+': stable@kernel.org
+stable@kernel.org    [2.6.38]: stable@kernel.org
 Simon Horman <horms@verge.net.au: simon.horman.horms@verge.net.au
 Ajit Khaparde ajit.khaparde@emulex.com: ajit.khaparde.ajit.khaparde@emulex.com
 stable (2.6.38): stable@2.6.38
-stable@kernel.org [.38 down to .34]: stable@kernel.org.38.down.to.34
-stable@kernel.org (v2.6.38): stable@kernel.org.v2.6.38
+stable@kernel.org [.38 down to .34]: stable@kernel.org
+stable@kernel.org (v2.6.38): stable@kernel.org
 Petr Vandrovec <petr@vandrovec.name>,: petr.vandrovec.petr@vandrovec.name
-! "<stable@kernel.org> \t[2.6.38.x]": stable@kernel.org.2.6.38.x
-! 'stable@kernel.org # v2.6.38': stable@kernel.org.v2.6.38
+! "<stable@kernel.org> \t[2.6.38.x]": stable@kernel.org
+! 'stable@kernel.org # v2.6.38': stable@kernel.org
 <dame_eugene@mail.ru>: dame_eugene@mail.ru
 Vincenzo Pii: vincenzo@pii
-! "stable@kernel.org\t[2.6.36+]": stable@kernel.org.2.6.36
-stable@kernel.org (2.6.37 and up): stable@kernel.org.2.6.37.and.up
-stable@kernel.org [2.6.38]: stable@kernel.org.2.6.38
+! "stable@kernel.org\t[2.6.36+]": stable@kernel.org
+stable@kernel.org (2.6.37 and up): stable@kernel.org
+stable@kernel.org [2.6.38]: stable@kernel.org
 Mark Davis [via p54/devices wiki]: mark@davis.via.p54.devices.wiki
-! 'stable@kernel.org # .37+': stable@kernel.org.37
+! 'stable@kernel.org # .37+': stable@kernel.org
 Andrew Buckeridge <andrewb@bgc.com.au> [against 2.6.32]: andrew.buckeridge.andrewb@bgc.com.au.against.2.6.32
-stable <stable@kernel.org>  [2.6.38]: stable.stable@kernel.org.2.6.38
+stable <stable@kernel.org>  [2.6.38]: stable@kernel.org
 Uwe Kleine-König <u.kleine-koenig@pengutronix.de: uwe.kleine-k.nig.u.kleine-koenig@pengutronix.de
 Uwe Kleine-König: uwe@kleine-k.nig
-! "stable@kernel.org\t[v2.6.32+]": stable@kernel.org.v2.6.32
+! "stable@kernel.org\t[v2.6.32+]": stable@kernel.org
 <lethal@linux-sh.org>: lethal@linux-sh.org
-! 'stable@kernel.org # 2.6.37+': stable@kernel.org.2.6.37
+! 'stable@kernel.org # 2.6.37+': stable@kernel.org
 Yang Ruirui<ruirui.r.yang@tieto.com>: yang.ruirui.ruirui.r.yang@tieto.com
 Stuart Swales<stuart.swales.croftnuisk@gmail.com>: stuart.swales.stuart.swales.croftnuisk@gmail.com
 <linux-mmc@vger.kernel.org>: linux-mmc@vger.kernel.org
-! "<stable@kernel.org>\t\t[2.6.38.1]": stable@kernel.org.2.6.38.1
+! "<stable@kernel.org>\t\t[2.6.38.1]": stable@kernel.org
 mario.kleiner at tuebingen.mpg.de: mario.kleiner@tuebingen.mpg.de
 Yasunori Goto<y-goto@jp.fujitsu.com>: yasunori.goto.y-goto@jp.fujitsu.com
-stable@kernel.org (2.6.32 and later): stable@kernel.org.2.6.32.and.later
-stable@kernel.org (v2.6.32 and later): stable@kernel.org.v2.6.32.and.later
-! 'stable@kernel.org # 38.x, 37.x, 32.x': stable@kernel.org.38.x.37.x.32.x
+stable@kernel.org (2.6.32 and later): stable@kernel.org
+stable@kernel.org (v2.6.32 and later): stable@kernel.org
+! 'stable@kernel.org # 38.x, 37.x, 32.x': stable@kernel.org
 Jinqiu Yang<crindy646@gmail.com>: jinqiu.yang.crindy646@gmail.com
-! 'stable@kernel.org (2.6.38, needs commit c826cb7dfce8 "dcache.c:': stable@kernel.org.2.6.38.needs.commit.c826cb7dfce8.dcache.c
+! 'stable@kernel.org (2.6.38, needs commit c826cb7dfce8 "dcache.c:': stable@kernel.org
 Heiko Schocher<hs@denx.de>: heiko.schocher.hs@denx.de
 Ian Dobson <i.dobson@planet-ian.com> (NCT6776F): ian.dobson.i.dobson@planet-ian.com.nct6776f
 Zachary Marzec <zmarzec@gmail.com> (ASUS P8P67 PRO/NCT6776F): zachary.marzec.zmarzec@gmail.com.asus.p8p67.pro.nct6776f
 sshtylyov@mvista.com,: sshtylyov@mvista.com
 Matt Domsch <Matt_Domsch@dell.com>,: matt.domsch.matt_domsch@dell.com
-! '<stable@kernel.org> # 2.6.37': stable@kernel.org.2.6.37
+! '<stable@kernel.org> # 2.6.37': stable@kernel.org
 Chris Metcalf <cmetcalf@tilera.com>  [tile]: chris.metcalf.cmetcalf@tilera.com.tile
 Tony Luck <tony.luck@intel.com>  [ia64]: tony.luck.tony.luck@intel.com.ia64
 Michal Simek <monstr@monstr.eu>  [microblaze]: michal.simek.monstr@monstr.eu.microblaze
 David Howells <dhowells@redhat.com> [frv]: david.howells.dhowells@redhat.com.frv
 Chi-Thanh Christopher Nguyen: chi-thanh@christopher.nguyen
-stable@kernel.org [v2.6.37]: stable@kernel.org.v2.6.37
+stable@kernel.org [v2.6.37]: stable@kernel.org
 Steven Rostedt <rostedt@goodmis.org> (with ktest.pl): steven.rostedt.rostedt@goodmis.org.with.ktest.pl
 philip.worrall at googlemail.com: philip.worrall@googlemail.com
 Miguel Di Ciurcio Filho <miguel.filho@gmail.com>,: miguel.di.ciurcio.filho.miguel.filho@gmail.com
-stable <stable@kernel.org>  [2.6.37]: stable.stable@kernel.org.2.6.37
+stable <stable@kernel.org>  [2.6.37]: stable@kernel.org
 Chris Ball <cjb@laptop.org: chris.ball.cjb@laptop.org
 Tony Lindgren <tony@atomide.com: tony.lindgren.tony@atomide.com
 Rajendra Nayak <rnayak@ti.com: rajendra.nayak.rnayak@ti.com
 Matthiew Herrb (OpenBSD X.org team): matthiew@herrb.openbsd.x.org.team
-! 'stable@kernel.org # .21 ->': stable@kernel.org.21
-! "<stable@kernel.org>\t\t[2.6.34+, possibly earlier]": stable@kernel.org.2.6.34.possibly.earlier
+! 'stable@kernel.org # .21 ->': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.34+, possibly earlier]": stable@kernel.org
 Sedat Dilek <sedat.dilek@googlemail.com> [ath5k]: sedat.dilek.sedat.dilek@googlemail.com.ath5k
 Gertjan van Wingerde <gwingerde@gmail.com> [rt2x00]: gertjan.van.wingerde.gwingerde@gmail.com.rt2x00
 Larry Finger <Larry.Finger@lwfinger.net> [b43, rtl8187, rtlwifi]: larry.finger.larry.finger@lwfinger.net.b43.rtl8187.rtlwifi
 Luciano Coelho <coelho@ti.com> [wl12xx]: luciano.coelho.coelho@ti.com.wl12xx
-stable <stable@kernel.org> [after .39-rc1 is out]: stable.stable@kernel.org.after.39-rc1.is.out
-! 'stable@kernel.org # 37.x, 32.x': stable@kernel.org.37.x.32.x
-stable@kernel.org (for 2.6.37): stable@kernel.org.for.2.6.37
+stable <stable@kernel.org> [after .39-rc1 is out]: stable@kernel.org
+! 'stable@kernel.org # 37.x, 32.x': stable@kernel.org
+stable@kernel.org (for 2.6.37): stable@kernel.org
 Alan Cox <alan@lxorguk.ukuu.org.uk>,: alan.cox.alan@lxorguk.ukuu.org.uk
 Thorsten Vollmer <thorsten@thvo.de> (DFI-ACP G5M150-N w/852GME): thorsten.vollmer.thorsten@thvo.de.dfi-acp.g5m150-n.w.852gme
 Moritz Brunner <2points@gmx.org> (Asus M2400N/i855GM): moritz.brunner.2points@gmx.org.asus.m2400n.i855gm
@@ -646,103 +646,103 @@ Indan Zupancic <indan@nul.nu> (Thinkpad X40/855GM rev 02): indan.zupancic.indan@
 Eric Anholt <eric@anholt.net> (865G): eric.anholt.eric@anholt.net.865g
 Tony Luck <tony.luck@intel.com> [clocksource_itc path]: tony.luck.tony.luck@intel.com.clocksource_itc.path
 Konrad Rzeszutek Wilk <konrad.wilk@oracle.com> [xen]: konrad.rzeszutek.wilk.konrad.wilk@oracle.com.xen
-! 'stable@kernel.org # .28 -> .37': stable@kernel.org.28.-.37
-! 'stable@kernel.org # .37': stable@kernel.org.37
-! 'stable@kernel.org # ca86828: x86, AMD, PCI: Add AMD northbridge PCI device': stable@kernel.org.ca86828.x86.amd.pci.add.amd.northbridge.pci.device
-! '<stable@kernel.org> # [2.6.35.x, 2.6.36.x, 2.6.37.x]': stable@kernel.org.2.6.35.x.2.6.36.x.2.6.37.x
+! 'stable@kernel.org # .28 -> .37': stable@kernel.org
+! 'stable@kernel.org # .37': stable@kernel.org
+! 'stable@kernel.org # ca86828: x86, AMD, PCI: Add AMD northbridge PCI device': stable@kernel.org
+! '<stable@kernel.org> # [2.6.35.x, 2.6.36.x, 2.6.37.x]': stable@kernel.org
 steffenbpunkt[AT]googlemail[DOT]com: steffenbpunkt.@.googlemail.com
-! '<stable@kernel.org> # .3x - good for debugging, please apply as far back as it applies cleanly': stable@kernel.org.3x.-.good.for.debugging.please.apply.as.far.back.as.it.applies.cleanly
+! '<stable@kernel.org> # .3x - good for debugging, please apply as far back as it applies cleanly': stable@kernel.org
 Kjell L.: kjell@l
-! '<stable@kernel.org> # 2.6.35.y and later': stable@kernel.org.2.6.35.y.and.later
-! '<stable@kernel.org> # .3x: as far back as it applies': stable@kernel.org.3x.as.far.back.as.it.applies
-! '<stable@kernel.org> # .37': stable@kernel.org.37
+! '<stable@kernel.org> # 2.6.35.y and later': stable@kernel.org
+! '<stable@kernel.org> # .3x: as far back as it applies': stable@kernel.org
+! '<stable@kernel.org> # .37': stable@kernel.org
 Kent Overstreet<kent.overstreet@gmail.com>: kent.overstreet.kent.overstreet@gmail.com
-! "<stable@kernel.org>\t\t[2.6.37.x]": stable@kernel.org.2.6.37.x
+! "<stable@kernel.org>\t\t[2.6.37.x]": stable@kernel.org
 <chaoming_li@realsil.com.cn>: chaoming_li@realsil.com.cn
 <george0505@realtek.com>: george0505@realtek.com
-stable@kernel.org (2.6.37+): stable@kernel.org.2.6.37
+stable@kernel.org (2.6.37+): stable@kernel.org
 Hans Peter: hans@peter
-! 'stable@kernel.org  # 2.6.35+': stable@kernel.org.2.6.35
+! 'stable@kernel.org  # 2.6.35+': stable@kernel.org
 <Andreas.Herrmann3@amd.com>: andreas.herrmann3@amd.com
-stable@kernel.org (2.6.37): stable@kernel.org.2.6.37
-stable <stable@kernel.org> [.36+]: stable.stable@kernel.org.36
-stable@kernel.org [2.6.37]: stable@kernel.org.2.6.37
-! 'stable@kernel.org # [v2.6.32+]': stable@kernel.org.v2.6.32
+stable@kernel.org (2.6.37): stable@kernel.org
+stable <stable@kernel.org> [.36+]: stable@kernel.org
+stable@kernel.org [2.6.37]: stable@kernel.org
+! 'stable@kernel.org # [v2.6.32+]': stable@kernel.org
 Jozsef Kadlecsik <kadlec@blackhole.kfki.hu: jozsef.kadlecsik.kadlec@blackhole.kfki.hu
 Tirumala R Marri<tmarri@apm.com>: tirumala.r.marri.tmarri@apm.com
 <acme@ghostprotocols.net>: acme@ghostprotocols.net
 netdev@vger.kernel.org,: netdev@vger.kernel.org
 <Giovanni Scafora giovanni@archlinux.org>: giovanni.scafora.giovanni@archlinux.org
 <Sergey Manucharian sm@ingeniware.com>: sergey.manucharian.sm@ingeniware.com
-! 'stable@kernel.org # 37.x': stable@kernel.org.37.x
+! 'stable@kernel.org # 37.x': stable@kernel.org
 Todd Fischer<todd.fischer@ridgerun.com>: todd.fischer.todd.fischer@ridgerun.com
 <andreas.herrmann3@amd.com>: andreas.herrmann3@amd.com
-! "<stable@kernel.org>\t[2.6.36+]": stable@kernel.org.2.6.36
-Stable <stable@kernel.org> [2.6.37]: stable.stable@kernel.org.2.6.37
+! "<stable@kernel.org>\t[2.6.36+]": stable@kernel.org
+Stable <stable@kernel.org> [2.6.37]: stable@kernel.org
 <ttkspam@free.fr>: ttkspam@free.fr
 Clemens Ladisch <clemens@ladisch.de: clemens.ladisch.clemens@ladisch.de
-stable <stable@kernel.org> [2.6.37, 2.6.36]: stable.stable@kernel.org.2.6.37.2.6.36
+stable <stable@kernel.org> [2.6.37, 2.6.36]: stable@kernel.org
 David Engraf<david.engraf@sysgo.com>: david.engraf.david.engraf@sysgo.com
 Gerhard Pircher <gerhard_pircher@gmx.net> [against 2.6.32]: gerhard.pircher.gerhard_pircher@gmx.net.against.2.6.32
-<stable@kernel.org> [2.6.32+]: stable@kernel.org.2.6.32
+<stable@kernel.org> [2.6.32+]: stable@kernel.org
 Steven Rostedt <rostedt@goodmis.org: steven.rostedt.rostedt@goodmis.org
 Neil Horman: neil@horman
 Stefan Richter <stefanr@s5r6.in-berlin.de> (rebased): stefan.richter.stefanr@s5r6.in-berlin.de.rebased
 Ralf Lange: ralf@lange
-! '<stable@kernel.org> # 2.6.32.y and newer': stable@kernel.org.2.6.32.y.and.newer
+! '<stable@kernel.org> # 2.6.32.y and newer': stable@kernel.org
 simbwa at gmail dot com: simbwa@gmail.com
 Linus Torvalds <torvalds@linux-foundation.org>,: linus.torvalds.torvalds@linux-foundation.org
 Imre Kaloz <kaloz@openwrt.org>,: imre.kaloz.kaloz@openwrt.org
 Lu Hongjiu<hongjiu.lu@intel.com>: lu.hongjiu.hongjiu.lu@intel.com
-<stable@kernel.org> 2.6.37: stable@kernel.org.2.6.37
-<stable@kernel.org> [2.6.37, 2.6.36]: stable@kernel.org.2.6.37.2.6.36
-! "<stable@kernel.org>\t\t[2.6.37.early]": stable@kernel.org.2.6.37.early
-! "<stable@kernel.org>\t\t[2.6.37.1, 2.6.36.x]": stable@kernel.org.2.6.37.1.2.6.36.x
-stable@kernel.org    [2.6.37]: stable@kernel.org.2.6.37
+<stable@kernel.org> 2.6.37: stable@kernel.org
+<stable@kernel.org> [2.6.37, 2.6.36]: stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.37.early]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.37.1, 2.6.36.x]": stable@kernel.org
+stable@kernel.org    [2.6.37]: stable@kernel.org
 Rolf Eike Beer <eike-kernel@sf-tec.de: rolf.eike.beer.eike-kernel@sf-tec.de
 Keshava Munegowda <keshava_mgowda@ti.com: keshava.munegowda.keshava_mgowda@ti.com
 Bart De Schuymer<bdschuym@pandora.be>: bart.de.schuymer.bdschuym@pandora.be
-! 'stable@kernel.org # after 47356eb6728501452': stable@kernel.org.after.47356eb6728501452
-! 'stable@kernel.org # 2.6.37 only': stable@kernel.org.2.6.37.only
-! 'stable@kernel.org  # 2.6.34+': stable@kernel.org.2.6.34
-stable@kernel.org  [2.6.37]: stable@kernel.org.2.6.37
+! 'stable@kernel.org # after 47356eb6728501452': stable@kernel.org
+! 'stable@kernel.org # 2.6.37 only': stable@kernel.org
+! 'stable@kernel.org  # 2.6.34+': stable@kernel.org
+stable@kernel.org  [2.6.37]: stable@kernel.org
 H. Peter Anvin <hpa@zytor.com: h.peter.anvin.hpa@zytor.com
-stable@kernel.org [2.6.27+]: stable@kernel.org.2.6.27
+stable@kernel.org [2.6.27+]: stable@kernel.org
 Scott Wood <scottwood@freescale.com>,: scott.wood.scottwood@freescale.com
-! '<stable@kernel.org> # .37.x': stable@kernel.org.37.x
+! '<stable@kernel.org> # .37.x': stable@kernel.org
 <atswartz@gmail.com>: atswartz@gmail.com
-! '<stable@kernel.org> # .37.x and later': stable@kernel.org.37.x.and.later
+! '<stable@kernel.org> # .37.x and later': stable@kernel.org
 chaos.youn at samsung.com: chaos.youn@samsung.com
 linux at treblig.org: linux@treblig.org
-stable@kernel.org (for 2.6.37 only): stable@kernel.org.for.2.6.37.only
+stable@kernel.org (for 2.6.37 only): stable@kernel.org
 Nishanth Menon<nm@ti.com>: nishanth.menon.nm@ti.com
 Hillf Danton<dhillf@gmail.com>: hillf.danton.dhillf@gmail.com
 Tobyn Bertram: tobyn@bertram
 Brandon Philips<brandon@ifup.org>: brandon.philips.brandon@ifup.org
 https://patchwork.linux-mips.org/patch/1754/: https@patchwork.linux-mips.org.patch.1754
 Ben Skeggs<bskeggs@redhat.com>: ben.skeggs.bskeggs@redhat.com
-stable@kernel.org [v2.6.32+]: stable@kernel.org.v2.6.32
-! '<stable@kernel.org> # 2.6.36.y': stable@kernel.org.2.6.36.y
+stable@kernel.org [v2.6.32+]: stable@kernel.org
+! '<stable@kernel.org> # 2.6.36.y': stable@kernel.org
 Paul Walmsley <paul@pwsan.com: paul.walmsley.paul@pwsan.com
 Yan, Zheng<zheng.z.yan@intel.com>: yan.zheng.zheng.z.yan@intel.com
-! 'stable@kernel.org # >= 2.6.32': stable@kernel.org.2.6.32
-stable@kernel.org (2.6.35+): stable@kernel.org.2.6.35
-! '<stable@kernel.org> #36.x': stable@kernel.org.36.x
-stable@kernel.org [after applying 5bddd17]: stable@kernel.org.after.applying.5bddd17
-Stable <stable@kernel.org> (2.6.36+): stable.stable@kernel.org.2.6.36
+! 'stable@kernel.org # >= 2.6.32': stable@kernel.org
+stable@kernel.org (2.6.35+): stable@kernel.org
+! '<stable@kernel.org> #36.x': stable@kernel.org
+stable@kernel.org [after applying 5bddd17]: stable@kernel.org
+Stable <stable@kernel.org> (2.6.36+): stable@kernel.org
 Breno Leitao<leitao@linux.vnet.ibm.com>: breno.leitao.leitao@linux.vnet.ibm.com
 <major_Lee@wistron.com>: major_lee@wistron.com
 john.baboval at virtualcomputer.com: john.baboval@virtualcomputer.com
-! "<stable@kernel.org>\t\t[2.6.32.x+]": stable@kernel.org.2.6.32.x
+! "<stable@kernel.org>\t\t[2.6.32.x+]": stable@kernel.org
 Mike Frysinger<vapier@gentoo.org>: mike.frysinger.vapier@gentoo.org
 Hendrik Brueckner <brueckner@linux.vnet.ibm.com>,: hendrik.brueckner.brueckner@linux.vnet.ibm.com
-stable@kernel.org [2.6.33+]: stable@kernel.org.2.6.33
-Stable <stable@kernel.org> (2.6.37): stable.stable@kernel.org.2.6.37
-stable@kernel.org [36]: stable@kernel.org.36
-<stable@kernel.org> [2.6.35+]: stable@kernel.org.2.6.35
-! "<stable@kernel.org>\t\t[2.6.36.x]": stable@kernel.org.2.6.36.x
+stable@kernel.org [2.6.33+]: stable@kernel.org
+Stable <stable@kernel.org> (2.6.37): stable@kernel.org
+stable@kernel.org [36]: stable@kernel.org
+<stable@kernel.org> [2.6.35+]: stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.36.x]": stable@kernel.org
 Luis R. Rodriguez <lrodriguez@atheros.com: luis.r.rodriguez.lrodriguez@atheros.com
-stable@kernel.org [2.6.32..2.6.36]: stable@kernel.org.2.6.32.2.6.36
+stable@kernel.org [2.6.32..2.6.36]: stable@kernel.org
 Arjan van de Ven <arjan@infradead.org>,: arjan.van.de.ven.arjan@infradead.org
 Frederic Weisbecker <fweisbec@gmail.com>,: frederic.weisbecker.fweisbec@gmail.com
 Arnaldo Carvalho de Melo <acme@redhat.com>,: arnaldo.carvalho.de.melo.acme@redhat.com
@@ -750,10 +750,10 @@ pjt@google.com?: pjt@google.com
 Jiri Slaby <jslaby@suse.cz> [cleanups]: jiri.slaby.jslaby@suse.cz.cleanups
 naveen.gaddipati@stericsson.com, js.ha@stericsson.com: naveen.gaddipati@stericsson.com.js.ha@stericsson.com
 Jody Bruchon<jody@nctritech.com>: jody.bruchon.jody@nctritech.com
-stable@kernel.org (for 2.6.36): stable@kernel.org.for.2.6.36
+stable@kernel.org (for 2.6.36): stable@kernel.org
 <arunabal@in.ibm.com>: arunabal@in.ibm.com
 <sbest@us.ibm.com>: sbest@us.ibm.com
-stable@kernel.org [32, 33, 36]: stable@kernel.org.32.33.36
+stable@kernel.org [32, 33, 36]: stable@kernel.org
 ! ' Amit Kumar Salecha <amit.salecha@qlogic.com>--': amit.kumar.salecha.amit.salecha@qlogic.com
 Kevin Wells <wellsk40@gmail.com>OA: kevin.wells.wellsk40@gmail.com.oa
 Stefan Richter <stefanr@s5r6.in-berlin.de> (cast PAGE_SIZE to size_t): stefan.richter.stefanr@s5r6.in-berlin.de.cast.page_size.to.size_t
@@ -764,34 +764,34 @@ linux-mips@linux-mips.org>: linux-mips@linux-mips.org
 Kevin Buhr: kevin@buhr
 Oleg Nesterov <oleg@redhat.com: oleg.nesterov.oleg@redhat.com
 Samuel Ortiz <sameo@linux.intel.com>,: samuel.ortiz.sameo@linux.intel.com
-stable@kernel.org [2.6.32+]: stable@kernel.org.2.6.32
+stable@kernel.org [2.6.32+]: stable@kernel.org
 <bjorn.helgaas@hp.com>: bjorn.helgaas@hp.com
 Andy Adamson<andros@netapp.com>: andy.adamson.andros@netapp.com
 David Ellingsworth<david@identd.dyndns.org>: david.ellingsworth.david@identd.dyndns.org
 Dan Carpenter <error27@gmail.com<: dan.carpenter.error27@gmail.com
 ! ' palash.bandyopadhyay@conexant.com': palash.bandyopadhyay@conexant.com
 eric.miao at canonical.com: eric.miao@canonical.com
-stable <stable@kernel.org>  [.35 & .36]: stable.stable@kernel.org.35.36
+stable <stable@kernel.org>  [.35 & .36]: stable@kernel.org
 Alan Cox <alan@linux.intel.com>,: alan.cox.alan@linux.intel.com
-<stable@kernel.org> v2.6.30-36: stable@kernel.org.v2.6.30-36
+<stable@kernel.org> v2.6.30-36: stable@kernel.org
 Stefan Richter <stefanr@s5r6.in-berlin.de> (trivial simplification): stefan.richter.stefanr@s5r6.in-berlin.de.trivial.simplification
-stable@kernel.org [2.6.35 only]: stable@kernel.org.2.6.35.only
+stable@kernel.org [2.6.35 only]: stable@kernel.org
 Louis Rilling<louis.rilling@kerlabs.com>: louis.rilling.louis.rilling@kerlabs.com
-! '<stable@kernel.org> # as far back as it applies': stable@kernel.org.as.far.back.as.it.applies
+! '<stable@kernel.org> # as far back as it applies': stable@kernel.org
 Jesse Barnes <jbarnes@virtuousgeek.org> [http://marc.info/?l=linux-pci&m=126149958010298&w=2]: jesse.barnes.jbarnes@virtuousgeek.org.http.marc.info.l.linux-pci.m.126149958010298.w.2
-<stable@kernel.org> 2.6.35: stable@kernel.org.2.6.35
+<stable@kernel.org> 2.6.35: stable@kernel.org
 Jeff Garzik <jgarzik@pobox.com> [2006-NOV-30]: jeff.garzik.jgarzik@pobox.com.2006-nov-30
 <speakup@braille.uwo.ca>: speakup@braille.uwo.ca
 RussianNeuroMancer: russianneuromancer
 Francois Jaouen<francois.jaouen@laposte.net>: francois.jaouen.francois.jaouen@laposte.net
 Kevin Hilman <khilman@deeprootsystems.com: kevin.hilman.khilman@deeprootsystems.com
 John Blackwood<john.blackwood@ccur.com>: john.blackwood.john.blackwood@ccur.com
-<stable@kernel.org> 2.6.33 .34 .35 .36: stable@kernel.org.2.6.33.34.35.36
-! '<stable@kernel.org> # .35.x': stable@kernel.org.35.x
-! 'stable@kernel.org # .35.x': stable@kernel.org.35.x
+<stable@kernel.org> 2.6.33 .34 .35 .36: stable@kernel.org
+! '<stable@kernel.org> # .35.x': stable@kernel.org
+! 'stable@kernel.org # .35.x': stable@kernel.org
 Dennis.Jansen@...: dennis.jansen@
 Greg Kroah-Hartman <gregkh@suse.d: greg.kroah-hartman.gregkh@suse.d
-<stable@kernel.org> v2.6.36: stable@kernel.org.v2.6.36
+<stable@kernel.org> v2.6.36: stable@kernel.org
 Ben Greear <greearb@candelatech.com: ben.greear.greearb@candelatech.com
 David Howells <dhowells@redhat.com> [X86, FRV, MN10300]: david.howells.dhowells@redhat.com.x86.frv.mn10300
 Chris Metcalf <cmetcalf@tilera.com> [Tile]: chris.metcalf.cmetcalf@tilera.com.tile
@@ -814,47 +814,47 @@ Yoshinori Sato <ysato@users.sourceforge.jp> [H8300]: yoshinori.sato.ysato@users.
 starvik@axis.com [CRIS]: starvik@axis.com.cris
 jesper.nilsson@axis.com [CRIS]: jesper.nilsson@axis.com.cris
 Felix Fietkau <nbd@openwrt.org: felix.fietkau.nbd@openwrt.org
-stable@kernel.org [all]: stable@kernel.org.all
-! 'stable@kernel.org # .32.x, .35.x': stable@kernel.org.32.x.35.x
-! "<stable@kernel.org>\t\t[2.6.32 and later]": stable@kernel.org.2.6.32.and.later
+stable@kernel.org [all]: stable@kernel.org
+! 'stable@kernel.org # .32.x, .35.x': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.32 and later]": stable@kernel.org
 Lin Ming <ming.m.lin@intel.com: lin.ming.ming.m.lin@intel.com
 Bob Moore <robert.moore@intel.com: bob.moore.robert.moore@intel.com
 Gustavo F. Padovan <padovan@profusion.mobi> (for drivers/bluetooth): gustavo.f.padovan.padovan@profusion.mobi.for.drivers.bluetooth
-<stable@kernel.org> v2.6.29..2.6.35: stable@kernel.org.v2.6.29.2.6.35
+<stable@kernel.org> v2.6.29..2.6.35: stable@kernel.org
 André Erdmann: andr@erdmann
 <caiqian@redhat.com>: caiqian@redhat.com
-stable@kernel.org (2.6.35): stable@kernel.org.2.6.35
-stable@kernel.org [2.6.31+]: stable@kernel.org.2.6.31
-! '<stable@kernel.org> # [v2.6.32+]': stable@kernel.org.v2.6.32
-! '<stable@kernel.org>  # 2.6.32.19+ (partially) and 2.6.33+': stable@kernel.org.2.6.32.19.partially.and.2.6.33
+stable@kernel.org (2.6.35): stable@kernel.org
+stable@kernel.org [2.6.31+]: stable@kernel.org
+! '<stable@kernel.org> # [v2.6.32+]': stable@kernel.org
+! '<stable@kernel.org>  # 2.6.32.19+ (partially) and 2.6.33+': stable@kernel.org
 ! 'Toni Spets (hifi on #radeon)': toni@spets.hifi.on.radeon
 Randy Dunlap <randy.dunlap@oracle.com>,: randy.dunlap.randy.dunlap@oracle.com
 ! '<stable@kernel.org> # Greg, please apply after: cd7240c ("x86, tsc, sched: Recompute cyc2ns_offset''s during resume from")': stable@kernel.org.greg.please.apply.after.cd7240c.x86.tsc.sched.recompute.cyc2ns_offset.s.during.resume.from
-! "<stable@kernel.org>\t\t[2.6.35.x]": stable@kernel.org.2.6.35.x
+! "<stable@kernel.org>\t\t[2.6.35.x]": stable@kernel.org
 Richard Henderson <rth@twiddle.net: richard.henderson.rth@twiddle.net
-! "<stable@kernel.org>\t\t[2.6.everything.x]": stable@kernel.org.2.6.everything.x
+! "<stable@kernel.org>\t\t[2.6.everything.x]": stable@kernel.org
 Magnus Damm <damm@opensource.se>": magnus.damm.damm@opensource.se
 Arnd Hannemann <arnd@arndnet.de>": arnd.hannemann.arnd@arndnet.de
-! '<stable@kernel.org> # as far back as it would apply': stable@kernel.org.as.far.back.as.it.would.apply
+! '<stable@kernel.org> # as far back as it would apply': stable@kernel.org
 andre.przywara@amd,com: andre.przywara@amd.com
-stable@kernel.org [.32.x .34.x, .35.x]: stable@kernel.org.32.x.34.x.35.x
+stable@kernel.org [.32.x .34.x, .35.x]: stable@kernel.org
 <yiyingc@ene.com.tw>: yiyingc@ene.com.tw
 David Safford<safford@watson.ibm.com>: david.safford.safford@watson.ibm.com
 James Ketrenos<jketreno@linux.intel.com>: james.ketrenos.jketreno@linux.intel.com
-stable <stable@kernel.org> [.34 and newer]: stable.stable@kernel.org.34.and.newer
+stable <stable@kernel.org> [.34 and newer]: stable@kernel.org
 Steven Rostedt <rostedt@goodmis.org> [recordmcount.pl change]: steven.rostedt.rostedt@goodmis.org.recordmcount.pl.change
-stable@kernel.org [all the way back]: stable@kernel.org.all.the.way.back
+stable@kernel.org [all the way back]: stable@kernel.org
 Clemens Ladisch <clemens@ladisch.de> (VT6308): clemens.ladisch.clemens@ladisch.de.vt6308
-stable@kernel.org [.32.x, .33.x, .34.x, .35.x]: stable@kernel.org.32.x.33.x.34.x.35.x
+stable@kernel.org [.32.x, .33.x, .34.x, .35.x]: stable@kernel.org
 Eric Paris <eparis@redhat.com: eric.paris.eparis@redhat.com
-! "<stable@kernel.org>\t\t[2.6.34.x, 2.6.35.x]": stable@kernel.org.2.6.34.x.2.6.35.x
-! '<stable@kernel.org> # .35.x, .34.x, .33.x, .32.x': stable@kernel.org.35.x.34.x.33.x.32.x
-! '<stable@kernel.org> # .35.x, .34.x, .33.x': stable@kernel.org.35.x.34.x.33.x
-stable@kernel.org [2.6.31+, for 2.6.35 revert 1235f504aa]: stable@kernel.org.2.6.31.for.2.6.35.revert.1235f504aa
-stable@kernel.org [2.6.35]: stable@kernel.org.2.6.35
+! "<stable@kernel.org>\t\t[2.6.34.x, 2.6.35.x]": stable@kernel.org
+! '<stable@kernel.org> # .35.x, .34.x, .33.x, .32.x': stable@kernel.org
+! '<stable@kernel.org> # .35.x, .34.x, .33.x': stable@kernel.org
+stable@kernel.org [2.6.31+, for 2.6.35 revert 1235f504aa]: stable@kernel.org
+stable@kernel.org [2.6.35]: stable@kernel.org
 Jiri Slaby <jslaby@suse.cz> and many others: jiri.slaby.jslaby@suse.cz.and.many.others
 ! ' "Jayamohan Kalickal" <jayamohank@serverengines.com>  ': jayamohan.kalickal.jayamohank@serverengines.com
-stable <stable@kernel.org> [.34, .35]: stable.stable@kernel.org.34.35
+stable <stable@kernel.org> [.34, .35]: stable@kernel.org
 Russell King <linux@arm.linux.org.uk> (arch/arm): russell.king.linux@arm.linux.org.uk.arch.arm
 Ralf Baechle <ralf@linux-mips.org> (arch/mips): ralf.baechle.ralf@linux-mips.org.arch.mips
 David Howells <dhowells@redhat.com> (arch/frv, arch/mn10300): david.howells.dhowells@redhat.com.arch.frv.arch.mn10300
@@ -870,10 +870,10 @@ Ingo Molnar <mingo@redhat.com> (arch/x86): ingo.molnar.mingo@redhat.com.arch.x86
 ! '"H. Peter Anvin" <hpa@zytor.com> (arch/x86)': h.peter.anvin.hpa@zytor.com.arch.x86
 Arnd Bergmann <arnd@arndb.de> (include/asm-generic): arnd.bergmann.arnd@arndb.de.include.asm-generic
 Rusty Russell <rusty@rustcorp.com.au> ("Hard To Misuse" list): rusty.russell.rusty@rustcorp.com.au.hard.to.misuse.list
-! '<stable@kernel.org> # 32.x 33.x 34.x': stable@kernel.org.32.x.33.x.34.x
+! '<stable@kernel.org> # 32.x 33.x 34.x': stable@kernel.org
 seastland at gmail.com: seastland@gmail.com
-<stable@kernel.org> [ .33, .34 ]: stable@kernel.org.33.34
-stable@kernel.org [2.6.34+, maybe only parts of patch]: stable@kernel.org.2.6.34.maybe.only.parts.of.patch
+<stable@kernel.org> [ .33, .34 ]: stable@kernel.org
+stable@kernel.org [2.6.34+, maybe only parts of patch]: stable@kernel.org
 Jason Wessel<jason.wessel@windriver.com>: jason.wessel.jason.wessel@windriver.com
 linux-kernel@vger.kernel.org,: linux-kernel@vger.kernel.org
 Alessandro Zummo <a.zummo@towertech.it>,: alessandro.zummo.a.zummo@towertech.it
@@ -883,51 +883,51 @@ Sam Ravnborg <sam@ravnborg.org>,: sam.ravnborg.sam@ravnborg.org
 Rusty Russell <rusty@rustcorp.com.au> (use ARRAY_SIZE): rusty.russell.rusty@rustcorp.com.au.use.array_size
 Rusty Russell <rusty@rustcorp.com.au> (removed unused var): rusty.russell.rusty@rustcorp.com.au.removed.unused.var
 Mingquan Pan: mingquan@pan
-! '<stable@kernel.org> # 34.x': stable@kernel.org.34.x
-! '<stable@kernel.org> # .32.x .33.x .34.x': stable@kernel.org.32.x.33.x.34.x
+! '<stable@kernel.org> # 34.x': stable@kernel.org
+! '<stable@kernel.org> # .32.x .33.x .34.x': stable@kernel.org
 Matthew Garrett <mjg@redhat.com>a: matthew.garrett.mjg@redhat.com.a
 Mike Frysinger <vapier@gentoo.org> [blackfin]: mike.frysinger.vapier@gentoo.org.blackfin
 Haavard Skinnemoen <haavard.skinnemoen@atmel.com> [avr32]: haavard.skinnemoen.haavard.skinnemoen@atmel.com.avr32
 Marcel Holtmann <marcel@holtmann.org> (for drivers/bluetooth/): marcel.holtmann.marcel@holtmann.org.for.drivers.bluetooth
-! '<stable@kernel.org> # for .35.x': stable@kernel.org.for.35.x
-! "stable@kernel.org\t[2.6.35]": stable@kernel.org.2.6.35
+! '<stable@kernel.org> # for .35.x': stable@kernel.org
+! "stable@kernel.org\t[2.6.35]": stable@kernel.org
 Vikas Chaudhary@qlogic.com: vikas.chaudhary@qlogic.com
-! "<stable@kernel.org>\t\t[2.6.32+]": stable@kernel.org.2.6.32
+! "<stable@kernel.org>\t\t[2.6.32+]": stable@kernel.org
 Nick Cheng< nick.cheng@areca.com.tw >: nick.cheng.nick.cheng@areca.com.tw
-! 'stable@kernel.org # .34.x': stable@kernel.org.34.x
+! 'stable@kernel.org # .34.x': stable@kernel.org
 Ingo Molnar <mingo@elte.hu>,: ingo.molnar.mingo@elte.hu
-! "<stable@kernel.org>\t\t[2.6.34.x]": stable@kernel.org.2.6.34.x
-<stable@kernel.org> 2.6.34: stable@kernel.org.2.6.34
+! "<stable@kernel.org>\t\t[2.6.34.x]": stable@kernel.org
+<stable@kernel.org> 2.6.34: stable@kernel.org
 ! 'Jan Pogadl <pogadl.jan@googlemail.com>:': jan.pogadl.pogadl.jan@googlemail.com
-stable@kernel.org [.32.x .33.x, .34.x]: stable@kernel.org.32.x.33.x.34.x
+stable@kernel.org [.32.x .33.x, .34.x]: stable@kernel.org
 ! 'Rusty Russell <rusty@rustcorp.com.au> (removed a #ifdef)': rusty.russell.rusty@rustcorp.com.au.removed.a.ifdef
 Rusty Russell <rusty@rustcorp.com.au> (...and avoid TX_BUSY): rusty.russell.rusty@rustcorp.com.au.and.avoid.tx_busy
-! 'stable@kernel.org  # .34.x (s/virtqueue_/vi->svq->vq_ops->/)': stable@kernel.org.34.x.s.virtqueue_.vi-.svq-.vq_ops
-! '<stable@kernel.org> # .33.x .34.x': stable@kernel.org.33.x.34.x
+! 'stable@kernel.org  # .34.x (s/virtqueue_/vi->svq->vq_ops->/)': stable@kernel.org
+! '<stable@kernel.org> # .33.x .34.x': stable@kernel.org
 Evengi Golov (in bugzilla): evengi@golov.in.bugzilla
 ! 'Reilithion on #radeon': reilithion@on.radeon
-stable <stable@kernel.org> [.34]: stable.stable@kernel.org.34
+stable <stable@kernel.org> [.34]: stable@kernel.org
 Casey Leedom: casey@leedom
 Arne Nordmark <nordmark@mech.kth.se> [against 2.6.32]: arne.nordmark.nordmark@mech.kth.se.against.2.6.32
 Sjur Braendeland@stericsson.com: sjur.braendeland@stericsson.com
 Stefan Richter <stefanr@s5r6.in-berlin.de> (whitespace): stefan.richter.stefanr@s5r6.in-berlin.de.whitespace
-stable@kernel.org [2.6.34 only]: stable@kernel.org.2.6.34.only
+stable@kernel.org [2.6.34 only]: stable@kernel.org
 Forest Bond <forest@alittletooquiet.net>,: forest.bond.forest@alittletooquiet.net
 Michael Chan <mchan@broadcom.com.: michael.chan.mchan@broadcom.com
 Masami Hiramatsu <masami.hiramatsu.pt@hitachi.com>,: masami.hiramatsu.masami.hiramatsu.pt@hitachi.com
 Rusty Russell <rusty@rustcorp.com.au> (cleaned & rebased): rusty.russell.rusty@rustcorp.com.au.cleaned.rebased
 Rusty Russell <rusty@rustcorp.com.au> (tweaked logic): rusty.russell.rusty@rustcorp.com.au.tweaked.logic
-! 'Stable Kernel <stable@kernel.org> # .32.x': stable.kernel.stable@kernel.org.32.x
+! 'Stable Kernel <stable@kernel.org> # .32.x': stable@kernel.org
 Cliff Holden <cliff.holden@atheros.com: cliff.holden.cliff.holden@atheros.com
 Clemens Ladisch <clemens@ladisch.de> (missing 1394a check): clemens.ladisch.clemens@ladisch.de.missing.1394a.check
 H. S. <hs.samix@gmail.com> (issue with Sony DCR-TRV25): h.s.hs.samix@gmail.com.issue.with.sony.dcr-trv25
-! '<stable@kernel.org> # .32.x and newer': stable@kernel.org.32.x.and.newer
+! '<stable@kernel.org> # .32.x and newer': stable@kernel.org
 Arjan van de Ven <arjan@redhat.com> [defunct email]: arjan.van.de.ven.arjan@redhat.com.defunct.email
 Stefan Richter <stefanr@s5r6.in-berlin.de> (changelog): stefan.richter.stefanr@s5r6.in-berlin.de.changelog
-<stable@kernel.org> [ .33 and .34 ]: stable@kernel.org.33.and.34
-! "<stable@kernel.org>\t\t[2.6.35.1]": stable@kernel.org.2.6.35.1
-! "<stable@kernel.org>\t\t[2.6.34.1]": stable@kernel.org.2.6.34.1
-! "<stable@kernel.org>\t\t[all kernel versions]": stable@kernel.org.all.kernel.versions
+<stable@kernel.org> [ .33 and .34 ]: stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.35.1]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.34.1]": stable@kernel.org
+! "<stable@kernel.org>\t\t[all kernel versions]": stable@kernel.org
 <shiraz.hashim@st.com>: shiraz.hashim@st.com
 Michal Miroslaw <mirq-linux@rere.qmqm.pl>ZZ: michal.miroslaw.mirq-linux@rere.qmqm.pl.zz
 ! "<stable@kernel.org>\t[if \"platform-drivers: move probe to .devinit.text in drivers/video\" was merged]": stable@kernel.org.if.platform-drivers.move.probe.to.devinit.text.in.drivers.video.was.merged
@@ -937,18 +937,18 @@ is included because signers responsible for the code thought: is@included.becaus
 minskey guo<chaohong.guo@intel.com>: minskey.guo.chaohong.guo@intel.com
 Wan ZongShun<mcuos.com@gmail.com>: wan.zongshun.mcuos.com@gmail.com
 <jbohac@novell.com>: jbohac@novell.com
-<stable@kernel.org>         [2.6.34.x]: stable@kernel.org.2.6.34.x
-stable <stable@kernel.org> [.33 and .34]: stable.stable@kernel.org.33.and.34
-stable <stable@kernel.org>  [.34]: stable.stable@kernel.org.34
+<stable@kernel.org>         [2.6.34.x]: stable@kernel.org
+stable <stable@kernel.org> [.33 and .34]: stable@kernel.org
+stable <stable@kernel.org>  [.34]: stable@kernel.org
 Naveen Krishna Ch <ch.naveen@samsung.com: naveen.krishna.ch.ch.naveen@samsung.com
 sai<tsg321@gmail.com>: sai.tsg321@gmail.com
 Rusty Russell <rusty@rustcorp.com.au> (split patch): rusty.russell.rusty@rustcorp.com.au.split.patch
 Dan Carpenter: dan@carpenter
 Stefan Richter <stefanr@s5r6.in-berlin.de> (+ one lockdep annotation): stefan.richter.stefanr@s5r6.in-berlin.de.one.lockdep.annotation
-! "linux-next@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>, \tlinux-media@vger.kernel.org": linux-next@vger.kernel.org.lkml.linux-kernel@vger.kernel.org.linux-media@vger.kernel.org
+! "linux-next@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>, \tlinux-media@vger.kernel.org": linux-next@vger.kernel.org
 Avi Kivity<avi@redhat.com>: avi.kivity.avi@redhat.com
 at> samsung.com: at@samsung.com
-! '<stable@kernel.org> # .32.x .33.x': stable@kernel.org.32.x.33.x
+! '<stable@kernel.org> # .32.x .33.x': stable@kernel.org
 Valentin Longchamp<valentin.longchamp@epfl.ch>: valentin.longchamp.valentin.longchamp@epfl.ch
 Philippe Rétornaz<philippe.retornaz@epfl.ch>: philippe.r.tornaz.philippe.retornaz@epfl.ch
 Wolfram Sang<w.sang@pengutronix.de>: wolfram.sang.w.sang@pengutronix.de
@@ -958,21 +958,21 @@ Marin Mitov <mitov@issp.bas.bg: marin.mitov.mitov@issp.bas.bg
 Bartlomiej Zolnierkiewicz <bzolnier@gmail.com>,: bartlomiej.zolnierkiewicz.bzolnier@gmail.com
 Andrea Gelmini <andrea.gelmini@gelma.net: andrea.gelmini.andrea.gelmini@gelma.net
 <containers@lists.linux-foundation.org>: containers@lists.linux-foundation.org
-<stable@kernel.org> [2.6.33]: stable@kernel.org.2.6.33
+<stable@kernel.org> [2.6.33]: stable@kernel.org
 Ben Dooks <ben-linux@fluff.org>y: ben.dooks.ben-linux@fluff.org.y
 Josh Boyer <jwboyer@linux.vnet.ibm.com: josh.boyer.jwboyer@linux.vnet.ibm.com
 Robert Richter <robert.richter@amd.com: robert.richter.robert.richter@amd.com
 John Kacur <jkacur@redhat.com: john.kacur.jkacur@redhat.com
 Valombre: valombre
 Richard Gagne: richard@gagne
-! '<stable@kernel.org> # 33.x 32.x': stable@kernel.org.33.x.32.x
-! '<stable@kernel.org> # 32.x,  33.x': stable@kernel.org.32.x.33.x
+! '<stable@kernel.org> # 33.x 32.x': stable@kernel.org
+! '<stable@kernel.org> # 32.x,  33.x': stable@kernel.org
 <imwithid@yahoo.com>: imwithid@yahoo.com
 Robert Chambers: robert@chambers
 Eric Paris: eric@paris
-stable@kernel.org [2.6.32, 2.6.33]: stable@kernel.org.2.6.32.2.6.33
+stable@kernel.org [2.6.32, 2.6.33]: stable@kernel.org
 mikpe at it.uu.se: mikpe@it.uu.se
-! '<stable@kernel.org> # NOTE: wont apply to .3[34].x cleanly, please backport': stable@kernel.org.note.wont.apply.to.3.34.x.cleanly.please.backport
+! '<stable@kernel.org> # NOTE: wont apply to .3[34].x cleanly, please backport': stable@kernel.org
 Divyesh Shah<dpshah@google.com>: divyesh.shah.dpshah@google.com
 <joachim.eastwood@jotron.com>: joachim.eastwood@jotron.com
 Németh Márton <nm127@freemail.h: n.meth.m.rton.nm127@freemail.h
@@ -990,61 +990,61 @@ Tom Tucker<tom@opengridcomputing.com>: tom.tucker.tom@opengridcomputing.com
 <weidong.han@intel.com>: weidong.han@intel.com
 <youquan.song@intel.com>: youquan.song@intel.com
 <Jan.Grossmann@kielnet.net>: jan.grossmann@kielnet.net
-! '<stable@kernel.org> # [v2.6.32.x, v2.6.33.x]': stable@kernel.org.v2.6.32.x.v2.6.33.x
+! '<stable@kernel.org> # [v2.6.32.x, v2.6.33.x]': stable@kernel.org
 Mark Fasheh <mfasheh@suse.com>[: mark.fasheh.mfasheh@suse.com
 Jane Silber: jane@silber
-stable <stable@kernel.org>                     [2.6.33.x]: stable.stable@kernel.org.2.6.33.x
+stable <stable@kernel.org>                     [2.6.33.x]: stable@kernel.org
 Eric Anholt <eric@anholt.net> (fixes OpenArena): eric.anholt.eric@anholt.net.fixes.openarena
 <zhiteng.huang@intel.com>: zhiteng.huang@intel.com
 ! 'Sachin Sant <sachinp@in.ibm.com> wrote:': sachin.sant.sachinp@in.ibm.com.wrote
 Clemens Ladisch <clemens@ladisch.de> (untested): clemens.ladisch.clemens@ladisch.de.untested
 ! 'Stefan Richter <stefanr@s5r6.in-berlin.de> (added #define)': stefan.richter.stefanr@s5r6.in-berlin.de.added.define
-stable@kernel.org (for .33): stable@kernel.org.for.33
+stable@kernel.org (for .33): stable@kernel.org
 Harald Welte <laforge@gnumonks.org> (registration failure): harald.welte.laforge@gnumonks.org.registration.failure
 Mike Frysinger <vapier@gentoo.org> (constify struct backlight_ops): mike.frysinger.vapier@gentoo.org.constify.struct.backlight_ops
 Jim Dailey <Jim_Dailey@dell.com>, Developers: jim.dailey.jim_dailey@dell.com.developers
-! '<stable@kernel.org> # [as far back as long as it still applies]': stable@kernel.org.as.far.back.as.long.as.it.still.applies
-! "<stable@kernel.org>\t\t[2.6.33.x]": stable@kernel.org.2.6.33.x
+! '<stable@kernel.org> # [as far back as long as it still applies]': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.33.x]": stable@kernel.org
 ! '"Eric W. Biederman" <ebiederm@xmission.com>,': eric.w.biederman.ebiederm@xmission.com
-! "<stable@kernel.org>\t\t\t[2.6.33.x]": stable@kernel.org.2.6.33.x
+! "<stable@kernel.org>\t\t\t[2.6.33.x]": stable@kernel.org
 <qbarnes+nfs@yahoo-inc.com>: qbarnes.nfs@yahoo-inc.com
 Alexey Kuznetsov <kuznet@ms2.inr.ac.ru: alexey.kuznetsov.kuznet@ms2.inr.ac.ru
 MMarking: mmarking
 Tom Louwrier: tom@louwrier
-Stable <stable@vger.kernel.org> [2.6.33]: stable.stable@vger.kernel.org.2.6.33
+Stable <stable@vger.kernel.org> [2.6.33]: stable@vger.kernel.org
 <mwilder@cs.nmsu.edu>: mwilder@cs.nmsu.edu
-stable <stable@kernel.org>  [2.6.33 only]: stable.stable@kernel.org.2.6.33.only
+stable <stable@kernel.org>  [2.6.33 only]: stable@kernel.org
 Haiyang Zhang <haiyangz@microsoft.com>.: haiyang.zhang.haiyangz@microsoft.com
 Justin Madru<jdm64@gawab.com>: justin.madru.jdm64@gawab.com
 Ray Lee<ray-lk@madrabbit.org>: ray.lee.ray-lk@madrabbit.org
 Rakib Mullick<rakib.mullick@gmail.com>: rakib.mullick.rakib.mullick@gmail.com
-stable@kernel.org (2.6.33): stable@kernel.org.2.6.33
-stable@kernel.org (2.6.32, 2.6.33): stable@kernel.org.2.6.32.2.6.33
-stable@kernel.org (2.6.33, 2.6.32): stable@kernel.org.2.6.33.2.6.32
-! '<stable@kernel.org> # .32.x: 14315592: Allow highmem user page tables to be disabled at boot time': stable@kernel.org.32.x.14315592.allow.highmem.user.page.tables.to.be.disabled@boot.time
-! '<stable@kernel.org> # .32.x': stable@kernel.org.32.x
+stable@kernel.org (2.6.33): stable@kernel.org
+stable@kernel.org (2.6.32, 2.6.33): stable@kernel.org
+stable@kernel.org (2.6.33, 2.6.32): stable@kernel.org
+! '<stable@kernel.org> # .32.x: 14315592: Allow highmem user page tables to be disabled at boot time': stable@kernel.org
+! '<stable@kernel.org> # .32.x': stable@kernel.org
 Andrew Morton <akpm@linux-foundation.org>,: andrew.morton.akpm@linux-foundation.org
-! '<stable@kernel.org> # [2.6.32.x, 2.6.33.x]': stable@kernel.org.2.6.32.x.2.6.33.x
-! '<stable@kernel.org> # for .33.x. Does not apply cleanly, needs backport.': stable@kernel.org.for.33.x.does.not.apply.cleanly.needs.backport
-! '<stable@kernel.org> # for .33.x': stable@kernel.org.for.33.x
+! '<stable@kernel.org> # [2.6.32.x, 2.6.33.x]': stable@kernel.org
+! '<stable@kernel.org> # for .33.x. Does not apply cleanly, needs backport.': stable@kernel.org
+! '<stable@kernel.org> # for .33.x': stable@kernel.org
 George Chriss: george@chriss
 Rusty Russell <rusty@rustcorp.com.au> (minor fixes): rusty.russell.rusty@rustcorp.com.au.minor.fixes
 <linux-parisc@vger.kernel.org>: linux-parisc@vger.kernel.org
-! "stable@kernel.org\t[2.6.32, 2.6.33]": stable@kernel.org.2.6.32.2.6.33
+! "stable@kernel.org\t[2.6.32, 2.6.33]": stable@kernel.org
 John W. Linville (in bug).: john@w.linville.in.bug
 Jonathan Brassow <jbrassow@redhat.com: jonathan.brassow.jbrassow@redhat.com
-stable@kernel.org [2.6.32.x]: stable@kernel.org.2.6.32.x
+stable@kernel.org [2.6.32.x]: stable@kernel.org
 <akwatts@ymail.com>: akwatts@ymail.com
 Clemens Ladisch <clemens@ladisch.de> (cosmetics, list terminator): clemens.ladisch.clemens@ladisch.de.cosmetics.list.terminator
 Stefan Richter <stefanr@s5r6.in-berlin.de> (changelog, comment): stefan.richter.stefanr@s5r6.in-berlin.de.changelog.comment
 Doug Thompson <dougthompson@xmission.com: doug.thompson.dougthompson@xmission.com
-! "<stable@kernel.org>\t\t[2.6.32.x]": stable@kernel.org.2.6.32.x
-! 'stable@kernel.org # .32.x': stable@kernel.org.32.x
+! "<stable@kernel.org>\t\t[2.6.32.x]": stable@kernel.org
+! 'stable@kernel.org # .32.x': stable@kernel.org
 ! 'Julien Cristau <jcristau@debian.org> (fd.o #25371)': julien.cristau.jcristau@debian.org.fd.o.25371
 luca at luca-barbieri.com: luca@luca-barbieri.com
 Eric Van Hensbergen <ericvh@gmail.com>w: eric.van.hensbergen.ericvh@gmail.com.w
-Stable <stable@kernel.org>   [2.6.32]: stable.stable@kernel.org.2.6.32
-Stable <stable@kernel.org> [Any stable version back through 2.6.28]: stable.stable@kernel.org.any.stable.version.back.through.2.6.28
+Stable <stable@kernel.org>   [2.6.32]: stable@kernel.org
+Stable <stable@kernel.org> [Any stable version back through 2.6.28]: stable@kernel.org
 at> gmx.de: at@gmx.de
 David VomLehn (dvomlehn@cisco.com): david.vomlehn.dvomlehn@cisco.com
 Paul Johnson: paul@johnson
@@ -1053,7 +1053,7 @@ G Zornetzer: g@zornetzer
 Mark Thompson: mark@thompson
 Linus Torvalds: linus@torvalds
 Jay Sternberg<jay.e.sternberg@intel.com>: jay.sternberg.jay.e.sternberg@intel.com
-Stable <stable@vger.kernel.org> [2.6.32]: stable.stable@vger.kernel.org.2.6.32
+Stable <stable@vger.kernel.org> [2.6.32]: stable@vger.kernel.org
 <manu@linuxtv.org>: manu@linuxtv.org
 Rafał Miłecki <zajec5@gmail.com>a: rafa.mi.ecki.zajec5@gmail.com.a
 Rafał Miłecki <zajec5@gmail.com>`: rafa.mi.ecki.zajec5@gmail.com
@@ -1061,7 +1061,7 @@ Jesse Barnes <jbarnes@virtuousgeek.org> (in principle): jesse.barnes.jbarnes@vir
 Michael Breuer<mbreuer@majjas.com>: michael.breuer.mbreuer@majjas.com
 <tomaz.mertelj@guest.arnes.si>: tomaz.mertelj@guest.arnes.si
 Stefan Richter stefanr@s5r6.in-berlin.de> (changelog): stefan.richter.stefanr@s5r6.in-berlin.de.changelog
-stable@kernel.org [2.6.32]: stable@kernel.org.2.6.32
+stable@kernel.org [2.6.32]: stable@kernel.org
 spolette@adnlysd018.(none): spolette
 Dmitry Torokhov <dmitry.torokhov@gmail.com> [for the input.h part]: dmitry.torokhov.dmitry.torokhov@gmail.com.for.the.input.h.part
 Paul Rolland: paul@rolland
@@ -1084,16 +1084,16 @@ Mark Brown <broonie@opensource.wolfsonmicro.com: mark.brown.broonie@opensource.w
 <linux-ext4@vger.kernel.org>: linux-ext4@vger.kernel.org
 Mike Frysinger <vapier@gentoo.org> (blackfin): mike.frysinger.vapier@gentoo.org.blackfin
 <arve@android.com>: arve@android.com
-Stable <stable@vger.kernel.org>        [2.6.32]: stable.stable@vger.kernel.org.2.6.32
+Stable <stable@vger.kernel.org>        [2.6.32]: stable@vger.kernel.org
 Anil Ravindranath<anil_ravindranath@pmc-sierra.com>: anil.ravindranath.anil_ravindranath@pmc-sierra.com
 Alan Jenkins <alan-jenkins@tuffmail.co.uk: alan.jenkins.alan-jenkins@tuffmail.co.uk
 Tobias.Hansen at physik.uni-hamburg.de: tobias.hansen@physik.uni-hamburg.de
-! '<stable@kernel.org> # in <= .32 this typo resides in native_apic_write_dummy()': stable@kernel.org.in.32.this.typo.resides.in.native_apic_write_dummy
+! '<stable@kernel.org> # in <= .32 this typo resides in native_apic_write_dummy()': stable@kernel.org
 <tstrelar@gmail.com>: tstrelar@gmail.com
 Xiaotian Feng <dfeng@redhat.com> [from identical patch]: xiaotian.feng.dfeng@redhat.com.from.identical.patch
 Stefan Lippers-Hollmann <s.l-h@gmx.de> [from identical patch]: stefan.lippers-hollmann.s.l-h@gmx.de.from.identical.patch
 David Howells <dhowells@redhat.com>,: david.howells.dhowells@redhat.com
-stable@kernel.org [2.6.29+]: stable@kernel.org.2.6.29
+stable@kernel.org [2.6.29+]: stable@kernel.org
 Karsten Keil <keil@b1-systems.de> (for ISDN): karsten.keil.keil@b1-systems.de.for.isdn
 Cristian Klein: cristian@klein
 Peter P Waskiewicz Jr <peter.p.waskiewicz.jr@intel.com: peter.p.waskiewicz.jr.peter.p.waskiewicz.jr@intel.com
@@ -1104,22 +1104,22 @@ Stefan Richter <stefanr@s5r6.in-berlin.de> (edited comment): stefan.richter.stef
 Stefan Richter <stefanr@s5r6.in-berlin.de> (add required include): stefan.richter.stefanr@s5r6.in-berlin.de.add.required.include
 <v.mayatskih@gmail.com>: v.mayatskih@gmail.com
 <mike.miller@hp.com>: mike.miller@hp.com
-! "<stable@kernel.org>\t\t[2.6.31.x]": stable@kernel.org.2.6.31.x
+! "<stable@kernel.org>\t\t[2.6.31.x]": stable@kernel.org
 Clemens Ladisch <clemens@ladisch.de> for drivers/char/hpet.c: clemens.ladisch.clemens@ladisch.de.for.drivers.char.hpet.c
 Scott Wood <scottwood@freescale.com> [dts]: scott.wood.scottwood@freescale.com.dts
 http://www.kerneloops.org/searchweek.php?search=ml_ff_set_gain: http@www.kerneloops.org.searchweek.php.search.ml_ff_set_gain
-! '<stable@kernel.org> # .3x.x: 85160b9: x86: Add new Intel CPU cache size descriptors': stable@kernel.org.3x.x.85160b9.x86.add.new.intel.cpu.cache.size.descriptors
-! '<stable@kernel.org> # .3x.x': stable@kernel.org.3x.x
-! '<stable@kernel.org> # .32.x: a1f84a3: sched: Check for an idle shared cache': stable@kernel.org.32.x.a1f84a3.sched.check.for.an.idle.shared.cache
-! '<stable@kernel.org> # .32.x: 1b9508f: sched: Rate-limit newidle': stable@kernel.org.32.x.1b9508f.sched.rate-limit.newidle
-! '<stable@kernel.org> # .32.x: fd21073: sched: Fix affinity logic': stable@kernel.org.32.x.fd21073.sched.fix.affinity.logic
-! '<stable@kernel.org> # .31.x': stable@kernel.org.31.x
-! '<stable@kernel.org> # .32.x and older': stable@kernel.org.32.x.and.older
+! '<stable@kernel.org> # .3x.x: 85160b9: x86: Add new Intel CPU cache size descriptors': stable@kernel.org
+! '<stable@kernel.org> # .3x.x': stable@kernel.org
+! '<stable@kernel.org> # .32.x: a1f84a3: sched: Check for an idle shared cache': stable@kernel.org
+! '<stable@kernel.org> # .32.x: 1b9508f: sched: Rate-limit newidle': stable@kernel.org
+! '<stable@kernel.org> # .32.x: fd21073: sched: Fix affinity logic': stable@kernel.org
+! '<stable@kernel.org> # .31.x': stable@kernel.org
+! '<stable@kernel.org> # .32.x and older': stable@kernel.org
 Chris Dearman (chris@mips.com): chris.dearman.chris@mips.com
 Hank Janssen<hjanssen@microsoft.com>: hank.janssen.hjanssen@microsoft.com
 systemtap<systemtap@sources.redhat.com>: systemtap.systemtap@sources.redhat.com
 Arjan van de Ven <arjan@linux.intel.com: arjan.van.de.ven.arjan@linux.intel.com
-! '<stable@kernel.org> # for v2.6.31.x': stable@kernel.org.for.v2.6.31.x
+! '<stable@kernel.org> # for v2.6.31.x': stable@kernel.org
 <bugzilla-daemon@bugzilla.kernel.org>: bugzilla-daemon@bugzilla.kernel.org
 Sachin Garg: sachin@garg
 (address hidden): address@hidden
@@ -1130,7 +1130,7 @@ Rusty Russell <rusty@rustcorp.com.au> (modified): rusty.russell.rusty@rustcorp.c
 Hirokazu Takata <takata@linux-m32r.org> (fixes): hirokazu.takata.takata@linux-m32r.org.fixes
 <mtk.manpages@gmail.com>: mtk.manpages@gmail.com
 Madhusudhan Chikkature<madhu.cr@ti.com>: madhusudhan.chikkature.madhu.cr@ti.com
-! "<stable@kernel.org>\t\t[2.6.30.x, 2.6.31.x]": stable@kernel.org.2.6.30.x.2.6.31.x
+! "<stable@kernel.org>\t\t[2.6.30.x, 2.6.31.x]": stable@kernel.org
 Adam Belay <abelay@novell.com: adam.belay.abelay@novell.com
 ! ' chrisw@sous-sol.org': chrisw@sous-sol.org
 Russell King <linux@arm.linux.org.uk> [arm]: russell.king.linux@arm.linux.org.uk.arm
@@ -1147,7 +1147,7 @@ Thomas Gleixner <tglx@linutronix.de> [x86]: thomas.gleixner.tglx@linutronix.de.x
 Ingo Molnar <mingo@redhat.com> [x86]: ingo.molnar.mingo@redhat.com.x86
 OGAWA Hirofumi <hirofumi@mail.parknet.co.jp>,: ogawa.hirofumi.hirofumi@mail.parknet.co.jp
 Hugh Dickins <hugh.dickins@tiscali.co.uk>,: hugh.dickins.hugh.dickins@tiscali.co.uk
-stable@kernel.org (2.6.31): stable@kernel.org.2.6.31
+stable@kernel.org (2.6.31): stable@kernel.org
 Ananth N Mavinakayanahalli<ananth@in.ibm.com>: ananth.n.mavinakayanahalli.ananth@in.ibm.com
 <stable@kernel.org): stable@kernel.org
 Tim de Waal<tim.dewaal@yahoo.com>: tim.de.waal.tim.dewaal@yahoo.com
@@ -1160,21 +1160,21 @@ Frederic Weisbecker <fweisbec@gmail.com: frederic.weisbecker.fweisbec@gmail.com
 <kosaki.motohiro@jp.fujitsu.com: kosaki.motohiro@jp.fujitsu.com
 Joonwoo Park<joonwpark81@gmail.com>: joonwoo.park.joonwpark81@gmail.com
 <sam@ravnborg.org>: sam@ravnborg.org
-stable@kernel.org (2.6.29 and 2.6.30): stable@kernel.org.2.6.29.and.2.6.30
-stable@kernel.org (2.6.30, needed by TLB shootdown fix): stable@kernel.org.2.6.30.needed.by.tlb.shootdown.fix
+stable@kernel.org (2.6.29 and 2.6.30): stable@kernel.org
+stable@kernel.org (2.6.30, needed by TLB shootdown fix): stable@kernel.org
 Vikram Pandita <vikram.pandita@ti.com: vikram.pandita.vikram.pandita@ti.com
 Chu Lih Kwek <kwek.chulih@renesas.com>,: chu.lih.kwek.kwek.chulih@renesas.com
 General Lai <general.lai@renesas.com>,: general.lai.general.lai@renesas.com
 kyungmin.park@samsung.com,: kyungmin.park@samsung.com
 <steve.glendinning@smsc.com>: steve.glendinning@smsc.com
-! '<stable@kernel.org> # for v2.6.30.x': stable@kernel.org.for.v2.6.30.x
+! '<stable@kernel.org> # for v2.6.30.x': stable@kernel.org
 Gábor Stefanik<netrolller.3d@gmail.com>: g.bor.stefanik.netrolller.3d@gmail.com
 Michael Buesch<mb@bu3sch.de>: michael.buesch.mb@bu3sch.de
 Larry Finger<larry.finger@lwfinger.net>: larry.finger.larry.finger@lwfinger.net
 Subrata Modak<subrata@linux.vnet.ibm.com>: subrata.modak.subrata@linux.vnet.ibm.com
-stable@kernel.org [2.6.29, 2.6.30]: stable@kernel.org.2.6.29.2.6.30
-! "<stable@kernel.org>\t\t[2.6.30.x]": stable@kernel.org.2.6.30.x
-stable@kernel.org (2.6.27 and 30): stable@kernel.org.2.6.27.and.30
+stable@kernel.org [2.6.29, 2.6.30]: stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.30.x]": stable@kernel.org
+stable@kernel.org (2.6.27 and 30): stable@kernel.org
 David Howells <dhowells@redhat.com> [MN10300 & FRV]: david.howells.dhowells@redhat.com.mn10300.frv
 Richard Röjfors<richard.rojfors.ext@mocean-labs.com>: richard.r.jfors.richard.rojfors.ext@mocean-labs.com
 Adrián Cereto<ssorgatem@esdebian.org>: adri.n.cereto.ssorgatem@esdebian.org
@@ -1187,9 +1187,9 @@ Subrata Modak<subrata@linux.vnet.ibm.com>,: subrata.modak.subrata@linux.vnet.ibm
 Larry Finger@lwfinger.net>: larry.finger@lwfinger.net
 Arun Bharadwaj <arun@linux.vnet.ibm.com: arun.bharadwaj.arun@linux.vnet.ibm.com
 ! 'Avi Kivity <avi@redhat.com> # Avi, please have a look at the kvm_para.h bit': avi.kivity.avi@redhat.com.avi.please.have.a.look@the.kvm_para.h.bit
-stable@kernel.org  [ for 2.6.30 ]: stable@kernel.org.for.2.6.30
+stable@kernel.org  [ for 2.6.30 ]: stable@kernel.org
 <pablomme@googlemail.com>: pablomme@googlemail.com
-! '<stable@kernel.org> # for 2.6.30.x': stable@kernel.org.for.2.6.30.x
+! '<stable@kernel.org> # for 2.6.30.x': stable@kernel.org
 Jesper Nilsson <Jesper.Nilsson@axis.com: jesper.nilsson.jesper.nilsson@axis.com
 at> das-labor.org: at@das-labor.org
 <linux-s390@vger.kernel.org>: linux-s390@vger.kernel.org
@@ -1229,17 +1229,17 @@ Michel Abraham: michel@abraham
 <xfs-masters@oss.sgi.com>: xfs-masters@oss.sgi.com
 <linux-btrfs@vger.kernel.org>: linux-btrfs@vger.kernel.org
 Shan Wei<shanwei@cn.fujitsu.com>: shan.wei.shanwei@cn.fujitsu.com
-! "<stable@kernel.org>\t\t[All kernel versions]": stable@kernel.org.all.kernel.versions
-! "<stable@kernel.org>\t\t[2.6.29.x]": stable@kernel.org.2.6.29.x
-! "<stable@kernel.org>\t\t\t[2.6.28.x, 2.6.29.x]": stable@kernel.org.2.6.28.x.2.6.29.x
-stable@kernel.org [2.6.29]: stable@kernel.org.2.6.29
+! "<stable@kernel.org>\t\t[All kernel versions]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.29.x]": stable@kernel.org
+! "<stable@kernel.org>\t\t\t[2.6.28.x, 2.6.29.x]": stable@kernel.org
+stable@kernel.org [2.6.29]: stable@kernel.org
 ! 'Christoph Bisping (bug #13086)': christoph@bisping.bug.13086
 <hs4233@mail.mn-solutions.de>: hs4233@mail.mn-solutions.de
 <balagi@justmail.de>: balagi@justmail.de
 Lin Tan <tammy000@gmail.com>.: lin.tan.tammy000@gmail.com
-! "<stable@kernel.org>\t\t[2.6.28.x, 2.6.29.x]": stable@kernel.org.2.6.28.x.2.6.29.x
+! "<stable@kernel.org>\t\t[2.6.28.x, 2.6.29.x]": stable@kernel.org
 <syrjala@sci.fi>: syrjala@sci.fi
-Yinhai Lu <yinghai@kernel.org.: yinhai.lu.yinghai@kernel.org
+Yinhai Lu <yinghai@kernel.org.: yinghai@kernel.org
 Sergei Shtylyov <sshtylyov@ru.mvista.com>,: sergei.shtylyov.sshtylyov@ru.mvista.com
 Yang Hongyang<yanghy@cn.fujitsu.com>: yang.hongyang.yanghy@cn.fujitsu.com
 ralf@linux-mips.org>: ralf@linux-mips.org
@@ -1253,37 +1253,37 @@ Kristoffer Ericson <kristoffer.ericson@gmail.com: kristoffer.ericson.kristoffer.
 <Quoc.Pham@hp.com>: quoc.pham@hp.com
 <util-linux-ng@vger.kernel.org>: util-linux-ng@vger.kernel.org
 Edward Shishkin<edward.shishkin@gmail.com>: edward.shishkin.edward.shishkin@gmail.com
-! "stable@kernel.org\t[2.6.28.x][2.6.29.x]": stable@kernel.org.2.6.28.x.2.6.29.x
+! "stable@kernel.org\t[2.6.28.x][2.6.29.x]": stable@kernel.org
 Rusty Russell <rusty@rustcorp.com.au> (bool-ified): rusty.russell.rusty@rustcorp.com.au.bool-ified
 Rusty Russell <rusty@rustcorp.com.au> (bugfix and style): rusty.russell.rusty@rustcorp.com.au.bugfix.and.style
 FreeBSD community: freebsd@community
 Safradin mijo@linux.vnet.ibm.com: safradin.mijo@linux.vnet.ibm.com
 Alex Stephens alex@miranova.com: alex.stephens.alex@miranova.com
-stable <stable@kernel.org>  [2.6.28 and 2.6.29, nothing earlier]: stable.stable@kernel.org.2.6.28.and.2.6.29.nothing.earlier
+stable <stable@kernel.org>  [2.6.28 and 2.6.29, nothing earlier]: stable@kernel.org
 Stefan Richter <stefanr@s5r6.in-berlin.de> (tweaks): stefan.richter.stefanr@s5r6.in-berlin.de.tweaks
-<stable@kernel.org> [for 2.6.29.x]: stable@kernel.org.for.2.6.29.x
-<stable@kernel.org> [2.6.29.x, 2.6.28.x, 2.6.27.x]: stable@kernel.org.2.6.29.x.2.6.28.x.2.6.27.x
+<stable@kernel.org> [for 2.6.29.x]: stable@kernel.org
+<stable@kernel.org> [2.6.29.x, 2.6.28.x, 2.6.27.x]: stable@kernel.org
 Vijay Chauhan<vijay.chauhan@lsi.com>: vijay.chauhan.vijay.chauhan@lsi.com
 ! ' maciej.sosnowski@intel.com': maciej.sosnowski@intel.com
-! '<stable@kernel.org> # .29 only': stable@kernel.org.29.only
+! '<stable@kernel.org> # .29 only': stable@kernel.org
 suresh.b.siddha>@intel.com: suresh.b.siddha.@intel.com
-! '<stable@kernel.org> # only for 2.6.29.1, not .28': stable@kernel.org.only.for.2.6.29.1.not.28
-! "<stable@kernel.org>\t\t[2.6.28.x]": stable@kernel.org.2.6.28.x
+! '<stable@kernel.org> # only for 2.6.29.1, not .28': stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.28.x]": stable@kernel.org
 <habeck@sgi.com>: habeck@sgi.com
 <etienne.basset@numericable.fr>: etienne.basset@numericable.fr
 ! 'Theodore Ts''o <tytso@mit.edu> wrote:': theodore.ts.o.tytso@mit.edu.wrote
 Stefan Richter <stefanr@s5r6.in-berlin.de> (rebased, whitespace): stefan.richter.stefanr@s5r6.in-berlin.de.rebased.whitespace
 schen at mvista.com: schen@mvista.com
 mamurph[at]cs.clemson.edu: mamurph@cs.clemson.edu
-! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x, 2.6.27.x, 2.6.28.x]": stable@kernel.org.2.6.25.x.2.6.26.x.2.6.27.x.2.6.28.x
-! "<stable@kernel.org>\t\t[2.6.27.x, 2.6.28.x]": stable@kernel.org.2.6.27.x.2.6.28.x
+! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x, 2.6.27.x, 2.6.28.x]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.27.x, 2.6.28.x]": stable@kernel.org
 <karaluh@karaluh.pl>: karaluh@karaluh.pl
 Geoff Levand <geoffrey.levand@am.sony.com>  Tested on PS3.: geoff.levand.geoffrey.levand@am.sony.com.tested.on.ps3
-! "<stable@kernel.org>\t\t[2.6.26.x, 2.6.27.x, 2.6.28.x]": stable@kernel.org.2.6.26.x.2.6.27.x.2.6.28.x
-stable@kernel.org [2.6.28.x]: stable@kernel.org.2.6.28.x
+! "<stable@kernel.org>\t\t[2.6.26.x, 2.6.27.x, 2.6.28.x]": stable@kernel.org
+stable@kernel.org [2.6.28.x]: stable@kernel.org
 <R.E.Wolff@BitWizard.nl>: r.e.wolff@bitwizard.nl
-! "<stable@kernel.org>\t\t[\"after some testing\"]": stable@kernel.org.after.some.testing
-! "<stable@kernel.org>\t\t[2.6.everything]": stable@kernel.org.2.6.everything
+! "<stable@kernel.org>\t\t[\"after some testing\"]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.everything]": stable@kernel.org
 Bob Copeland <me@bobcopeland.com> [ath5k]: bob.copeland.me@bobcopeland.com.ath5k
 Ivo van Doorn <ivdoorn@gmail.com> [rt2x00]: ivo.van.doorn.ivdoorn@gmail.com.rt2x00
 Christian Lamparter <chunkeey@web.de> [p54]: christian.lamparter.chunkeey@web.de.p54
@@ -1304,15 +1304,15 @@ Zhang Rui<rui.zhang@intel.com>: zhang.rui.rui.zhang@intel.com
 Florian Fainelli <florian@openwrt.org: florian.fainelli.florian@openwrt.org
 ! '[email]chenbdchenbd@gmail.com[email]': email.chenbdchenbd@gmail.com.email
 Rene Herman: rene@herman
-! "<stable@kernel.org>\t\t[2.6.27.x]": stable@kernel.org.2.6.27.x
-stable <stable@kernel.org> [2.6.27, 2.6.28]: stable.stable@kernel.org.2.6.27.2.6.28
+! "<stable@kernel.org>\t\t[2.6.27.x]": stable@kernel.org
+stable <stable@kernel.org> [2.6.27, 2.6.28]: stable@kernel.org
 Peter Henn <p.henn@option.com: peter.henn.p.henn@option.com
-! "<stable@kernel.org>\t\t[2.6.lots]": stable@kernel.org.2.6.lots
+! "<stable@kernel.org>\t\t[2.6.lots]": stable@kernel.org
 <jidanni@jidanni.org>: jidanni@jidanni.org
 <330403@bugs.debian.org>: 330403@bugs.debian.org
 Rik van Riel <riel@redhat.com: rik.van.riel.riel@redhat.com
 Zhou Yingchao: zhou@yingchao
-! "Stable <stable@kernel.org>\t\t[2.6.28], [2.6.27], [2.6.26]": stable.stable@kernel.org.2.6.28.2.6.27.2.6.26
+! "Stable <stable@kernel.org>\t\t[2.6.28], [2.6.27], [2.6.26]": stable@kernel.org
 Stefan Richter <stefanr@s5r6.in-berlin.de> (patch update): stefan.richter.stefanr@s5r6.in-berlin.de.patch.update
 Rusty Russell <rusty@rustcorp.com.au> (renamed fn): rusty.russell.rusty@rustcorp.com.au.renamed.fn
 chris at cnpbagwell dot com: chris@cnpbagwell.com
@@ -1321,23 +1321,23 @@ aleksey@alst60.(none): aleksey
 at> suse.de: at@suse.de
 Rusty Russell <rusty@rustcorp.com.au> (minor additions): rusty.russell.rusty@rustcorp.com.au.minor.additions
 Rusty Russell <rusty@rustcorp.com.au> (re-impl alloc_cpumask_var): rusty.russell.rusty@rustcorp.com.au.re-impl.alloc_cpumask_var
-! "<stable@kernel.org>\t\t[2.6.26.x, 2.6.27.x]": stable@kernel.org.2.6.26.x.2.6.27.x
-! "<stable@kernel.org>\t\t[please check with Jeff]": stable@kernel.org.please.check.with.jeff
+! "<stable@kernel.org>\t\t[2.6.26.x, 2.6.27.x]": stable@kernel.org
+! "<stable@kernel.org>\t\t[please check with Jeff]": stable@kernel.org
 Emmanuel Kowalski: emmanuel@kowalski
 ! 'Randy Dunlap <randy.dunlap@oracle.com> # as file author': randy.dunlap.randy.dunlap@oracle.com.as.file.author
-! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x, 2.6.27.x, earlier...]": stable@kernel.org.2.6.25.x.2.6.26.x.2.6.27.x.earlier
+! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x, 2.6.27.x, earlier...]": stable@kernel.org
 Christoph Lameter <cl@linux-foundation.org: christoph.lameter.cl@linux-foundation.org
-stable <stable@kernel.org> [2.6.25, 2.6.26, 2.6.27]: stable.stable@kernel.org.2.6.25.2.6.26.2.6.27
+stable <stable@kernel.org> [2.6.25, 2.6.26, 2.6.27]: stable@kernel.org
 Richard Röjfors <richard.rojfors@endian.se>.: richard.r.jfors.richard.rojfors@endian.se
-! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x, 2.6.27.x]": stable@kernel.org.2.6.25.x.2.6.26.x.2.6.27.x
+! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x, 2.6.27.x]": stable@kernel.org
 Paul Menage <menage@google.com: paul.menage.menage@google.com
-! "<stable@kernel.org>\t\t[2.6.26.x, 2.6.26.x, 2.6.27.x]": stable@kernel.org.2.6.26.x.2.6.26.x.2.6.27.x
-stable@kernel.org [2.6.27]: stable@kernel.org.2.6.27
+! "<stable@kernel.org>\t\t[2.6.26.x, 2.6.26.x, 2.6.27.x]": stable@kernel.org
+stable@kernel.org [2.6.27]: stable@kernel.org
 Rusty Russell <rusty@rustcorp.com.au> (use netdev_priv): rusty.russell.rusty@rustcorp.com.au.use.netdev_priv
 <alex.shi@intel.com>: alex.shi@intel.com
 Casey Schaufler <casey@schaufler-ca.com> [Smack changes]: casey.schaufler.casey@schaufler-ca.com.smack.changes
 Sebastian Andrzej Siewior <bigeasy@linutronix.de>a: sebastian.andrzej.siewior.bigeasy@linutronix.de.a
-stable <stable@kernel.org> [2.6.27, 2.6.26, 2.6.25]: stable.stable@kernel.org.2.6.27.2.6.26.2.6.25
+stable <stable@kernel.org> [2.6.27, 2.6.26, 2.6.25]: stable@kernel.org
 Al Viro <viro@ZenIV.linux.org.uk: al.viro.viro@zeniv.linux.org.uk
 <avorontsov@ru.mvista.com>: avorontsov@ru.mvista.com
 Nicolas Boichat <nicolas@boichat.ch: nicolas.boichat.nicolas@boichat.ch
@@ -1345,22 +1345,22 @@ Dan Williams <dcbw@redhat.com> [airo, libertas]: dan.williams.dcbw@redhat.com.ai
 Pavel Roskin <proski@gnu.org> [orinoco]: pavel.roskin.proski@gnu.org.orinoco
 David Kilroy <kilroyd@googlemail.com> [orinoco]: david.kilroy.kilroyd@googlemail.com.orinoco
 danders at amltd.com: danders@amltd.com
-! "<stable@kernel.org>\t\t[2.6.27.x, maybe earlier?]": stable@kernel.org.2.6.27.x.maybe.earlier
+! "<stable@kernel.org>\t\t[2.6.27.x, maybe earlier?]": stable@kernel.org
 <Uwe.Kleine-Koenig@digi.com>: uwe.kleine-koenig@digi.com
 Alexander Beregalov: alexander@beregalov
-stable@kernel.org [2.6.24-2.6.27, bug present in some form since driver was added (2.6.22)]: stable@kernel.org.2.6.24-2.6.27.bug.present.in.some.form.since.driver.was.added.2.6.22
+stable@kernel.org [2.6.24-2.6.27, bug present in some form since driver was added (2.6.22)]: stable@kernel.org
 Sean Young: sean@young
 FUJITA Tomonori <fujita.tomonori@lab.ntt.co.jp>\: fujita.tomonori.fujita.tomonori@lab.ntt.co.jp
 ! ' arvidjaar@mail.ru': arvidjaar@mail.ru
 Frédéric Marchal <frederic.marchal@wowcompany.co: fr.d.ric.marchal.frederic.marchal@wowcompany.co
 Christian Borntraeger <borntraeger@de.ibm.com> (virtio_console): christian.borntraeger.borntraeger@de.ibm.com.virtio_console
-! "<stable@kernel.org>\t\t[2.6.27.x, 2.6.26.x. 2.6.25.x]": stable@kernel.org.2.6.27.x.2.6.26.x.2.6.25.x
-! "<stable@kernel.org>\t\t[2.6.27.x, 2.6.26.x, 2.6.25.x]": stable@kernel.org.2.6.27.x.2.6.26.x.2.6.25.x
-stable <stable@kernel.org>  [2.6.27]: stable.stable@kernel.org.2.6.27
-stable <stable@kernel.org> [2.6.27]: stable.stable@kernel.org.2.6.27
+! "<stable@kernel.org>\t\t[2.6.27.x, 2.6.26.x. 2.6.25.x]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.27.x, 2.6.26.x, 2.6.25.x]": stable@kernel.org
+stable <stable@kernel.org>  [2.6.27]: stable@kernel.org
+stable <stable@kernel.org> [2.6.27]: stable@kernel.org
 SangSu Park<sangsu@gmail.com>: sangsu.park.sangsu@gmail.com
 David S. Miller <davem@davemloft.net> [ networking bits ]: david.s.miller.davem@davemloft.net.networking.bits
-! "<stable@kernel.org>\t[2.6.27.x, 2.6.26.x, maybe 2.6.25.x]": stable@kernel.org.2.6.27.x.2.6.26.x.maybe.2.6.25.x
+! "<stable@kernel.org>\t[2.6.27.x, 2.6.26.x, maybe 2.6.25.x]": stable@kernel.org
 David S. Miller <davem@davemloft.net> [ sparc bits ]: david.s.miller.davem@davemloft.net.sparc.bits
 Kyle McMartin <kyle@mcmartin.ca> [ parisc bits ]: kyle.mcmartin.kyle@mcmartin.ca.parisc.bits
 at> redhat.com: at@redhat.com
@@ -1372,32 +1372,32 @@ Mark Fasheh: mark@fasheh
 Jeff Garzik <jeff@garzik.org>,: jeff.garzik.jeff@garzik.org
 Wu Fengguang<wfg@linux.intel.com>: wu.fengguang.wfg@linux.intel.com
 Karthik Dasu<karthik-dp@ti.com>: karthik.dasu.karthik-dp@ti.com
-! "<stable@kernel.org>\t\t[2.6.26.x]": stable@kernel.org.2.6.26.x
-Adrian Bunk <bunk@kernel.org>.: adrian.bunk.bunk@kernel.org
-<stable@kernel.org>             [2.6.26.x]: stable@kernel.org.2.6.26.x
+! "<stable@kernel.org>\t\t[2.6.26.x]": stable@kernel.org
+Adrian Bunk <bunk@kernel.org>.: bunk@kernel.org
+<stable@kernel.org>             [2.6.26.x]: stable@kernel.org
 Lorenzo Nava, Francesco Gringoli: lorenzo@nava.francesco.gringoli
-! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x]": stable@kernel.org.2.6.25.x.2.6.26.x
+! "<stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x]": stable@kernel.org
 Ivo van Doorn <IvDoorn@gmail.com: ivo.van.doorn.ivdoorn@gmail.com
-! "Stable <stable@kernel.org>\t\t[2.6.26], [2.6.25]": stable.stable@kernel.org.2.6.26.2.6.25
+! "Stable <stable@kernel.org>\t\t[2.6.26], [2.6.25]": stable@kernel.org
 Lorenzo Nava: lorenzo@nava
 Mingming Cao<cmm@us.ibm.com>: mingming.cao.cmm@us.ibm.com
 krzysztof.h1@wp.pl> (if needed: krzysztof.h1@wp.pl.if.needed
 <sasin@solomon-systech.com>: sasin@solomon-systech.com
-! "<stable@kernel.org>\t\t[2.6.26]": stable@kernel.org.2.6.26
+! "<stable@kernel.org>\t\t[2.6.26]": stable@kernel.org
 Mohamed Abbas <mohamed.abbas@intel.com: mohamed.abbas.mohamed.abbas@intel.com
 Feng Kan fkan@amcc.com: feng.kan.fkan@amcc.com
 Manfred Spraul <manfred@colorfullife.com: manfred.spraul.manfred@colorfullife.com
 Rusty Russell <rusty@rustcorp.com.au> (simplified): rusty.russell.rusty@rustcorp.com.au.simplified
-! "stable <stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x]": stable.stable@kernel.org.2.6.25.x.2.6.26.x
-! "<stable@kernel.org>\t\t[2.6.14 and later]": stable@kernel.org.2.6.14.and.later
-<stable@kernel.org> [14fcc23fd is in 2.6.25.14 and 2.6.26.1]: stable@kernel.org.14fcc23fd.is.in.2.6.25.14.and.2.6.26.1
-! "Stable <stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x]": stable.stable@kernel.org.2.6.25.x.2.6.26.x
+! "stable <stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x]": stable@kernel.org
+! "<stable@kernel.org>\t\t[2.6.14 and later]": stable@kernel.org
+<stable@kernel.org> [14fcc23fd is in 2.6.25.14 and 2.6.26.1]: stable@kernel.org
+! "Stable <stable@kernel.org>\t\t[2.6.25.x, 2.6.26.x]": stable@kernel.org
 <J.A.K.Mouw@its.tudelft.nl>: j.a.k.mouw@its.tudelft.nl
 Ian Molton: ian@molton
 Linus "Grr.." Torvalds: linus@grr.torvalds
 juergh at gmail.com: juergh@gmail.com
 jkacur at gmail dot com: jkacur@gmail.com
-<stable@kernel.org> [2.6.25.x, 2.6.26.x]: stable@kernel.org.2.6.25.x.2.6.26.x
+<stable@kernel.org> [2.6.25.x, 2.6.26.x]: stable@kernel.org
 <reiserfs-devel@vger.kernel.org>: reiserfs-devel@vger.kernel.org
 Duane Griffin <duaneg@dghda.com: duane.griffin.duaneg@dghda.com
 Ingo Molnar <mingo@elte.hu> [x86 architecture part]: ingo.molnar.mingo@elte.hu.x86.architecture.part
@@ -1407,7 +1407,7 @@ Rusty Russell <rusty@rustcorp.com.au> (remove MTU setting): rusty.russell.rusty@
 <Valdis.Kletnieks@vt.edu}: valdis.kletnieks@vt.edu
 Jeff Kirsher<jeffrey.t.kirsher@intel.com>: jeff.kirsher.jeffrey.t.kirsher@intel.com
 jie.yang @atheros.com: jie.yang.@atheros.com
-! "<stable@kernel.org>\t[2.6.26.x]": stable@kernel.org.2.6.26.x
+! "<stable@kernel.org>\t[2.6.26.x]": stable@kernel.org
 ! 'Ralf Baechle <ralf@linux-mips.org>[MIPS] IP22, IP28: Fix merge bug': ralf.baechle.ralf@linux-mips.org.mips.ip22.ip28.fix.merge.bug
 ehabkost@Rawhide-64.localdomain: ehabkost@rawhide-64.localdomain
 Jeremy Fitzhardinge <jeremy.fitzhardinge@citrix.com>a: jeremy.fitzhardinge.jeremy.fitzhardinge@citrix.com.a
@@ -1478,7 +1478,7 @@ Yoshinori Sato <ysato@users.sourceforge.jp>,: yoshinori.sato.ysato@users.sourcef
 Hirokazu Takata <takata@linux-m32r.org>,: hirokazu.takata.takata@linux-m32r.org
 Geert Uytterhoeven <geert@linux-m68k.org>,: geert.uytterhoeven.geert@linux-m68k.org
 Roman Zippel <zippel@linux-m68k.org>,: roman.zippel.zippel@linux-m68k.org
-William L. Irwin <sparclinux@vger.kernel.org>,: william.l.irwin.sparclinux@vger.kernel.org
+William L. Irwin <sparclinux@vger.kernel.org>,: sparclinux@vger.kernel.org
 Chris Zankel <chris@zankel.net>,: chris.zankel.chris@zankel.net
 H. Peter Anvin <hpa@zytor.com>,: h.peter.anvin.hpa@zytor.com
 <bfennema@falcon.csc.calpoly.edu>: bfennema@falcon.csc.calpoly.edu
@@ -1505,7 +1505,7 @@ Russ Anderson (rja@sgi.com): russ.anderson.rja@sgi.com
 Mark Lord <mlord@pobox.com: mark.lord.mlord@pobox.com
 <hcegtvedt@atmel.com>: hcegtvedt@atmel.com
 Kiyoshi Ueda <k-ueda@ct.jp.nec.com: kiyoshi.ueda.k-ueda@ct.jp.nec.com
-linux-wireless <linux-wireless@vger.kernel.org: linux-wireless.linux-wireless@vger.kernel.org
+linux-wireless <linux-wireless@vger.kernel.org: linux-wireless@vger.kernel.org
 JRottmann at LiPPERT-AT. de: jrottmann@lippert-@.de
 Peter Missel (peter.missel@onlinehome.de): peter.missel.peter.missel@onlinehome.de
 Mats Johannesson: mats@johannesson
@@ -1913,7 +1913,7 @@ Lucas Correia Villa Real: lucas@correia.villa.real
 <davej@redhat.com>: davej@redhat.com
 <racing.guo@intel.com>: racing.guo@intel.com
 <Suresh.b.siddha@intel.com>: suresh.b.siddha@intel.com
-Deepak K<deepak.k@ti.com>: deepak.k.deepak.k@ti.com
+Deepak K<deepak.k@ti.com>: deepak.k@ti.com
 Tarun Kanti DebBarma <tarun.kanti@ti.com: tarun.kanti.debbarma.tarun.kanti@ti.com
 Ambresh K <ambresh@ti.com>,: ambresh.k.ambresh@ti.com
 Ramesh Gupta G<grgupta@ti.com>: ramesh.gupta.g.grgupta@ti.com
