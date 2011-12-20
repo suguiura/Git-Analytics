@@ -2,61 +2,6 @@
 module GitAnalytics
   module DB
 
-    class Commit < ActiveRecord::Base
-      has_many :modifications
-      has_many :signatures
-      belongs_to :author, :class_name => 'Person', :foreign_key => 'author_id'
-      belongs_to :committer, :class_name => 'Person', :foreign_key => 'committer_id'
-      belongs_to :project
-    end
-
-    class Person < ActiveRecord::Base
-      has_many :signatures
-      belongs_to :domain
-    end
-
-    class Author < Person
-      has_many :commits, :foreign_key => 'author_id'
-    end
-
-    class Committer < Person
-      has_many :commits, :foreign_key => 'committer_id'
-    end
-
-    class Modification < ActiveRecord::Base
-      belongs_to :commit
-    end
-
-    class Signature < ActiveRecord::Base
-      belongs_to :person
-      belongs_to :commit
-    end
-
-    class Domain < ActiveRecord::Base
-      has_many :people
-      has_many :authors
-      has_many :committers
-      has_many :author_commits, :through => :authors, :source => :commits
-      has_many :committers_commits, :through => :committers, :source => :commits
-    end
-
-    class Server < ActiveRecord::Base
-      has_many :projects
-    end
-
-    class Project < ActiveRecord::Base
-      belongs_to :server
-      has_many :commits
-    end
-
-    def self.connect(connection)
-      ActiveRecord::Base.establish_connection connection
-    end
-
-    def self.enable_log
-      ActiveRecord::Base.logger = Logger.new STDERR
-    end
-
     def self.create_tables
       ActiveRecord::Schema.define do
         create_table   :commits do |t|
@@ -65,7 +10,9 @@ module GitAnalytics
           t.text       :message, :default => ''
           t.datetime   :author_date
           t.datetime   :committer_date
-          t.references :author, :committer, :project
+          t.references :author
+          t.references :committer
+          t.references :project
           t.timestamps
         end
         create_table   :people do |t|
@@ -83,7 +30,10 @@ module GitAnalytics
           t.references :person, :commit
         end
         create_table   :domains do |t|
-          t.string     :name, :default => '', :limit => 128
+          t.string     :address, :default => '', :limit => 128
+          t.string     :subdomain, :default => '', :limit => 32
+          t.string     :orgdomain, :default => '', :limit => 64
+          t.references :company
         end
         create_table   :servers do |t|
           t.string     :name, :null => false, :limit => 128
@@ -107,6 +57,7 @@ module GitAnalytics
         add_index :people, :domain_id
         add_index :signatures, :person_id
         add_index :signatures, :commit_id
+        add_index :modifications, :commit_id
         add_index :domains, :name
       end
     end
@@ -121,8 +72,77 @@ module GitAnalytics
         remove_index :people, :domain_id
         remove_index :signatures, :person_id
         remove_index :signatures, :commit_id
+        remove_index :modifications, :commit_id
         remove_index :domains, :name
       end
+    end
+
+    class Commit < ActiveRecord::Base
+      has_many :modifications
+      has_many :signatures
+      belongs_to :author, :foreign_key => 'author_id',
+                 :class_name => 'Person'
+      belongs_to :committer, :foreign_key => 'committer_id',
+                 :class_name => 'Person'
+      belongs_to :project
+    end
+
+    class Person < ActiveRecord::Base
+      belongs_to :domain
+      has_many :signatures, :dependent => :delete_all
+    end
+
+    class Author < Person
+      has_many :commits, :foreign_key => 'author_id'
+    end
+
+    class Committer < Person
+      has_many :commits, :foreign_key => 'committer_id'
+    end
+
+    class Modification < ActiveRecord::Base
+      belongs_to :commit
+    end
+
+    class Signature < ActiveRecord::Base
+      belongs_to :person
+      belongs_to :commit
+    end
+
+    class Domain < ActiveRecord::Base
+      belongs_to :company
+      has_many :people
+      has_many :authors
+      has_many :committers
+      has_many :author_commits, :through => :authors, :source => :commits
+      has_many :committers_commits, :through => :committers, :source => :commits
+    end
+
+    class Server < ActiveRecord::Base
+      has_many :projects
+    end
+
+    class Project < ActiveRecord::Base
+      belongs_to :server
+      has_many :commits
+    end
+
+    class Company < ActiveRecord::Base
+      has_many :domains
+      has_many :similarities
+    end
+
+    class Similarity < ActiveRecord::Base
+    end
+
+    def self.connect(commits, crunchbase)
+      ActiveRecord::Base.establish_connection commits
+      Company.establish_connection crunchbase
+      Similarity.establish_connection crunchbase
+    end
+
+    def self.enable_log
+      ActiveRecord::Base.logger = Logger.new STDERR
     end
 
     def self.store_project(data)
@@ -153,7 +173,9 @@ module GitAnalytics
     def self.create_person(data)
       Person.find_or_create_by_email(data[:email]) do |p|
         p.name   = data[:name]
-        p.domain = Domain.find_or_create_by_name(data[:domain])
+        p.domain = Domain.find_or_create_by_address(data[:domain]) do |d|
+          d.company = Company.find_by_orgdomain(data[:domain][:orgdomain])
+        end
       end
     end
 
