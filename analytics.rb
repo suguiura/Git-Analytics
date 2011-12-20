@@ -3,7 +3,7 @@
 require 'uri'
 require 'yaml'
 require 'logger'
-require 'rubygems'
+require 'domainatrix'
 require 'active_record'
 require 'email_veracity'
 
@@ -40,9 +40,9 @@ def process
 end
 
 def prepare
-  GitAnalytics::DB.connect $config[:db][:commits]
-  GitAnalytics::Email.prepare $config[:emailfix]
-#  GitAnalytics::CSV.prepare($config[:cctlds], $config[:gtlds])
+  c = $config
+  GitAnalytics::Email.prepare c[:emailfix]
+  GitAnalytics::DB.connect c[:db][:commits], c[:db][:crunchbase]
   GitAnalytics::DB.create_tables
   GitAnalytics::DB.add_indexes
 #  GitAnalytics::DB.remove_indexes
