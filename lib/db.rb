@@ -20,10 +20,13 @@ module GitAnalytics
           t.string     :email, :default => '', :limit => 128
           t.references :domain
         end
-        create_table   :modifications do |t|
-          t.string     :path, :default => '', :limit => 64
-          t.integer    :linechanges, :default => 0
+        create_table   :modifications, :id => false do |t|
           t.references :commit
+          t.references :metafile
+          t.integer    :linechanges, :default => 0
+        end
+        create_table   :metafiles do |t|
+          t.string     :path, :default => '', :limit => 64
         end
         create_table   :signatures do |t|
           t.string     :name, :default => '', :limit => 32
@@ -58,6 +61,7 @@ module GitAnalytics
         add_index :signatures, :person_id
         add_index :signatures, :commit_id
         add_index :modifications, :commit_id
+        add_index :modifications, :metafile_id
         add_index :domains, :name
       end
     end
@@ -73,13 +77,15 @@ module GitAnalytics
         remove_index :signatures, :person_id
         remove_index :signatures, :commit_id
         remove_index :modifications, :commit_id
+        remove_index :modifications, :metafile_id
         remove_index :domains, :name
       end
     end
 
     class Commit < ActiveRecord::Base
-      has_many :modifications
       has_many :signatures
+      has_many :modifications
+      has_many :metafiles, :through => :modifications
       belongs_to :author, :foreign_key => 'author_id',
                  :class_name => 'Person'
       belongs_to :committer, :foreign_key => 'committer_id',
@@ -102,6 +108,12 @@ module GitAnalytics
 
     class Modification < ActiveRecord::Base
       belongs_to :commit
+      belongs_to :metafile
+    end
+
+    class Metafile < ActiveRecord::Base
+      has_many :modifications
+      has_many :commits, :through => :modifications
     end
 
     class Signature < ActiveRecord::Base
@@ -125,6 +137,7 @@ module GitAnalytics
     class Project < ActiveRecord::Base
       belongs_to :server
       has_many :commits
+      has_many :metafiles, :through => :commits
     end
 
     class Company < ActiveRecord::Base
