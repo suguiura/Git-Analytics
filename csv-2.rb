@@ -34,14 +34,12 @@ def process
   $l.info 'projects: %d' % (n = GitAnalytics::DB::Project.count)
   GitAnalytics::DB::Project.find_each do |project|
     $l.info '%d: %s' % [n -= 1, project.name]
-#    next if n > 645
     companies = Hash.new{|h, v| h[v] = []}
-    project.commits.each do |commit|
+    project.commits.find_each do |commit|
       company = commit.author.domain.company
-      next if company.nil? or company.permalink.nil?
-      commit.modifications.each do |modification|
-        companies[modification.metafile.path] << company
-      end
+      commit.metafiles.find_each do |metafile|
+        companies[metafile.path] << company
+      end unless company.nil? or company.permalink.nil?
     end
     $l.info 'printing'
     process_companies project, companies
