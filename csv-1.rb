@@ -13,8 +13,9 @@ $config = YAML::load_file 'config.yaml'
 
 def process(commit, type, company, other_company)
   a, b = company, other_company
-  a_permalink = a.permalink rescue ''
-  b_permalink = b.permalink rescue ''
+  a_permalink = a.permalink rescue return
+  b_permalink = b.permalink rescue return
+  return if a.permalink.nil? or b.permalink.nil?
   competition = a.competitors.include?(b) rescue false
   counter = a.similarities.find_or_create_by_other_company(b).counter rescue 0
   similarity = counter.to_f / a.tags.size rescue 0.0
@@ -35,7 +36,7 @@ def process(commit, type, company, other_company)
 end
 
 puts %w(server origin project description org1 org2 author_date commit_date
-        filechanges relationship competition tag_similarity)
+        filechanges relationship competition tag_similarity).join("\t")
 
 GitAnalytics::DB.connect $config[:db][:commits], $config[:db][:crunchbase]
 n = GitAnalytics::DB::Commit.count
