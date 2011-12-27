@@ -165,7 +165,8 @@ module GitAnalytics
 
     def self.create_modifications(log)
       log[:modifications].map do |modification|
-        Modification.create(modification)
+        metafile = Metafile.find_or_create_by_path(modification[:path])
+        metafile.modifications.create(:linechanges => modification[:linechanges])
       end
     end
   end
