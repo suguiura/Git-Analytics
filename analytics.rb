@@ -42,7 +42,7 @@ end
 def prepare
   c = $config
   GitAnalytics::Email.prepare c[:emailfix]
-  GitAnalytics::DB.connect c[:db][:commits], c[:db][:crunchbase]
+  GitAnalytics::DB.connect c[:db][:commits]
   GitAnalytics::DB.create_tables
   GitAnalytics::DB.add_indexes
 #  GitAnalytics::DB.remove_indexes
