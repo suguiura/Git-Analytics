@@ -19,10 +19,10 @@ module GitAnalytics
     private
 
     @signatures = "Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc"
-    @re_signatures = /^    (#{@signatures}): (.*<([^>]*).*|.*)$/
+    @re_signatures = /^    (#{@signatures}): ([^>]*>?)/
     @re_modifications = /^ (.+) \|\s+(\d+) /
-    @re_author = /^author (.*) <(.*)> (.*) (.*)$/
-    @re_committer = /^committer (.*) <(.*)> (.*) (.*)$/
+    @re_author = /^author ([^>]*>?) (.*) (.*)$/
+    @re_committer = /^committer ([^>]*>?) (.*) (.*)$/
     @re_message = /^    (.*)$/
     @re_commit = /^commit (\S+) ?(.*)$/
 
@@ -36,8 +36,8 @@ module GitAnalytics
         :sha1          => sha1,
         :tag           => tag,
         :message       => message,
-        :author        => parse_person(line, @re_author),
-        :committer     => parse_person(line, @re_committer),
+        :author        => parse_email(line, @re_author),
+        :committer     => parse_email(line, @re_committer),
         :signatures    => parse_signatures(line),
         :modifications => parse_modifications(line)
       }.update(extra)
@@ -47,15 +47,9 @@ module GitAnalytics
       Time.at(secs.to_i).getlocal(offset.insert(3, ':'))
     end
 
-    def self.create_person(name, email)
-      email = GitAnalytics::Email.fix(email)
-      domain = GitAnalytics::Email.domain(email)
-      {:name => name, :email => email, :domain => domain}
-    end
-
     def self.parse_signatures(line)
-      line.scan(@re_signatures).map do |key, name, email|
-        {:name => key, :person => create_person(name, email)}
+      line.scan(@re_signatures).map do |name, raw_email|
+        {:raw_email => raw_email, :name => name}
       end
     end
 
@@ -63,10 +57,9 @@ module GitAnalytics
       line.scan(@re_modifications).map{|p, c| {:path => p.strip, :linechanges => c.to_i}}
     end
 
-    def self.parse_person(line, re)
-      name, email, secs, offset = re.match(line).captures
-      date = create_date(secs, offset)
-      create_person(name, email).update(:date => date)
+    def self.parse_email(line, re)
+      raw_email, secs, offset = re.match(line).captures
+      {:raw_email => raw_email, :date => create_date(secs, offset)}
     end
   end
 end
