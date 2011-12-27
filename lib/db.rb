@@ -23,7 +23,7 @@ module GitAnalytics
           t.string     :orgdomain, :default => '', :limit => 64
           t.references :company
         end
-        create_table   :modifications, :id => false do |t|
+        create_table   :modifications do |t|
           t.references :commit
           t.references :metafile
           t.integer    :linechanges, :default => 0
