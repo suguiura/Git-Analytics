@@ -60,6 +60,7 @@ module GitAnalytics
         add_index :modifications, :metafile_id
         add_index :emails, :raw
         add_index :emails, :orgdomain
+        add_index :metafiles, :path
       end
     end
     
@@ -75,6 +76,7 @@ module GitAnalytics
         remove_index :modifications, :metafile_id
         remove_index :emails, :raw
         remove_index :emails, :orgdomain
+        remove_index :metafiles, :path
       end
     end
 
