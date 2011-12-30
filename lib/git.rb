@@ -19,7 +19,7 @@ module GitAnalytics
     private
 
     @signatures = "Signed-off-by|Reported-by|Reviewed-by|Tested-by|Acked-by|Cc"
-    @re_signatures = /^    (#{@signatures}): ([^>]*>?)/
+    @re_signatures = /^    (#{@signatures}): ([^\n>]*>?)/
     @re_modifications = /^ (.+) \|\s+(\d+) /
     @re_author = /^author ([^>]*>?) (.*) (.*)$/
     @re_committer = /^committer ([^>]*>?) (.*) (.*)$/
