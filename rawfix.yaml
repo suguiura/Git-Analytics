@@ -1,0 +1,1317 @@
+---
+! ' <>': ''
+00:22:46  Alex Roberts <bse@gedit.pn.org>: Alex Roberts <bse@gedit.pn.org>
+00:27:48  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+00:38:43 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+00:42:04  Alex Roberts <bse@gedit.pn.org>: Alex Roberts <bse@gedit.pn.org>
+00:49 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+00:53:28 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+01:30:51 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+02:01:08 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+02:25:24 UTC  James M. Cape <jcape@ignore-your.tv>: James M. Cape <jcape@ignore-your.tv>
+02:25:33 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+02:27:07 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+02:27:58 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+02:50:22  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+02:50:53  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+04:00:42 Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+05:27:43 2000  Owen Taylor <otaylor@redhat.com>: Owen Taylor <otaylor@redhat.com>
+07:31 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+08:23:38  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+08:44  Craig Routledge <webstuff at craigroutledge dot com>: Craig Routledge <webstuff@craigroutledge.com>
+09:00:28  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+09:04 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+09:27:42  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+09:49:29  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+10:07:23  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+10:16 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+10:27:02  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+10:27:39  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:30:33  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:31:26  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:33:41  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:35:29  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+10:39:17  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:44:52  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:49:20  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:49:37  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+10:54  manu <eallaud@yahoo.fr>: manu <eallaud@yahoo.fr>
+11:03:30  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+11:20:57  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+11:21:54  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+11:23:32  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+11:41:37  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+11:42:10  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+11:43:22  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+11:45 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+12:08  Albrecht Dress <albrecht.dress@arcor.de>: Albrecht Dress <albrecht.dress@arcor.de>
+12:26 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+12:31 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+12:41:26  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+12:55:19  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+12:58:54  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:02:08  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:15:29  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:16:33  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:24:13  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:25  Albrecht Dress <albrecht.dress@arcor.de>: Albrecht Dress <albrecht.dress@arcor.de>
+13:28:02  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:28:23  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:29:00  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:34:01  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:37:28  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:38:36  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:42 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+13:45:23  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:49 Daniel Rogers <dsrogers@phasevelocity.org>: Daniel Rogers <dsrogers@phasevelocity.org>
+13:55:06  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+13:58  Albrecht Dress <albrecht.dress@arcor.de>: Albrecht Dress <albrecht.dress@arcor.de>
+13:59:18  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+14:06:34  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+14:27:34  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+14:31:18  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+14:55  Craig Routledge <webstuff@craigroutledge.com>: Craig Routledge <webstuff@craigroutledge.com>
+14:58:31  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:03:51  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:07:28  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+15:08:59  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:17:04  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:18:17  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:30:09  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:39:40  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:43:54 2002 Dan Mills <thunder@ximian.com>: Dan Mills <thunder@ximian.com>
+15:44:01  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:47:08  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+15:48:26  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+16:04:38  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+16:06:11  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+16:11:14  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+16:19:16  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+16:31:06  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+16:34:04  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+16:51:23  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+16:55:57  Alex Roberts <bse@gedit.pn.org>: Alex Roberts <bse@gedit.pn.org>
+17:05:31  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+17:21:05  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+17:310Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+17:40:58  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+17:48 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+17:49  Albrecht Dress <albrecht dot dress at arcor dot de>: Albrecht Dress <albrecht.dress@arcor.de>
+17:58:18  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+18:01:32  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+18:02:30  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+18:12:38  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+18:16:50  Adam D. Moss <adam@gimp.org>: Adam D. Moss <adam@gimp.org>
+18:22:28  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+18:33:33  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+18:39:56  Stefan Westerfeld <stefan@space.twc.de>: Stefan Westerfeld <stefan@space.twc.de>
+18:40 Albrecht Dress <albrecht dot dress at arcor dot de>: Albrecht Dress <albrecht.dress@arcor.de>
+18:41:22  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+18:42:42  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+18:45   Albrecht Dress <albrecht dot dress at arcor dot de>: Albrecht Dress <albrecht.dress@arcor.de>
+18:52:07  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+18:59:59  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+19:09  PeterB/manu <eallaud@yahoo.fr>: PeterB manu <eallaud@yahoo.fr>
+19:11:07  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+19:15:25  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+19:21  Albrecht Dress <albrecht.dress@arcor.de>: Albrecht Dress <albrecht.dress@arcor.de>
+19:25  Albrecht Dress <albrecht.dress@arcor.de>: Albrecht Dress <albrecht.dress@arcor.de>
+19:27 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+19:36 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+19:49 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+19:54:11  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+19:56  Albrecht Dress <albrecht dot dress at arcor dot de>: Albrecht Dress <albrecht.dress@arcor.de>
+2008-04-25  Massimo Cora\ <maxcvs@email.it>: Massimo Cora <maxcvs@email.it>
+20:08:16  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+20:08:17  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+20:21:28  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+20:30:18  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+20:41:30  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+20:49 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+21:04:28  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+21:06:47  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+21:10:15  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+21:11 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+21:12 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+21:20 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+21:42:47  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+21:46:08  Tim Janik <timj@imendio.com>: Tim Janik <timj@imendio.com>
+21:48  Craig Routledge <webstuff@craigroutledge.com>: Craig Routledge <webstuff@craigroutledge.com>
+21:53:47  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+21:59:18  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+22:12:00  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+22:16:19  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+22:17:33  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+22:20:15  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+22:37:55  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+22:52 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+22:59:29  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+23:32:57 BST Alex Roberts <bse@gedit.pn.org>: Alex Roberts <bse@gedit.pn.org>
+23:38 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+23:44 Daniel Rogers <daniel@phasevelocity.org>: Daniel Rogers <daniel@phasevelocity.org>
+23:50:33  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+23:52:21  Tim Janik <timj@gtk.org>: Tim Janik <timj@gtk.org>
+5 <Christian Schaller@gnome.org>: Christian <schaller@gnome.org>
+Abhijith Das <adas redhat com>: Abhijith Das <adas@redhat.com>
+! 'Acked-by: Alessandro Zummo <a.zummo@towertech.it>': Alessandro Zummo <a.zummo@towertech.it>
+! 'Acked-by: Catalin Marinas <catalin.marinas@arm.com>': Catalin Marinas <catalin.marinas@arm.com>
+! 'Acked-by: David S. Miller <davem@davemloft.net>': David S. Miller <davem@davemloft.net>
+! 'Acked-by: Gregory Haskins <ghaskins@novell.com>': Gregory Haskins <ghaskins@novell.com>
+! 'Acked-by: Hollis Blanchard <hollis@penguinppc.org>': Hollis Blanchard <hollis@penguinppc.org>
+! 'Acked-by: James Morris <jmorris@namei.org>': James Morris <jmorris@namei.org>
+! 'Acked-by: Jens Axboe <axboe@suse.de>': Jens Axboe <axboe@suse.de>
+! 'Acked-by: Kevin Tian <kevin.tian@intel.com>': Kevin Tian <kevin.tian@intel.com>
+! 'Acked-by: Krzysztof Helt <krzysztof.h1@wp.pl>': Krzysztof Helt <krzysztof.h1@wp.pl>
+! 'Acked-by: Muli Ben-Yehuda <muli@il.ibm.com>': Muli Ben-Yehuda <muli@il.ibm.com>
+! 'Acked-by: Robert Richter <robert.richter@amd.com>': Robert Richter <robert.richter@amd.com>
+! 'Acked-by: Sheng Yang <sheng@linux.intel.com>': Sheng Yang <sheng@linux.intel.com>
+! 'Acked-By: Stephen Warren <swarren@nvidia.com>': Stephen Warren <swarren@nvidia.com>
+Adam Belay <abelay@novell.com: Adam Belay <abelay@novell.com>
+Adam Bliss <>: ''
+Adrian Hunter <[ext-adrian.hunter@nokia.com]>: Adrian Hunter <ext-adrian.hunter@nokia.com>
+adurbin@google.com <adurbin@google.com>: <adurbin@google.com>
+agilmore@wirelessbeehive.com <agilmore@wirelessbeehive.com>: <agilmore@wirelessbeehive.com>
+Aguilar Pena, Leed <leed.aguilar@ti.com>: Leed Aguilar Pena <leed.aguilar@ti.com>
+aherrman@arcor.de <aherrman@arcor.de>: <aherrman@arcor.de>
+Ahmet Inan <ainan <at>: ''
+Ahmet Inan <ainan at>: ''
+Ajit Khaparde ajit.khaparde@emulex.com: Ajit Khaparde <ajit.khaparde@emulex.com>
+Akinobu Mita <akinobu.mita@gmail..com>: Akinobu Mita <akinobu.mita@gmail.com>
+akinobu.mita@gmail.com <akinobu.mita@gmail.com>: <akinobu.mita@gmail.com>
+Akira Iguchi <akira2.iguchi at toshiba.co.jp>: Akira Iguchi <akira2.iguchi@toshiba.co.jp>
+akpm@linux-foundation.org <akpm@linux-foundation.org>: <akpm@linux-foundation.org>
+akpm@osdl.org <akpm@osdl.org>: <akpm@osdl.org>
+Alan Cox: ''
+! '"Alan Cox <alan@linux.intel.com>': Alan Cox <alan@linux.intel.com>
+Alan Cox <alan@linux.intel.com): Alan Cox <alan@linux.intel.com>
+Alan Cox <alan@lxorguk.ukuu.org.uk: Alan Cox <alan@lxorguk.ukuu.org.uk>
+Alan Cox alan@lxorguk.ukuu.org.uk: Alan Cox <alan@lxorguk.ukuu.org.uk>
+Alan Horkan <horkana tcd ie>: Alan Horkan <horkana@tcd.ie>
+Alan Jenkins <alan-jenkins@tuffmail.co.uk: Alan Jenkins <alan-jenkins@tuffmail.co.uk>
+Alan Nisota alannisota@gmail.com: Alan Nisota <alannisota@gmail.com>
+Albrecht Dress: ''
+Albrecht Dress <albrecht dot dress at arcor dot de>: Albrecht Dress <albrecht.dress@arcor.de>
+aleksey_gorelov@phoenix.com <aleksey_gorelov@phoenix.com>: <aleksey_gorelov@phoenix.com>
+! 'Alessandro Zummo: <a.zummo@towertech.it>': Alessandro Zummo <a.zummo@towertech.it>
+Alexander Beregalov: ''
+Alexander E. Patrakov: ''
+Alex.Cheng@quantatw.com <Alex.Cheng@quantatw.com>: <alex.cheng@quantatw.com>
+! 'Alex Chiang: <achiang@hp.com>': Alex Chiang <achiang@hp.com>
+Alexey Kuznetsov <kuznet@ms2.inr.ac.ru: Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>
+Alexey Starikovskiy <alexey.y.starikovskiy at intel.com>: Alexey Starikovskiy <alexey.y.starikovskiy@intel.com>
+Alexey Starikovskiy <astarikovskiy <at>: Alexey Starikovskiy <alexey.y.starikovskiy@intel.com>
+Alex Kennberg <>: ''
+Alex Larsson (sometimes testing helps): ''
+Alex Magaz <rivaldi8 gmail com>: Alex Magaz <rivaldi8@gmail.com>
+Alex Stephens alex@miranova.com: Alex Stephens <alex@miranova.com>
+Al Viro <viro@ZenIV.linux.org.uk: Al Viro <viro@zeniv.linux.org.uk>
+Amith Yamasani <>: ''
+Amnon Shiloh: ''
+Anders Kaseorg <[andersk@ksplice.com]>: Anders Kaseorg <andersk@ksplice.com>
+andi@firstfloor.org <andi@firstfloor.org>: <andi@firstfloor.org>
+Andrea.Amorosi76@gmail.com <Andrea.Amorosi76@gmail.com>: <andrea.amorosi76@gmail.com>
+Andrea Gelmini <andrea.gelmini@gelma.net: Andrea Gelmini <andrea.gelmini@gelma.net>
+Andrea Merello <andreamrl at tiscali it>: Andrea Merello <andreamrl@tiscali.it>
+Andreas Huber <>: ''
+Andreas Mohr <[andi@rhlx01.fht-esslingen.de]>: Andreas Mohr <andi@rhlx01.fht-esslingen.de>
+Andre Erdmann: ''
+Andrei Popa: ''
+Andrei Popescu <>: ''
+andreoli@samba.ing.unimo.it <andreoli@samba.ing.unimo.it>: <andreoli@samba.ing.unimo.it>
+Andre Przywara <andre.przywara@amd,com>: Andre Przywara <andre.przywara@amd.com>
+Andrew G. Morgan" <morgan@kernel.org>: Andrew G. Morgan <morgan@kernel.org>
+Andrew Lewis <andrew-lewis at netspace.net.au>: Andrew Lewis <andrew-lewis@netspace.net.au>
+Andrew Lunn, <andrew@lunn.ch>: Andrew Lunn <andrew@lunn.ch>
+Andrew Morton: ''
+andrew.vasquez@qlogic.com <andrew.vasquez@qlogic.com>: <andrew.vasquez@qlogic.com>
+Andrew Victor <andrew at sanpeople.com>: Andrew Victor <andrew@sanpeople.com>
+Andrew Victor <andrew@sanpeople.com: Andrew Victor <andrew@sanpeople.com>
+Andrey Cherkinskiy <Andrey Cherkinskiy unihorn@pochta.ru>: Andrey Cherkinskiy <unihorn@pochta.ru>
+andrey@cozybit.com <andrey@cozybit.com>: <andrey@cozybit.com>
+Andrey Mirkin <(amirkin@sw.ru)>: Andrey Mirkin <amirkin@sw.ru>
+andros@citi.umich.edu <andros@citi.umich.edu>: <andros@citi.umich.edu>
+Andy Adamson <andros@netapp.com: Andy Adamson <andros@netapp.com>
+Andy McFadden <>: ''
+Andy Stadler <>: ''
+Anthony Godshall, Ampro Computers, Inc <agodshall@ampro.com>: Anthony Godshall <agodshall@ampro.com>
+anthony@rhesus <anthony@rhesus>: ''
+anthony@squirrel <anthony@squirrel>: ''
+anton@samba.org <anton@samba.org>: <anton@samba.org>
+apatard@mandriva.com <apatard@mandriva.com>: <apatard@mandriva.com>
+aquynh@gmail.com <aquynh@gmail.com>: <aquynh@gmail.com>
+Arjan van de Ven: ''
+Arjan van de Ven <arjan@linux.intel.com: Arjan van de Ven <arjan@linux.intel.com>
+armadefuego@gmail.com <armadefuego@gmail.com>: <armadefuego@gmail.com>
+Arnaud Patard (Rtp <arnaud.patard@rtp-net.org>: Arnaud Patard <arnaud.patard@rtp-net.org>
+arnaud.patard@rtp-net.org <arnaud.patard@rtp-net.org>: <arnaud.patard@rtp-net.org>
+arnd@arndb.de <arnd@arndb.de>: <arnd@arndb.de>
+Artem B. Bityitskiy: ''
+Arun Bharadwaj <arun@linux.vnet.ibm.com: Arun Bharadwaj <arun@linux.vnet.ibm.com>
+Arve HjA,nnevA?g <arve@android.com>: Arve <arve@android.com>
+arvidjaar@mail.ru <arvidjaar@mail.ru>: <arvidjaar@mail.ru>
+Assaf Hoffman: ''
+audetto@tiscali.it <audetto@tiscali.it>: <audetto@tiscali.it>
+Auke Kok <auke\-jan.h.kok@intel.com>: Auke Kok <auke-jan.h.kok@intel.com>
+Auke Kok <auke\\-jan.h.kok@intel.com>: Auke Kok <auke-jan.h.kok@intel.com>
+Auke Kok <auke\\\-jan.h.kok@intel.com>: Auke Kok <auke-jan.h.kok@intel.com>
+aurelien...@free.fr <aurelien...@free.fr>: <aurelien@free.fr>
+austin_zhang@linux.intel.com <austin_zhang@linux.intel.com>: <austin_zhang@linux.intel.com>
+! 'Author: Andy Lutomirski <luto@MIT.EDU>': Andy Lutomirski <luto@mit.edu>
+Axel Lin <[axel.lin@gmail.com]>: Axel Lin <axel.lin@gmail.com>
+Baodong Chen <[email]chenbdchenbd@gmail.com[email]>: Baodong Chen <chenbdchenbd@gmail.com>
+bart.hartgers@gmail.com <bart.hartgers@gmail.com>: <bart.hartgers@gmail.com>
+basile@opensource.dyc.edu <basile@opensource.dyc.edu>: <basile@opensource.dyc.edu>
+bdpepple@gmail.com <bdpepple@gmail.com@280a3c95-c248-0410-a8b1-f7e71b7f0842>: ''
+Becky Bruce <becky.bruce at freescale.com>: Becky Bruce <becky.bruce@freescale.com>
+Ben Cheng <>: ''
+Ben Dooks: ''
+Ben Dooks <(address hidden)>: ''
+ben@fluff.org.uk <ben@fluff.org.uk>: <ben@fluff.org.uk>
+Ben Greear <greearb@candelatech.com: Ben Greear <greearb@candelatech.com>
+Ben Murdoch <>: ''
+ben.nizette@iinet.net.au <ben.nizette@iinet.net.au>: <ben.nizette@iinet.net.au>
+Benny Amorsen: ''
+Benny.Wong@motorola.com <Benny.Wong@motorola.com>: <benny.wong@motorola.com>
+bgardner@wabtec.com <bgardner@wabtec.com>: <bgardner@wabtec.com>
+BGardner@Wabtec.com <BGardner@Wabtec.com>: <bgardner@wabtec.com>
+bharrosh@panasas.com <bharrosh@panasas.com>: <bharrosh@panasas.com>
+Bill Huey (hui <billh@gnuppy.monkey.org>: Bill Huey <billh@gnuppy.monkey.org>
+Bill Napier <>: ''
+Bjorn Bringert <>: ''
+Bjorn Helgaas <bjorn.helgaas at hp.com>: Bjorn Helgaas <bjorn.helgaas@hp.com>
+bjorn.helgaas@hp.com <bjorn.helgaas@hp.com>: Bjorn Helgaas <bjorn.helgaas@hp.com>
+blaisorblade@yahoo.it <blaisorblade@yahoo.it>: <blaisorblade@yahoo.it>
+Boaz Harrosh <Boaz Harrosh bharrosh@panasas.com>: Boaz Harrosh <bharrosh@panasas.com>
+Bob Lee <>: ''
+Bob Mauchin <zebob.m gmail.com>: Bob Mauchin <zebob.m@gmail.com>
+Bob Moore <robert.moore@intel.com: Bob Moore <robert.moore@intel.com>
+bookjovi@gmail.com <bookjovi@gmail.com>: <bookjovi@gmail.com>
+born.into.silence@gmail.com <born.into.silence@gmail.com>: <born.into.silence@gmail.com>
+bpm@sgi.com <bpm@sgi.com>: <bpm@sgi.com>
+Brad Fitzpatrick <>: ''
+Brandon Ballinger <>: ''
+brandon@ifup.org <brandon@ifup.org>: <brandon@ifup.org>
+Brett Chabot <>: ''
+brian@murphy.dk <brian@murphy.dk>: <brian@murphy.dk>
+brice@myri.com <brice@myri.com>: <brice@myri.com>
+BrillyWu@viatech.com.cn <BrillyWu@viatech.com.cn>: <brillyWu@viatech.com.cn>
+brking@charter.net <brking@charter.net>: <brking@charter.net>
+brking@us.ibm.com <brking@us.ibm.com>: <brking@us.ibm.com>
+brking@us.ibm.com  <brking@us.ibm.com>: <brking@us.ibm.com>
+broonie@sirena.org.uk <broonie@sirena.org.uk>: <broonie@sirena.org.uk>
+Bryan Young (Utilitek Systems, Inc.): ''
+bugme-daemon@bugzilla.kernel.org <bugme-daemon@bugzilla.kernel.org>: <bugme-daemon@bugzilla.kernel.org>
+Candelaria Villareal, Jorge <jorge.candelaria@ti.com>: Jorge Candelaria Villareal <jorge.candelaria@ti.com>
+Candelaria Villareal, Jorge <x0107209@ti.com>: Jorge Candelaria Villareal <x0107209@ti.com>
+Carlos Eduardo Aguiar <carlos.aguiar <at>: ''
+Carlos Morgado <chbm gnome.org>: Carlos Morgado <chbm@gnome.org>
+Cary Clark <>: ''
+Casey Leedom: ''
+Catalin BOIE <catab at umbrella.ro>: Catalin BOIE <catab@umbrella.ro>
+Catalin BOIE <catab at umrella.ro>: Catalin BOIE <catab@umbrella.ro>
+Catalin Marinas: ''
+! 'Cc: David Woodhouse <dwmw2@infradead.org>': David Woodhouse <dwmw2@infradead.org>
+! 'Cc: Greg Kroah-Hartman <gregkh@suse.de>': Greg Kroah-Hartman <gregkh@suse.de>
+! 'Cc: Ingo Molnar <mingo@elte.hu>': Ingo Molnar <mingo@elte.hu>
+Cedric Beust <>: ''
+CEST 1999,  Eskil Olsen <deity@eskil.dk>: Eskil Olsen <deity@eskil.dk>
+chaithrika@ti.com <chaithrika@ti.com>: <chaithrika@ti.com>
+Changhwan Youn <chaos.youn at samsung.com>: Changhwan Youn <chaos.youn@samsung.com>
+changoh.heo@samsung.com <changoh.heo@samsung.com>: <changoh.heo@samsung.com>
+Chih-Chung Chang <>: ''
+Chi-Thanh Christopher Nguyen: ''
+Chris Bagwell <chris at cnpbagwell dot com>: Chris Bagwell <chris@cnpbagwell.com>
+Chris Ball <cjb@laptop.org: Chris Ball <cjb@laptop.org>
+Chris Dearman (chris@mips.com): Chris Dearman <chris@mips.com>
+Chris Fox (Karderio) <chrisfox -at- svn.gnome -dot- org>: Chris Fox <chrisfox@svn.gnome.org>
+Chris Tate <>: ''
+Christian Rose <menthos@menthos,com>: Christian Rose <menthos@menthos.com>
+! 'Christoph Bisping (bug #13086)': ''
+Christophe Fergeau <set EMAIL_ADDRESS environment variable>: ''
+Christophe Lambin <clambin@easynet,be>: Christophe Lambin <clambin@easynet.be>
+Christoph Hellwig <hch@infradead.org: Christoph Hellwig <hch@infradead.org>
+Christoph Lameter <clameter@@sgi.com>: Christoph Lameter <clameter@sgi.com>
+Christoph Lameter <cl@linux-foundation.org: Christoph Lameter <cl@linux-foundation.org>
+Chung-yih Wang <>: ''
+clameter@sgi.com <clameter@sgi.com>: <clameter@sgi.com>
+Claudio Arseni <claudio. arseni@gmail.com>: Claudio Arseni <claudio.arseni@gmail.com>
+Clemens Ladisch <clemens@ladisch.de: Clemens Ladisch <clemens@ladisch.de>
+Cliff Holden <cliff.holden@atheros.com: Cliff Holden <cliff.holden@atheros.com>
+colin@cozybit.com <colin@cozybit.com>: <colin@cozybit.com>
+Colin King: ''
+Conny Seidel <conny.seidel@.amd.com>: Conny Seidel <conny.seidel@amd.com>
+cpw@sgi.com <cpw@sgi.com>: <cpw@sgi.com>
+Craig Routledge <webstuff at craigroutledge dot com>: Craig Routledge <webstuff@craigroutledge.com>
+Craig Shelley craig@microtron.org.uk: Craig Shelley <craig@microtron.org.uk>
+Cristian Klein: ''
+csanchez@neurowork.net <csanchez@neurowork.net>: <csanchez@neurowork.net>
+cybercide@f2s.com <cybercide@f2s.com>: <cybercide@f2s.com>
+Cynthia Wong <>: ''
+Daisuke Miyakawa <>: ''
+Dan Aloni <da\\-x@monatomic.org>: Dan Aloni <da-x@monatomic.org>
+Dan Bornstein <>: ''
+Dan Carpenter: ''
+Dan Carpenter <[error27@gmail.com]>: Dan Carpenter <error27@gmail.com>
+Dan Carpenter <error27@gmail.com<: Dan Carpenter <error27@gmail.com>
+daniel@centurion.net.nz <daniel@centurion.net.nz>: <daniel@centurion.net.nz>
+Daniele Forsi: ''
+Daniele Lacamera (root at danielinux.net)net: Daniele Lacamera <root@danielinux.net>
+Daniel Marjamaki <daniel.marjamaki at comhem.se>: Daniel Marjamaki <daniel.marjamaki@comhem.se>
+Daniel Mustieles <daniel.mustieles@gmail..com>: Daniel Mustieles <daniel.mustieles@gmail.com>
+Daniel T Chen <crimsun at ubuntu.com>: Daniel T Chen <crimsun@ubuntu.com>
+Danilo \305\240egan <dsegan@gmx.net>: Danilo Segan <dsegan@gmx.net>
+Dave Airlie <Ben Herrenschmidt benh@kernel.crashing.org>: Ben Herrenschmidt <benh@kernel.crashing.org>
+Dave Bort <>: ''
+Dave Neuer: ''
+Dave Olson <dave.olson@qlogic.com: Dave Olson <dave.olson@qlogic.com>
+Dave Sparks <>: ''
+David Anders <danders at amltd.com>: David Anders <danders@amltd.com>
+david-b@pacbell.net <david-b@pacbell.net>: <david-b@pacbell.net>
+David Brown <>: ''
+David Brownell: ''
+! 'David Brownell: <david-b@pacbell.net>': David Brownell <david-b@pacbell.net>
+': David Daney <ddaney@caviumnetworks.com>': David Daney <ddaney@caviumnetworks.com>
+! 'DavidFreeman on #linux-wireless': ''
+David Gibson david@gibson.dropbear.id.au>: David Gibson <david@gibson.dropbear.id.au>
+David McCullough: ''
+David Mosberger: ''
+David P. Reed: ''
+David S. Miller" <davem@davemloft.net>: David S. Miller <davem@davemloft.net>
+David Teigland <teigland redhat com>: David Teigland <teigland@redhat.com>
+David T.L. Wong <davidtlwong <at>: ''
+David Turner <>: ''
+David VomLehn (dvomlehn@cisco.com): David VomLehn <dvomlehn@cisco.com>
+David Woodhouse: ''
+dayu@datangmobile.cn <dayu@datangmobile.cn>: <dayu@datangmobile.cn>
+ddiaz@cenditel.gob.ve <ddiaz@cenditel.gob.ve>: <ddiaz@cenditel.gob.ve>
+Debajit Ghosh <>: ''
+de Dinechin, Christophe (Integrity VM) <christophe.de-dinechin@hp.com>: Christophe de Dinechin <christophe.de-dinechin@hp.com>
+Deepak Saxena: ''
+Dennis Cransotn <dennis_cranston at yahoo com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis Cransotn <dennis_cranston at yahoo.com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis cranston <dennis_cranston at yahoo com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis Cranston <dennis_cranston at yahoo com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis Cranston <dennis_cranston at yahoo.com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis Cranston <dennis_cranston at yaoo com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis Jansen <Dennis.Jansen@...>: ''
+Dennis M. Cranston <dennis_cranston at yahoo com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis M. Cranston <dennis_cranston at yahoo.com>: Dennis M. Cranston <dennis_cranston@yahoo.com>
+Dennis Munsie <dmunsie@cecropia.com: Dennis Munsie <dmunsie@cecropia.com>
+devzero@web.de <devzero@web.de>: <devzero@web.de>
+dhananjay@netxen.com <dhananjay@netxen.com>: <dhananjay@netxen.com>
+dhananjay.phadke@gmail.com <dhananjay.phadke@gmail.com>: <dhananjay.phadke@gmail.com>
+Dianne Hackborn <>: ''
+Didier 'Ptitjes <ptitjes at free dot fr>: Didier Ptitjes <ptitjes@free.fr>
+Didier "Ptitjes <ptitjes@free.fr>: Didier Ptitjes <ptitjes@free.fr>
+Dima Zavin <>: ''
+Dirk Dougherty <>: ''
+Dirk Opfer: ''
+Dmitry Baryshkov <[dbaryshkov@gmail.com]>: Dmitry Baryshkov <dbaryshkov@gmail.com>
+Dmitry Baryshkov dbaryshkov@gmail.com: Dmitry Baryshkov <dbaryshkov@gmail.com>
+Dmitry Kodanev <dkodanev at gmail dot com>: Dmitry Kodanev <dkodanev@gmail.com>
+Dmitry Shmidt <>: ''
+Dmitry Torokhov <dtor at mail.ru>: Dmitry Torokhov <dtor@mail.ru>
+d.moskvitin@samsung.com <d.moskvitin@samsung.com>: <d.moskvitin@samsung.com>
+Dodji Seketeli <dodji 47 seketeli dot org>: Dodji Seketeli <dodji@seketeli.org>
+Dodji Seketeli <dodji at seketeli dot org>: Dodji Seketeli <dodji@seketeli.org>
+Dodji Seketeli <dodji () seketeli () org>: Dodji Seketeli <dodji@seketeli.org>
+Dodji Seketeli <dodji seketeli org>: Dodji Seketeli <dodji@seketeli.org>
+domen@coderock.org <domen@coderock.org>: <domen@coderock.org>
+Dominik Brodowski <linux at dominikbrodowski.net>: Dominik Brodowski <linux@dominikbrodowski.net>
+Dominik Brodowski <linux@dominikbrodowski.net: Dominik Brodowski <linux@dominikbrodowski.net>
+donald.d.dugger@intel.com <donald.d.dugger@intel.com>: <donald.d.dugger@intel.com>
+Doug Kwan <>: ''
+Douglas Thompson <dougthompson@xmission.com: Douglas Thompson <dougthompson@xmission.com>
+Doug Nelson: ''
+Doug Thompson <dougthompson@xmission.com: Douglas Thompson <dougthompson@xmission.com>
+Doug Zongker <>: ''
+dranch@trinnet.net <dranch@trinnet.net>: <dranch@trinnet.net>
+Dr. David Alan Gilbert <linux at treblig.org>: Dr. David Alan Gilbert <linux@treblig.org>
+Duane Griffin <duaneg@dghda.com: Duane Griffin <duaneg@dghda.com>
+Duarte Loreto <happyguy_pt@hotmail,com>: Duarte Loreto <happyguy_pt@hotmail.com>
+Duncan Sands <duncan.sands@math.u\-psud.fr>: Duncan Sands <duncan.sands@math.u-psud.fr>
+dyfet@gnutelephony.org <dyfet@gnutelephony.org>: <dyfet@gnutelephony.org>
+ecashin@coraid.com <ecashin@coraid.com>: <ecashin@coraid.com>
+Ed Heyl <>: ''
+Edouard Lafargue (edouard@lafargue.name): ''
+Edward Falk: ''
+eiichiro.oiwa.nm@hitachi.com <eiichiro.oiwa.nm@hitachi.com>: <eiichiro.oiwa.nm@hitachi.com>
+Eli Cohen <eli at mellanox.co.il>: Eli Cohen <eli@mellanox.co.il>
+Elijah Newren <newren gamil com>: Elijah Newren <newren@gmail.com>
+Elijah Newren <newren gmail com>: Elijah Newren <newren@gmail.com>
+Elijah Newren <newren gmail.com>: Elijah Newren <newren@gmail.com>
+Emmanuel Kowalski: ''
+Emmanuel Rodriguez <emmanuel.rodriguez gmail com>: Emmanuel Rodriguez <emmanuel.rodriguez@gmail.com>
+eparis@redhat <eparis@redhat>: <eparis@redhat>
+eranian@google.com <eranian@google.com>: <eranian@google.com>
+Erdai Ronahi <erdal dot ronahi at gmail dot com>: Erdai Ronahi <erdal.ronahi@gmail.com>
+Eric Fischer <>: ''
+Eric Laurent <>: ''
+Eric Miao <eric.miao at canonical.com>: Eric Miao <eric.miao@canonical.com>
+Eric Miao" <eric.y.miao@gmail.com>: Eric Miao <eric.y.miao@gmail.com>
+Eric Paris: ''
+Eric Paris <eparis@redhat.com: Eric Paris <eparis@redhat.com>
+Eric Sandeen <sandeen@sandeen.net: Eric Sandeen <sandeen@sandeen.net>
+Eric Sesterhenn <[mailto:snakebyte@gmx.de]>: Eric Sesterhenn <snakebyte@gmx.de>
+Eric Shienbrood <>: ''
+Eskil Olsen <set EMAIL_ADDRESS environment variable>: ''
+ethanhsiao@jmicron.com <ethanhsiao@jmicron.com>: <ethanhsiao@jmicron.com>
+Eugene Surovegin <ebs@ebshome.net: Eugene Surovegin <ebs@ebshome.net>
+Evan Millar <>: ''
+Evengi Golov (in bugzilla): ''
+Fabian Carlstrom <>: ''
+Fabrice Deyber fabricedeyber@agilemesh.com: Fabrice Deyber <fabricedeyber@agilemesh.com>
+Faisal Latif <flatif@neteffect.com.: Faisal Latif <flatif@neteffect.com>
+felix@derklecks.de <felix@derklecks.de>: <felix@derklecks.de>
+Felix Fietkau <nbd@openwrt.org: Felix Fietkau <nbd@openwrt.org>
+felixonta@gmail.com <felixonta@gmail.com>: <felixonta@gmail.com>
+Fenghua Yu <[fenghua.yu@intel.com]>: Fenghua Yu <fenghua.yu@intel.com>
+Feng Kan fkan@amcc.com: Feng Kan <fkan@amcc.com>
+Feng Qian <>: ''
+Fernando Herrera <fherrera onirica com>: Fernando Herrera <fherrera@onirica.com>
+Fernando Luis [** ISO-8859-1 charset **] VazquezCao <fernando@oss.ntt.co.jp>: Fernando Luis <fernando@oss.ntt.co.jp>
+Fernando Luis VA?AE'A,A?zquez Cao <fernando@oss.ntt.co.jp>: Fernando Luis <fernando@oss.ntt.co.jp>
+fernando@oss.ntt.co <fernando@oss.ntt.co>: Fernando Luis <fernando@oss.ntt.co.jp>
+Ficus Kirkpatrick <>: ''
+Filippo Argiolas <filippo.argiolas at gmail.com>: Filippo Argiolas <filippo.argiolas@gmail.com>
+Filip Zyzniewski <(address hidden)>: ''
+! 'fixed url: T.Aihana <aihana@gnome.gr.jp>': T.Aihana <aihana@gnome.gr.jp>
+fkan@amcc.com <fkan@amcc.com>: <fkan@amcc.com>
+Florian Fainelli <florian@openwrt.org: Florian Fainelli <florian@openwrt.org>
+florian@mickler.org <florian@mickler.org>: <florian@mickler.org>
+Florin Malita: ''
+frank.blaschka@de.ibm.com <frank.blaschka@de.ibm.com>: Frank Blaschka <frank.blaschka@de.ibm.com>
+Frank Blaschka <frank.blaschka@de.ibm.com: Frank Blaschka <frank.blaschka@de.ibm.com>
+Frank Wiegand <FWIE cpan org>: Frank Wiegand <fwie@cpan.org>
+Frederic Marchal <frederic.marchal@wowcompany.co: Frederic Marchal <frederic.marchal@wowcompany.com>
+Frederic Weisbecker <fweisbec@gmail.com: Frederic Weisbecker <fweisbec@gmail.com>
+Fred Quintana <>: ''
+FreeBSD community: ''
+! '"Frej Drejhammar <frej.drejhammar@gmail.com>': Frej Drejhammar <frej.drejhammar@gmail.com>
+Friedel Wolff <F Wolff friedel@translate.org.za>: F Wolff <friedel@translate.org.za>
+! 'From: Andrew Morton <akpm@linux-foundation.org>': Andrew Morton <akpm@linux-foundation.org>
+! 'From: Christoph Hellwig <hch@lst.de>': Christoph Hellwig <hch@lst.de>
+! 'From: Greg Kroah-Hartman <gregkh@suse.de>': Greg Kroah-Hartman <gregkh@suse.de>
+! 'From: jiang.adam@gmail.com <From: jiang.adam@gmail.com>': <jiang.adam@gmail.com>
+! 'From: Lee, Chun-Yi <jlee@novell.com>': Chun-Yi Lee <jlee@novell.com>
+! 'From: Mel Gorman <mel@csn.ul.ie>': Mel Gorman <mel@csn.ul.ie>
+! 'From: Nick Piggin <npiggin@suse.de>': Nick Piggin <npiggin@suse.de>
+! 'From: Rafael J. Wysocki <rjw@sisk.pl>': Rafael J. Wysocki <rjw@sisk.pl>
+! 'From: Thiemo Nagel <thiemo.nagel@ph.tum.de>': Thiemo Nagel <thiemo.nagel@ph.tum.de>
+fweisbec@gmail.com <fweisbec@gmail.com>: <fweisbec@gmail.com>
+GaA<<l CHAMOULAUD <strider@src.gnome.org>: G. CHAMOULAUD <strider@src.gnome.org>
+garrett_damore@tadpole.com <garrett_damore@tadpole.com>: <garrett_damore@tadpole.com>
+Gaurav Mathur <>: ''
+Gen Fukatsu: ''
+Geode <gerard DOT b AT bbox DOT fr>: Geode <gerard.b@bbox.fr>
+geoffrey.levand@am.sony.com <geoffrey.levand@am.sony.com>: <geoffrey.levand@am.sony.com>
+George Chriss: ''
+George G. Davis: ''
+George Kadianakis <desnacked at gmail.com>: George Kadianakis <desnacked@gmail.com>
+Gerald Henriksen <murrayc@ghenriks@rogers.com>: Gerald Henriksen <ghenriks@rogers.com>
+Gilles Casse <via william.walker@sun.com>: Gilles Casse <william.walker@sun.com>
+Giorgio Padrin: ''
+<Giovanni Scafora giovanni@archlinux.org>: Giovanni Scafora <giovanni@archlinux.org>
+Giridhar Pemmasani (pgiri@yahoo.com): Giridhar Pemmasani <pgiri@yahoo.com>
+Gomez Castellanos, Ivan <ivan.gomez@ti.com>: Ivan Gomez Castellanos <ivan.gomez@ti.com>
+gorcunov@gmail.com <gorcunov@gmail.com>: <gorcunov@gmail.com>
+Grace Kloba <>: ''
+Grant Grundler <grundler@parisc-linux.org: Grant Grundler <grundler@parisc-linux.org>
+gregkh@suse.de <gregkh@suse.de>: Greg Kroah-Hartman <gregkh@suse.de>
+Greg Kroah-Hartman <gregkh@suse.d: Greg Kroah-Hartman <gregkh@suse.de>
+Greg Kroah-Hartman <gregkh@suse.de: Greg Kroah-Hartman <gregkh@suse.de>
+Gregory Leblanc <set EMAIL_ADDRESS environment variable>: ''
+grzegorz.chwesewicz@chilan.com <grzegorz.chwesewicz@chilan.com>: Chilan Grzegorz Chwesewicz <grzegorz.chwesewicz@chilan.com>
+Grzegorz Chwesewicz, Chilan <grzegorz.chwesewicz@chilan.com>: Chilan Grzegorz Chwesewicz <grzegorz.chwesewicz@chilan.com>
+Guang Zhu <>: ''
+Guennadi Liakhovetski <g.liakhovetski <at>: ''
+Guillaume GOURAT / guillaume.gourat@nexvision.fr: Guillaume GOURAT <guillaume.gourat@nexvision.fr>
+Guzman Lugo, Fernando <fernando.lugo@ti.com>: Fernando Guzman Lugo <fernando.lugo@ti.com>
+Guzman Lugo, Fernando <x0095840@ti.com>: Fernando Guzman Lugo <x0095840@ti.com>
+gwang@google.com <gwang@google.com>: <gwang@google.com>
+gw.kernel@tnode.com <gw.kernel@tnode.com>: <gw.kernel@tnode.com>
+G Zornetzer: ''
+Hans Peter: ''
+Hartmut Hackmann <hartmut.hackmann@t\-online.de>: Hartmut Hackmann <hartmut.hackmann@t-online.de>
+Hartmut Hackmann <hartmut.hackmann@t\\-online.de>: Hartmut Hackmann <hartmut.hackmann@t-online.de>
+hawkes@sgi.com <hawkes@sgi.com>: <hawkes@sgi.com>
+hch@lst.de <Christoph Hellwig>: Christoph Hellwig <hch@lst.de>
+Herbert Xu ~{PmV>: ''
+Hermann Kneissel herkne@users.sourceforge.net: Hermann Kneissel <herkne@users.sourceforge.net>
+H Hartley Sweeten <(address hidden)>: H Hartley Sweeten <hsweeten@visionengravers.com>
+<H Hartley Sweeten <hsweeten@visionengravers.com>: H Hartley Sweeten <hsweeten@visionengravers.com>
+Hidetoshi Seto <[seto.hidetoshi@jp.fujitsu.com]>: Hidetoshi Seto <seto.hidetoshi@jp.fujitsu.com>
+Hinko Kocevar <hinko.kocevar@cetrtapot.si: Hinko Kocevar <hinko.kocevar@cetrtapot.si>
+hiranotaka@zng.jp <hiranotaka@zng.jp>: <hiranotaka@zng.jp>
+Hoang-Nam Nguyen <hnguyen at de.ibm.com>: Hoang-Nam Nguyen <hnguyen@de.ibm.com>
+holger@muscate-magnussen.de <holger@muscate-magnussen.de>: <holger@muscate-magnussen.de>
+Holger Schurig: Holger Schurig <hs4233@mail.mn-solutions.de>
+Holger Schurig <hs4233@mail.mn-solutions.de: Holger Schurig <hs4233@mail.mn-solutions.de>
+holt@sgi.com <holt@sgi.com>: <holt@sgi.com>
+hongmin.son <hongmin.son@samsung.com: <hongmin.son@samsung.com>
+horms@vergenet.net <horms@vergenet.net>: <horms@vergenet.net>
+H. Peter Anvin <hpa@zytor.com: H. Peter Anvin <hpa@zytor.com>
+http://gregmeiste.com/2009/06/gerrit-code-review-installation/: ''
+https://patchwork.linux-mips.org/patch/1754/: ''
+http://www.kerneloops.org/searchweek.php?search=ml_ff_set_gain: ''
+! '"Huang': ''
+Hubert Feurstein <(address hidden)>: ''
+hummerbliss@gmail.com <hummerbliss@gmail.com>: <hummerbliss@gmail.com>
+hyc@symas.com <hyc@symas.com>: <hyc@symas.com>
+Iain Holmes <iain@openedhand.com mailto:iain@openedhand.com>: Iain Holmes <iain@openedhand.com>
+Ian Molton: ''
+Igor Chernyshev <igor.ch75+alsa at gmail.com>: Igor Chernyshev <igor.ch75+alsa@gmail.com>
+Igor Mammedov <niallain at gmail.com>: Igor Mammedov <niallain@gmail.com>
+Iliyan Malchev <>: ''
+inaky@linux.intel.com <inaky@linux.intel.com>: <inaky@linux.intel.com>
+Ingo Molnar: ''
+is included because signers responsible for the code thought: ''
+is included because those are people who are responsible: ''
+is questionable, but as signers that use this tag tend to be: ''
+istvan_v@mailbox.hu <istvan_v@mailbox.hu>: <istvan_v@mailbox.hu>
+Ivan Skytte J?rgensen <isj-sctp@i1.dk: Ivan Skytte J. <isj-sctp@i1.dk>
+Ivo van Doorn <IvDoorn@gmail.com: Ivo van Doorn <ivdoorn@gmail.com>
+j223yang@asset.uwaterloo.ca <j223yang@asset.uwaterloo.ca>: <j223yang@asset.uwaterloo.ca>
+Jack Palevich <>: ''
+Jack Veenstra <>: ''
+jacmet@sunsite.dk <jacmet@sunsite.dk>: <jacmet@sunsite.dk>
+Jacob IlsA, Christensen <firelake@src.gnome.org>: Christensen Jacob IlsA <firelake@src.gnome.org>
+jacob.jun.pan@linux.intel.com <jacob.jun.pan@linux.intel.com>: <jacob.jun.pan@linux.intel.com>
+Jacob.Shin@amd.com <Jacob.Shin@amd.com>: <jacob.shin@amd.com>
+jacob.shin@amd.com <jacob.shin@amd.com>: <jacob.shin@amd.com>
+Jaikumar Ganesh <>: ''
+Jakub Steiner <jimmac * ximian * com>: Jakub Steiner <jimmac@ximian.com>
+James Bottomley <[mailto:James.Bottomley@SteelEye.com]>: James Bottomley <james.bottomley@steeleye.com>
+James Dong <>: ''
+James Ketrenos: ''
+James Le Cuirot <chewi at aura-online.co.uk>: James Le Cuirot <chewi@aura-online.co.uk>
+James.Smart@Emulex.Com <James.Smart@Emulex.Com>: <james.smart@emulex.com>
+Jamie McCracken <jamiemcc at gnome org>: Jamie McCracken <jamiemcc@gnome.org>
+Jamie McCracken <jamiemcc gnome org>: Jamie McCracken <jamiemcc@gnome.org>
+Jamie McCracken <jamie.mccrack gmail com>: Jamie McCracken <jamie.mccrack@gmail.com>
+janboe <janboe.ye at gmail.com>: <janboe.ye@gmail.com>
+Jane Silber: ''
+Jarek Poplawski <jarkao2@gmail.com;->: Jarek Poplawski <jarkao2@gmail.com>
+Jaroslav Kysela perex@suse.cz <perex@suse.cz>: Jaroslav Kysela <perex@suse.cz>
+Jason Parekh <>: ''
+Jason Sams <>: ''
+Jasper Lin <>: ''
+Jassi Brar <jassisinghbrar@gmail.com: Jassi Brar <jassisinghbrar@gmail.com>
+Jaswinder Singh Rajput <[jaswinder@kernel.org]>: Jaswinder Singh Rajput <jaswinder@kernel.org>
+Jayachandran C. <c.jayachandran at gmail.com>: Jayachandran C. <c.jayachandran@gmail.com>
+jayakumar.video@gmail.com <jayakumar.video@gmail.com>: <jayakumar.video@gmail.com>
+jayalk@intworks.biz <jayalk@intworks.biz>: <jayalk@intworks.biz>
+Jay Fenlason, Stefan Richter <stefanr@s5r6.in-berlin.de>: Stefan Richter Jay Fenlason <stefanr@s5r6.in-berlin.de>
+jblunck@suse.de <jblunck@suse.de>: <jblunck@suse.de>
+\"J. Bruce Fields\ <bfields@citi.umich.edu>: J. Bruce Fields <bfields@citi.umich.edu>
+\\\"J. Bruce Fields\\\ <bfields@citi.umich.edu>: J. Bruce Fields <bfields@citi.umich.edu>
+jdl@freescale.com <jdl@freescale.com>: <jdl@freescale.com>
+Jean-Baptiste Queru <>: ''
+Jean Delvare <khali@linux\-fr.org>: Jean Delvare <khali@linux-fr.org>
+Jean-Michel Trivi <>: ''
+Jeff Hamilton <>: ''
+Jeff Lackey: ''
+Jeffrey Finkelstein: ''
+Jeffrey Sharkey <>: ''
+Jens Axboe <axboe@suse.de: Jens Axboe <axboe@suse.de>
+Jens.Osterkamp@de.ibm.com <Jens.Osterkamp@de.ibm.com>: <jens.osterkamp@de.ibm.com>
+Jens Rottmann <JRottmann at LiPPERT-AT. de>: Jens Rottmann <jrottmann@lippert-at.de>
+Jeremy Allison (jra@samba.org): Jeremy Allison <jra@samba.org>
+Jerome Glisse <jglisse@redhat.com: Jerome Glisse <jglisse@redhat.com>
+Jesper Juhl <jesper.juhl@gmail.com: Jesper Juhl <jesper.juhl@gmail.com>
+jesper.nilsson@axis.com [CRIS]: Jesper Nilsson <jesper.nilsson@axis.com>
+Jesper Nilsson <Jesper.Nilsson@axis.com: Jesper Nilsson <jesper.nilsson@axis.com>
+Jesse Barnes <jbarnes at virtuousgeek.org>: Jesse Barnes <jbarnes@virtuousgeek.org>
+Jesse Barnes <jbarnes@virtuousgeek.org: Jesse Barnes <jbarnes@virtuousgeek.org>
+Jesse Brandeburg <jesse.brandeburg@intel.com: Jesse Brandeburg <jesse.brandeburg@intel.com>
+jhbird.choi@samsung.com <jhbird.choi@samsung.com>: <jhbird.choi@samsung.com>
+jiayingz@google.com (Jiaying Zhang) <>: Jiaying Zhang <jiayingz@google.com>
+jie.yang@atheros.com <jie.yang@atheros.com>: <jie.yang@atheros.com>
+jimix@watson.ibm.com <jimix@watson.ibm.com>: <jimix@watson.ibm.com>
+Jim Miller <>: ''
+Jody Goldberg <jgoldberg@home,com>: Jody Goldberg <jgoldberg@home.com>
+Joe Korty <joe.korty@ccur.com: Joe Korty <joe.korty@ccur.com>
+<Joel Becker <joel.becker@oracle.com>: Joel Becker <joel.becker@oracle.com>
+Joe Onorato <>: ''
+joe@perches.com <joe@perches.com>: <joe@perches.com>
+! 'Joerg Dorchain: <joerg@dorchain.net>': Joerg Dorchain <joerg@dorchain.net>
+Johannes Berg <johannes@sipsolutions.net: Johannes Berg <johannes@sipsolutions.net>
+Johannes Schmid <jhs@cvs,gnome.org>: Johannes Schmid <jhs@cvs.gnome.org>
+Johannes Schmid <set EMAIL_ADDRESS environment variable>: ''
+johannes@sipsolutions.net <johannes@sipsolutions.net>: <johannes@sipsolutions.net>
+Johannes Weiner <[hannes@cmpxchg.org]>: Johannes Weiner <hannes@cmpxchg.org>
+Johann Messner <johann.messner at jku.at>: Johann Messner <johann.messner@jku.at>
+John Baboval <john.baboval at virtualcomputer.com>: John Baboval <john.baboval@virtualcomputer.com>
+John Huang <>: ''
+John Kacur <jkacur at gmail dot com>: John Kacur <jkacur@gmail.com>
+John Kacur <jkacur@redhat.com: John Kacur <jkacur@redhat.com>
+John Kingman <kingman <at>: ''
+john.maxin@nokia.com <john.maxin@nokia.com>: <john.maxin@nokia.com>
+johnpol@2ka.mipt.ru <johnpol@2ka.mipt.ru>: <johnpol@2ka.mipt.ru>
+John Wang <>: ''
+John W. Linville (in bug).: John W. Linville <linville@tuxdriver.com>
+John W. Linville <linville@tuxdriver.com: John W. Linville <linville@tuxdriver.com>
+jolsa@redhat.com <jolsa@redhat.com>: <jolsa@redhat.com>
+Jonathan Brassow <jbrassow@redhat.com: Jonathan Brassow <jbrassow@redhat.com>
+Jonathan Corbet <corbet@lwn.net: Jonathan Corbet <corbet@lwn.net>
+Jon Loeliger <jdl@@jdl.com>: Jon Loeliger <jdl@jdl.com>
+Jon Ringle: ''
+Jordan_Hargrave@Dell.com <Jordan_Hargrave@Dell.com>: <jordan_hargrave@dell.com>
+Jorge Bernal "Koke <koke@amedias.org>: Jorge Bernal Koke <koke@amedias.org>
+Jorge Boncompte [DTI2] <jorge@dti2.net>: Jorge Boncompte <jorge@dti2.net>
+Jorge Gonzalez, Daniel Mustieles <jorgegonz@svn.gnome.org>: Daniel Mustieles Jorge Gonzalez <jorgegonz@svn.gnome.org>
+Jorge Perez Burgos <jorge@perez@adaptia.es>: Jorge Perez Burgos <jorge.perez@adaptia.es>
+Jorg Pleumann <>: ''
+JosephChan@via.com.tw <JosephChan@via.com.tw>: <josephchan@via.com.tw>
+Josh Boyer <jwboyer@linux.vnet.ibm..com>: Josh Boyer <jwboyer@linux.vnet.ibm.com>
+Josh Boyer <jwboyer@linux.vnet.ibm.com: Josh Boyer <jwboyer@linux.vnet.ibm.com>
+Jozsef Kadlecsik <kadlec@blackhole.kfki.hu: Jozsef Kadlecsik <kadlec@blackhole.kfki.hu>
+Jrgen Schindele (linux@schindele.name): ''
+jschopp@austin.ibm.com <jschopp@austin.ibm.com>: <jschopp@austin.ibm.com>
+J Shane Culpepper <set EMAIL_ADDRESS environment variable>: ''
+juergen.mell@t-online.de <juergen.mell@t-online.de>: <juergen.mell@t-online.de>
+Juerg Haefliger <juergh at gmail.com>: Juerg Haefliger <juergh@gmail.com>
+! "Juha [\x18eola <juha.yrjola@solidboot.com>": Juha Yrjola <juha.yrjola@solidboot.com>
+Juha Yrjola <juha.yrjola <at>: Juha Yrjola <juha.yrjola@solidboot.com>
+Juha Yrjola juha.yrjola <at solidboot.com>: Juha Yrjola <juha.yrjola@solidboot.com>
+Julien hardelin <jm.hard {at} wanadoo.fr>: Julien hardelin <jm.hard@wanadoo.fr>
+Kacper Wysocki <kacperw at online dot no>: Kacper Wysocki <kacperw@online.no>
+KAMEZAWA Hiroyuki <kamezawa.hiroyu@jp.fujitsu.com: KAMEZAWA Hiroyuki <kamezawa.hiroyu@jp.fujitsu.com>
+Karl Rosaen <>: ''
+Kay Sievers <kay.sievers@vrfy.org: Kay Sievers <kay.sievers@vrfy.org>
+kay.sievers@vrfy.org <kay.sievers@vrfy.org>: Kay Sievers <kay.sievers@vrfy.org>
+Keld JA,rn Simonsen <keld@src.gnome.org>: Simonsen Keld <keld@src.gnome.org>
+Ken Shirriff <>: ''
+kenton@google.com <kenton@google.com@630680e5-0e50-0410-840e-4b1c322b438d>: ''
+Keshava Munegowda <keshava_mgowda@ti.com: Keshava Munegowda <keshava_mgowda@ti.com>
+Kevin Buhr: ''
+Kevin Hilman <khilman@deeprootsystems.com: Kevin Hilman <khilman@deeprootsystems.com>
+Kevin Ryde <user42 zip com au>: Kevin Ryde <user42@zip.com.au>
+Kevin Vandersloot <kfv101 psu edu>: Kevin Vandersloot <kfv101@psu.edu>
+Ke Wei <kewei@marvell.com: Ke Wei <kewei@marvell.com>
+Keyin Ryde <user42 zip com au>: Kevin Ryde <user42@zip.com.au>
+khali@linux-fr.org <khali@linux-fr.org>: <khali@linux-fr.org>
+kirjanov@gmail.com <kirjanov@gmail.com>: <kirjanov@gmail.com>
+Kiyoshi Ueda <k-ueda@ct.jp.nec.com: Kiyoshi Ueda <k-ueda@ct.jp.nec.com>
+Kjartan Maraas,,23491770 <kmaraas@gnome.org>: Kjartan Maraas <kmaraas@gnome.org>
+Kjartan Maraas <set EMAIL_ADDRESS environment variable>: Kjartan Maraas <kmaraas@gnome.org>
+Kjell L.: ''
+Komal Shah <komal_shah802003 <at>: ''
+kosaki.motohiro@jp.fujitsu.com <kosaki.motohiro@jp.fujitsu.com>: <kosaki.motohiro@jp.fujitsu.com>
+KOSAKI Motohiro <<kosaki.motohiro@jp.fujitsu.com>: KOSAKI Motohiro <kosaki.motohiro@jp.fujitsu.com>
+Kou Ishizaki <kou.ishizaki at toshiba.co.jp>: Kou Ishizaki <kou.ishizaki@toshiba.co.jp>
+<Kristen Carlson Accardi>: ''
+Kristian H?gsberg, Stefan Richter <stefanr@s5r6.in-berlin.de>: Stefan Richter Kristian H. <stefanr@s5r6.in-berlin.de>
+Kristoffer Ericson: Kristoffer Ericson <kristoffer.ericson@gmail.com>
+Kristoffer Ericson <(address hidden)>: Kristoffer Ericson <kristoffer.ericson@gmail.com>
+Kristoffer Ericson <kristoffer.ericson@gmail.com: Kristoffer Ericson <kristoffer.ericson@gmail.com>
+krzysztof.h1@wp.pl <krzysztof.h1@wp.pl>: Krzysztof Helt <krzysztof.h1@wp.pl>
+Krzysztof Halasa {khc@pm.waw.pl>: Krzysztof Halasa <khc@pm.waw.pl>
+Krzysztof Helt <krzysztof.h1 at wp.pl>: Krzysztof Helt <krzysztof.h1@wp.pl>
+Krzysztof Helt <krzysztof.h1@wp.pl: Krzysztof Helt <krzysztof.h1@wp.pl>
+Krzysztof Helt (krzysztof.h1@wp.pl): Krzysztof Helt <krzysztof.h1@wp.pl>
+Kukjin Kim <kgene.kim <at>: Kukjin Kim <kgene.kim@samsung.com>
+Kukjin Kim <kgene.kim at samsung.com>: Kukjin Kim <kgene.kim@samsung.com>
+kushylee <>: ''
+kxie@chelsio.com <kxie@chelsio.com>: <kxie@chelsio.com>
+Kylene Hall <kjhall@us.ibm.com: Kylene Hall <kjhall@us.ibm.com>
+Kyungmin Park: Kyungmin Park <kyungmin.park@samsung.com>
+Kyungmin Park <kyungmin.park at samsung.com>: Kyungmin Park <kyungmin.park@samsung.com>
+Larry Finger@lwfinger.net>: <larry.finger@lwfinger.net>
+Larry.Finger@lwfinger.net <Larry.Finger@lwfinger.net>: <larry.finger@lwfinger.net>
+Laurent Aguerreche <laurent.aguerrechGabor Kelemen kelemeng@gnome.hu>: Laurent Aguerreche <laurent.aguerreche@gnome.hu>
+lcc upstream <>: ''
+leitao@linux.vnet.ibm.com <leitao@linux.vnet.ibm.com>: <leitao@linux.vnet.ibm.com>
+len.brown@intel.com <len.brown@intel.com>: Len Brown <len.brown@intel.com>
+Len Brown <len.brown@intel.com: Len Brown <len.brown@intel.com>
+Lennert Buytenhek: ''
+Leon Scroggins <>: ''
+leon.woestenberg@gmail.com <leon.woestenberg@gmail.com>: <leon.woestenberg@gmail.com>
+Liam Girdwood <lrg@ti.com.: Liam Girdwood <lrg@ti.com>
+linas@austin.ibm.com <linas@austin.ibm.com>: <linas@austin.ibm.com>
+ling.ma@intel.com <ling.ma@intel.com>: <ling.ma@intel.com>
+Lin Ming <ming.m.lin@intel.com: Lin Ming <ming.m.lin@intel.com>
+Linus "Grr.." Torvalds: ''
+Linus Torvalds: ''
+Linus Torvalds <torvalds@akpm@linux-foundation.org>: Linus Torvalds <torvalds@linux-foundation.org>
+Linus Torvalds <torvalds@osdl.org: Linus Torvalds <torvalds@osdl.org>
+Linus Torvalds <torvalds@osdl.org): Linus Torvalds <torvalds@osdl.org>
+Linus Walleij (LD/EAB <linus.walleij@ericsson.com>: Linus Walleij <linus.walleij@ericsson.com>
+Linus Walleij <linus.walleij@linaro.org: Linus Walleij <linus.walleij@linaro.org>
+linus.walleij@stericsson.com <linus.walleij@stericsson.com>: <linus.walleij@stericsson.com>
+linux-kernel@vger.kernel.org <linux-kernel@vger.kernel.org>: <linux-kernel@vger.kernel.org>
+linux-mips@linux-mips.org>: <linux-mips@linux-mips.org>
+linux-mm@kvack.org <linux-mm@kvack.org>: <linux-mm@kvack.org>
+linuxppc@jdl.com <linuxppc@jdl.com>: <linuxppc@jdl.com>
+<linux-usb-devel@lists.sourceforge.net?: <linux-usb-devel@lists.sourceforge.net>
+linux-wireless <linux-wireless@vger.kernel.org: <linux-wireless@vger.kernel.org>
+Lionel Landwerlin <lionel.g.landwerlin@linuxA1;2403;0c.intel.com>: Lionel Landwerlin <lionel.g.landwerlin@linux.intel.com>
+Li Yuan <li.yuan@.sun.com>: Li Yuan <li.yuan@sun.com>
+lm-sensors@lm-sensors.org <lm-sensors@lm-sensors.org>: <lm-sensors@lm-sensors.org>
+Lopez Cruz, Misael <x0052729@ti.com>: Misael Lopez Cruz <x0052729@ti.com>
+Lorenzo Colitti <>: ''
+lorenzo@gnu.org <lorenzo@gnu.org>: <lorenzo@gnu.org>
+<Lorenzo Hernandez Garcia-Hierro <lorenzo@gnu.org>: Lorenzo Hernandez Garcia-Hierro <lorenzo@gnu.org>
+Lorenzo Nava: ''
+Lorenzo Nava, Francesco Gringoli: ''
+Luca Barbieri <luca at luca-barbieri.com>: Luca Barbieri <luca@luca-barbieri.com>
+Luca Ferretti <elle uca at libero it>: Luca Ferretti <elle.uca@libero.it>
+Lucas Correia Villa Real: ''
+Lucas De Marchi lucas.demarchi@profusion.mobi: Lucas De Marchi <lucas.demarchi@profusion.mobi>
+Luck, Tony" <tony.luck@intel.com>: Tony Luck <tony.luck@intel.com>
+Luis R. Rodriguez <lrodriguez@atheros.com: Luis R. Rodriguez <lrodriguez@atheros.com>
+Luiz Fernando N. Capitulino" <lcapitulino@mandriva.com.br>: Luiz Fernando N. Capitulino <lcapitulino@mandriva.com.br>
+Maciej W. Rozycki <macro@linux-mips.org: Maciej W. Rozycki <macro@linux-mips.org>
+Mads Kiilerich: ''
+mail@rainerkeller.de <mail@rainerkeller.de>: <mail@rainerkeller.de>
+malahal@us.ibm.com <malahal@us.ibm.com>: <malahal@us.ibm.com>
+malattia@linux.it <malattia@linux.it>: <malattia@linux.it>
+Manfred Spraul <manfred@colorfullife.com: Manfred Spraul <manfred@colorfullife.com>
+Manish Singh <yosh@gi,p.org>: Manish Singh <yosh@gimp.org>
+Marcel Holtmann <marcel@holtmann.org: Marcel Holtmann <marcel@holtmann.org>
+Marcelo Tosatti <marcelo.tosatti@cyclades.com: Marcelo Tosatti <marcelo.tosatti@cyclades.com>
+Marcelo Tosatti <mtosatti <at>: Marcelo Tosatti <marcelo.tosatti@cyclades.com>
+marcin.slusarz@gmail.com <marcin.slusarz@gmail.com>: Marcin Slusarz <marcin.slusarz@gmail.com>
+Marcin Slusarz <marcin.slusarz@gmail.com: Marcin Slusarz <marcin.slusarz@gmail.com>
+Marco Nelissen <>: ''
+Marco Pesenti Gritti <marco@.gnome.org>: Marco Pesenti Gritti <marco@gnome.org>
+Marco Pesenti Gritti <set EMAIL_ADDRESS environment variable>: Marco Pesenti Gritti <marco@gnome.org>
+Marek Szyprowski <[m.szyprowski@samsung.com]>: Marek Szyprowski <m.szyprowski@samsung.com>
+Marin Mitov <mitov@issp.bas.bg: Marin Mitov <mitov@issp.bas.bg>
+Mario Kleiner <mario.kleiner at tuebingen.mpg.de>: Mario Kleiner <mario.kleiner@tuebingen.mpg.de>
+Marius Andreiana <marius galuna ro>: Marius Andreiana <marius@galuna.ro>
+Marius Andreiana <marius galuna.ro>: Marius Andreiana <marius@galuna.ro>
+Marius Andreiana <marius spam galuna.ro>: Marius Andreiana <marius@galuna.ro>
+Mark A. Greer <mgreer@mvista.com: Mark A. Greer <mgreer@mvista.com>
+Mark Brown <broonie@@opensource.wolfsonmicro.com>: Mark Brown <broonie@opensource.wolfsonmicro.com>
+Mark Brown <broonie@opensource.wolfsonmicro.com: Mark Brown <broonie@opensource.wolfsonmicro.com>
+Mark Davis: ''
+Mark Davis [via p54/devices wiki]: ''
+mark@ecs.vuw.ac.nz <mark@ecs.vuw.ac.nz>: <mark@ecs.vuw.ac.nz>
+Mark Fasheh: ''
+Mark Lord <mlord@pobox.com: Mark Lord <mlord@pobox.com>
+Mark Thompson: ''
+markus.t.metzger@intel.com <markus.t.metzger@intel.com>: <markus.t.metzger@intel.com>
+Mark Wagner <>: ''
+Mark Womack <>: ''
+masc@theaterzentrum.at <masc@theaterzentrum.at>: <masc@theaterzentrum.at>
+Massimo Cora\ <maxcvs@email.it>: Massimo Cora <maxcvs@email.it>
+Mathias Agopian <>: ''
+Mathias Beilstein: ''
+Mathieu Lacage <set EMAIL_ADDRESS environment variable>: ''
+Matias Zabaljauregui <zabaljauregui at gmail.com>: Matias Zabaljauregui <zabaljauregui@gmail.com>
+Mats Johannesson: ''
+Matthias Drochner <drochner dot netbsd.org>: Matthias Drochner <drochner@netbsd.org>
+matthias@kaehlcke.net <matthias@kaehlcke.net>: <matthias@kaehlcke.net>
+Matthiew Herrb (OpenBSD X.org team): ''
+Matthijs van Drunen: ''
+Mattias Poldaru <mahfiaz gmail com>: Mattias Poldaru <mahfiaz@gmail.com>
+Matti Linnanvuori mattilinnanvuori@yahoo.com: Matti Linnanvuori <mattilinnanvuori@yahoo.com>
+Maxim Dziumanenko <mvd@mylinux,ua>: Maxim Dziumanenko <mvd@mylinux.ua>
+Maxim Petrov <iammozg at gmail dot com>: Maxim Petrov <iammozg@gmail.com>
+mboton@gmail.com <mboton@gmail.com>: <mboton@gmail.com>
+mdr@sgi.com <mdr@sgi.com>: <mdr@sgi.com>
+Mel Gorman <mel[at]csn.ul.ie>: Mel Gorman <mel@csn.ul.ie>
+Michael Biebl <mbiebl at gmail com>: Michael Biebl <mbiebl@gmail.com>
+Michael Chan <>: Michael Chan <mchan@broadcom.com>
+Michael Chan <mchan@broadcom.com.: Michael Chan <mchan@broadcom.com>
+Michael Ellerman <michael at ellerman.id.au>: Michael Ellerman <michael@ellerman.id.au>
+Michael Muller <mueller michael@alice-dsl.net>: Michael Muller <mueller.michael@alice-dsl.net>
+Michael Scherer <misc at mandriva dot org>: Michael Scherer <misc@mandriva.org>
+Michael Williamson <[michael.williamson@criticallink.com]>: Michael Williamson <michael.williamson@criticallink.com>
+Michal Ostrowski <mostrows at watson ibm com>: Michal Ostrowski <mostrows@watson.ibm.com>
+Michal Pryc <michal dot pryc at sun dot com>: Michal Pryc <michal.pryc@sun.com>
+Michel Abraham: ''
+Miguel Boton <mboton@gmail.com: Miguel Boton <mboton@gmail.com>
+Mijo <Safradin mijo@linux.vnet.ibm.com>: Mijo Safradin <mijo@linux.vnet.ibm.com>
+Mikael Pettersson <mikpe at it.uu.se>: Mikael Pettersson <mikpe@it.uu.se>
+Mika Kukkonen (mikukkon@iki.fi): Mika Kukkonen <mikukkon@iki.fi>
+Mike Cleron <>: ''
+Mike Frysinger: ''
+Mike Lockwood <>: ''
+mike.miller@hp.com <mike.miller@hp.com>: <mike.miller@hp.com>
+Mike Miller (OS Dev <mikem@beardog.cca.cpqcorp.net>: Mike Miller <mikem@beardog.cca.cpqcorp.net>
+Mike Murphy <mamurph[at]cs.clemson.edu>: Mike Murphy <mamurph@cs.clemson.edu>
+mike.rapoport@gmail.com <mike.rapoport@gmail.com>: <mike.rapoport@gmail.com>
+Mike Rapoport <[mailto:mike@compulab.co.il]>: Mike Rapoport <mike@compulab.co.il>
+Mike Reed <>: ''
+Mike Ritter <>: ''
+Mike Wakerly <>: ''
+Mike Westerhof <mwester at dls.net>: Mike Westerhof <mwester@dls.net>
+Mingming Cao <cmm@us.ibm.com: Mingming Cao <cmm@us.ibm.com>
+ming.m.lin@intel.com <ming.m.lin@intel.com>: <ming.m.lin@intel.com>
+mingo@elte.hu <mingo@elte.hu>: <mingo@elte.hu>
+Mingquan Pan: ''
+minyard@acm.org <minyard@acm.org>: <minyard@acm.org>
+! '[MIPS] James E Wilson <wilson@specifix.com>': James E Wilson <wilson@specifix.com>
+Mitsuru Oshima <>: ''
+mochel@digitalimplant.org <mochel@digitalimplant.org>: <mochel@digitalimplant.org>
+Mohamed Abbas <mohamed.abbas@intel.com: Mohamed Abbas <mohamed.abbas@intel.com>
+Moni Shoua <monis at voltaire.com>: Moni Shoua <monis@voltaire.com>
+mostrows@watson.ibm.com <mostrows@watson.ibm.com>: <mostrows@watson.ibm.com>
+mpopovic@git.gnome.org <mpopovic@src.gnome.org>: <mpopovic@src.gnome.org>
+Murray Cumming <murrayc@.com>: Murray Cumming <murrayc@murrayc.com>
+Murray Cumming <murrayc@murrayc@.com>: Murray Cumming <murrayc@murrayc.com>
+Murray Cumming <murrayc@murrayc@com>: Murray Cumming <murrayc@murrayc.com>
+Murray Cumming <murrayc@murrayc@murrayc.com>: Murray Cumming <murrayc@murrayc.com>
+Murray Cumming <set EMAIL_ADDRESS environment variable>: Murray Cumming <murrayc@murrayc.com>
+mware@internode.on.net <mware@internode.on.net>: <mware@internode.on.net>
+Nagananda.Chumbalkar@hp.com <Nagananda.Chumbalkar@hp.com>: <nagananda.chumbalkar@hp.com>
+Namhyung Kim <namhyung () gmail ! com>: Namhyung Kim <namhyung@gmail.com>
+Naranjo Manuel Francisco <naranjo.manuel@gmail.com: Naranjo Manuel Francisco <naranjo.manuel@gmail.com>
+Narendra_K@Dell.com <Narendra_K@Dell.com>: <narendra_k@dell.com>
+Natalie.Protasevich@unisys.com <Natalie.Protasevich@unisys.com>: <natalie.protasevich@unisys.com>
+Nat Friedman, Dan Winship <nat,danw@helixcode.com>: Dan Winship Nat Friedman <nat.danw@helixcode.com>
+Naveen Krishna Ch <ch.naveen@samsung.com: Naveen Krishna Ch <ch.naveen@samsung.com>
+Neil Horman: ''
+Neil \"Superna\" ARMSTRONG <superna@na-prod.com>: Neil Superna ARMSTRONG <superna@na-prod.com>
+Nemeth Marton <nm127@freemail.h: Nemeth Marton <nm127@freemail.h>
+nickcheng(??? <nick.cheng@areca.com.tw>: nickcheng <nick.cheng@areca.com.tw>
+Nickolay V. Shmyrev <<nshmyrev@yandex.ru>: Nickolay V. Shmyrev <nshmyrev@yandex.ru>
+Nick Pelly <>: ''
+': Nick Piggin <npiggin@suse.de>': Nick Piggin <npiggin@suse.de>
+Nicolas Bellido: ''
+Nicolas Boichat <nicolas@boichat.ch: Nicolas Boichat <nicolas@boichat.ch>
+Nicolas Pitre: ''
+Nicolas Reinecke <nr <at>: ''
+Nicolas Roard <>: ''
+Niko Catania <>: ''
+! ',,Nils-Christoph <,,fiedler@medienkompanie.de">': Nils-Christoph <fiedler@medienkompanie.de>
+nir.tzachar@gmail.com <nir.tzachar@gmail.com>: <nir.tzachar@gmail.com>
+(no author) <(no author)@0e78e225-ae63-48d5-a2ed-64e6acdf68e9>: ''
+(no author) <(no author)@280a3c95-c248-0410-a8b1-f7e71b7f0842>: ''
+(no author) <(no author)@630680e5-0e50-0410-840e-4b1c322b438d>: ''
+(no author) <(no author)@b7d58dbb-9946-4a5b-8479-c015d44800d7>: ''
+(no author) <(no author)@bc369b68-a12e-11dd-8697-036594075916>: ''
+(no author) <(no author)@ceeb4d5b-b54a-450a-8187-2fe761e350a8>: ''
+(no author) <(no author)@d3729300-e425-0410-8a4c-d956edccc248>: ''
+(no author) <(no author)@e1f7a261-9273-438a-a57d-3e10c22895c8>: ''
+(no author) <(no author)@e2bd861d-eb25-0410-b326-f6ed22b6b98c>: ''
+(no author) <(no author)@f5e0f49d-192f-0410-a22d-a8d8700d0965>: ''
+Noone Important <nxhxzi702 at sneakemail.com>: Noone Important <nxhxzi702@sneakemail.com>
+npiggin@suse.de <npiggin@suse.de>: <npiggin@suse.de>
+nshmyrev@yandex.ru <nshmyrev@yandex.ru>: <nshmyrev@yandex.ru>
+nsxfreddy@gmail.com <nsxfreddy@gmail.com>: <nsxfreddy@gmail.com>
+Olav Kongas: ''
+olecom@mail.ru <olecom@mail.ru>: <olecom@mail.ru>
+Oleg Nesterov <oleg@redhat.com: Oleg Nesterov <oleg@redhat.com>
+Oliver Neukum <oneukum@suse.de_: Oliver Neukum <oneukum@suse.de>
+Olivier DANET <odanet at caramail.com>: Olivier DANET <odanet@caramail.com>
+Olivier Goffart: ''
+olof@lixom.net <olof@lixom.net>: <olof@lixom.net>
+open list:AMD MICROCODE UPD... <amd64-microcode@amd64.org>: <amd64-microcode@amd64.org>
+oprofile-list@lists.sourceforge.net <oprofile-list@lists.sourceforge.net>: <oprofile-list@lists.sourceforge.net>
+Or Gerlitz <ogerlitz at voltaire.com>: Or Gerlitz <ogerlitz@voltaire.com>
+oscar.medina@motorola.com <oscar.medina@motorola.com>: <oscar.medina@motorola.com>
+Owen Lin <>: ''
+Pablo Neira Ayuso <Pablo Neira Ayuso>: ''
+pageexec@freemail.hu <pageexec@freemail.hu>: <pageexec@freemail.hu>
+Pallipadi, Venkatesh" <venkatesh.pallipadi@intel.com>: Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>
+Parthasarathi@novell.com <sparthasarathi@novell.com>: <sparthasarathi@novell.com>
+pascal@pabr.org <pascal@pabr.org>: <pascal@pabr.org>
+pasky@ucw.cz <pasky@ucw.cz>: <pasky@ucw.cz>
+Patch from Marcus Fritzsch <fritschy at googlemail com>: Marcus Fritzsch <fritschy@gmail.com>
+Pat Gefre <pfg@sgi.com: Pat Gefre <pfg@sgi.com>
+Patrick McHardy <kaber@trash,net>: Patrick McHardy <kaber@trash.net>
+Patrick Scott <>: ''
+PauGNU <>: ''
+Paul E. McKenney" <paulmck@us.ibm.com>: Paul E. McKenney <paulmck@us.ibm.com>
+Paul Johnson: ''
+Paul Menage <menage@google.com: Paul Menage <menage@google.com>
+paul.moore@hp.com <paul.moore@hp.com>: <paul.moore@hp.com>
+Paul Walmsley <paul@pwsan.com: Paul Walmsley <paul@pwsan.com>
+! "Pauyl \b\b\bl Berman <w35028@motoola\b\b\brola.com>": Paul Berman <w35028@motorola.com>
+Pavel Machek <pavel@pavel@suse.cz>: Pavel Machek <pavel@suse.cz>
+Pavel Pisa: ''
+pavel@ucw.cz <pavel@ucw.cz>: <pavel@ucw.cz>
+pbathija@amcc.com <pbathija@amcc.com>: <pbathija@amcc.com>
+pcnet32@verizon.net <pcnet32@verizon.net>: <pcnet32@verizon.net>
+P@Draig Brady <P@draigBrady.com>: <p@draigbrady.com>
+P@draig Brady <P@draigBrady.com>: <p@draigbrady.com>
+pefoley2@verizon.net <pefoley2@verizon.net>: <pefoley2@verizon.net>
+Pekka J Enberg <penberg (at) cs ! helsinki ! fi>: Pekka J Enberg <penberg@cs.helsinki.fi>
+Penchala Narasimha Reddy Chilakala, ERS-HCLTech <narasimhareddyc@hcl.in>: Penchala Narasimha Reddy Chilakala <narasimhareddyc@hcl.in>
+! "Peng Zhu <w46253\b4@motorola.com>": Peng Zhu <w46254@motorola.com>
+! "Peng Zhu <w46254@motorola,\b.com>": Peng Zhu <w46254@motorola.com>
+per.dalen@appeartv.com <per.dalen@appeartv.com>: <per.dalen@appeartv.com>
+Peter Henn <p.henn@option.com: Peter Henn <p.henn@option.com>
+Peter Missel (peter.missel@onlinehome.de): Peter Missel <peter.missel@onlinehome.de>
+Peter Moulder <pmoulder at mail.csse.monash.edu.au>: Peter Moulder <pmoulder@mail.csse.monash.edu.au>
+Peter P Waskiewicz Jr <peter.p.waskiewicz.jr@intel.com: Peter P Waskiewicz Jr <peter.p.waskiewicz.jr@intel.com>
+peter sikking, m+mi works <peter@mmiworks.net>: peter sikking <peter@mmiworks.net>
+Peter Teichmann: ''
+Phil Dubach <>: ''
+philipl@overt.org <philipl@overt.org>: <philipl@overt.org>
+Philip Worrall <philip.worrall at googlemail.com>: Philip Worrall <philip.worrall@gmail.com>
+Phillip Simbwa <simbwa at gmail dot com>: Phillip Simbwa <simbwa@gmail.com>
+PJ Waskiewicz <peter.p.waskiewicz.jr.@intel.com>: PJ Waskiewicz <peter.p.waskiewicz.jr@intel.com>
+Priit Laes <plaes at svn dot gnome dot org>: Priit Laes <plaes@svn.gnome.org>
+Priit Laes <plaes plaes org>: Priit Laes <plaes@svn.gnome.org>
+\"Rafael J. Wysocki\ <rjw@sisk.pl>: Rafael J. Wysocki <rjw@sisk.pl>
+Rafael J. Wysocki" <rjw@sisk.pl>: Rafael J. Wysocki <rjw@sisk.pl>
+rafalbilski@interia.pl <rafalbilski@interia.pl>: <rafalbilski@interia.pl>
+raghavendra.koushik@neterion.com <raghavendra.koushik@neterion.com>: <raghavendra.koushik@neterion.com>
+Rajendra Nayak <rnayak@ti.com: Rajendra Nayak <rnayak@ti.com>
+rajesh.shah@intel.com <rajesh.shah@intel.com>: <rajesh.shah@intel.com>
+Ralf Baechle <ralf@linux-mips.org: Ralf Baechle <ralf@linux-mips.org>
+Ralf Lange: ''
+Ramanan Rajeswaran <>: ''
+! 'Ramiro Voicu: <Ramiro.Voicu@cern.ch>': Ramiro Voicu <ramiro.voicu@cern.ch>
+Ramos Falcon, Ernesto <ernesto@ti.com>: Ernesto Ramos Falcon <ernesto@ti.com>
+Raphael Moll <>: ''
+ravinandan.arakali@neterion.com <ravinandan.arakali@neterion.com>: <ravinandan.arakali@neterion.com>
+Ray Chen <>: ''
+Ray Strode <rstrode@@redhat.com>: Ray Strode <rstrode@redhat.com>
+Ray Wang <wanglei1123 at gmail dot com>: Ray Wang <wanglei1123@gmail.com>
+Rebecka Schulman <set EMAIL_ADDRESS environment variable>: ''
+! 'Reilithion on #radeon': ''
+remi.denis-courmont@nokia <remi.denis-courmont@nokia>: <remi.denis-courmont@nokia.com>
+Remi Machet (rmachet@slac.stanford.edu): Remi Machet <rmachet@slac.stanford.edu>
+Rene Herman: ''
+! 'Reviewed-by: Dmitry Torokhov <dtor@mail.ru>': Dmitry Torokhov <dtor@mail.ru>
+! 'Reviewed-by: James Morris <jmorris@namei.org>': James Morris <jmorris@namei.org>
+! 'Reviewed-by: Rik van Riel <riel@redhat.com>': Rik van Riel <riel@redhat.com>
+Ricardo Cerqueira <v4l\@cerqueira.org>: Ricardo Cerqueira <v4l@cerqueira.org>
+Richard Gagne: ''
+Richard Henderson <rth@twiddle.net: Richard Henderson <rth@twiddle.net>
+Richard Hughes <set EMAIL_ADDRESS environment variable>: ''
+Richard Purdie: Richard Purdie <rpurdie@linux.intel.com>
+Richard Purdie <rpurdie@linux.intel.com: Richard Purdie <rpurdie@linux.intel.com>
+Richard RA?AE'A,A?jfors <richard.rojfors@pelagicore.com>: Richard <richard.rojfors@pelagicore.com>
+Ricky Ng-Adam <>: ''
+Rik van Riel <riel@redhat.com: Rik van Riel <riel@redhat.com>
+R.Marek@sh.cvut.cz <R.Marek@sh.cvut.cz>: <r.marek@sh.cvut.cz>
+Robert Chambers: ''
+Robert Greenwalt <>: ''
+robert.moore@intel.com <robert.moore@intel.com>: <robert.moore@intel.com>
+Robert Richter <robert.richter@amd.com: Robert Richter <robert.richter@amd.com>
+Robin H\. Johnson <robbat2@gentoo.org>: Robin H. Johnson <robbat2@gentoo.org>
+Robin@sgi.com <Robin@sgi.com>: <robin@sgi.com>
+Roel Kluin <[mailto:roel.kluin@gmail.com]>: Roel Kluin <roel.kluin@gmail.com>
+Roel Kluin <[roel.kluin@gmail.com]>: Roel Kluin <roel.kluin@gmail.com>
+rol@as2917.net <Paul Rolland>: Paul Rolland <rol@as2917.net>
+Rolf Eike Beer <eike-kernel@sf-tec.de: Rolf Eike Beer <eike-kernel@sf-tec.de>
+Romain Guy <>: ''
+Roman Zippel <zippel@linux-m68k.org: Roman Zippel <zippel@linux-m68k.org>
+Ronneil Camara: ''
+root <Chris Mason chris.mason@oracle.com>: Chris Mason <chris.mason@oracle.com>
+Ross Brattain <ross.b.brattain.@intel.com>: Ross Brattain <ross.b.brattain@intel.com>
+Russ Anderson <(rja@sgi.com)>: Russ Anderson <rja@sgi.com>
+Russ Anderson (rja@sgi.com): Russ Anderson <rja@sgi.com>
+Russell King: Russell King <rmk+kernel@arm.linux.org.uk>
+Russell King <rmk+kernel@arm.linux.org.uk: Russell King <rmk+kernel@arm.linux.org.uk>
+Russell King <rmk+kernel at arm.linux.org.uk>: Russell King <rmk+kernel@arm.linux.org.uk>
+Rusty Russell <rusty@rustcorp.com.au.: Rusty Russell <rusty@rustcorp.com.au>
+Ryan Mallon <(address hidden)>: ''
+Ryan Niebur <ryanryan52 gmail com>: Ryan Niebur <ryanryan52@gmail.com>
+Sachin Garg: ''
+Sam Ravnborg <sam@ravnborg.org: Sam Ravnborg <sam@ravnborg.org>
+Samuel Ortiz samuel@sortiz.org <>: Samuel Ortiz <samuel@sortiz.org>
+sandeen@sandeen.net <sandeen@sandeen.net>: <sandeen@sandeen.net>
+Sang-Jun Park <sj2202.park@samsung.com: Sang-Jun Park <sj2202.park@samsung.com>
+San Mehat <>: ''
+Sascha Hauer: Sascha Hauer <s.hauer@pengutronix.de>
+Sascha Hauer <s.hauer@pengutronix.de: Sascha Hauer <s.hauer@pengutronix.de>
+Satoshi Kataoka <>: ''
+scameron@beardog.cca.cpqcorp.net <scameron@beardog.cca.cpqcorp.net>: <scameron@beardog.cca.cpqcorp.net>
+scameron@beardog.cce.hp.com <scameron@beardog.cce.hp.com>: <scameron@beardog.cce.hp.com>
+schwab@suse.de <schwab@suse.de>: <schwab@suse.de>
+Scott Main <>: ''
+Scott Su <>: ''
+Scott Thompson <postfail <at>: Scott Thompson <postfail@hushmail.com>
+Scott Thompson <postfail at hushmail.com>: Scott Thompson <postfail@hushmail.com>
+scwhab@suse.de <scwhab@suse.de>: <scwhab@suse.de>
+Sean Young: ''
+sebastian.blanes@gmail.com <sebastian.blanes@gmail.com>: <sebastian.blanes@gmail.com>
+sebastian@breakpoint.cc <sebastian@breakpoint.cc>: <sebastian@breakpoint.cc>
+sebdeg@ngi.it <sebdeg@ngi.it>: <sebdeg@ngi.it>
+! "S\e%Gi? 1/2 \e%@ren Sandmann <sandmann@redhat.com>": Sandmann <sandmann@redhat.com>
+sergeh@us.ibm.com <sergeh@us.ibm.com>: <sergeh@us.ibm.com>
+Sergei Shtylyov <sshtylyov@mvista.com: Sergei Shtylyov <sshtylyov@mvista.com>
+Sergei Shtylyov <[sshtylyov@ru.mvista.com]>: Sergei Shtylyov <sshtylyov@ru.mvista.com>
+Sergej.Stepanov@ids.de <Sergej.Stepanov@ids.de>: <sergej.stepanov@ids.de>
+<Sergey Manucharian sm@ingeniware.com>: Sergey Manucharian <sm@ingeniware.com>
+serue@us.ibm.com <serue@us.ibm.com>: <serue@us.ibm.com>
+Seth Nickell <set EMAIL_ADDRESS environment variable>: ''
+sfking@fdwdc.com <sfking@fdwdc.com>: <sfking@fdwdc.com>
+sg.tweak@gmail.com <sg.tweak@gmail.com>: <sg.tweak@gmail.com>
+shaohua.li@intel.com <shaohua.li@intel.com>: <shaohua.li@intel.com>
+s.hauer@pengutronix.de <s.hauer@pengutronix.de>: <s.hauer@pengutronix.de>
+Shaun McCance <Shaun McCance>: ''
+shemminger@linux-foundation.org <shemminger@linux-foundation.org>: <shemminger@linux-foundation.org>
+shemminger@osdl.org <shemminger@osdl.org>: <shemminger@osdl.org>
+Sheng Yongjie (Sam <samsheng@trident.com.cn>: Sam Sheng Yongjie <samsheng@trident.com.cn>
+Shin-ya Okada <sh_okada at d4.dion.ne.jp>: Shin-ya Okada <sh_okada@d4.dion.ne.jp>
+shirishpargaonkar@gmail.com <shirishpargaonkar@gmail.com>: <shirishpargaonkar@gmail.com>
+Shirley Ma <xma@...ibm.com>: Shirley Ma <xma@ibm.com>
+Shyam_Iyer@Dell.com <Shyam_Iyer@Dell.com>: <shyam_iyer@dell.com>
+! '"Siddha': ''
+! 'Signed-off-by: Darren Hart <dvhltc@us.ibm.com>': ''
+! 'Signed-off-by: Hayes Wang <hayeswang@realtek.com>': ''
+! 'Signed-off-by: Jan Glauber <jang@linux.vnet.ibm.com>': ''
+! 'Signed-off-by: Jan Kara <jack@suse.cz>': ''
+! 'Signed-off-by: Nicholas A. Bellinger <nab@linux-iscsi.org>': ''
+! 'Signed-off-by: Ohad Ben-Cohen <ohad@wizery.com>': ''
+! 'Signed-off-by: Olof Johansson <olof@lixom.net>': ''
+! 'Signed-off-by: Peter Stokes <linux@dadeos.co.uk>': ''
+Signed-off-by@vergenet.net":Simon <Signed-off-by@vergenet.net":Simon>: ''
+! 'Signed-off-by: Wu Fengguang <fengguang.wu@intel.com>': ''
+Simon.Braunschmidt@gmail.com>: ''
+Simon Horman <horms@verge.net.au: ''
+simon@thekelleys.org.uk <simon@thekelleys.org.uk>: ''
+simurg56 <simurg56 at gmail dot com>: ''
+Sjur Braendeland@stericsson.com: ''
+sjur.brandeland@stericsson.com <sjur.brandeland@stericsson.com>: ''
+Slobodan D, Sredojevic <slobo@akrep.be>: ''
+! ']smund Skj{veland <asmund@magnetfelt.uio.no>': ''
+Solofo.Ramangalahy@bull.net <>: ''
+s-paulraj@ti.com <s-paulraj@ti.com>: ''
+Sridhar Gurivireddy <>: ''
+Sridhar Samudrala <sri@us.ibm.com: ''
+Sriram Raman <>: ''
+Srivatsa Vaddagiri <vatsa@in.ibm.com: ''
+ssant@in.ibm.com <ssant@in.ibm.com>: ''
+sshahrom@micron.com <sshahrom@micron.com>: ''
+<stable@kernel.org): stable@kernel.org
+! 'stable@kernel.org # >': stable@kernel.org
+! 'stable@kernel.org # .21 ->': stable@kernel.org
+! 'stable@kernel.org # 2.6.14+': stable@kernel.org
+stable@kernel.org [2.6.17+]: stable@kernel.org
+stable@kernel.org [2.6.24-2.6.27, bug present in some form since driver was added (2.6.22)]: stable@kernel.org
+! 'stable@kernel.org # 2.6.27+': stable@kernel.org
+stable@kernel.org [2.6.27]: stable@kernel.org
+stable@kernel.org [2.6.27+]: stable@kernel.org
+stable@kernel.org [2.6.28.x]: stable@kernel.org
+stable@kernel.org [2.6.29]: stable@kernel.org
+stable@kernel.org [2.6.29+]: stable@kernel.org
+stable@kernel.org [2.6.29, 2.6.30]: stable@kernel.org
+! 'stable@kernel.org # 2.6.30+': stable@kernel.org
+stable@kernel.org [2.6.30+]: stable@kernel.org
+stable@kernel.org [2.6.31+]: stable@kernel.org
+stable@kernel.org [2.6.31+, for 2.6.35 revert 1235f504aa]: stable@kernel.org
+! 'stable@kernel.org # 2.6.32+': stable@kernel.org
+stable@kernel.org [2.6.32]: stable@kernel.org
+stable@kernel.org [2.6.32+]: stable@kernel.org
+stable@kernel.org [2.6.32, 2.6.33]: stable@kernel.org
+stable@kernel.org [2.6.32..2.6.36]: stable@kernel.org
+stable@kernel.org [2.6.32.x]: stable@kernel.org
+stable@kernel.org [2.6.33+]: stable@kernel.org
+! 'stable@kernel.org  # 2.6.34+': stable@kernel.org
+! 'stable@kernel.org # 2.6.34+': stable@kernel.org
+stable@kernel.org [2.6.34+]: stable@kernel.org
+stable@kernel.org [2.6.34+, maybe only parts of patch]: stable@kernel.org
+stable@kernel.org [2.6.34 only]: stable@kernel.org
+! 'stable@kernel.org  # 2.6.35+': stable@kernel.org
+! 'stable@kernel.org # 2.6.35+': stable@kernel.org
+stable@kernel.org [2.6.35]: stable@kernel.org
+stable@kernel.org [2.6.35+]: stable@kernel.org
+! 'stable@kernel.org # 2.6.35+, backport a week or two after this gets more testing in mainline': stable@kernel.org
+stable@kernel.org [2.6.35 only]: stable@kernel.org
+! 'stable@kernel.org # 2.6.36+': stable@kernel.org
+stable@kernel.org [2.6.36+]: stable@kernel.org
+! 'stable@kernel.org # 2.6.36 and newer': stable@kernel.org
+! 'stable@kernel.org # 2.6.37+': stable@kernel.org
+stable@kernel.org    [2.6.37]: stable@kernel.org
+stable@kernel.org  [2.6.37]: stable@kernel.org
+stable@kernel.org [2.6.37]: stable@kernel.org
+stable@kernel.org [2.6.37+]: stable@kernel.org
+! 'stable@kernel.org # 2.6.37 only': stable@kernel.org
+! 'stable@kernel.org # 2.6.38': stable@kernel.org
+stable@kernel.org    [2.6.38]: stable@kernel.org
+stable@kernel.org [2.6.38]: stable@kernel.org
+stable@kernel.org [2.6.38+]: stable@kernel.org
+! 'stable@kernel.org # 2.6.38.5+': stable@kernel.org
+! 'stable@kernel.org (2.6.38, needs commit c826cb7dfce8 "dcache.c:': stable@kernel.org
+! 'stable.kernel.org # 2.6.39': stable@kernel.org
+! 'stable@kernel.org # 2.6.39': stable@kernel.org
+! 'stable@kernel.org # 2.6.39+': stable@kernel.org
+stable@kernel.org   [2.6.39]: stable@kernel.org
+stable@kernel.org [2.6.39]: stable@kernel.org
+stable@kernel.org [2.6.39+]: stable@kernel.org
+! 'stable@kernel.org #2.6.39, #3.0.0': stable@kernel.org
+! 'stable@kernel.org # .28 ->': stable@kernel.org
+! 'stable@kernel.org # 3.0+': stable@kernel.org
+! 'stable@kernel.org # 32...': stable@kernel.org
+stable@kernel.org [32, 33, 36]: stable@kernel.org
+! 'stable@kernel.org # .32.x': stable@kernel.org
+stable@kernel.org [.32.x .33.x, .34.x]: stable@kernel.org
+stable@kernel.org [.32.x, .33.x, .34.x, .35.x]: stable@kernel.org
+stable@kernel.org [.32.x .34.x, .35.x]: stable@kernel.org
+! 'stable@kernel.org # .32.x, .35.x': stable@kernel.org
+! 'stable@kernel.org # 32.x, 38.x, 39.x': stable@kernel.org
+! 'stable@kernel.org # .34.x': stable@kernel.org
+! 'stable@kernel.org  # .34.x (s/virtqueue_/vi->': stable@kernel.org
+! 'stable@kernel.org # .35.x': stable@kernel.org
+stable@kernel.org [36]: stable@kernel.org
+! 'stable@kernel.org # .37': stable@kernel.org
+! 'stable@kernel.org # .37+': stable@kernel.org
+! 'stable@kernel.org # 37+': stable@kernel.org
+! 'stable@kernel.org # 37.x': stable@kernel.org
+! 'stable@kernel.org # 37.x, 32.x': stable@kernel.org
+stable@kernel.org [.38 down to .34]: stable@kernel.org
+! 'stable@kernel.org # 38.x, 37.x, 32.x': stable@kernel.org
+! 'stable@kernel.org # .39.x': stable@kernel.org
+! 'stable@kernel.org # after 47356eb6728501452': stable@kernel.org
+! 'stable@kernel.org # after ab4bd22d': stable@kernel.org
+stable@kernel.org [after applying 5bddd17]: stable@kernel.org
+stable@kernel.org [all]: stable@kernel.org
+stable@kernel.org [all the way back]: stable@kernel.org
+! 'stable@kernel.org # ca86828: x86, AMD, PCI: Add AMD northbridge PCI device': stable@kernel.org
+stable@kernel.org  [ for 2.6.30 ]: stable@kernel.org
+! "stable@kernel.org\t# >": stable@kernel.org
+! "stable@kernel.org\t[2.6.28.x][2.6.29.x]": stable@kernel.org
+! "stable@kernel.org\t[2.6.32, 2.6.33]": stable@kernel.org
+! "stable@kernel.org\t[2.6.35]": stable@kernel.org
+! "stable@kernel.org\t[2.6.36+]": stable@kernel.org
+! "stable@kernel.org\t[v2.6.32+]": stable@kernel.org
+! 'stable@kernel.org # [v2.6.32+]': stable@kernel.org
+stable@kernel.org [v2.6.32+]: stable@kernel.org
+stable@kernel.org [v2.6.35+]: stable@kernel.org
+stable@kernel.org [v2.6.37]: stable@kernel.org
+! 'stable@kernel.org # v2.6.38': stable@kernel.org
+Star Trac by Unisen, Inc. Dan Taylor <dtaylor@startrac.com>: Dan Taylor <dtaylor@startrac.com>
+starvik@axis.com [CRIS]: starvik@axis.com
+Stefan Richter stefanr@s5r6.in-berlin.de>: Stefan Richter <stefanr@s5r6.in-berlin.de>
+Stefan Roscher <stefan.roscher at de.ibm.com>: Stefan Roscher <stefan.roscher@de.ibm.com>
+Stefan Walter <Stefan Walter>: ''
+Steffen Barszus <steffenbpunkt[AT]googlemail[DOT]com>: Steffen Barszus <steffenbpunkt@gmail.com>
+Stephane Eranian <eranian@google.com: Stephane Eranian <eranian@google.com>
+stephane.eranian@hp.com <stephane.eranian@hp.com>: <stephane.eranian@hp.com>
+Stephen Rothwell <sfr@canb.auug.org.au: Stephen Rothwell <sfr@canb.auug.org.au>
+Steve Chen <schen at mvista.com>: Steve Chen <schen@mvista.com>
+steve@digidescorp.com <steve@digidescorp.com>: <steve@digidescorp.com>
+Steve Falco <sfalco at harris.com>: Steve Falco <sfalco@harris.com>
+Steve French: Steve French <sfrench@us.ibm.com>
+Steve French (sfrench@us.ibm.com): Steve French <sfrench@us.ibm.com>
+Steve French@sfrench@us.ibm.com: Steve French <sfrench@us.ibm.com>
+Steve Grubb <sgrubb redhat com>: Steve Grubb <sgrubb@redhat.com>
+Steve Longerbeam: ''
+Steven Eastland <seastland at gmail.com>: Steven Eastland <seastland@gmail.com>
+Steven Rostedt <rostedt@goodmis.org: Steven Rostedt <rostedt@goodmis.org>
+Steven Rostedt <srostedt@srostedt@redhat.com>: Steven Rostedt <srostedt@redhat.com>
+Steven Scholz: ''
+Steven Whitehouse: ''
+! 'Steven Whitehouse: <swhiteho@redhat.com>': Steven Whitehouse <swhiteho@redhat.com>
+Steven Whitehouse <swhiteho@redhat,com>: Steven Whitehouse <swhiteho@redhat.com>
+stigge@antcom.de <stigge@antcom.de>: <stigge@antcom.de>
+Stuart_Hayes@Dell.com <Stuart_Hayes@Dell.com>: <stuart_hayes@dell.com>
+Suchi Amalapurapu <>: ''
+Sujith.Manoharan@atheros.com <Sujith.Manoharan@atheros.com>: <sujith.manoharan@atheros.com>
+Suresh B" <suresh.b.siddha@intel.com>: Suresh B <suresh.b.siddha@intel.com>
+Sven Anders & Marcus Junker <anders@anduras.de, junker@anduras.de>: Sven Anders <anders@anduras.de>
+Sven Neumanns.neumann@raumfeld.com, Zeeshan Ali (Khattak) <zeeshanak@gnome.org>: Sven Neumanns <neumann@raumfeld.com>
+Syed Mohammed, Khasim <khasim@ti.com>: Khasim Syed Mohammed <khasim@ti.com>
+Syed Mohammed, Khasim <x0khasim@ti.com>: Khasim Syed Mohammed <khasim@ti.com>
+Tadashi Takaoka <>: ''
+\"Talpey, Thomas\ <Thomas.Talpey@netapp.com>: Thomas Talpey <thomas.talpey@netapp.com>
+taneli.vahakangas@netsonic.fi <taneli.vahakangas@netsonic.fi>: <taneli.vahakangas@netsonic.fi>
+Tang@Motorola.com <Tang@Motorola.com>: <tang@motorola.com>
+tao.ma@oracle.com <tao.ma@oracle.com>: <tao.ma@oracle.com>
+Tarun Kanti DebBarma <tarun.kanti@ti.com: Tarun Kanti DebBarma <tarun.kanti@ti.com>
+Tatyana Brokhman <tlinder@codeaurora.org: Tatyana Brokhman <tlinder@codeaurora.org>
+Tejun Heo <htejun@gmail.com<: Tejun Heo <htejun@gmail.com>
+! 'Tested-by: Chris Wilson <chris@chris-wilson.co.uk>': Chris Wilson <chris@chris-wilson.co.uk>
+Thomas Abraham <thomas.ab <at>: ''
+Thomas Gleixner <[tglx@linutronix.de]>: Thomas Gleixner <tglx@linutronix.de>
+Thomas Hellstrom: ''
+Thomas Kaiser <linux-dvb AT kaiser-linux.li>: Thomas Kaiser <linux-dvb@kaiser-linux.li>
+thomas@koeller.dyndns.org <thomas@koeller.dyndns.org>: <thomas@koeller.dyndns.org>
+Thomas Sailer, <sailer@ife.ee.ethz.ch>: Thomas Sailer <sailer@ife.ee.ethz.ch>
+Thomas Thurman <thomas thurman org uk>: Thomas Thurman <thomas@thurman.org.uk>
+Thomas Vander Stichele <thomas (at) apestaart (dot) org>: Thomas Vander Stichele <thomas@apestaart.org>
+Thomas Vander Stichele <thomas at apestaart dot org>: Thomas Vander Stichele <thomas@apestaart.org>
+Thomas Wood <set EMAIL_ADDRESS environment variable>: ''
+Tobias Hansen <Tobias.Hansen at physik.uni-hamburg.de>: Tobias Hansen <Tobias.Hansen@physik.uni-hamburg.de>
+Tobyn Bertram: ''
+Todd Poynor: ''
+Tomasz Kvarsin: ''
+tomek@koprowski.org <tomek@koprowski.org>: <tomek@koprowski.org>
+Tom Louwrier: ''
+Tom Rini: ''
+Tom Taylor <>: ''
+! 'Toni Spets (hifi on #radeon)': ''
+tonyj@suse.de <tonyj@suse.de>: <tonyj@suse.de>
+Tony Lindgren: ''
+Tony Lindgren <tony <at>: ''
+Tony Lindgren tony <at atomide.com>: Tony Lindgren <tony@atomide.com>
+Tony Lindgren <tony@atomide.com: Tony Lindgren <tony@atomide.com>
+Tor Lillqvist <tml@>: ''
+Toru UCHIYAMA uchiyama.toru@jp.fujitsu.com: Toru UCHIYAMA <uchiyama.toru@jp.fujitsu.com>
+travis geiselbrecht <travis geiselbrecht@66e7e368-e84f-11db-80e5-f76231892b0b>: ''
+travis@sgi.com <travis@sgi.com>: <travis@sgi.com>
+T. S., Anil Kumar <anil@ti.com>: Anil Kumar T. S. <anil@ti.com>
+Tsuneo.Yoshioka@f-secure.com <Tsuneo.Yoshioka@f-secure.com>: <tsuneo.yoshioka@f-secure.com>
+ubuntu@tjworld.net <ubuntu@tjworld.net>: <ubuntu@tjworld.net>
+ucc_geth maintainer: ''
+unknown <Administrador@.(none)>: ''
+unknown <Administrator@.(none)>: ''
+unknown <Habacker@.(none)>: ''
+unknown <hb@.(none)>: ''
+unknown <Yoshi@.(none)>: ''
+Updated ja.po, fixed translators_credit. T.Aihana <aihana@gnome.gr.jp>: T. Aihana <aihana@gnome.gr.jp>
+Urs Grob <>: ''
+Ursula Braun >: ''
+Uwe Kleine-Konig: ''
+Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de: Uwe Kleine-Konig <u.kleine-koenig@pengutronix.de>
+Vadim Catana <skystar at moldova.cc>: Vadim Catana <skystar@moldova.cc>
+<Valdis.Kletnieks@vt.edu}: <valdis.kletnieks@vt.edu>
+Valdis.Kletnieks@vt.edu <Valdis.Kletnieks@vt.edu>: <valdis.kletnieks@vt.edu>
+vbarshak@ru.mvista.com <vbarshak@ru.mvista.com>: <vbarshak@ru.mvista.com>
+vdb128@picaros.org <vdb128@picaros.org>: <vdb128@picaros.org>
+venkatesh.pallipadi@intel.com <venkatesh.pallipadi@intel.com>: <venkatesh.pallipadi@intel.com>
+Venkatesh Pallipadi <venkatesh.pallipadi at intel.com>: <venkatesh.pallipadi@intel.com>
+Venkateswararao Jujjuri "<jvrao@linux.vnet.ibm.com>: Venkateswararao Jujjuri <jvrao@linux.vnet.ibm.com>
+vignesh.babu@wipro.com <vignesh.babu@wipro.com>: <vignesh.babu@wipro.com>
+Vikas Chaudhary <Vikas Chaudhary@qlogic.com>: Vikas Chaudhary <chaudhary@qlogic.com>
+Vikram Pandita <vikram.pandita@ti.com: Vikram Pandita <vikram.pandita@ti.com>
+Ville Nuorvala <vnuorval@tcs.hut.fi: Ville Nuorvala <vnuorval@tcs.hut.fi>
+Ville-Pekka Vainio <vpivaini AT cs.helsinki.fi>: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>
+Ville Skytt\a <ville.skytta@iki.fi>: Ville Skytta <ville.skytta@iki.fi>
+Vincent Sanders: ''
+Vincenzo Pii: ''
+viro@ftp.linux.org.uk <viro@ftp.linux.org.uk>: <viro@ftp.linux.org.uk>
+viro@zenIV.linux.org.uk <viro@zenIV.linux.org.uk>: <viro@zeniv.linux.org.uk>
+viro@ZenIV.linux.org.uk <viro@ZenIV.linux.org.uk>: <viro@zeniv.linux.org.uk>
+Vitaliy Gusev <vgusev@openvz.org: Vitaliy Gusev <vgusev@openvz.org>
+Vlad Yasevich <vladislav.yasevich@.hp.com>: Vlad Yasevich <vladislav.yasevich@hp.com>
+Vovan888@gmail <Vovan888@gmail>: <vovan888@gmail.com>
+vwadekar@nvidia.com <vwadekar@nvidia.com>: <vwadekar@nvidia.com>
+walken@zoy.org <walken@zoy.org>: <walken@zoy.org>
+walker@suse.cz <walker@suse.cz>: <walker@suse.cz>
+Wang Xin <set EMAIL_ADDRESS environment variable>: ''
+Waskiewicz Jr, Peter P <peter.p.waskiewicz.jr@intel.com>: Peter P Waskiewicz Jr <peter.p.waskiewicz.jr@intel.com>
+Wei Huang <>: ''
+Wink Saville <>: ''
+Wolfram Sang & Martyn Welch <w.sang@pengutronix.de, martyn.welch@ge.com>: Wolfram Sang <w.sang@pengutronix.de>
+Wouter Bolsterlee <Wouter Bolsterlee uws@xs4all.nl>: Wouter Bolsterlee <uws@xs4all.nl>
+Wu-cheng Li <>: ''
+wzt.wzt@gmail.com <wzt.wzt@gmail.com>: <wzt.wzt@gmail.com>
+Xavier Ducrohet <>: ''
+xeb@mail.ru <xeb@mail.ru>: <xeb@mail.ru>
+xen-devel@lists.xensource.com <xen-devel@lists.xensource.com>: <xen-devel@lists.xensource.com>
+xiantao.zhang@intel.com <xiantao.zhang@intel.com>: <xiantao.zhang@intel.com>
+Xia Wang <>: ''
+xiphmont@xiph.org <xiphmont@xiph.org>: <xiphmont@xiph.org>
+yakui.zhao@intel.com <yakui.zhao@intel.com>: <yakui.zhao@intel.com>
+Yanqing_Liu@Dell.com <Yanqing_Liu@Dell.com>: <yanqing_liu@dell.com>
+Yan Zheng <yanzheng@21cn.com: Yan Zheng <yanzheng@21cn.com>
+Yeasah Pell <yeasah at schwide.net>: Yeasah Pell <yeasah@schwide.net>
+Ye Jianjun (Joey <joeyye@trident.com.cn>: Joey <joeyye@trident.com.cn>
+Ye Wen <>: ''
+yinghai@kernel.org <yinghai@kernel.org>: <yinghai@kernel.org>
+ying.huang@intel.com <ying.huang@intel.com>: <ying.huang@intel.com>
+Ying" <ying.huang@intel.com>: Ying <ying.huang@intel.com>
+Yinhai Lu <yinghai@kernel.org.: Yinhai Lu <yinghai@kernel.org>
+Yuri Kozlov <yuray at komyakino.ru>: Yuri Kozlov <yuray@komyakino.ru>
+Yu Shan Emily Lau <>: ''
+Zaheer Abbas Merali <izaheerabbas at merali dot org>: Zaheer Abbas Merali <zaheerabbas@merali.org>
+Zaheer Abbas Merali <zaheerabbas at merali dot org>: Zaheer Abbas Merali <zaheerabbas@merali.org>
+Zaheer Abbas merali <zaheerabbas at merali dot org>: Zaheer Abbas Merali <zaheerabbas@merali.org>
+ZeBob <zebob.m gmail.com>: ZeBob <zebob.m@gmail.com>
+zhao.ming9@zte.com.cn <zhao.ming9@zte.com.cn>: <zhao.ming9@zte.com.cn>
+zhenyu.z.wang@intel.com <zhenyu.z.wang@intel.com>: <zhenyu.z.wang@intel.com>
+Zhou Yingchao: ''
+ZhuYanhai <>: ''
+zippel@linux-m68k.org <zippel@linux-m68k.org>: <zippel@linux-m68k.org>
+Zoltan Menyhart, <Zoltan.Menyhart@bull.net>: Zoltan Menyhart <zoltan.menyhart@bull.net>
+
