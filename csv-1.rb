@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'yaml'
 require 'logger'
 require 'active_record'
 
@@ -30,28 +29,35 @@ def process(commit, type, company, other_company)
   ].join("\t")
 end
 
+def process
+  puts %w(server origin project description org1 org2 author_date commit_date
+          filechanges relationship competition tag_similarity).join("\t")
+  n = GitAnalytics::DB::Commit.count
+  GitAnalytics::DB::Commit.find_each do |commit|
+    ac = commit.author.company
+    cc = commit.committer.company
+    process commit, 'author-committer', ac, cc
+    commit.signatures.find_each do |signature|
+      sc = signature.email.company
+      process commit, 'author-signedoff', ac, sc
+      process commit, 'committer-signedoff', cc, sc
+    end
+    $l.info('%d left' % n) if (n -= 1) % 1000 == 0
+  end
+end
+
+def prepare
+  require 'yaml'
+  config = YAML::load_file 'config.yaml'
+  GitAnalytics::DB.connect config[:db][:commits]
+  GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
+end
+
 $l = Logger.new STDERR
 $l.formatter = Logger::Formatter.new
 
-$config = YAML::load_file 'config.yaml'
-
-GitAnalytics::DB.connect $config[:db][:commits]
-GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
-
-puts %w(server origin project description org1 org2 author_date commit_date
-        filechanges relationship competition tag_similarity).join("\t")
-
-n = GitAnalytics::DB::Commit.count
-GitAnalytics::DB::Commit.find_each do |commit|
-  ac = commit.author.company
-  cc = commit.committer.company
-  process commit, 'author-committer', ac, cc
-  commit.signatures.find_each do |signature|
-    sc = signature.email.company
-    process commit, 'author-signedoff', ac, sc
-    process commit, 'committer-signedoff', cc, sc
-  end
-  
-  $l.info('%d left' % n) if (n -= 1) % 1000 == 0
-end
+$l.info 'Start'
+prepare
+process
+$l.info 'Finish'
 
