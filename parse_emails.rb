@@ -39,4 +39,5 @@ Email.find_each do |email|
   else
     Company.find_by_orgdomain email.orgdomain
   end
+  email.save
 end
