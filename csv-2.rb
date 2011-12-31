@@ -5,8 +5,6 @@ require 'active_record'
 
 load 'lib/db.rb'
 
-GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
-
 def relate_companies(company, other_company)
   a, b = company, other_company
   a_permalink = a.permalink || raise
@@ -52,6 +50,7 @@ def prepare
   require 'yaml'
   config = YAML::load_file 'config.yaml'
   GitAnalytics::DB.connect config[:db][:commits]
+  GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
 end
 
 $l = Logger.new STDERR

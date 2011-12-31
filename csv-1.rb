@@ -5,7 +5,7 @@ require 'active_record'
 
 load 'lib/db.rb'
 
-def process(commit, type, company, other_company)
+def process_data(commit, type, company, other_company)
   a, b = company, other_company
   a_permalink = a.permalink rescue return
   b_permalink = b.permalink rescue return
@@ -36,11 +36,11 @@ def process
   GitAnalytics::DB::Commit.find_each do |commit|
     ac = commit.author.company
     cc = commit.committer.company
-    process commit, 'author-committer', ac, cc
+    process_data commit, 'author-committer', ac, cc
     commit.signatures.find_each do |signature|
       sc = signature.email.company
-      process commit, 'author-signedoff', ac, sc
-      process commit, 'committer-signedoff', cc, sc
+      process_data commit, 'author-signedoff', ac, sc
+      process_data commit, 'committer-signedoff', cc, sc
     end
     $l.info('%d left' % n) if (n -= 1) % 1000 == 0
   end
