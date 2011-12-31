@@ -5,6 +5,8 @@ require 'active_record'
 
 load 'lib/db.rb'
 
+GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
+
 def relate_companies(company, other_company)
   a, b = company, other_company
   a_permalink = a.permalink || raise
@@ -36,7 +38,7 @@ def process
     $l.info '%d: %s' % [n -= 1, project.name]
     companies = Hash.new{|h, v| h[v] = []}
     project.commits.find_each do |commit|
-      company = commit.author.domain.company
+      company = commit.author.company
       commit.metafiles.find_each do |metafile|
         companies[metafile.path] << company
       end unless company.nil? or company.permalink.nil?
@@ -49,7 +51,7 @@ end
 def prepare
   require 'yaml'
   config = YAML::load_file 'config.yaml'
-  GitAnalytics::DB.connect config[:db][:commits], config[:db][:crunchbase]
+  GitAnalytics::DB.connect config[:db][:commits]
 end
 
 $l = Logger.new STDERR

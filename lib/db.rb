@@ -121,6 +121,10 @@ module GitAnalytics
       has_many :metafiles, :through => :commits
     end
 
+    class Company < ActiveRecord::Base
+      has_many :emails
+    end
+
     def self.connect(commits)
       ActiveRecord::Base.establish_connection commits
     end
