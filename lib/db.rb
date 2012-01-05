@@ -122,7 +122,20 @@ module GitAnalytics
     end
 
     class Company < ActiveRecord::Base
+      has_and_belongs_to_many :competitors,
+                              :class_name => 'Company',
+                              :join_table => 'competitions',
+                              :association_foreign_key => 'competitor_id'
+      has_and_belongs_to_many :tags,
+                              :join_table => 'taggings'
+      has_many :similarities
       has_many :emails
+    end
+
+    class Similarity < ActiveRecord::Base
+    end
+
+    class Tag < ActiveRecord::Base
     end
 
     def self.connect(commits)

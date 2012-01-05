@@ -9,8 +9,8 @@ def relate_companies(company, other_company)
   a, b = company, other_company
   a_permalink = a.permalink || raise
   b_permalink = b.permalink || raise
-  competition = a.competitors.include?(b) rescue false
-  counter = a.similarities.find_or_create_by_other_company(b).counter rescue 0
+  competition = a.competitors.include? b
+  counter = a.similarities.find_by_other_company_id(b.id).counter rescue 0
   similarity = counter.to_f / a.tags.size rescue 0.0
   [a_permalink, b_permalink, competition, similarity]
 end
@@ -51,6 +51,8 @@ def prepare
   config = YAML::load_file 'config.yaml'
   GitAnalytics::DB.connect config[:db][:commits]
   GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
+  GitAnalytics::DB::Similarity.establish_connection config[:db][:crunchbase]
+  GitAnalytics::DB::Tag.establish_connection config[:db][:crunchbase]
 end
 
 $l = Logger.new STDERR
