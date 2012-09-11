@@ -39,10 +39,10 @@ The configuration file is described further below.
 ### Generating the projects list file
 
 After updating the config/general.yaml file (check its description bellow), run
-the configure.rb to generate the config/list.yaml file (as defined in the
+the 1-configure.rb to generate the config/list.yaml file (as defined in the
 _:list_ ).
 
-    ruby configure.rb <android|gnome|linux> (<android|gnome|linux> (...))
+    ruby 1-configure.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
 The config/list.yaml is a file that contains projects metadata which allows both
 batch operations over them and customization of how the scripts should deal with
@@ -55,7 +55,7 @@ It will also try to download the project descriptions for the projects.
 From the config/list.yaml generated (and customized) above, a tool was created
 to make the computer automatically download the git data from each project:
 
-    ruby dl.rb <android|gnome|linux> (<android|gnome|linux> (...))
+    ruby 2-dl.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
 It will download the files and place them according to the data in
 config/list.yaml.
@@ -65,7 +65,7 @@ config/list.yaml.
 The data downloaded in the previous section can now be processed. Use the
 following to parse the data:
 
-    ruby analytics.rb <android|gnome|linux> (<android|gnome|linux> (...))
+    ruby 3-analytics.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
 For each project, this script reads, parses and stores its commits log to the
 database specified in config/general.yaml. Along the way, it also validates the
@@ -82,7 +82,7 @@ structured further, so the username and the domain of the email can be separated
 from the raw email string, and be associated with the companies in the
 CrunchBase database. This is done with the following script:
 
-    ruby parse_email.rb
+    ruby 4-parse_email.rb
 
 Since this is going to work only with the data within the database, it's doesn't
 require a server to parse.
@@ -198,7 +198,7 @@ The _:list/:deny_ is a list of projects that are not going to be included into
 the list of projects.
 
 The _:instances_ section alters the default values generated from
-configure.rb to the ones in each of the given instances.
+1-configure.rb to the ones in each of the given instances.
 
     :conflicts: config/conflicts.yaml
     :rawfix: config/rawfix.yaml
