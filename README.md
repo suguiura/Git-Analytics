@@ -17,7 +17,14 @@ Dependencies
 - [git](http://git-scm.com/)
 - [perl](http://www.perl.org/)
 - [ruby 1.9](http://ruby-lang.org/)
+
+Gems
+----
+
 - [libxml](http://libxml.rubyforge.org/)
+- [domainatrix](https://github.com/pauldix/domainatrix)
+- [email_veracity](https://github.com/heycarsten/email-veracity)
+- [sqlite3](http://rubygems.org/gems/sqlite3)
 
 
 How to use
