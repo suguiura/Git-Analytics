@@ -39,10 +39,10 @@ The configuration file is described further below.
 ### Generating the projects list file
 
 After updating the config/general.yaml file (check its description bellow), run
-the tools/configure.rb to generate the config/list.yaml file (as defined in the
+the configure.rb to generate the config/list.yaml file (as defined in the
 _:list_ ).
 
-    ruby tools/configure.rb <android|gnome|linux> (<android|gnome|linux> (...))
+    ruby configure.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
 The config/list.yaml is a file that contains projects metadata which allows both
 batch operations over them and customization of how the scripts should deal with
@@ -55,7 +55,7 @@ It will also try to download the project descriptions for the projects.
 From the config/list.yaml generated (and customized) above, a tool was created
 to make the computer automatically download the git data from each project:
 
-    ruby tools/dl.rb <android|gnome|linux> (<android|gnome|linux> (...))
+    ruby dl.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
 It will download the files and place them according to the data in
 config/list.yaml.
@@ -198,7 +198,7 @@ The _:list/:deny_ is a list of projects that are not going to be included into
 the list of projects.
 
 The _:instances_ section alters the default values generated from
-tools/configure.rb to the ones in each of the given instances.
+configure.rb to the ones in each of the given instances.
 
     :conflicts: config/conflicts.yaml
     :rawfix: config/rawfix.yaml
