@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
+require 'logger'
 require 'yaml'
 
-$: << File.join(File.dirname(__FILE__), '.')
-require 'config'
+load 'lib/utils.rb'
 
 each_server_config("Downloading projects for ") do |server, config, projects|
   n = projects.size
