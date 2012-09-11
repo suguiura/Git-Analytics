@@ -13,7 +13,7 @@ def download_descriptions(server, config, paths)
   xpath, nslist = config[:description][:find].values
   n = paths.size
   paths.each do |path, tmpfile| n -= 1
-    $l.info "%5d - %s" % (n, path)
+    $l.info "%5d - %s" % [n, path]
     next if File.exists? tmpfile
     Process.fork do
       xml = Net::HTTP.get URI.parse config[:description][:url].join(path)
@@ -32,7 +32,7 @@ def get_paths(server, config)
     url = config[:list][:url]
     $l.info "Downloading list from #{url}..."
     result = Net::HTTP.get URI.parse url
-    regexp = Regexp.new(config[:list][:regexp])
+    regexp = Regexp.new config[:list][:regexp]
     result.strip.split("\n").map{|x| x.strip.scan(regexp).first}
   end.inject({}) do |hash, path|
     tmpfile = filename.join(path.hash.to_s.tr('-', 'x'))
