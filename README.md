@@ -246,3 +246,8 @@ This project was possible with the tutorship of [Carlos Denner dos Santos Jr]
 (denner@ime.usp.br) and the financial support from
 [Centro de Competência de Software Livre](http://ccsl.ime.usp.br/).
 
+
+License
+=======
+
+GNU Affero General Public License v3
