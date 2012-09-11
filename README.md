@@ -20,6 +20,7 @@ Dependencies
 
 ### Gems
 
+- [activerecord](https://rubygems.org/gems/activerecord)
 - [libxml](http://libxml.rubyforge.org/)
 - [domainatrix](https://github.com/pauldix/domainatrix)
 - [email_veracity](https://github.com/heycarsten/email-veracity)
