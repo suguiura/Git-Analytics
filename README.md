@@ -13,9 +13,7 @@ Dependencies
 ------------
 
 - [linux](http://kernel.org/)
-- [bash](http://www.gnu.org/s/bash/)
 - [git](http://git-scm.com/)
-- [perl](http://www.perl.org/)
 - [ruby 1.9](http://ruby-lang.org/)
 
 ### Gems
