@@ -10,7 +10,7 @@ Estatística.
 
 
 Dependencies
-============
+------------
 
 - [linux](http://kernel.org/)
 - [bash](http://www.gnu.org/s/bash/)
@@ -18,8 +18,7 @@ Dependencies
 - [perl](http://www.perl.org/)
 - [ruby 1.9](http://ruby-lang.org/)
 
-Gems
-----
+### Gems
 
 - [libxml](http://libxml.rubyforge.org/)
 - [domainatrix](https://github.com/pauldix/domainatrix)
@@ -28,7 +27,7 @@ Gems
 
 
 How to use
-==========
+----------
 
 The full process of evaluating the data includes generating a list of
 repositories (list.yaml) from the initial config file (config.yaml), downloading
@@ -38,8 +37,7 @@ described in the following section.
 
 The configuration file is described further below.
 
-Generating the projects list file
----------------------------------
+### Generating the projects list file
 
 After updating the config.yaml file (check its description bellow), run the
 tools/configure.rb to generate the list.yaml file (as defined in the _:list_ ).
@@ -52,8 +50,7 @@ of those projects.
 
 It will also try to download the project descriptions for the projects.
 
-Download the git data
----------------------
+### Download the git data
 
 From the list.yaml generated (and customized) above, a tool was created to make
 the computer automatically download the git data from each project:
@@ -62,8 +59,7 @@ the computer automatically download the git data from each project:
 
 It will download the files and place them according to the data in list.yaml.
 
-Generate the database
----------------------
+### Generate the database
 
 The data downloaded in the previous section can now be processed. Use the
 following to parse the data:
@@ -78,8 +74,7 @@ fixed by this script.
 
 It can also generate a CSV file.
 
-Parsing and associating emails with companies
----------------------------------------------
+### Parsing and associating emails with companies
 
 Once the entries in rawfix.yaml are fixed, they can be parsed and structured
 further, so the username and the domain of the email can be separated from the
@@ -92,7 +87,7 @@ Since this is going to work only with the data within the database, it's doesn't
 require a server to parse.
 
 Configuration File
-==================
+------------------
 
 The configuration file has a YAML format. An example is shown below:
 
@@ -217,7 +212,7 @@ data.
 
 
 Acknowledgements
-================
+----------------
 
 This project was possible with the tutorship of [Carlos Denner dos Santos Jr]
 (denner@ime.usp.br) and the financial support from
@@ -225,6 +220,6 @@ This project was possible with the tutorship of [Carlos Denner dos Santos Jr]
 
 
 License
-=======
+-------
 
 GNU Affero General Public License v3
