@@ -23,8 +23,11 @@ Dependencies
 How to use
 ==========
 
-The full process of evaluating the data includes generating config files,
-downloading bare git files and parsing them is described in the following steps.
+The full process of evaluating the data includes generating a list of
+repositories (list.yaml) from the initial config file (config.yaml), downloading
+the bare git files from the repositories in that list, parsing them and either
+printing data in the CSV format or generating and populating a database, is
+described in the following section.
 
 The configuration file is described further below.
 
@@ -37,7 +40,7 @@ a list of projects is downloaded, obtaining and expanding the metadata for each
 of those projects. This generated metadata is, then, saved into a YAML file.
 The script for this task has the following syntax:
 
-    ruby script/generate.rb <config.yaml>
+    ruby tools/configure.rb <android|gnome|linux>
 
 Download the git files from each project
 ----------------------------------------
@@ -116,59 +119,124 @@ Configuration File
 
 The configuration file has a YAML format. An example is shown below:
 
-    :data:
-      :dir:
-      - data/linux/
-      - 
-    :git:
-      :url:
-      - git://git.kernel.org/pub/scm/
-      -
-    :description:
-      :url:
-      - http://git.kernel.org/?a=rss;p=
-      -
-      :find:
-        :xpath: /rss/channel/description
-        :nslist:
-    :list:
-      :url: http://git.kernel.org/?a=project_index
-      :regexp: ^[^\s]*
-      :file: config/list-linux.yaml
-      :deny:
-      - 
-      :only:
-      - linux/kernel/git/torvalds/linux.git
+    :db:
+      :commits:
+        :adapter: sqlite3
+        :database: /home/ram/commits.sqlite3
+      :crunchbase:
+        :adapter: sqlite3
+        :database: /home/ram/cb.sqlite3
 
-The main sections used in the tool, and specified in the configuration file are
-_data_, _git_, _description_ and _list_.
+The _:db_ section of the configuration file are parameters passed straightly to
+ActiveRecord to store the data into the database, or to retrieve data from it.
+The _:commits_ subsection is the database for the git commits data. For a
+specific moment, the crunchbase database should be queried, so it's
+configuration was also stored here.
 
-_Data_ represents the work data, so far
-represented only by the (to be downloaded) git mirror files, and the only
-subsection is _dir_, which is where the data is going to be saved. It is an
-array in order to build a path according to a parameter, which is given by
-entries in the _list_ section, explained below. Two other subsections are also
-arrays, due to the same reason: _git/url_ and _description/url_.
+    :servers:
+      :linux:
+        :host: git.kernel.org
+        :ip: 149.20.4.72
+        :data:
+          :dir:
+          - /media/attach/data/git/source/linux/
+          - 
+          :csv: /media/attach/data/git/working/linux.dat
+        :git:
+          :url:
+          - git://149.20.4.72/pub/scm/
+          -
+        :description:
+          :url:
+          - http://149.20.4.72/?a=rss;p=
+          -
+          :find:
+            :xpath: /rss/channel/description
+            :nslist:
+        :origin:
+          :default: .
+          :regexp: '^$'
+        :list:
+          :url: http://149.20.4.72/?a=project_index
+          :regexp: ^[^\s]*
+          :only:
+          - linux/kernel/git/torvalds/linux.git
 
-The _git_ section contains informations about git repositories.
+Each server in the _:servers_ section has a basic structure containing its host 
+name (_:host_), its ip (_:ip_), the base dir where the git repositories shall be
+placed for that server (_:data/:dir_) and what is the file for the generated CSV
+(_:data/:csv). Note that _:data/:dir_ is an array with two elements, with the
+second one empty. This is a way to programatically wrap the path of each project
+with a prefix and a suffix, which are the first and the second elements of the
+array, respectively. The same applies to all other two-elements-array in the
+config file.
 
-The _description_ section represents data about project description, since it's
-not really downloaded from servers when they are cloned by the git tool.
-_description/find_ subsection has two other subsections, _xpath_ and _nslist_.
-_xpath_ is a XML xpath, selecting the description about the project from a XML
-file provided from the _description/url_, and the _nslist_ is the list of XML
-namespaces used by _xpath_.
+_:git/:url_ has the base url of the git repositories. _:description_ has the url
+for the description of the projects (_:url_) and the xpath expression to
+retrieve it (_:description/:find/:xpath_) in the given namespace
+(_:description/:find/:nslist_)
 
-Finally, the _list_ section contain informations about the list of projects.
-It has the _url_ of the list, and a _regexp_ (regular expression) subsection to
-extract the essencial information from the file downloaded from the _url_
-subsection. _file_ is the filename where the YAML file about the projects will
-be saved. The last two subsections, _deny_ and _only_, are arrays, denying and
-selecting projects, respectively. When _only_ is specified, only projects in
-this subsection is evaluated. The projects in _deny_ will be excluded from the
-list.
+_:origin_ is a string that will be put into the database table as the origin
+column. It will defaults to the content of _:origin/:default_ if no expression
+is found from the project name using the regular expression from
+_:origin/:regexp_.
 
-TODO: to include the _instances_ section and the generated configuration file.
+:list_ relates to the list of projects from that server. A url is used
+to get the list (_:list/:url_) and a regular expression is used to select the
+part of the url to that project (_:list/:regexp_).
+
+The _:list/:only_ is an option to ignore the list provided from the _:list/:url_
+to select only the projects from its list.
+
+      :android:
+        (...)
+        :list:
+          (...)
+          :deny:
+          - kernel/experimental.git
+          - kernel/linux-2.6.git
+        :instances:
+          kernel/common.git:
+            :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
+            :range: ..remotes/common/android-3.0
+            :fork: true
+          kernel/msm.git:
+            :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
+            :range: ..remotes/msm/android-msm-2.6.35
+            :fork: true
+          kernel/omap.git:
+            :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
+            :range: ..remotes/omap/android-omap-3.0
+            :fork: true
+          kernel/qemu.git:
+            :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
+            :range: ..remotes/qemu/android-goldfish-2.6.29
+            :fork: true
+          kernel/samsung.git:
+            :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
+            :range: ..remotes/samsung/android-samsung-2.6.35
+            :fork: true
+          kernel/tegra.git:
+            :dir: /home/rafael/media/git-data/linux/linux/kernel/git/torvalds/linux.git
+            :range: ..remotes/tegra/android-tegra-2.6.39
+            :fork: true
+
+The _:list/:deny_ is a list of projects that are not going to be included into
+the list of projects.
+
+The _:instances_ section alters the default values generated from
+tools/configure.rb to the ones in each of the given instances.
+
+    :conflicts: conflicts.yaml
+    :emailfix: emailfix.yaml
+    :list: list.yaml
+
+Finally some additional files are used, which are the _:conflicts_, _:emailfix_
+and _:list_. _:emailfix_ is a dictionary of fixes of strings that are supposed
+to be email string, but for some reason are not a valid. _:list_ is the list of
+projects and some metadata about them. _:conflicts_ is a file of conflicts from
+associating a company to an email domain and it's related to the CrunchBase
+data.
 
 
 Acknowledgements
