@@ -16,7 +16,7 @@ Dependencies
 - [bash](http://www.gnu.org/s/bash/)
 - [git](http://git-scm.com/)
 - [perl](http://www.perl.org/)
-- [ruby](http://ruby-lang.org/)
+- [ruby 1.9](http://ruby-lang.org/)
 - [libxml](http://libxml.rubyforge.org/)
 
 
@@ -31,88 +31,58 @@ described in the following section.
 
 The configuration file is described further below.
 
-Generating configuration files
-------------------------------
+Generating the projects list file
+---------------------------------
 
-All of the required metadata about projects is obtained and generated in this
-section. Given a small set of data about a server hosting git repositories,
-a list of projects is downloaded, obtaining and expanding the metadata for each
-of those projects. This generated metadata is, then, saved into a YAML file.
-The script for this task has the following syntax:
+After updating the config.yaml file (check its description bellow), run the
+tools/configure.rb to generate the list.yaml file (as defined in the _:list_ ).
 
-    ruby tools/configure.rb <android|gnome|linux>
+    ruby tools/configure.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
-Download the git files from each project
-----------------------------------------
+The list.yaml is a file that contains projects metadata which allows both batch
+operations over them and customization of how the scripts should deal with each
+of those projects.
 
-A given server can contain several projects (e.g. git.kernel.org) and the dl.rb
-tool was made to automatically download them. Give a yaml configuration file to
-the too, using the following command syntax to download the data. If a project
-list doesn't already exist, it is downloaded.
+It will also try to download the project descriptions for the projects.
 
-    ruby script/dl.rb <config.yaml>
+Download the git data
+---------------------
 
-### Download git descriptions (optional)
+From the list.yaml generated (and customized) above, a tool was created to make
+the computer automatically download the git data from each project:
 
-Since the git tool, used within the script in the previous step, doesn't
-download projects description, it can be done separately. A tool is available
-for this task and has the following syntax:
+    ruby tools/dl.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
-    ruby script/dl-description <config.yaml>
+It will download the files and place them according to the data in list.yaml.
 
-### Correct incorrect emails (optional)
+Generate the database
+---------------------
 
-Many emails are messed up by their own owners, due to a number of reasons. To
-correct some of them (not all emails can be corrected sometimes), git has a
-mailmap file (more information at `git help shortlog`), which, in one of its
-basic forms, plainly maps the original email string to the correct one. It's
-pretty simple.
+The data downloaded in the previous section can now be processed. Use the
+following to parse the data:
 
-A script to list all the anomalies is the following:
+    ruby analytics.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
-    ruby script/anomalies.rb <config.yaml>
+For each project, this script reads, parses and stores its commits log to the
+database specified in config.yaml. Along the way, it also validates the email
+strings. If it's not a valid one, it saves it in rawfix.yaml, along with an
+email fix suggestion. The email will be saved as is in the database and won't be
+fixed by this script.
 
-Another script tries its best to guess the correct email from a list supplied
-into its standard input. Using the list from the script above, the following
-will generate a mailmap format from the input list.
+It can also generate a CSV file.
 
-    ruby script/anomalies.rb <config.yaml> | ruby script/mailmap.rb
-
-Note: In order to actually use the mailmap file, set it into the git config with
-the following command:
-
-    git config --global mailmap.file <path_to_mailmap>
-
-Concatenate commit logs into a formatted file
+Parsing and associating emails with companies
 ---------------------------------------------
 
-All the commit data are hidden within the git files, usually packaged,
-compressed and using their own format. This step is needed to expand, filter and
-format the logs into the standard output which is going to be used by the next
-step. Redirecting it to a file is recommended, since the output can be big.
+Once the entries in rawfix.yaml are fixed, they can be parsed and structured
+further, so the username and the domain of the email can be separated from the
+raw email string, and be associated with the companies in the CrunchBase
+database. This is done with the following script:
 
-    ruby script/gitlog.rb <config.yaml>
+    ruby parse_email.rb
 
-Generate a CSV file
--------------------
-
-In order to generate a valid csv formatted text, along with some
-transformations, the following script is used, where both parameters
---default-origin and --regexp-origin are optional and are used to define the
-origin column, in terms of the default and the presence of a substring at the
-project's name.
-
-    ruby script/csv.rb [--default-origin <string>] [--regexp-origin <regexp>]
-
-The pipe way
-------------
-
-Given the data is already downloaded, performing the above steps many times in a
-rown can become quite monotonous. Fortunately, the scripts were coded into such
-a way that it all can be done into a long pipe. The following is an example
-using the pipe feature, along with `time` and `gzip`.
-
-    time ruby script/gitlog.rb config/linux.yaml | ruby script/csv.rb | gzip -c > generated/linux.dat.gz
+Since this is going to work only with the data within the database, it's doesn't
+require a server to parse.
 
 Configuration File
 ==================
