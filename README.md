@@ -19,9 +19,9 @@ Dependencies
 ### Gems
 
 - [activerecord](https://rubygems.org/gems/activerecord)
-- [libxml](http://libxml.rubyforge.org/)
-- [domainatrix](https://github.com/pauldix/domainatrix)
-- [email_veracity](https://github.com/heycarsten/email-veracity)
+- [libxml](http://rubygems.org/gems/libxml-ruby)
+- [domainatrix](http://rubygems.org/gems/domainatrix)
+- [email_veracity](http://rubygems.org/gems/email_veracity)
 - [sqlite3](http://rubygems.org/gems/sqlite3)
 
 
