@@ -5,7 +5,7 @@ require 'active_record'
 
 load 'lib/db.rb'
 
-$config = YAML.load_file 'config.yaml'
+$config = YAML.load_file 'config/general.yaml'
 
 GitAnalytics::DB.connect $config[:db][:commits], $config[:db][:crunchbase]
 

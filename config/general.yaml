@@ -115,7 +115,8 @@
         :range: ..remotes/tegra/android-tegra-2.6.39
         :fork: true
 
-:conflicts: conflicts.yaml
-:emailfix: emailfix.yaml
-:list: list.yaml
+:company_domain: config/company_domain.yaml
+:conflicts: config/conflicts.yaml
+:rawfix: config/rawfix.yaml
+:list: config/list.yaml
 

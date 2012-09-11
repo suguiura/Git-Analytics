@@ -48,7 +48,7 @@ end
 
 def prepare
   require 'yaml'
-  config = YAML::load_file 'config.yaml'
+  config = YAML::load_file 'config/general.yaml'
   GitAnalytics::DB.connect config[:db][:commits]
   GitAnalytics::DB::Company.establish_connection config[:db][:crunchbase]
   GitAnalytics::DB::Similarity.establish_connection config[:db][:crunchbase]

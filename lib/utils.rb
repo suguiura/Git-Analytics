@@ -3,7 +3,7 @@ $l = Logger.new STDERR
 $l.formatter = Logger::Formatter.new
 #$l.datetime_format = "%H:%M:%S"
 
-$config = YAML::load_file 'config.yaml'
+$config = YAML::load_file 'config/general.yaml'
 $projects = YAML.load_file($config[:list]) rescue {}
 
 def each_server_config(prefix='', suffix='')

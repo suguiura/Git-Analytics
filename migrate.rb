@@ -9,7 +9,7 @@ $l.formatter = Logger::Formatter.new
 
 $l.info 'Start'
 
-$config = YAML::load_file 'config.yaml'
+$config = YAML::load_file 'config/general.yaml'
 
 ActiveRecord::Base.establish_connection $config[:db][:commits]
 ActiveRecord::Schema.define do

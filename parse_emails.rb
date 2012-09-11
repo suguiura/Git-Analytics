@@ -8,9 +8,9 @@ require 'active_record'
 
 #EmailVeracity::Config[:skip_lookup] = true
 
-$config = YAML.load_file 'config.yaml'
-$fix = YAML.load_file 'rawfix.yaml'
-$permalink = YAML.load_file 'company_domain.yaml'
+$config = YAML.load_file 'config/general.yaml'
+$fix = YAML.load_file $config[:rawfix]
+$permalink = YAML.load_file $config[:company_domain]
 
 ActiveRecord::Base.establish_connection $config[:db][:commits]
 

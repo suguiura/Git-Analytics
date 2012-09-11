@@ -29,34 +29,36 @@ How to use
 ----------
 
 The full process of evaluating the data includes generating a list of
-repositories (list.yaml) from the initial config file (config.yaml), downloading
-the bare git files from the repositories in that list, parsing them and either
-printing data in the CSV format or generating and populating a database, is
-described in the following section.
+repositories (config/list.yaml) from the initial config file
+(config/general.yaml), downloading the bare git files from the repositories in
+that list, parsing them and either printing data in the CSV format or generating
+and populating a database, is described in the following section.
 
 The configuration file is described further below.
 
 ### Generating the projects list file
 
-After updating the config.yaml file (check its description bellow), run the
-tools/configure.rb to generate the list.yaml file (as defined in the _:list_ ).
+After updating the config/general.yaml file (check its description bellow), run
+the tools/configure.rb to generate the config/list.yaml file (as defined in the
+_:list_ ).
 
     ruby tools/configure.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
-The list.yaml is a file that contains projects metadata which allows both batch
-operations over them and customization of how the scripts should deal with each
-of those projects.
+The config/list.yaml is a file that contains projects metadata which allows both
+batch operations over them and customization of how the scripts should deal with
+each of those projects.
 
 It will also try to download the project descriptions for the projects.
 
 ### Download the git data
 
-From the list.yaml generated (and customized) above, a tool was created to make
-the computer automatically download the git data from each project:
+From the config/list.yaml generated (and customized) above, a tool was created
+to make the computer automatically download the git data from each project:
 
     ruby tools/dl.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
-It will download the files and place them according to the data in list.yaml.
+It will download the files and place them according to the data in
+config/list.yaml.
 
 ### Generate the database
 
@@ -66,19 +68,19 @@ following to parse the data:
     ruby analytics.rb <android|gnome|linux> (<android|gnome|linux> (...))
 
 For each project, this script reads, parses and stores its commits log to the
-database specified in config.yaml. Along the way, it also validates the email
-strings. If it's not a valid one, it saves it in rawfix.yaml, along with an
-email fix suggestion. The email will be saved as is in the database and won't be
-fixed by this script.
+database specified in config/general.yaml. Along the way, it also validates the
+email strings. If it's not a valid one, it saves it in config/rawfix.yaml, along
+with an email fix suggestion. The email will be saved as is in the database and
+won't be fixed by this script.
 
 It can also generate a CSV file.
 
 ### Parsing and associating emails with companies
 
-Once the entries in rawfix.yaml are fixed, they can be parsed and structured
-further, so the username and the domain of the email can be separated from the
-raw email string, and be associated with the companies in the CrunchBase
-database. This is done with the following script:
+Once the entries in config/rawfix.yaml are fixed, they can be parsed and
+structured further, so the username and the domain of the email can be separated
+from the raw email string, and be associated with the companies in the
+CrunchBase database. This is done with the following script:
 
     ruby parse_email.rb
 
@@ -198,9 +200,9 @@ the list of projects.
 The _:instances_ section alters the default values generated from
 tools/configure.rb to the ones in each of the given instances.
 
-    :conflicts: conflicts.yaml
-    :emailfix: emailfix.yaml
-    :list: list.yaml
+    :conflicts: config/conflicts.yaml
+    :rawfix: config/rawfix.yaml
+    :list: config/list.yaml
 
 Finally some additional files are used, which are the _:conflicts_, _:emailfix_
 and _:list_. _:emailfix_ is a dictionary of fixes of strings that are supposed
