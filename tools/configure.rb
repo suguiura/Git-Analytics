@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 
+require 'logger'
 require 'net/http'
 require 'uri'
 require 'xml'
+require 'yaml'
 
-$: << File.join(File.dirname(__FILE__), '.')
-require 'config'
+load 'lib/utils.rb'
 
 def download_descriptions(server, config, paths)
   $l.info "Downloading description for:"
