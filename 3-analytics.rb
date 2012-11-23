@@ -41,7 +41,7 @@ end
 
 def prepare
   c = $config
-  GitAnalytics::Email.prepare c[:emailfix]
+  GitAnalytics::Email.prepare c[:rawfix]
   GitAnalytics::DB.connect c[:db][:commits]
   GitAnalytics::DB.create_tables
   GitAnalytics::DB.add_indexes

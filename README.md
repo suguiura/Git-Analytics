@@ -204,8 +204,8 @@ The _:instances_ section alters the default values generated from
     :rawfix: config/rawfix.yaml
     :list: config/list.yaml
 
-Finally some additional files are used, which are the _:conflicts_, _:emailfix_
-and _:list_. _:emailfix_ is a dictionary of fixes of strings that are supposed
+Finally some additional files are used, which are the _:conflicts_, _:rawfix_
+and _:list_. _:rawfix_ is a dictionary of fixes of strings that are supposed
 to be email string, but for some reason are not a valid. _:list_ is the list of
 projects and some metadata about them. _:conflicts_ is a file of conflicts from
 associating a company to an email domain and it's related to the CrunchBase
