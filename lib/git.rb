@@ -49,7 +49,11 @@ module GitAnalytics
 
     def self.parse_signatures(line)
       line.scan(@re_signatures).map do |name, raw_email|
-        {:raw_email => raw_email, :name => name}
+        {
+          :raw_email => raw_email,
+          :name      => name,
+          :email     => GitAnalytics::Email.parse(raw_email),
+        }
       end
     end
 
@@ -59,7 +63,11 @@ module GitAnalytics
 
     def self.parse_email(line, re)
       raw_email, secs, offset = re.match(line).captures
-      {:raw_email => raw_email, :date => create_date(secs, offset)}
+      {
+        :raw_email => raw_email,
+        :date      => create_date(secs, offset),
+        :email     => GitAnalytics::Email.parse(raw_email),
+      }
     end
   end
 end
