@@ -6,16 +6,21 @@ module GitAnalytics
       gtld = "(%s)" % gtlds.join('|')
       @re_tlds = /^(#{cctld}\.#{gtld}|#{cctld}|#{gtld})\.([^\.]+)(\.(.*))?$/
     end
-    
+
     def self.open(filename)
       @file = File.open(filename, 'w')
       @file.puts header.join("\t")
     end
-    
+
     def self.store(log)
       signatures = log[:signatures].map do |signature|
-        p = signature[:person]
-        [p[:email], p[:domain], split_domain(p[:domain])]
+        [
+          signature[:email][:address],
+          signature[:email][:host],
+          signature[:email][:subdomain],
+          signature[:email][:domain],
+          signature[:email][:public_suffix],
+        ]
       end
       @file.puts [
         log[:server],
@@ -23,14 +28,18 @@ module GitAnalytics
         log[:project],
         log[:description],
         log[:author][:name],
-        log[:author][:email],
-        log[:author][:domain],
-        split_domain(log[:author][:domain]),
+        log[:author][:email][:address],
+        log[:author][:email][:host],
+        log[:author][:email][:subdomain],
+        log[:author][:email][:domain],
+        log[:author][:email][:public_suffix],
         log[:author][:date],
         log[:committer][:name],
-        log[:committer][:email],
-        log[:committer][:domain],
-        split_domain(log[:committer][:domain]),
+        log[:committer][:email][:address],
+        log[:committer][:email][:host],
+        log[:committer][:email][:subdomain],
+        log[:committer][:email][:domain],
+        log[:committer][:email][:public_suffix],
         log[:committer][:date],
         log[:committer][:date].to_i - log[:author][:date].to_i,
         log[:tag],
@@ -66,7 +75,7 @@ module GitAnalytics
     end
 
     def self.header
-      email = %w(email email_domain email_department email_company email_gtld email_cctld)
+      email = %w(email email_domain email_department email_company email_public_suffix)
       attribs = ['name', email, 'date'].flatten
 
       [
