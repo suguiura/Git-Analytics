@@ -5,21 +5,6 @@ module GitAnalytics
       @fix_email.update(YAML.load_file(@file = file)) rescue nil
     end
 
-    def self.fix(email)
-      @fix_email[email].to_s
-    end
-
-    def self.domain(email)
-      address = @fix_email[email].domain.to_s.downcase
-      subdomain, orgdomain = begin
-        url = Domainatrix.parse("http://" + address)
-        [url.subdomain, [url.domain, url.public_suffix].join('.')]
-      rescue
-        ['', '']
-      end
-      {:address => address, :subdomain => subdomain, :orgdomain => orgdomain}
-    end
-
     def self.save
       emails = @fix_email.delete_if{|k, v| k == v.to_s}
       File.open(@file, 'w').puts emails.to_yaml
