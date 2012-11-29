@@ -9,6 +9,21 @@ module GitAnalytics
       emails = @fix_email.delete_if{|k, v| k == v.to_s}
       File.open(@file, 'w').puts emails.to_yaml
     end
+
+    def self.parse(raw_email)
+      raw = @fix_email[raw_email].to_s || raw_email
+      e = Mail::Address.new(raw.encode(Encoding::UTF_8, Encoding::ISO8859_1))
+      d = Domainatrix.parse 'http://%s' % e.domain
+      {
+        :name => e.name,
+        :address => e.address,
+        :username => e.local,
+        :host => e.domain,
+        :subdomain => d.subdomain,
+        :domain => d.domain,
+        :public_suffix => d.public_suffix,
+      }
+    end
     
     private
 
