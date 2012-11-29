@@ -1,12 +1,6 @@
 
 module GitAnalytics
   module CSV
-    def self.prepare(gtlds, cctlds)
-      cctld = "(%s)" % cctlds.join('|')
-      gtld = "(%s)" % gtlds.join('|')
-      @re_tlds = /^(#{cctld}\.#{gtld}|#{cctld}|#{gtld})\.([^\.]+)(\.(.*))?$/
-    end
-
     def self.open(filename)
       @file = File.open(filename, 'w')
       @file.puts header.join("\t")
