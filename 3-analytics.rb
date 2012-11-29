@@ -2,6 +2,7 @@
 
 require 'uri'
 require 'yaml'
+require 'mail'
 require 'logger'
 require 'domainatrix'
 require 'active_record'
