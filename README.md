@@ -23,7 +23,7 @@ Dependencies
 - [domainatrix](http://rubygems.org/gems/domainatrix)
 - [email_veracity](http://rubygems.org/gems/email_veracity)
 - [sqlite3](http://rubygems.org/gems/sqlite3)
-
+- [mail](http://rubygems.org/gems/mail)
 
 How to use
 ----------
