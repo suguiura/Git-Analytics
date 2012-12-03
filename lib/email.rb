@@ -13,11 +13,11 @@ module GitAnalytics
     def self.parse(raw_email)
       raw = @fix_email[raw_email].to_s || raw_email
       e = Mail::Address.new(raw.encode(Encoding::UTF_8, Encoding::ISO8859_1))
-      d = Domainatrix.parse 'http://%s' % e.domain rescue {
-        :name => e.name,
-        :address => e.address,
-        :username => e.local,
-        :host => e.domain,
+      d = Domainatrix.parse 'http://%s' % e.domain rescue return {
+        :name => (e.name rescue ''),
+        :address => (e.address rescue ''),
+        :username => (e.local rescue ''),
+        :host => (e.domain rescue ''),
         :subdomain => '',
         :domain => '',
         :public_suffix => '',
