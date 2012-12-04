@@ -6,31 +6,29 @@ module GitAnalytics
     end
 
     def self.save
-      emails = @fix_email.delete_if{|k, v| k == v.to_s}
+      emails = @fix_email.delete_if{|k, v| k == v}
       File.open(@file, 'w').puts emails.to_yaml
     end
 
     def self.parse(raw_email)
-      raw = @fix_email[raw_email].to_s || raw_email
-      e = Mail::Address.new(raw.encode(Encoding::UTF_8, Encoding::ISO8859_1))
-      d = Domainatrix.parse 'http://%s' % e.domain rescue return {
-        :name => (e.name rescue ''),
-        :address => (e.address rescue ''),
-        :username => (e.local rescue ''),
-        :host => (e.domain rescue ''),
-        :subdomain => '',
-        :domain => '',
-        :public_suffix => '',
-      }
-      {
-        :name => e.name,
-        :address => e.address,
-        :username => e.local,
-        :host => e.domain,
-        :subdomain => d.subdomain,
-        :domain => d.domain,
-        :public_suffix => d.public_suffix,
-      }
+      email = @fix_email[raw_email].empty? ? raw_email : @fix_email[raw_email]
+      email.encode!(Encoding::UTF_8, Encoding::ISO8859_1)
+      begin
+        e = Mail::Address.new(email)
+        d = Domainatrix.parse 'http://%s' % e.domain
+        {
+          :name => e.name,
+          :address => e.address,
+          :username => e.local,
+          :host => e.domain,
+          :subdomain => d.subdomain,
+          :domain => d.domain,
+          :public_suffix => d.public_suffix,
+        }
+      rescue
+        $l.error "Bad email: %s" % raw_email
+        Hash.new('')
+      end
     end
     
     private
@@ -40,23 +38,7 @@ module GitAnalytics
 
     def self.do_fix(email)
       e = EmailVeracity::Address.new(email)
-      unless e.valid?
-        email = URI.unescape(email)
-        email.gsub! /DOT/, '.'
-        email.gsub! /AT/, '@'
-        email.downcase!
-        email.gsub! /[^-._@a-z0-9]/, ' '
-        email.squeeze! ' '
-        email.gsub! /[ _.-]+at[-._ ]+/, '@'
-        email.gsub! /[ _.-]+dot[-._ ]+/, '.'
-        email.gsub! /^[ _.-]+|[-._ ]+$/, ''
-        email.sub!(' ', '@') if email.count('@') == 0
-        email.gsub! ' ', '.'
-        email.squeeze! '.'
-        email.sub! /(^no\.author\.@)|(@.*\.none$)/, ''
-        e = EmailVeracity::Address.new(email)
-      end
-      e
+      e.valid? ? e.to_s : ''
     end
   end
 end
