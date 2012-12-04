@@ -26,7 +26,10 @@ module GitAnalytics
           :public_suffix => d.public_suffix,
         }
       rescue
-        $l.error "Bad email: %s" % raw_email
+        unless @bad_emails.include? raw_email
+          @bad_emails << raw_email
+          $l.error "Bad email: %s" % raw_email
+        end
         Hash.new('')
       end
     end
@@ -35,6 +38,7 @@ module GitAnalytics
 
     EmailVeracity::Config[:skip_lookup] = true
     @fix_email = Hash.new{|h, e| h[e] = do_fix(e)}
+    @bad_emails = []
 
     def self.do_fix(email)
       e = EmailVeracity::Address.new(email)
